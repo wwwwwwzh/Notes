@@ -65,6 +65,16 @@ Can use fourier basis for BRDF.
 ### Environment Map 
 Assumption is all light infinite far. Reflection map->diffuse map. box vs sphere map.
 
-
 ### Others
-[Mach bands](https://en.wikipedia.org/wiki/Mach_bands)
+- [Mach bands](https://en.wikipedia.org/wiki/Mach_bands)
+- Thor 4 is really bad. 
+- Beam search in translation (balance between greedy search and resource constraint)
+- Log is a really interesting function. When x is too big, it makes x grow slower. When x is too small, it makes x shrink slower. Everything is within a more controllable range. 
+
+## 12.21
+### Machine Translation
+- statistical translation:
+- [RNN encoder decoder](https://arxiv.org/pdf/1406.1078.pdf): "Unlike the traditional phrase-based translation system which consists of many small sub-components that are tuned separately, neural machine translation attempts to build and train a single, large neural network that reads a sentence and outputs a correct translation."
+- [Attention](https://arxiv.org/pdf/1409.0473.pdf): "the use of a fixed-length vector is a bottleneck in improving the performance of this basic encoder–decoder architecture, and propose to extend this by allowing a model to automatically (soft-)search for parts of a source sentence that are relevant to predicting a target word, without having to form these parts as a hard segment explicitly"
+- Self attention: replace RNN with dot product
+- Transformer
