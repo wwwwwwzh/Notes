@@ -32,7 +32,7 @@ https://computergraphics.stackexchange.com/questions/7503/what-is-the-difference
 > Calculus review: Difference between area/time/solid angle, sqaured meters/seconds/steradians, and point/timestamp/direction. Power (flux density) at a point or radiance at a particlular direction are zero because they are defined differentially. You have to move the point to cover some area or move the direction to cover some solid angle to integrate power or irradiance. When integrating something, we say we integrate (quantity of measurement) and we are adding infinitesimal (unit of measurement) over the initegral range (e.g. integrate time/mass/angle by adding small seconds/kilograms/radians). 
 
 ### BRDF
-> Calculus Review: dx is h->h and dy is really f'(x(h))dx(h) or f'(x)dx. In multivariable calculus, df(xᵢ) means f'xᵢ(x)dxᵢ. df itself would be a vector of gradients.
+> Calculus Review: dx is h->h and dy is really f'(x(h))dx(h) or f'(x)dx. In multivariable calculus, df(xᵢ) means f'xᵢ(x)dxᵢ. df itself would be a vector of gradients. dy has same unit as y.
 #### Radiance and Irradiance
 Irradiance can be computed by integrating radiance over Ω. 
 <img width="200" alt="Screen Shot 2022-12-21 at 8 32 46 PM" src="https://user-images.githubusercontent.com/36484215/209056734-01c365f1-13d9-46bb-887b-ee8e96526326.png">
@@ -65,7 +65,7 @@ BSSRDF:
 
 tr(p,w) is the transport function that returns the point hit by a ray from p with direction w.
 
-<img width="1022" alt="Screen Shot 2022-12-22 at 12 30 50 PM" src="https://user-images.githubusercontent.com/36484215/209220806-22332cb9-225e-4634-8659-5bf251028796.png">
+<img width="500" alt="Screen Shot 2022-12-22 at 12 30 50 PM" src="https://user-images.githubusercontent.com/36484215/209220806-22332cb9-225e-4634-8659-5bf251028796.png">
 
 I hope I can understand the later part of the slides
 #### Microfacet
@@ -89,7 +89,7 @@ https://www.pbr-book.org/3ed-2018/Reflection_Models/Microfacet_Models
 
 Part of the radiation can pass the object unchanged, which is called transmission, part of it can change direction without a change in energy/frequency, which is called scattering, and part of it can disappear with the energy transferred to the object, which is called absorption. Both scattering and absorption remove radiation from the beam and are together called extinction.
 
-<img width="400" alt="Screen Shot 2022-12-22 at 1 55 17 PM" src="https://user-images.githubusercontent.com/36484215/209232685-741b8794-7f22-409b-beed-5045a95c5ebf.png">
+<img width="500" alt="Screen Shot 2022-12-22 at 1 55 17 PM" src="https://user-images.githubusercontent.com/36484215/209232685-741b8794-7f22-409b-beed-5045a95c5ebf.png">
 
 
 ### Environment Map 
@@ -109,5 +109,29 @@ Assumption is all light infinite far. Reflection map->diffuse map. box vs sphere
 - Self attention: replace RNN with dot product
 - Transformer: more complex than I thought. wonder what intuition guided them
 
-## 12.22
+## 12.22-23
 ### PixelRNN
+masked convolution + row LSTM to predict next pixel given all previous pixels
+
+### GANS
+#### GANS
+
+#### DCGAN
+
+#### [StyleGAN](https://arxiv.org/pdf/1812.04948.pdf)
+the generators continue to operate as black boxes, and the understanding of various aspects of the image synthesis process, e.g., the origin of stochastic features, is still lacking. The properties of the latent space are also poorly understood, and the commonly demonstrated latent space interpolations provide no quantitative way to compare different generators against each other.
+
+####
+
+> Note: upsampling+conv is favored over transposed conv to avoid checkerboard artifacts. https://distill.pub/2016/deconv-checkerboard/
+
+## 12.24-25
+### Think
+- Kanzi the ape
+- “The primate vocal tract is ‘speech ready,’ but ... most species don’t have the neural control to make the complex sounds that comprise human speech,” Dunn writes for The Conversation.
+- Deaf people think in sign language or imagined sounds or visual stuff
+- Blind people: echolocation, spatial understanding, other sensory information
+- https://waitbutwhy.com/table/person-with-no-senses
+- criticacl period for language (or really intelligence) development. Nervous system stops growing (real brain learning?)
+
+Sensory or external stimuli is needed to start things. Curiosity and other premitive desires (survival, imitation, some are uniqu to individuals, some learned) to drive internal processing. Memory?
