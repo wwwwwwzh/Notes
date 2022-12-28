@@ -1,22 +1,23 @@
-## 12.19
-### sherical harmonic 
+# Continuous Topics
+## Math
+(The Very Basics of Groups, Rings, and Fields)[https://www-users.cse.umn.edu/~brubaker/docs/152/152groups.pdf]
 
-<img width="200" alt="Screen Shot 2022-12-19 at 4 43 09 PM" src="https://user-images.githubusercontent.com/36484215/208555184-85d131f8-bfdd-402f-924f-b145467e3f6e.png">
+<img width="600" alt="Screen Shot 2022-12-27 at 8 11 28 PM" src="https://user-images.githubusercontent.com/36484215/209751312-d5187ff2-2716-4fc7-b93c-354f42ef69d2.png">
 
-ω = (sinθ*cosφ,sinθ*sinφ,cosθ)
+It seems that set theory and other associated number theories are the foundamentals of applied math I was looking for. They provide mathematically rigorous definitions (formal languages) to things.
 
-basically a basis for sherical functions like fourier basis
+### Vector Space
 
-### projection matrix (reviewing Roni's slides)
-<img width="300" alt="Screen Shot 2022-12-19 at 5 24 44 PM" src="https://user-images.githubusercontent.com/36484215/208559444-a1df7cd3-3423-4590-8fa1-64dd07c854de.png">
+### [Inner Product Space](https://en.wikipedia.org/wiki/Inner_product_space)
+a real vector space or a complex vector space with an operation called an inner product. The inner product of two vectors in the space is a scalar
 
-Note that image plane doesn't change size
+### [Affine Space](https://en.wikipedia.org/wiki/Affine_space)
+<img width="1073" alt="Screen Shot 2022-12-28 at 10 03 57 AM" src="https://user-images.githubusercontent.com/36484215/209847134-ee2e37ee-3611-4855-8576-602114afc5dd.png">
 
-<img width="300" alt="focal length and ratio" src="https://user-images.githubusercontent.com/36484215/208560712-78b6cd10-949e-446a-8d1b-c3646280e610.jpg">
+### Euclidean Space
+https://en.wikipedia.org/wiki/Euclidean_space#Motivation_of_the_modern_definition
 
-Note that when f→∞, this becomes orthographical projection and ratio will be 2.
-
-## 12.20-22 (reading pbr book)
+## Graphics
 ### Color and Radiometry
 https://www.pbr-book.org/3ed-2018/Color_and_Radiometry/Radiometry
 https://computergraphics.stackexchange.com/questions/7503/what-is-the-difference-between-radiance-and-irradiance-in-brdf
@@ -95,6 +96,27 @@ Part of the radiation can pass the object unchanged, which is called transmissio
 ### Environment Map 
 Assumption is all light infinite far. Reflection map->diffuse map. box vs sphere map.
 
+# Logs
+## 12.19
+### sherical harmonic 
+
+<img width="200" alt="Screen Shot 2022-12-19 at 4 43 09 PM" src="https://user-images.githubusercontent.com/36484215/208555184-85d131f8-bfdd-402f-924f-b145467e3f6e.png">
+
+ω = (sinθ*cosφ,sinθ*sinφ,cosθ)
+
+basically a basis for sherical functions like fourier basis
+
+### projection matrix (reviewing Roni's slides)
+<img width="300" alt="Screen Shot 2022-12-19 at 5 24 44 PM" src="https://user-images.githubusercontent.com/36484215/208559444-a1df7cd3-3423-4590-8fa1-64dd07c854de.png">
+
+Note that image plane doesn't change size
+
+<img width="300" alt="focal length and ratio" src="https://user-images.githubusercontent.com/36484215/208560712-78b6cd10-949e-446a-8d1b-c3646280e610.jpg">
+
+Note that when f→∞, this becomes orthographical projection and ratio will be 2.
+
+## 12.20-22 (reading pbr book)
+### BRDF
 ### Others
 - [Mach bands](https://en.wikipedia.org/wiki/Mach_bands)
 - Thor 4 is really bad. 
@@ -135,3 +157,9 @@ the generators continue to operate as black boxes, and the understanding of vari
 - criticacl period for language (or really intelligence) development. Nervous system stops growing (real brain learning?)
 
 Sensory or external stimuli is needed to start things. Curiosity and other premitive desires (survival, imitation, some are uniqu to individuals, some learned) to drive internal processing. Memory?
+
+## 12.26-28
+### Eating
+Not eating after 12.25 dinner makes me starve early in the morning and feel bad throughout the day. Ate at 12.26 but still not good after 12.27 breakfast. Took a walk and ate lunch much better. Slept and all good. Ran short late afternoon.
+
+### Math
