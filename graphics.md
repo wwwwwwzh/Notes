@@ -1,6 +1,6 @@
 # Continuous Topics
-## Math
-(The Very Basics of Groups, Rings, and Fields)[https://www-users.cse.umn.edu/~brubaker/docs/152/152groups.pdf]
+## Math (Group, Ring, Field, Space)
+[The Very Basics of Groups, Rings, and Fields](https://www-users.cse.umn.edu/~brubaker/docs/152/152groups.pdf)
 
 <img width="600" alt="Screen Shot 2022-12-27 at 8 11 28 PM" src="https://user-images.githubusercontent.com/36484215/209751312-d5187ff2-2716-4fc7-b93c-354f42ef69d2.png">
 
@@ -8,14 +8,49 @@ It seems that set theory and other associated number theories are the foundament
 
 ### Vector Space
 
+
+
 ### [Inner Product Space](https://en.wikipedia.org/wiki/Inner_product_space)
-a real vector space or a complex vector space with an operation called an inner product. The inner product of two vectors in the space is a scalar
+a real vector space or a complex vector space with an operation called an inner product. The inner product of two vectors in the space is a scalar.
+
+### Dual Space
+- Any vector space V has a corresponding dual vector space (or just dual space for short) consisting of all linear forms on V, together with the vector space structure of pointwise addition and scalar multiplication by constants.
+- A linear form or a covector is a linear map from a vector space to its field of scalars (e.g. R^n->R)
+- Transpose of a vector v is a linear form ⍺ such that ⍺(v)=<v,v>
+
+> Dot product of two vectors x and y is often written as x^Ty where it is actually this: (1) x^T is a matrix representing the linear map ⍺ such that ⍺(x)=<x,x>; y is a matrix representing a vector from the same vector space as x; the mapping ⍺ transforms y to a scalar and by definition of covector ⍺(y)=<x,y>. (2) x^T is actually not a vector transpose, but the transpose of a matrix representing the vector x; y is a matrix representing a vector; by definition of matrix multiplication, the product is a scalar representing the dot product of the two underlying vectors.
 
 ### [Affine Space](https://en.wikipedia.org/wiki/Affine_space)
 <img width="1073" alt="Screen Shot 2022-12-28 at 10 03 57 AM" src="https://user-images.githubusercontent.com/36484215/209847134-ee2e37ee-3611-4855-8576-602114afc5dd.png">
 
 ### Euclidean Space
 https://en.wikipedia.org/wiki/Euclidean_space#Motivation_of_the_modern_definition
+
+## Math (Mapping)
+A map or mapping is a function in its general sense.
+### Function
+A function from a set X to a set Y assigns to each element of X exactly one element of Y.
+
+### Homomorphism
+Homomorphisms of vector spaces are also called linear maps
+
+<img width="1245" alt="Screen Shot 2022-12-28 at 1 19 11 PM" src="https://user-images.githubusercontent.com/36484215/209867613-878b666e-e178-4a60-b896-b57e173638be.png">
+
+### Linear Mapping
+<img width="1091" alt="Screen Shot 2022-12-28 at 1 24 17 PM" src="https://user-images.githubusercontent.com/36484215/209868110-d10b668f-37c4-4b8e-ba1f-40b0e6ebc2a9.png">
+
+- A linear mapping is usually represented by a matrix. 
+- A matrix is just some numbers but in this case it can represent a function. A n by 1 or 1 by n matrix usually represents a vector.
+- "Matrix multiplication was first described by the French mathematician Jacques Philippe Marie Binet in 1812, to represent the composition of linear maps that are represented by matrices."
+
+## Math (Geometry)
+Geometry (from Ancient Greek γεωμετρία (geōmetría) 'land measurement'; from γῆ (gê) 'earth, land', and μέτρον (métron) 'a measure') is, with arithmetic, one of the oldest branches of mathematics. It is concerned with properties of space such as the distance, shape, size, and relative position of figures.
+
+Until the 19th century, geometry was almost exclusively devoted to Euclidean geometry, which includes the notions of point, line, plane, distance, angle, surface, and curve, as fundamental concepts.
+
+> Arithmetic (from Ancient Greek ἀριθμός (arithmós) 'number', and τική [τέχνη] (tikḗ [tékhnē]) 'art, craft') is an elementary part of mathematics that consists of the study of the properties of the traditional operations on numbers—addition, subtraction, multiplication, division, exponentiation, and extraction of roots.
+
+-------------------------------------------------------------------------------------------------------------------------------
 
 ## Graphics
 ### Color and Radiometry
@@ -95,6 +130,22 @@ Part of the radiation can pass the object unchanged, which is called transmissio
 
 ### Environment Map 
 Assumption is all light infinite far. Reflection map->diffuse map. box vs sphere map.
+
+## School Related
+### Course Plan
+- Visual or Performing Arts: APPL 110 (Introduction to Design and Making)
+- Literary Arts: Cicero
+
+### Interested
+- ECON 415 Market Failure
+- Hist 158 Early Modern Europe
+- HIST 266 history of warfare
+- HIST 315 NATION BUILDING LATIN AMERICA
+- HIST 340 ETHICS AND BUSINESS IN AFRICA
+- HIST 538 MIDDLE EAST & THE WEST
+
+
+-------------------------------------------------------------------------------------------------------------------------------
 
 # Logs
 ## 12.19
