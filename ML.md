@@ -25,3 +25,39 @@ To get reconstruction of a feature/activation map: forward all images in dataset
 2. each feature contains probability of detection, bounding box, and class of object
 3. IOU and Non-Max suppression to get final bounding boxes.
 4. Note that each grid sees more than the grid itself
+
+
+
+
+# NLP -------------------------------------------------
+## Attention & Transformer
+### Attention
+- Motivation: "the use of a fixed-length vector is a bottleneck in improving the performance of this basic encoder–decoder architecture, and propose to extend this by allowing a model to automatically (soft-)search for parts of a source sentence that are relevant to predicting a target word, without having to form these parts as a hard segment explicitly"
+- Intuition: Decoder network receives a context vector at every decoding timestamp. This context used to be only from previous states and previous output/prediction. We want it to also depend on every word of input sequence and focus on the most relavent word (e.g. when translating from me gusta perros to I like dogs, "like" should see both me and gusta but particularly focusing on gusta). 
+
+### Self Attention
+<img width="700" alt="Screen Shot 2023-01-04 at 10 52 30 AM" src="https://user-images.githubusercontent.com/36484215/210618485-7ea28d20-7d98-4b20-b61e-9b2108bf1927.png">
+- Intuition: for plain attention, every input should provide some relevant information and relevancy to every output. This can be done without RNN. 
+
+### [Transformer](https://arxiv.org/pdf/1706.03762.pdf)
+"A model architecture eschewing recurrence and instead relying entirely on an attention mechanism to draw global dependencies between input and output."
+
+
+# NLP & Vision -----------------------------------------
+## Captioning
+
+
+## Vision Transformer
+
+
+# 3D ---------------------------------------------------
+### [PointNet](http://stanford.edu/~rqi/pointnet/docs/cvpr17_pointnet_slides.pdf)
+<img width="1000" alt="Screen Shot 2023-01-04 at 2 24 20 PM" src="https://user-images.githubusercontent.com/36484215/210652646-6a69efd5-b508-4a75-8166-88257994d5dd.png">
+
+1. Global max pooling to enforce permutation invariance (points with different ordering should be the same scene)
+2. Learned transformation to enforce invariance under geometric transformations (rotation)
+
+
+
+
+
