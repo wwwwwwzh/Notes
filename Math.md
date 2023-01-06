@@ -6,7 +6,9 @@
 It seems that set theory and other associated number theories are the foundamentals of applied math I was looking for. They provide mathematically rigorous definitions (formal languages) to things.
 
 ### Vector Space
+- A vector space over a field F is a set V together with two binary operations that satisfy the eight axioms. the elements of V are commonly called vectors, and the elements of F are called scalars.
 
+> Easier version: a set with its elements closed under addition and scalar multiplication. Remember that "closed under" means for any two elements in the set, the output of the defined binary operation between them is also in the set.
 
 
 ### [Inner Product Space](https://en.wikipedia.org/wiki/Inner_product_space)
@@ -19,11 +21,28 @@ a real vector space or a complex vector space with an operation called an inner 
 
 > Dot product of two vectors x and y is often written as x^Ty where it is actually this: (1) x^T is a matrix representing the linear map ⍺ such that ⍺(x)=<x,x>; y is a matrix representing a vector from the same vector space as x; the mapping ⍺ transforms y to a scalar and by definition of covector ⍺(y)=<x,y>. (2) x^T is actually not a vector transpose, but the transpose of a matrix representing the vector x; y is a matrix representing a vector; by definition of matrix multiplication, the product is a scalar representing the dot product of the two underlying vectors.
 
+### Metric space
+- a metric space is a set together with a notion of distance between its elements, usually called points. The distance is measured by a function called a metric or distance function.
+- The most familiar example of a metric space is 3-dimensional Euclidean space with its usual notion of distance.
+
+
 ### [Affine Space](https://en.wikipedia.org/wiki/Affine_space)
 <img width="1073" alt="Screen Shot 2022-12-28 at 10 03 57 AM" src="https://user-images.githubusercontent.com/36484215/209847134-ee2e37ee-3611-4855-8576-602114afc5dd.png">
 
 ### Euclidean Space
 https://en.wikipedia.org/wiki/Euclidean_space#Motivation_of_the_modern_definition
+
+### Topological space
+- A topological space is a set whose elements are called points, along with an additional structure called a topology, which can be defined as a set of neighbourhoods for each point that satisfy some axioms formalizing the concept of closeness.
+- Open sets: 1) In a metric space (a set along with a distance defined between any two points), an open set is a set that, along with every point P, contains all points that are sufficiently near to P (that is, all points whose distance to P is less than some value depending on P). 2) More generally, an open set is a member of a given collection of subsets of a given set
+
+### Manifold 
+- a manifold is a topological space that locally resembles Euclidean space near each point. More precisely, an n-dimensional manifold, or n-manifold for short, is a topological space with the property that each point has a neighborhood that is homeomorphic to an open subset of n-dimensional Euclidean space.
+
+A function f: X to Y between two topological spaces is a homeomorphism if it has the following properties:
+- f is a bijection (one-to-one and onto),
+- f is continuous,
+- the inverse function f^-1 is continuous (f is an open mapping).
 
 -------------------------------------------------------------------------------------------------------------------------------
 
