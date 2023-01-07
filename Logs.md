@@ -12,6 +12,12 @@
 - HIST 538 MIDDLE EAST & THE WEST
 
 
+## Ideas
+### Talk to make a world
+basically auto game engine with ML to code stuff from what people tell them to do. everyone wants to create a world of their own and rule everything. dumb people can benefit from ML: engine ask conditions to make them exhaustive so ppl don't have to think of every cases.
+
+
+
 -------------------------------------------------------------------------------------------------------------------------------
 
 # Logs
@@ -86,3 +92,4 @@ Not eating after 12.25 dinner makes me starve early in the morning and feel bad 
 - Unconstrained optimization (f'=0 & positive definite Hessian) and why 1/2 for second order derivative (area of triangle)
 - Constrained optimization (Lagrange multiplier)
 - It seems that SVM is a more traditional way to do optimization but intuition guided neural network somehow is more flexible
+
