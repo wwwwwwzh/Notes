@@ -18,7 +18,7 @@
 - Control points
 
 ### Compare
-- Implicit representation is compact. Calculating distance is easy. But hard to sample points on surface
+- Implicit representation is compact. Calculating distance is easy. But hard to sample points on surface (have to test points)
 - Explicit representation means knowing every point already so sampling is easy. Other operations are more expensive
 
 ## Line & Surface
@@ -35,3 +35,25 @@ recall that linear interpolation is f(t)=(1-t)f0+tf1. This can be seen as constr
 (f⊗g)(u,v)=f(u)g(v)
 
 <img width="400" alt="Screen Shot 2023-01-08 at 9 03 03 AM" src="https://user-images.githubusercontent.com/36484215/211203560-76ab93a4-57cc-4a21-a945-99436b7915b1.png">
+
+## Manifold
+### Intuition
+<img width="400" alt="Screen Shot 2023-01-08 at 1 50 04 PM" src="https://user-images.githubusercontent.com/36484215/211215908-60dc5ca3-7b2d-4fc0-8655-f6798f308e93.png">
+
+
+## Storing Shapes in Computer
+### Ideas
+- Extending image grid to 3D is expensive, use surface instead.
+- Surfaces are manifolds, which are well defined so easier to store.
+- Our shapes are planes/triangles locally, so store all planes/triangles.
+- We also want some operations to be fast (collapsing, clipping...) so use a structure with faster local querying.
+
+### Methods
+- Polygon soup: simplist, store coordinates of the 3 vertices of all faces (faces x 3 x 3)
+- Adjacency list: 2 list, one for all vertices, one for all faces with reference to list 1
+- Incidence matrix: 2 matrices. edges x vertices, 1 means this edge touches this vertex. faces x edges. Extremely big.
+- Halfedge: linked list like. 
+<img width="200" alt="Screen Shot 2023-01-08 at 1 59 38 PM" src="https://user-images.githubusercontent.com/36484215/211216301-56230103-ef7b-45a3-91d2-0c6d90126139.png">
+
+### Storing Sparse Matrix
+<img width="500" alt="Screen Shot 2023-01-08 at 1 58 56 PM" src="https://user-images.githubusercontent.com/36484215/211216267-9da215ed-ed89-492c-a088-68fb570223d6.png">
