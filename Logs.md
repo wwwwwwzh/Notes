@@ -81,6 +81,7 @@ the generators continue to operate as black boxes, and the understanding of vari
 - criticacl period for language (or really intelligence) development. Nervous system stops growing (real brain learning?)
 
 Sensory or external stimuli is needed to start things. Curiosity and other premitive desires (survival, imitation, some are uniqu to individuals, some learned) to drive internal processing. Memory?
+https://www.youtube.com/watch?v=mFP_AjJeP-M
 
 ## 12.26-29
 ### Eating
