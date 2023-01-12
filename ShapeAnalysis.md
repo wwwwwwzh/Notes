@@ -21,7 +21,7 @@ Example: unit circle
 > Note that we are defining a particular parameterization so that we know v(s) is always 1.
 ### Tangent, Normal, Frenet Equations
 - T(s)=γ'(s). Because ||γ'(s)||= 1, T(s)=cosθ(s)e1 + sinθ(s)e2
-- N(s)=T'(s)=θ'(s)[−sinθ(s)e1 + cos θ(s)e2]=κ(s)N(s). κ(s):= θ'(s), is the signed curvature. It means of how much of the normal is the curve changing its direction. You can construct a curve just with κ(s). 
+- T'(s)=θ'(s)[−sinθ(s)e1 + cos θ(s)e2]=κ(s)N(s). κ(s):= θ'(s), is the signed curvature. It means of how much of the normal is the curve changing its direction. You can construct a curve just with κ(s). 
 - Frenet: <img width="300" alt="Screen Shot 2023-01-05 at 8 08 51 AM" src="https://user-images.githubusercontent.com/36484215/210812465-aaaa1674-6a82-455f-90c9-0879cb087cd6.png">
 - The Frenet equations is "coordinate free", it writes the derivatives of T and N in the {T, N} basis!
 
