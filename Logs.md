@@ -83,6 +83,15 @@ the generators continue to operate as black boxes, and the understanding of vari
 Sensory or external stimuli is needed to start things. Curiosity and other premitive desires (survival, imitation, some are uniqu to individuals, some learned) to drive internal processing. Memory?
 https://www.youtube.com/watch?v=mFP_AjJeP-M
 
+#### Short term memory
+- motivation1: when we see a particular shape for a long time, we might see everything as that shape. CNN analogy is every pass also keeps a weighted average of activation so if a particular activation shows up many times, a small activation there can be very big so it sees every image as containing that shape. 
+- RNN: rnn is really that CNN analogy with trained retaining activation. Previous activations are kept alive when new input comes. 
+
+#### Long term memory
+- Motivation1: long term memeory should be stored to "empty new space", be queried with trained (possibly refinable) network. 
+- KVQ query system.
+- google seems like a good memory system
+
 ## 12.26-29
 ### Eating
 Not eating after 12.25 dinner makes me starve early in the morning and feel bad throughout the day. Ate at 12.26 but still not good after 12.27 breakfast. Took a walk and ate lunch much better. Slept and all good. Ran short late afternoon. 28 morning stomach feeling funny 2p. 29 morning better 2p.  Ran afternoon.
