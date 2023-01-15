@@ -31,9 +31,21 @@
 ## Attention 
 ### Transformer
 
+# Multimodal
+## Image Captioning 
+### Encoder-Decoder
+
+### 
 
 # 3D
 ## Vision
 ### Explicit 
 #### Occupancy Networks
 implicitly represent the 3D surface as the continuous decision boundary of a deep neural network classifier. f(xyz, latent)->[0,1]. Can be used to do 3D reconstruction from single images, noisy point clouds and coarse discrete voxel grids. Loss=cross entropy between true occupancy and prediction + KL of latent code prior
+
+### Depth Prediction
+#### [MVSNet](https://arxiv.org/pdf/1804.02505.pdf)
+- 2D CNN to generate 32-channel feature maps downsized by four in each dimension compared with input images (HxWx3->H/4xW/4x32)
+- feature map projected (repeated) to 3d cost volume
+- 3d U-net to determine occupanncy
+- refine depth with initial reference image
