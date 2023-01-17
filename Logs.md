@@ -74,6 +74,7 @@ the generators continue to operate as black boxes, and the understanding of vari
 ## 12.24-25
 ### Think
 - Kanzi the ape
+- koko the gorilla
 - “The primate vocal tract is ‘speech ready,’ but ... most species don’t have the neural control to make the complex sounds that comprise human speech,” Dunn writes for The Conversation.
 - Deaf people think in sign language or imagined sounds or visual stuff
 - Blind people: echolocation, spatial understanding, other sensory information
@@ -89,8 +90,9 @@ https://www.youtube.com/watch?v=mFP_AjJeP-M
 
 #### Long term memory
 - Motivation1: long term memeory should be stored to "empty new space", be queried with trained (possibly refinable) network. 
-- KVQ query system.
+- KVQ query system. multiple Q what is this, is this dangerous, is this beautiful...
 - google seems like a good memory system
+- continuous refinement of memory by asking questions and creating new connections.
 
 ## 12.26-29
 ### Eating
