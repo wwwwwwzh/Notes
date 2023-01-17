@@ -137,3 +137,14 @@ Lagrangian example:
 
 
 <img width="795" alt="Screen Shot 2022-12-30 at 7 50 57 PM" src="https://user-images.githubusercontent.com/36484215/210122814-29bd3244-3179-4a50-a232-8164bf264183.png">
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+## Linear Algebra
+### Eigen
+
+### Diagonalization
+A=XΛX⁻¹. This means A as a linear transformation has the effect of moving its eigen basis lamda times. X⁻¹b gives coordinates of b in X basis. Λ moves each basis. X transform b back to original basis.
+
+### SVD
+A=XΛX⁻¹ works only for square matrix with full rank. Want something similar for any matrix. Observe that for any matrix A, AA^T is square, symmetric and positive semidefinite. So AA^T=VSV⁻¹. Similarly A^TA=USU⁻¹. 
