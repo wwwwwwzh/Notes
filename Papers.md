@@ -30,6 +30,7 @@
 
 ### LSTM
 <img width="400" alt="Screen Shot 2023-01-15 at 2 04 57 PM" src="https://user-images.githubusercontent.com/36484215/212564313-a5ba56f3-a8be-487a-8759-8ee30f5c5992.png">
+
 - memory is like the real memory. previous output and current input update memory. after update, memory, previous output and current input all together produce new output. new output is recursed back to the program for further thinking.
 - theoretically, lstm is just like a brain.
 - note that both hidden state/output and memory are vectors. forget gate has same dimension as memory and operates elementwise on memory (each scalar in memory vector controlled seperately). new memory (candidate x input gate) also has same dimension as memory and control change into memory elementwise.
@@ -60,7 +61,7 @@ implicitly represent the 3D surface as the continuous decision boundary of a dee
 
 # Brain
 ## Memory
-> My thinking: regard memory as a database. information generates key, query and value vectors. when new information comes, its query compares with key of all stored information. its value will be decoded and used as new query (thinking loop).  
+> My thinking: (this turns out to be exactly NTM) regard memory as a database. information generates key, query and value vectors. when new information comes, its query compares with key of all stored information. its value will be decoded and used as new query (thinking loop).  
 ### [NTM](https://arxiv.org/pdf/1410.5401.pdf)
 - LSTM with external memory matrix. read and write memory like digital computer for each timestamp.
 - What killed NTMs is that at the end of the day they're still recurrent networks, and thus inefficient and unstable to train in general.
