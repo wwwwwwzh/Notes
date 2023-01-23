@@ -17,6 +17,10 @@
 basically auto game engine with ML to code stuff from what people tell them to do. everyone wants to create a world of their own and rule everything. dumb people can benefit from ML: engine ask conditions to make them exhaustive so ppl don't have to think of every cases.
 
 
+### Linux Commands 
+- df -h: view storage devices
+- du -sh: view directory size
+- scp -r /path/to/directory someuser@serverB:/path/to/files/
 
 -------------------------------------------------------------------------------------------------------------------------------
 
