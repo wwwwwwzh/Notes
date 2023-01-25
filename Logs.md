@@ -20,7 +20,8 @@ basically auto game engine with ML to code stuff from what people tell them to d
 ### Linux Commands 
 - df -h: view storage devices
 - du -sh: view directory size
-- scp -r /path/to/directory someuser@serverB:/path/to/files/
+- scp -r /path/to/directory someuser@serverB:/path/to/files/: copies the directory itself into files folder
+- cp -r ~/folder1/. ~/new_folder1: copies contents of folder1 to a new folder (will create if not exist)
 
 -------------------------------------------------------------------------------------------------------------------------------
 
