@@ -148,3 +148,23 @@ A=XΛX⁻¹. This means A as a linear transformation has the effect of moving it
 
 ### SVD
 A=XΛX⁻¹ works only for square matrix with full rank. Want something similar for any matrix. Observe that for any matrix A, AA^T is square, symmetric and positive semidefinite. So AA^T=VSV⁻¹. Similarly A^TA=USU⁻¹. 
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+## Fourier
+### Overview
+- Express any function as combination of simpler functions. Here these functions are sinusoids of different frequencies and phases. f(x)=ΣᵢAᵢsin(2πix+ϕᵢ)
+- Sin and cos are related by phase (sin(2πix+ϕᵢ)=cos(2πix+ϕᵢ+π/2)). So sinusoids of different frequencies and phases can be expressed as sin and cos of different frequencies. f(x)=a₀/2+Σᵢaᵢcos(2πix)+bᵢsin(2πix)
+- Sin(2πix) and cos(2πix) are orthogonal. so sin and cos of different frequencies form an orthonormal basis for functions. Dot product of f(x) and sin or cos gives the magnitude/coordinate of the function that particular base. Here the magnitude (aᵢ and bᵢ) is found by integrating f(x)sin(nx) along common period.
+- a⋅cos(nx)+b⋅sin(nx) can be written as A⋅eٰⁱⁿˣ since eٰⁱⁿˣ=cos(nx)-i⋅sin(nx) where A is likely a complex number. This means a and b will normally also be complex numbers. Nevertheless, the ultimate goal is to get the series of Asin(2πnx+ϕ).
+
+### Calculate F(ω) Directly on Fourier Series
+<img width="200" alt="Screen Shot 2023-01-29 at 3 14 35 PM" src="https://user-images.githubusercontent.com/69565972/215355999-5197b36c-064e-486e-b02e-759b3aa62820.png">
+<img width="200" alt="Screen Shot 2023-01-29 at 3 14 42 PM" src="https://user-images.githubusercontent.com/69565972/215356002-6570587f-e56e-423c-927c-5d91c4181963.png">
+
+### Calculate F(ω) with Complex Exponential 
+<img width="400" alt="Screen Shot 2023-01-29 at 3 15 52 PM" src="https://user-images.githubusercontent.com/69565972/215356043-01dcea2d-2a95-433d-8c95-ba4c5ee73ec5.png">
+
+### Asin(nx+ϕ) from Psin(nx)+Qcos(nx)
+<img width="300" alt="Screen Shot 2023-01-29 at 3 16 25 PM" src="https://user-images.githubusercontent.com/69565972/215356064-0e94d617-770f-4093-b2e9-aa5e51d0997d.png">
+
