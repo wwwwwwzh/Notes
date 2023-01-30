@@ -153,10 +153,12 @@ A=XΛX⁻¹ works only for square matrix with full rank. Want something similar 
 
 ## Fourier
 ### Overview
+https://math.stackexchange.com/questions/1020231/fourier-series-of-real-valued-functions
 - Express any function as combination of simpler functions. Here these functions are sinusoids of different frequencies and phases. f(x)=ΣᵢAᵢsin(2πix+ϕᵢ)
 - Sin and cos are related by phase (sin(2πix+ϕᵢ)=cos(2πix+ϕᵢ+π/2)). So sinusoids of different frequencies and phases can be expressed as sin and cos of different frequencies. f(x)=a₀/2+Σᵢaᵢcos(2πix)+bᵢsin(2πix)
 - Sin(2πix) and cos(2πix) are orthogonal. so sin and cos of different frequencies form an orthonormal basis for functions. Dot product of f(x) and sin or cos gives the magnitude/coordinate of the function that particular base. Here the magnitude (aᵢ and bᵢ) is found by integrating f(x)sin(nx) along common period.
-- a⋅cos(nx)+b⋅sin(nx) can be written as A⋅eٰⁱⁿˣ since eٰⁱⁿˣ=cos(nx)-i⋅sin(nx) where A is likely a complex number. This means a and b will normally also be complex numbers. Nevertheless, the ultimate goal is to get the series of Asin(2πnx+ϕ).
+- Use eٰⁱⁿˣ to express a⋅cos(nx)+b⋅sin(nx). Since eٰⁱⁿˣ=cos(nx)+i⋅sin(nx), there are imaginary parts for the trigonometry functions. However, if we integrate from -L to L instead of 0 to L (L is common period), because eٰ-ⁱⁿˣ=cos(nx)-i⋅sin(nx), we get conjugates that cancels out the imaginary parts. 
+- So now we can write f(x) as Σₘ from -L to L Aₘ⋅eٰⁱmˣ where A is a complex number. Note that A an be computed by computing the dot product between f(x) and eٰⁱmˣ, so for real f, A has both real and imaginary parts, and A₋ᵢ, Aᵢ are conjugates. 
 
 ### Calculate F(ω) Directly on Fourier Series
 <img width="200" alt="Screen Shot 2023-01-29 at 3 14 35 PM" src="https://user-images.githubusercontent.com/69565972/215355999-5197b36c-064e-486e-b02e-759b3aa62820.png">
