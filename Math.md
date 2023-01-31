@@ -158,13 +158,15 @@ https://math.stackexchange.com/questions/1020231/fourier-series-of-real-valued-f
 - Sin and cos are related by phase (sin(2πix+ϕᵢ)=cos(2πix+ϕᵢ+π/2)). So sinusoids of different frequencies and phases can be expressed as sin and cos of different frequencies. f(x)=a₀/2+Σᵢaᵢcos(2πix)+bᵢsin(2πix)
 - Sin(2πix) and cos(2πix) are orthogonal. so sin and cos of different frequencies form an orthonormal basis for functions. Dot product of f(x) and sin or cos gives the magnitude/coordinate of the function that particular base. Here the magnitude (aᵢ and bᵢ) is found by integrating f(x)sin(nx) along common period.
 - Use eٰⁱⁿˣ to express a⋅cos(nx)+b⋅sin(nx). Since eٰⁱⁿˣ=cos(nx)+i⋅sin(nx), there are imaginary parts for the trigonometry functions. However, if we integrate from -L to L instead of 0 to L (L is common period), because eٰ-ⁱⁿˣ=cos(nx)-i⋅sin(nx), we get conjugates that cancels out the imaginary parts. 
-- So now we can write f(x) as Σₘ from -L to L Aₘ⋅eٰⁱmˣ where A is a complex number. Note that A an be computed by computing the dot product between f(x) and eٰⁱmˣ, so for real f, A has both real and imaginary parts, and A₋ᵢ, Aᵢ are conjugates. 
+- So now we can write f(x) as Σₘ from -L to L Aₘ⋅eٰⁱmˣ where A is a complex number. Note that A an be computed by computing the dot product between f(x) and eٰ⁻ⁱmˣ, so for real f, A has both real and imaginary parts, and A₋ᵢ, Aᵢ are conjugates, thus when translating to f(x)=a₀/2+Σᵢaᵢcos(2πix)+bᵢsin(2πix) this form, a and b are reals.  
 
 ### Calculate F(ω) Directly on Fourier Series
 <img width="200" alt="Screen Shot 2023-01-29 at 3 14 35 PM" src="https://user-images.githubusercontent.com/69565972/215355999-5197b36c-064e-486e-b02e-759b3aa62820.png">
 <img width="200" alt="Screen Shot 2023-01-29 at 3 14 42 PM" src="https://user-images.githubusercontent.com/69565972/215356002-6570587f-e56e-423c-927c-5d91c4181963.png">
 
 ### Calculate F(ω) with Complex Exponential 
+https://see.stanford.edu/Course/EE261/137 (last 10 mins proves A=f⋅e⁻ⁱπˣ from f=ΣAeⁱπˣ)
+
 <img width="400" alt="Screen Shot 2023-01-29 at 3 15 52 PM" src="https://user-images.githubusercontent.com/69565972/215356043-01dcea2d-2a95-433d-8c95-ba4c5ee73ec5.png">
 
 ### Asin(nx+ϕ) from Psin(nx)+Qcos(nx)
