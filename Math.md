@@ -100,6 +100,11 @@ Until the 19th century, geometry was almost exclusively devoted to Euclidean geo
 - x0 is the point of interest. v is a random direction in Rn. If ∇f(x)=0 and H(x) is positive definite, we know any v will result in increase at x0 so x0 is local minimum.
 - You can also use determinant of Hessian to check if a point is saddle, local minima or maxima. The determinant tells you about eigenvalues of H. Trace tells you if they have same sign.
 
+### Newton's Method
+- Use second order derivative to approximate f(x+t)≈f(x)+f'(x)t+f''(x)t²/2
+- Find minimum of this approximation by setting gradient to 0: f'(x)+f''(x)t=0
+- t=-f'(x)/f''(x) and setting x' to x+t gives minimum to this approximation
+- iteratively apply this until convergence
 
 ### Lagrangian (Optimization with Constraints)
 - Problem: find extrema of f(x) subject to constraint g(x)=b
@@ -144,7 +149,7 @@ Lagrangian example:
 ### Eigen
 
 ### Diagonalization
-A=XΛX⁻¹. This means A as a linear transformation has the effect of moving its eigen basis lamda times. X⁻¹b gives coordinates of b in X basis. Λ moves each basis. X transform b back to original basis.
+A=XΛX⁻¹. This means A as a linear transformation has the effect of moving its eigen basis lamda times. In transformation Ab, X⁻¹b gives coordinates of b in X (eigen) basis. Λ stretches each basis. X transform b back to original basis.
 
 ### SVD
 A=XΛX⁻¹ works only for square matrix with full rank. Want something similar for any matrix. Observe that for any matrix A, AA^T is square, symmetric and positive semidefinite. So AA^T=VSV⁻¹. Similarly A^TA=USU⁻¹. 
@@ -171,4 +176,7 @@ https://see.stanford.edu/Course/EE261/137 (last 10 mins proves A=f⋅e⁻ⁱπˣ
 
 ### Asin(nx+ϕ) from Psin(nx)+Qcos(nx)
 <img width="300" alt="Screen Shot 2023-01-29 at 3 16 25 PM" src="https://user-images.githubusercontent.com/69565972/215356064-0e94d617-770f-4093-b2e9-aa5e51d0997d.png">
+
+### Frequency Convolution Theorem 
+https://www.tutorialspoint.com/frequency-convolution-theorem
 
