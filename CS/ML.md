@@ -32,8 +32,7 @@ To get reconstruction of a feature/activation map: forward all images in dataset
 # NLP -------------------------------------------------
 ## Attention & Transformer
 ### Attention
-- Motivation: "the use of a fixed-length vector is a bottleneck in improving the performance of this basic encoder–decoder architecture, and propose to extend this by allowing a model to automatically (soft-)search for parts of a source sentence that are relevant to predicting a target word, without having to form these parts as a hard segment explicitly"
-- Intuition: Decoder network receives a context vector at every decoding timestamp. This context used to be only from previous states and previous output/prediction. We want it to also depend on every word of input sequence and focus on the most relavent word (e.g. when translating from me gusta perros to I like dogs, "like" should see both me and gusta but particularly focusing on gusta). 
+
 
 ### Self Attention
 <img width="700" alt="Screen Shot 2023-01-04 at 10 52 30 AM" src="https://user-images.githubusercontent.com/36484215/210618485-7ea28d20-7d98-4b20-b61e-9b2108bf1927.png">

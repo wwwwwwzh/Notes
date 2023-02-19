@@ -16,6 +16,11 @@
 ### Talk to make a world
 basically auto game engine with ML to code stuff from what people tell them to do. everyone wants to create a world of their own and rule everything. dumb people can benefit from ML: engine ask conditions to make them exhaustive so ppl don't have to think of every cases.
 
+### Misc
+- artistic training during childhood change structure of brain forever and can't be done in adulthood?
+- Learning from examples is superficial. Create "inductive bias" as teaching more low level principles one at a time so it really understands things. Like in nerf where knowing geometry makes color optimization easier.
+- Related to previous problem. If we can "train a complete adult" model it will fulfill half of the quest. The problem is it's difficult to train. We need layered structure and train them one by one with appropriate tasks
+- Neuron plasticity inspired SOM might work on very small tasks where all layers before are frozen and provide a solid inductive bias
 
 ### Linux Commands 
 - df -h: view storage devices
@@ -57,8 +62,8 @@ Note that when f→∞, this becomes orthographical projection and ratio will be
 - statistical translation:
 - [RNN encoder decoder](https://arxiv.org/pdf/1406.1078.pdf): "Unlike the traditional phrase-based translation system which consists of many small sub-components that are tuned separately, neural machine translation attempts to build and train a single, large neural network that reads a sentence and outputs a correct translation."
 - [Attention](https://arxiv.org/pdf/1409.0473.pdf): "the use of a fixed-length vector is a bottleneck in improving the performance of this basic encoder–decoder architecture, and propose to extend this by allowing a model to automatically (soft-)search for parts of a source sentence that are relevant to predicting a target word, without having to form these parts as a hard segment explicitly"
-- Self attention: replace RNN with dot product
-- Transformer: more complex than I thought. wonder what intuition guided them
+- Self attention/transformer: replace RNN with dot product
+
 
 ## 12.22-23
 ### PixelRNN
