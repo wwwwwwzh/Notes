@@ -11,10 +11,12 @@
 3. If two bodies exert forces on each other, these forces have the same magnitude but opposite directions.
 
 ## Thermodynamics
+Entropy measures disorder, randomness, or uncertainty.
 1. Energy cannot be created or destroyed, only converted from one form to another
 2. The entropy of an isolated system will always increase over time (local decrease in entropy occurring locally is always accompanied by a larger increase after the process)
 
 https://www.khanacademy.org/science/biology/energy-and-enzymes/free-energy-tutorial/a/gibbs-free-energy
+
 ## Misc
 Energy is the ability to do work/cause change
 - Force (F) = Mass (m) x Acceleration (a)
@@ -23,8 +25,7 @@ This equation, known as Newton's second law of motion, states that the force exe
 - Power (P) = Work (W) / Time (t)
 - Kinetic Energy (KE) = 1/2 x Mass (m) x Velocity (v)^2
 energy an object has due to its motion.
-- Potential Energy (PE) = Mass (m) x Gravity (g) x Height (h)
-energy an object has due to its position or configuration. 
+- Potential Energy (PE) = Mass (m) x Gravity (g) x Height (h). It's energy an object has due to its position or configuration. 
 - Total Energy (E) = Kinetic Energy (KE) + Potential Energy (PE)
 - Momentum (p) = Mass (m) x Velocity (v)
 - Thermal energy: a kind of kinetic energy. constant, random bouncing of atoms or molecules

@@ -43,7 +43,9 @@
 - 1789 Samuel Slater (Father of the American Industrial Revolution) arrived in America [people]
 - 1793 Execution of Louis XVI [people]
 - 1804 Napoleon Emperor of France [people]
+- 1806 Dissolution of the Holy Roman Empire
 - 1809-1882 Darwin [people]
+- 1815-1898 Otto von Bismarck [people]
 - 1819-1901 Queen Victoria [people]
 - 1822-1884 Mendel [people]
 - 1822 Charles Babbage Difference engine [invention]
@@ -59,6 +61,7 @@
 - 1869 Discovery of nucleus (DNA) [discovery]
 - 1870-1914 Second Industrial Revolution
 - 1870-1924 Lenin [people]
+- 1871 Unification of Germany 
 - 1876 telephone [invention]
 - 1878-1953 Stalin [people]
 - 1879 Lightbulb [invention]
@@ -68,6 +71,7 @@
 - 1885 AT&T founded [company]
 - 1886 Benz Patent Motor Car [invention]
 - 1893-1976 Mao [people]
+- 1901-1966 Walt Disney [people]
 - 1903 John von Neumann was born [people]
 - 1903 Wright Brothers Kitty Hawk [invention]
 - 1904-1997 Deng [people]
@@ -88,7 +92,11 @@
 - 1945-1955 Computing devices booming
 - mid-late 1950 development of transistors, mainframe computers, batch system [invention]
 - 1953 Structure of DNA [discovery]
+- 1955 Disneyland
 - 1957 Fairchild founded [company]
+- 1957 Sputnik 1 [invention]
+- 1958 NASA [company]
+- 1958 DARPA [company]
 - 1959 MOSFET (MOS field-effect transistor) [invention]
 - 1959 Monolithic integrated circuit [invention]
 - 1961 Compatible Time-Sharing System  (first general purpose time sharing os) [invention]
@@ -117,6 +125,7 @@
 - 1985 Steve Jobs resigned from Apple and started NeXT [company]
 - 1987 Macintosh II
 - 1989 Fall of Berlin Wall [war]
+- 1990 Reunification of Germany
 - 1991 Linux 0.01 [invention]
 - 1991 Soviet Union
 - 1995 Toy Story 1
@@ -126,3 +135,17 @@
 - 2000 x86-64 [invention]
 - 2001 Mac OS (X) [invention]
 - 2001 Windows XP [invention]
+
+A **state** is a centralized political organization that imposes and enforces rules over a population within a territory.
+
+A **nation** is a community of people formed on the basis of a combination of shared features such as language, history, ethnicity, culture and/or society. A nation is thus the collective identity of a group of people understood as defined by those features.
+
+A **nation-state** is a political unit where the state and nation are congruent. It is a more precise concept than "country", since a country does not need to have a predominant ethnic group.
+
+An **ethnic group or an ethnicity** is a grouping of people who identify with each other on the basis of shared attributes that distinguish them from other groups. Those attributes can include common sets of traditions, ancestry, race, language, history, society, nation, religion, or social treatment within their residing area.
+
+A **country** is a distinct part of the world, such as a state, nation, or other political entity.
+
+A **sovereign state** is a state that has the highest jurisdiction over a territory. International law defines sovereign states as having a permanent population, defined territory (see territorial disputes), a government not under another, and has the capacity to interact with other sovereign states. It is also normally understood that a sovereign state is independent.
+
+A government is the system or group of people governing an organized community, generally a state.

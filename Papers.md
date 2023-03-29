@@ -4,6 +4,22 @@
 - [Blender Facebuilder](https://medium.com/keentools/facebuilder-for-blender-guide-cbb10c717f7c)
 - [Snap Face Mesh](https://docs.snap.com/lens-studio/references/templates/face/face-mesh#guide)
 
+# Neural Network
+## Synaptic
+
+## Pruning
+### LOTTERY TICKET HYPOTHESIS
+Train a network, prune low magnitude weights, revert the rest to initialization state, train again, iterate several times.
+
+When randomly reinitialized, winning tickets perform far worse, meaning structure alone cannot explain a winning ticket’s success.
+
+One possible explanation for this behavior is the good initial weights are close to their final values after training—that in the most extreme case, they are already trained. However, experiments show the opposite—that the winning ticket weights move further than other weights.
+
+we hypothesize that the structure of our winning tickets encodes an inductive bias customized to the learning task at hand. Cohen & Shashua (2016) show that the inductive bias embedded in the structure of a deep network determines the kinds of data that it can separate more parameter-efficiently than can a shallow network
+
+#### Early Bird Tickets
+we discover for the first time that the winning tickets can be identified at a very early training stage, which we term as Early-Bird (EB) tickets, via low- cost training schemes
+
 --------------------------------------------
 # 2D Vision
 ## CNN
@@ -12,11 +28,11 @@
 
 <img width="600" alt="Screen Shot 2023-01-03 at 7 40 22 PM" src="https://user-images.githubusercontent.com/36484215/210474522-3916ad21-88f6-4372-95f9-41ea43c99db1.png">
 
-> it seems that saliency map is not as good in object localization as specialized algorithms
+> saliency map is not as good in object localization as specialized algorithms
 
 ### [Object Detection](https://www.coursera.org/learn/convolutional-neural-networks)
 #### RCNN
-- use selective search to extract just 2000 regions from the image and he called them region proposals.
+- use selective search to extract 2000 regions from the image as region proposals.
 - run CNN on each of the 2000 regions
 
 #### [Yolo](https://arxiv.org/pdf/1506.02640.pdf)
@@ -24,13 +40,17 @@
 
 <img width="400" alt="Screen Shot 2023-01-14 at 3 50 12 PM" src="https://user-images.githubusercontent.com/36484215/212498594-d42d85ee-d5f5-4d5c-b09d-3d55e66332bd.png">
 
-## Image Generation
-### Autoencoder
+## Autoencoder
+https://lilianweng.github.io/posts/2018-08-12-vae/
+
+Autocoder is invented to reconstruct high-dimensional data using a neural network model with a narrow bottleneck layer in the middle.
+
+The encoder network essentially accomplishes the dimensionality reduction, just like how we would use Principal Component Analysis (PCA) or Matrix Factorization (MF) for
+
 If encoder and decoder both have only one linear layer, this will result in a projection problem where projection hyperplane with minimal euclidean error is found. If we have a complex enough encoder decoder, it can essentially map every input to 1,2,3... and be able to reconstruct them.
 
 ### Variational Autoencoder
-https://towardsdatascience.com/understanding-variational-autoencoders-vaes-f70510919f73
-
+#### [Intuition](https://towardsdatascience.com/understanding-variational-autoencoders-vaes-f70510919f73)
 Plain autoencoders lack interpretable and exploitable structures in the latent space (lack of regularity) thus can't sample good images. This is because autoencoder is solely trained to encode and decode with as few loss as possible, no matter how the latent space is organized.
 
 We want continuity (two close points in the latent space should not give two completely different contents once decoded) and completeness (for a chosen distribution, a point sampled from the latent space should give “meaningful” content once decoded).
@@ -39,11 +59,45 @@ Plain autoencoders overfit by either having low variance or making mean far from
 
 ![](/images/vae-reg.png)
 
-### Diffusion
-https://jalammar.github.io/illustrated-stable-diffusion/
-Learn to remove noise.
+#### Formal
+VAE maps input into a distribution instead of a fixed vector. 
 
-### GPT
+## GANs
+### [Progressive GANs](https://arxiv.org/pdf/1710.10196.pdf)
+![](/images/progGAN.png)
+### StyleGAN
+![](/images/styleGAN.png)
+![](/images/styleGAN2.png)
+
+## Diffusion
+- https://jalammar.github.io/illustrated-stable-diffusion/
+- https://huggingface.co/blog/annotated-diffusion
+- https://yang-song.net/blog/2021/score/
+
+A (denoising) diffusion model is like other generative models such as Normalizing Flows, GANs or VAEs: they all convert noise from some simple distribution to a data sample. Diffusion model learns to gradually denoise data starting from pure noise.
+
+In traditional generative models like VAE or autoregressive models, we model probability density function over input data to approximate true data distribution (probability of every image). This results in intractable normalizing constant. So we instead learn a *score function* defined as gradient of log of probability density function. We can learn this by score matching.
+
+Once we have the score function, we use Langevin dynamics which provides an MCMC procedure to sample from distribution p(x)
+
+![](/images/score-multi-density.png)
+First problem for naive implementation is inaccurate score for low density region since we don't have many samples to learn from. Our solution is to perturb data points with noise and train score-based models on the noisy data points instead.
+
+In addition, we use multiple scales of noise perturbations simultaneously. we estimate the score function of each noise-perturbed distribution. Then we can train a Noise Conditional Score-Based Model.
+
+The model:
+- Overview: the network takes a batch of noisy images of shape (batch_size, num_channels, height, width) and a batch of noise levels of shape (batch_size, 1) as input, and returns a tensor of shape (batch_size, num_channels, height, width)
+1. a convolutional layer is applied on the batch of noisy images, and position embeddings are computed for the noise levels
+2. a sequence of downsampling stages are applied. Each downsampling stage consists of 2 ResNet blocks + groupnorm + attention + residual connection + a downsample operation
+3. at the middle of the network, again ResNet blocks are applied, interleaved with attention
+4. next, a sequence of upsampling stages are applied. Each upsampling stage consists of 2 ResNet blocks + groupnorm + attention + residual connection + an upsample operation
+5. finally, a ResNet block followed by a convolutional layer is applied.
+
+### [Variational Diffusion Models](https://arxiv.org/pdf/2107.00630.pdf)
+https://colab.research.google.com/github/google-research/vdm/blob/main/colab/SimpleDiffusionColab.ipynb#scrollTo=7BgesH_w6XVc
+
+
+## GPT
 See transformer section below
 
 --------------------------------------------
@@ -145,8 +199,16 @@ The BEIT pre-training can be viewed as variational autoencoder training
 ![](/images/BeIT.png)
 
 ### [DALL·E](https://openai.com/blog/dall-e/)
+DALL·E is a simple decoder-only transformer that receives both the text and the image as a single stream of 1280 tokens—256 for the text and 1024 for the image—and models all of them autoregressively.
+1. train a discrete VAE (256^2->32^2)
+2. concatenate up to 256 BPE-encoded text
+tokens with the 32 × 32 = 1024 image tokens, and
+train an autoregressive transformer to model the joint
+distribution over the text and image tokens.
 
-
+### [DALL·E 2](https://arxiv.org/pdf/2204.06125.pdf)
+Train a prior that generates a CLIP image embedding given a text caption, and a decoder that generates an image
+conditioned on the image embedding (diffusion)
 
 --------------------------------------------
 # Multimodal
@@ -155,21 +217,146 @@ The BEIT pre-training can be viewed as variational autoencoder training
 #### Karpathy
 
 
-### 
+### Transformer
 #### CLIP
 ![](/images/clip.png)
+Both encoders are pretrained transformers. Text encoder is GPT like while image encoder is based on a vision transformer. Training involves cross-modal similarity loss and weight updates jointly on the two encoders
 
+
+#### [Multimodal Neurons](https://openai.com/blog/multimodal-neurons/)
+Methods to investigate function of neuron: *feature visualization*, which maximizes the neuron’s firing by doing gradient-based optimization on the input, and *dataset examples*, which looks at the distribution of maximal activating images for a neuron from a dataset.
+
+## Misc
+### 2D
+#### [Semantically-Aware Object Sketching](https://clipasso.github.io/clipasso/)
 --------------------------------------------
 # 3D Vision
-## Scene Representation
+## Implicit
 ### Occupancy Networks
 implicitly represent the 3D surface as the continuous decision boundary of a deep neural network classifier. f(xyz, latent)->[0,1]. Can be used to do 3D reconstruction from single images, noisy point clouds and coarse discrete voxel grids. Loss=cross entropy between true occupancy and prediction + KL of latent code prior
 
-### [PointNet](http://stanford.edu/~rqi/pointnet/docs/cvpr17_pointnet_slides.pdf)
-<img width="1000" alt="Screen Shot 2023-01-04 at 2 24 20 PM" src="https://user-images.githubusercontent.com/36484215/210652646-6a69efd5-b508-4a75-8166-88257994d5dd.png">
+### Deep SDF
 
-1. Global max pooling to enforce permutation invariance (points with different ordering should be the same scene)
+### SRN
+Proposed a differentiable ray marching algorithm and represented scene as coordinate->color.
+
+![SRN](/images/SRN.png)
+1. shoot rays from image coordinates to world, initial distance 0.05
+2. 3d world coord to MLP and get features
+3. features go to LSTM to compute step length (sphere tracing)
+4. march ray with step length from 3 and iterate for a fixed amount of times
+5. final coordinate's feature pass 1x1 conv to get color
+
+We can see that NeRF wins by using a naturally differentiable algorithm that's well established in traditional graphics.
+
+### NeRF
+#### Dynamic
+##### Time + NeRF
+Can give reasonable results in low motion parts of the scene (with enough features). Though theoretically each time input can interrupt the whole scene representation thus give bad reconstruction near camera for all frames, in practice time and xyz are input to the first layer (skipped to 4th too) and they become entangled in the MLP layers.
+
+[Plain Time+NeRF with predicted depth](https://video-nerf.github.io/)
+
+
+##### NSFF
+Monocular dynamic reconstruction means one view point per frame. How to get more multi-view constraint? Use MLP to model both radiance and scene flow. For each time, we then have points mapped from previous and next time. Because those points are shot from different poses, they can constraint current time view if flow is correct. To get more priors, also use depth prediction and optical flow prediction. These priors gradually diminish during training. 
+
+##### Dynamic NeRF
+Well written code. Only difference from NSFF is blending from dynamic nerf and some different engineering choice during training. 
+
+It's difficult to train since all blending, forward and backward flow, and rgbd are produced by the same features from the last layer of MLP which makes this feature space highly entangled. 
+
+#### Generalized
+##### PixelNerf
+![](/images/pixelnerf.png)
+
+Nerf but other than normal 5d input, condition each point also on image features provided by the conditioned image (project nerf input point to image space on input image). This way the model learns to decode image features in 3d supervised by volume rendering constraint. Not very good result but interesting idea.
+
+## Projection
+### [Multiview CNN for Classification](https://arxiv.org/pdf/1505.00880.pdf)
+
+## Explicit
+### Point
+#### [PointNet](http://stanford.edu/~rqi/pointnet/docs/cvpr17_pointnet_slides.pdf)
+<img width="1000" alt="Screen Shot 2023-01-04 at 2 24 20 PM" src="https://user-images.githubusercontent.com/36484215/210652646-6a69efd5-b508-4a75-8166-88257994d5dd.png">
+Note mlp(64,64) means two mlp with output feature size 64 and 64.
+
+1. Global max pooling and point wise MLP to enforce permutation invariance (points with different ordering should be the same scene)
 2. Learned transformation to enforce invariance under geometric transformations (rotation)
+
+All MLPs are shared between points which means every feature up to max pool is local (point specific). A 1024 vector represents information from all features of all points with max pool. All N final outputs are concerned with the 1024 global feature and their own 64 local features.
+
+> Note1: transformation on coordinate points and on feature space with a predicted transformation matrix combined yields a 2% boost on ModelNet40 classification
+
+> Note2: Attention and average pooling yields worse performance as the symmetric function compared to max pool
+
+> Note3: the max pooling can be seen as key point selection where some points' some features are selected as globally important information
+
+> Note4: input for segmentation, in addition to x,y,z normalized location (0-1) and RGB (9 in total)
+
+#### [PointNet++](https://arxiv.org/pdf/1706.02413.pdf)
+![](/images/pointnet%2B%2B.png)
+PointNet does not capture local structures. Solution: sample->grouping->pointnet block repeated
+
+- FPS as sampling. 
+- Ball query for grouping (more generalizable across space with varying density compared to kNN) [N (d+C)]->[N' K (d+C)] note that K varies across groups N'
+- coordinate->local coord. [N' K (d+C)] -> [N' (d+C')]
+- combine features from different scales:
+    - concat local features from different scales (simultaneously not propagate from raw to lower scale)
+    - concat 2 scales, one below current layer one from current layer
+
+> Note1: random input drop with p=0.95 is used to train
+
+#### [FrustumNet](https://arxiv.org/pdf/1711.08488.pdf)
+![](/images/frustumnet.png)
+![](/images/frustumnet2.png)
+![](/images/frustumnet-arc.png)
+
+3D bounding box and classification. Use 2D detection pipeline and reproject box to 3d frustum. Estimate with points inside the frustum (4d x,y,z and intensity).
+
+> Note1: multiple transformations to canonical space is crucial (frustum, masked points, centered space)
+
+> Note2: pointnet++ provides a minor performance boost.
+
+> Note3: birds eye view has better performance
+
+#### [VoxelNet](https://arxiv.org/pdf/1711.06396.pdf)
+
+#### [Point Pillar]()
+![](/images/ppillar.png)
+
+3D bounding box and classification. Convert 3d point cloud to 2d feature plane by partitioning the point cloud from bird's eye view to vertical pillars. Each pillar generate a feature vector with a simple PixelNet(one linear on each point, BN, relu and max pool). This way the point cloud becomes a traditional 2d image. The point encoder (PointNet) on pillars and global 2D CNN learn jointly to aggregate useful information and generate bounding boxes. 
+
+#### [Point Transformer]()
+> The transformer family of models is particularly appropriate for point cloud processing because the self-attention operator is in essence a set operator: it is invariant to permutation and cardinality of the input elements.
+
+Vector attention: attention weights are vectors that can modulate individual feature channels (K^TQ in scalar attention)
+
+- Points->features
+- Attention with nearby points' features: features->K, Q, V(linear), relative position->δ(mlp); Q-K+δ->attention weights(mlp); attention weights*(V+δ)->output
+
+
+### Voxel
+#### Plenoxel
+> the key element of Neural Radiance Fields is not the neural network but the differentiable volumetric renderer.
+
+> opacity in the Neural Volumes formula is absolute and ray-independent whereas opacity in the Max formula denotes the fraction of incoming light that each sample absorbs, a ray-dependent quantity. As we show, the Max formula results in substantially better performance; we suspect this difference is due to its more physically-accurate modeling of transmittance.
+
+Trilinear interpolation of spherical harmonics at 256/512^3 resolution. Grid is all entries where empty is null.
+
+#### NSVF
+octree + MLP
+
+#### Direct Voxel
+feature + density grid, coarse to dense, color from feature grid+shallow MLP, density from post activation
+
+low density init
+#### Instant NGP
+replace dense grid with 16 hash tables of size 2^14-24. Each table represents a different resolution. Results are concated and passed to shallow MLP.  
+
+### Misc.
+#### [Queries on General Neural Implicit Surfaces](https://nmwsharp.com/research/interval-implicits/)
+SIGGRAPH Best Paper
+Difficult to convert Neural Implicit Surfaces to downstream representations (mesh, points...)
 
 ## Face
 ### [Dynamic Nerf for Monocular 4D Facial Avatar Reconstruction](https://arxiv.org/pdf/2012.03065.pdf)
