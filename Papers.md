@@ -62,12 +62,35 @@ Plain autoencoders overfit by either having low variance or making mean far from
 #### Formal
 VAE maps input into a distribution instead of a fixed vector. 
 
-## GANs
+1. want argmaxΣlogpθ(x) where x is real data
+2. pθ(x)=∫p(x|z)p(z)dz which is intractable
+3. instead of computing p(x|z)p(z) for every z, estimate p(z|x) and compute p(x) by sampling from estimated z distribution, 
+
+For computing loss:
+1. want KL(q(z|x)|p(z|x))
+2. 
+
+### VQ-VAE
+learns a discrete latent variable by the encoder
+
+## [GANs](https://lilianweng.github.io/posts/2017-08-20-gan/)
 ### [Progressive GANs](https://arxiv.org/pdf/1710.10196.pdf)
 ![](/images/progGAN.png)
 ### StyleGAN
 ![](/images/styleGAN.png)
 ![](/images/styleGAN2.png)
+
+### Image Translation
+#### [Image-to-Image Translation with Conditional Adversarial Networks](https://arxiv.org/abs/1611.07004)
+Apply Conditional GANs on many image to image generation problems.
+
+#### [Multimodal Unsupervised Image-to-Image Translation](https://arxiv.org/abs/1804.04732)
+Problem: image mapping (sketch to image, colorization, style transfer...) or translating image to another domain (p(x'|x)) is multimodal but existing approaches assume a deterministic or unimodal mapping.
+
+Solution: uniform content space but different style space to approximate this multimodal distribution.
+
+![](/images/multimodal-itoi.png)
+![](/images/multimodal-itoi2.png)
 
 ## Diffusion
 - https://jalammar.github.io/illustrated-stable-diffusion/
@@ -93,12 +116,44 @@ The model:
 4. next, a sequence of upsampling stages are applied. Each upsampling stage consists of 2 ResNet blocks + groupnorm + attention + residual connection + an upsample operation
 5. finally, a ResNet block followed by a convolutional layer is applied.
 
-### [Variational Diffusion Models](https://arxiv.org/pdf/2107.00630.pdf)
-https://colab.research.google.com/github/google-research/vdm/blob/main/colab/SimpleDiffusionColab.ipynb#scrollTo=7BgesH_w6XVc
+### Conditional Diffusion
+In the conditional generation setting, the data x0 has an associated conditioning signal c. The only modification that needs to be made is to inject c as a extra input to the neural network function approximators: instead of µθ(xt, t) we now have µθ(xt, t, c), and likewise for Σθ. The particular architectural choices for injecting these extra inputs depends on the type of the conditioning c
 
+#### [Stable Diffusion](https://arxiv.org/abs/2112.10752)
+![](/images/stable-diffusion.png)
 
-## GPT
-See transformer section below
+- Diffusion on latent space (auto-encoder)
+- OpenClip encoding of text added to all attention layers at every time step. 
+## Image Transformer
+### [Image GPT](https://openai.com/blog/image-gpt/)
+Directly use gpt on pixels. Tested both autoregressive and bert like training.
+
+![](/images/igpt.png)
+
+### [Vision Transformer](https://arxiv.org/pdf/2010.11929.pdf) 
+Vision Transformer has much less image-specific inductive bias than CNNs. In CNNs, locality, two-dimensional neighborhood structure, and translation equivariance are baked into each layer throughout the whole model. In ViT, only MLP layers are local and translationally equivariant, while the self-attention layers are global
+
+![](/images/ViT.png)
+
+### [BEiT: BERT Pre-Training of Image Transformers](https://arxiv.org/pdf/2106.08254.pdf)
+BEiT models are regular Vision Transformers, but pre-trained in a self-supervised way rather than supervised. Note iGPT doesn't employ vision specific processing like using image batch or targeting discrete visual tokens
+
+The BEIT pre-training can be viewed as variational autoencoder training
+
+![](/images/BeIT.png)
+
+### [DALL·E](https://openai.com/blog/dall-e/)
+DALL·E is a simple decoder-only transformer that receives both the text and the image as a single stream of 1280 tokens—256 for the text and 1024 for the image—and models all of them autoregressively.
+1. train a discrete VAE (256^2->32^2)
+2. concatenate up to 256 BPE-encoded text
+tokens with the 32 × 32 = 1024 image tokens, and
+train an autoregressive transformer to model the joint
+distribution over the text and image tokens.
+
+### [DALL·E 2](https://arxiv.org/pdf/2204.06125.pdf)
+Train a prior that generates a CLIP image embedding given a text caption, and a decoder that generates an image
+conditioned on the image embedding (diffusion)
+
 
 --------------------------------------------
 # NLP
@@ -180,35 +235,7 @@ http://jalammar.github.io/illustrated-bert/
 - If we replace FFNN with a persistent "memory matrix", where key and value from which is cross attentioned with query from attention block, we get similar results.
 
 
-## Image Transformer
-### [Image GPT](https://openai.com/blog/image-gpt/)
-Directly use gpt on pixels. Tested both autoregressive and bert like training.
 
-![](/images/igpt.png)
-
-### [Vision Transformer](https://arxiv.org/pdf/2010.11929.pdf) 
-Vision Transformer has much less image-specific inductive bias than CNNs. In CNNs, locality, two-dimensional neighborhood structure, and translation equivariance are baked into each layer throughout the whole model. In ViT, only MLP layers are local and translationally equivariant, while the self-attention layers are global
-
-![](/images/ViT.png)
-
-### [BEiT: BERT Pre-Training of Image Transformers](https://arxiv.org/pdf/2106.08254.pdf)
-BEiT models are regular Vision Transformers, but pre-trained in a self-supervised way rather than supervised. Note iGPT doesn't employ vision specific processing like using image batch or targeting discrete visual tokens
-
-The BEIT pre-training can be viewed as variational autoencoder training
-
-![](/images/BeIT.png)
-
-### [DALL·E](https://openai.com/blog/dall-e/)
-DALL·E is a simple decoder-only transformer that receives both the text and the image as a single stream of 1280 tokens—256 for the text and 1024 for the image—and models all of them autoregressively.
-1. train a discrete VAE (256^2->32^2)
-2. concatenate up to 256 BPE-encoded text
-tokens with the 32 × 32 = 1024 image tokens, and
-train an autoregressive transformer to model the joint
-distribution over the text and image tokens.
-
-### [DALL·E 2](https://arxiv.org/pdf/2204.06125.pdf)
-Train a prior that generates a CLIP image embedding given a text caption, and a decoder that generates an image
-conditioned on the image embedding (diffusion)
 
 --------------------------------------------
 # Multimodal
@@ -231,7 +258,7 @@ Methods to investigate function of neuron: *feature visualization*, which maximi
 #### [Semantically-Aware Object Sketching](https://clipasso.github.io/clipasso/)
 --------------------------------------------
 # 3D Vision
-## Implicit
+## Implicit (other than NeRF)
 ### Occupancy Networks
 implicitly represent the 3D surface as the continuous decision boundary of a deep neural network classifier. f(xyz, latent)->[0,1]. Can be used to do 3D reconstruction from single images, noisy point clouds and coarse discrete voxel grids. Loss=cross entropy between true occupancy and prediction + KL of latent code prior
 
@@ -249,27 +276,21 @@ Proposed a differentiable ray marching algorithm and represented scene as coordi
 
 We can see that NeRF wins by using a naturally differentiable algorithm that's well established in traditional graphics.
 
-### NeRF
-#### Dynamic
-##### Time + NeRF
+## NeRF
+### Dynamic
+#### Time + NeRF
 Can give reasonable results in low motion parts of the scene (with enough features). Though theoretically each time input can interrupt the whole scene representation thus give bad reconstruction near camera for all frames, in practice time and xyz are input to the first layer (skipped to 4th too) and they become entangled in the MLP layers.
 
 [Plain Time+NeRF with predicted depth](https://video-nerf.github.io/)
 
 
-##### NSFF
+#### NSFF
 Monocular dynamic reconstruction means one view point per frame. How to get more multi-view constraint? Use MLP to model both radiance and scene flow. For each time, we then have points mapped from previous and next time. Because those points are shot from different poses, they can constraint current time view if flow is correct. To get more priors, also use depth prediction and optical flow prediction. These priors gradually diminish during training. 
 
-##### Dynamic NeRF
+#### Dynamic NeRF
 Well written code. Only difference from NSFF is blending from dynamic nerf and some different engineering choice during training. 
 
 It's difficult to train since all blending, forward and backward flow, and rgbd are produced by the same features from the last layer of MLP which makes this feature space highly entangled. 
-
-#### Generalized
-##### PixelNerf
-![](/images/pixelnerf.png)
-
-Nerf but other than normal 5d input, condition each point also on image features provided by the conditioned image (project nerf input point to image space on input image). This way the model learns to decode image features in 3d supervised by volume rendering constraint. Not very good result but interesting idea.
 
 ## Projection
 ### [Multiview CNN for Classification](https://arxiv.org/pdf/1505.00880.pdf)
@@ -351,7 +372,99 @@ feature + density grid, coarse to dense, color from feature grid+shallow MLP, de
 
 low density init
 #### Instant NGP
-replace dense grid with 16 hash tables of size 2^14-24. Each table represents a different resolution. Results are concated and passed to shallow MLP.  
+replace dense grid with 16 hash tables of size 2^14-24. Each table represents a different resolution. Results are concated and passed to shallow MLP. 
+
+## Few Shot NVS
+### [PixelNerf 2021](https://alexyu.net/pixelnerf/)
+Nerf conditioned on feature volume.
+![](/images/pixelnerf.png)
+
+Nerf but other than normal 5d input, condition each point also on image features provided by the conditioned image (project nerf input point to image space on input image). This way the model learns to decode image features in 3d supervised by volume rendering constraint. Not very good result but seminal work.
+
+> It's unclear why x is necessary as mlp input; possible explanation is they model the problem as conditional nerf i.e. radiance field conditioned on feature volume f(x,d; W(x))->(c, σ) so f is still a nerf. A better approach would be C(x,d): f(W(x),d)->(c, σ) which is used in most future work but this formulation is more similar to light field
+
+### [Light Field Networks 2021 SL](https://www.vincentsitzmann.com/lfns/)
+Light field conditioned on scene prior encoded from input image. 
+![](/images/lfn.png)
+
+Scene prior is necessary because 4d light field itself isn't 3d consistent (nerf addresses this problem by passing view direction late but light field can't separate its 4d inputs). 
+
+> About light field: "Adelson et al. introduced the 5D plenoptic function as a unified representation of information in the early visual system. Levoy et al. and, concurrently, Gortler et al. introduced light fields in computer graphics as a 4D sampled scene representation for fast image-based rendering. Light fields have since enjoyed popularity as a representation for novel view synthesis and computational photography"
+
+> More: "while the light field only encodes appearance explicitly, its derivatives encode geometry information about the underlying 3D scene"
+
+> current formulation of LFNs does not outperform pixelNeRF. We note, however, that local conditioning methods solve a different problem. Rather than learning a prior over classes of objects, local conditioning methods learn priors over patches, answering the question “How does this image patch look like from a different perspective?”. As a result, this approach does not learn a latent space of neural scene representations. (Note that pixelNeRF does learn a latent space of feature volumes of neural scene representations. this paragraph is ambiguous in this sense but should be understood in a local patch encoding i.e. pixel aligned feature space perspective)
+
+### [IBRNet 2021](https://ibrnet.github.io/)
+![](/images/ibr.png)
+![](/images/ibr2.png)
+
+### [Light Field Neural Rendering 2022 Oral](https://light-field-neural-rendering.github.io/)
+Light field formulation with epipolar feature aggregation and learned rendering function (both transformers). 
+![](/images/nlf.png)
+
+
+### [Generalizable Patch-Based Neural Rendering 2022 Oral](https://mohammedsuhail.net/gen_patch_neural_rendering/)
+More complex than IBRNet (more transformers) but similar idea. Slightly better result than IBRNet
+![](/images/gpnr.gif)
+
+> ray representations (6d Plucker coordinates) are used as positional encoding in the transformers.
+
+> 10 reference views and 20 depth points for training and evaluation
+
+### [GENVS 2023](https://nvlabs.github.io/genvs/)
+image (>=1) to image through 3d feature volume, volume rendered latent feature image (2d) and conditional diffusion.
+![](/images/genvs.png)
+![](/images/genvs2.png)
+![](/images/genvs3.png)
+
+T encodes reference image as feature volume (depth=64, channel=16) and should intuitively understand how 2d image should be lifted to 3d (depth aware). Feature volume is volume rendered to feature image which makes all feature images from the same feature volume 3d consistent. Feature image gives necessary information to render a realistic image through U-net. U is trained with diffusion objective since diffusion models are good at constructing good image. 
+
+Two problems to solve:
+1. Ambiguity in extrapolation: often some parts of target view are occluded in reference image and "painting" these regions is ambiguous. Given other known parts in image, occluded regions generally follow multimodal distribution but regression (mse) training objective modals this as normal. These modals actually learn the average of all possible in-paintings of occluded regions and will produce blurry or over smooth result (pixelNeRF). Thus generative models are used to resolve this ambiguity by learning the full multimodal distribution. Note that they tried one step diffusion which is theoretically identical to MSE and it gives blurry result but high PSNR.
+2. 3d consistency: existing generative methods have no 3d prior and struggle with generating geometrically consistent sequences. In their experiment, diffusion alone gives worst result. Their work builds 3d prior based on pixel aligned feature, latent 3D feature field and neural feature rendering. 
+ > "The intuition is that generative novel view synthesis is identical to any other conditional image generation task—all we need to do is condition a 2D image diffusion model on the input image and the relative camera pose. However, while there are many ways of applying this conditioning, some may be more effective than others. By incorporating geometry priors in the form of a 3D feature field and neural rendering, we give our architecture a strong inductive bias towards geometrical consistency." 
+
+Network detail:
+- T: image segmentation architecture DeepLabV3+ based on ResNet50
+- f: two-layer ReLU MLP with 64 channels
+- U: EDM based on DDPM++
+
+Implementation details:
+- Multiview aggregation: max pool and weighted average pool have similar result as average pool (used in paper)
+- Auto-regressive conditioning schemes (frame-to-frame flicker & drift/loop closure tradeoff): 1) condition on the input image(s), the most recently generated rendering, and five previously generated images, selected at random. (baseline) 2) two pass, condition on only the nearest 4 frames during the second pass
+- Stochastic Conditioning (3DiM comparison): autoregressive to a single image randomly sampled from all previously generated images. autoregressive synthesis method performs slightly better
+- Training: randomly select 1-3 input image and produce 1 randomly selected target image 
+- c. 100 A100 GPU hours for training
+
+Comparison with other work:
+- 
+
+
+## Generative
+### [Generative NeRF](https://arxiv.org/abs/2007.02442)
+Model p(x), where x is distribution of real 3d objects, with Gθ. Given shape and appearance prior, output a nerf representation of the 3d object. GAN training. 
+![](/images/graf.png)
+![](/images/graf1.png)
+
+### [CLIP NeRF](https://arxiv.org/abs/2112.05139)
+Feed forward generation. Given caption output a nerf representation of the described object. First train like GRAF with GAN loss, then fix conditional nerf model and train caption prior mapper with CLIP loss.
+
+![](/images/clip-nerf.png)
+
+> Note1: Used a deformation network to map points (position encodings) given shape encoding to displacement vector.
+
+> Note2: "pre-trained CLIP model has the ability to support view-consistency representations for 3D-aware applications"
+
+
+### [Dream Field](https://arxiv.org/abs/2112.01455)
+Per caption optimization on nerf. 
+
+### [Dream Fusion](https://arxiv.org/abs/2209.14988)
+Per caption optimization on nerf. 
+![](/images/dream-fusion.png)
+
+ 
 
 ### Misc.
 #### [Queries on General Neural Implicit Surfaces](https://nmwsharp.com/research/interval-implicits/)

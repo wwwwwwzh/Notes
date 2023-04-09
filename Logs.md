@@ -7,12 +7,17 @@
 HS CI BN GL
 
 ### Interested
+- ECON 231 Economic History of Western Europe
+- ECON 234 Survey of the History of Economic Thought
 - ECON 415 Market Failure
 - Hist 158 Early Modern Europe
 - HIST 266 history of warfare
 - HIST 315 NATION BUILDING LATIN AMERICA
 - HIST 340 ETHICS AND BUSINESS IN AFRICA
 - HIST 538 MIDDLE EAST & THE WEST
+- MUSC 120 Foundations in Music
+- ARTH 151 History of Western Art I
+
 
 
 ## Projects
@@ -81,6 +86,7 @@ If we can "train a complete adult" model it will fulfill half of the quest. The 
 - cp -r ~/folder1/. ~/new_folder1: copies contents of folder1 to a new folder (will create if not exist)
 - screen -S 12917.tdnerf_baseline -X sessionname torf_gpu1
 - tensorboard --logdir log; ssh -L 16006:127.0.0.1:6006 zhw@hires-gpu1.cs.unc.edu + http://127.0.0.1:16006: tensor board on ssh
+- pstree / ps aux: show running processes
 
 - jupyter notebook --no-browser --port=8080; ssh -L 8081:localhost:8081 zhw@hires-gpu1.cs.unc.edu
 
@@ -99,7 +105,12 @@ rearrange(x, "b (h c) x y -> b h c (x y)", h=heads) # from [b, c, x, y] to [b, h
 einsum("b h d i, b h d j -> b h i j", q, k) # if index is in result (b h i j), it's element to element; if index not in result: same index appear in both input matrices (d here): Einstein sum along that dimension (Σq[d]*k[d])
 einsum("b h i j, b h d j -> b h i d", attn, v) 
 ```
--------------------------------------------------------------------------------------------------------------------------------
+
+## Websites
+### HuggingFace
+https://huggingface.co/transformers/v2.9.1/pretrained_models.html: model name and size
+
+----------------------------------------------------------
 
 # Logs
 ## 12.19
