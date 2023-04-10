@@ -93,13 +93,15 @@ Solution: uniform content space but different style space to approximate this mu
 ![](/images/multimodal-itoi2.png)
 
 ## Diffusion
+### Overview
 - https://jalammar.github.io/illustrated-stable-diffusion/
 - https://huggingface.co/blog/annotated-diffusion
 - https://yang-song.net/blog/2021/score/
 
 A (denoising) diffusion model is like other generative models such as Normalizing Flows, GANs or VAEs: they all convert noise from some simple distribution to a data sample. Diffusion model learns to gradually denoise data starting from pure noise.
 
-In traditional generative models like VAE or autoregressive models, we model probability density function over input data to approximate true data distribution (probability of every image). This results in intractable normalizing constant. So we instead learn a *score function* defined as gradient of log of probability density function. We can learn this by score matching.
+#### [Score Matching Perspective](https://arxiv.org/abs/1907.05600)
+In traditional generative models like VAE or autoregressive models, we model probability density function over input data to approximate true data distribution (probability of all images). This results in intractable normalizing constant. So we instead learn a *score function* defined as gradient of log of probability density function. We can learn this by score matching.
 
 Once we have the score function, we use Langevin dynamics which provides an MCMC procedure to sample from distribution p(x)
 
@@ -108,7 +110,16 @@ First problem for naive implementation is inaccurate score for low density regio
 
 In addition, we use multiple scales of noise perturbations simultaneously. we estimate the score function of each noise-perturbed distribution. Then we can train a Noise Conditional Score-Based Model.
 
-The model:
+#### [Thermodynamics Perspective](https://arxiv.org/abs/2006.11239)
+
+> a certain parameterization of diffusion models reveals an equivalence with denoising
+score matching over multiple noise levels during training and with annealed Langevin dynamics
+during sampling
+
+#### Comparison with Other Generative Models
+- Comparison with denoising autoencoder: similar except for variable timestep conditioning. Similar result on toy example can be achieved with both models.
+
+#### The model:
 - Overview: the network takes a batch of noisy images of shape (batch_size, num_channels, height, width) and a batch of noise levels of shape (batch_size, 1) as input, and returns a tensor of shape (batch_size, num_channels, height, width)
 1. a convolutional layer is applied on the batch of noisy images, and position embeddings are computed for the noise levels
 2. a sequence of downsampling stages are applied. Each downsampling stage consists of 2 ResNet blocks + groupnorm + attention + residual connection + a downsample operation
@@ -116,8 +127,16 @@ The model:
 4. next, a sequence of upsampling stages are applied. Each upsampling stage consists of 2 ResNet blocks + groupnorm + attention + residual connection + an upsample operation
 5. finally, a ResNet block followed by a convolutional layer is applied.
 
+
+
 ### Conditional Diffusion
 In the conditional generation setting, the data x0 has an associated conditioning signal c. The only modification that needs to be made is to inject c as a extra input to the neural network function approximators: instead of µθ(xt, t) we now have µθ(xt, t, c), and likewise for Σθ. The particular architectural choices for injecting these extra inputs depends on the type of the conditioning c
+
+### [Guidance](https://sander.ai/2022/05/26/guidance.html)
+Conditional generative models model p(x|y) and in diffusion case is proportional to p(x)+p(y|x) where p(y|x) could be a normal classifier. In practice score from unconditional diffusion model and gradient of a classifier are combined to update current image. However, this classifier needs to be trained on noisy image so can't use pretrained ones.
+
+In classifier free guidance, an unconditional diffusion model and a conditional diffusion model are trained jointly with a single network. The barycentric combination of these two models are used to update current image.
+
 
 #### [Stable Diffusion](https://arxiv.org/abs/2112.10752)
 ![](/images/stable-diffusion.png)
@@ -412,6 +431,9 @@ More complex than IBRNet (more transformers) but similar idea. Slightly better r
 
 > 10 reference views and 20 depth points for training and evaluation
 
+### [Make-It-3D 2023]()
+
+
 ### [GENVS 2023](https://nvlabs.github.io/genvs/)
 image (>=1) to image through 3d feature volume, volume rendered latent feature image (2d) and conditional diffusion.
 ![](/images/genvs.png)
@@ -438,6 +460,7 @@ Implementation details:
 - c. 100 A100 GPU hours for training
 
 Comparison with other work:
+- Pixelnerf:
 - 
 
 
@@ -447,7 +470,7 @@ Model p(x), where x is distribution of real 3d objects, with Gθ. Given shape an
 ![](/images/graf.png)
 ![](/images/graf1.png)
 
-### [CLIP NeRF](https://arxiv.org/abs/2112.05139)
+### [CLIP NeRF 21](https://arxiv.org/abs/2112.05139)
 Feed forward generation. Given caption output a nerf representation of the described object. First train like GRAF with GAN loss, then fix conditional nerf model and train caption prior mapper with CLIP loss.
 
 ![](/images/clip-nerf.png)
@@ -457,18 +480,33 @@ Feed forward generation. Given caption output a nerf representation of the descr
 > Note2: "pre-trained CLIP model has the ability to support view-consistency representations for 3D-aware applications"
 
 
-### [Dream Field](https://arxiv.org/abs/2112.01455)
+### [Dream Field CVPR 22 Best Poster](https://ajayj.com/dreamfields)
 Per caption optimization on nerf. 
 
-### [Dream Fusion](https://arxiv.org/abs/2209.14988)
-Per caption optimization on nerf. 
+### [Dream Fusion ICRL 23 Spotlight](https://dreamfusion3d.github.io/)
+Per caption optimization on nerf with rendered image score distillation loss. 
 ![](/images/dream-fusion.png)
 
- 
+### [3D Neural Field Generation using Triplane Diffusion 23](https://jryanshue.com/nfd/)
+> shue is a highschool senior
+
+Unconditoinal neural field (Occupancy field) generation with triplane and light MLP decoder.
+![](/images/triDiff.png)
+![](/images/triDiff2.png)
+
+Convert shapenet objects to occupancy fields. Jointly learn their triplane representation and MLP for many objects (so MLP decoder is shared). Train DDPM to denoise NxNx3C image. 
+
+Regularizations: 
+- total variation on triplanes to avoid spurious high frequency information
+- outlier loss on normalized occupancy value since DDPM work on (-1,1)
+- explicit density regularization to learn empty space triplane feature better since sampling is mostly on object surface. This reduces artifacts.
+
+### [Magic3D CVPR 23 HL](https://research.nvidia.com/labs/dir/magic3d/)
+First dreamfusion like low res nerf optimization with instant-ngp to get coarse 3d mesh. High res latent diffusion SDS loss on rendered mesh image to update mesh directly. 
+
 
 ### Misc.
-#### [Queries on General Neural Implicit Surfaces](https://nmwsharp.com/research/interval-implicits/)
-SIGGRAPH Best Paper
+#### [Queries on General Neural Implicit Surfaces 22 SIGGRAPH Best Paper](https://nmwsharp.com/research/interval-implicits/)
 Difficult to convert Neural Implicit Surfaces to downstream representations (mesh, points...)
 
 ## Face

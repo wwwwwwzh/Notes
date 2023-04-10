@@ -107,9 +107,15 @@ einsum("b h i j, b h d j -> b h i d", attn, v)
 ```
 
 ## Websites
-### HuggingFace
+### ML
+#### HuggingFace
 https://huggingface.co/transformers/v2.9.1/pretrained_models.html: model name and size
 
+### Language
+
+
+### Others
+https://www.letras.com/shakira/1657452/
 ----------------------------------------------------------
 
 # Logs
