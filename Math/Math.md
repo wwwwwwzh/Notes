@@ -25,6 +25,11 @@ a real vector space or a complex vector space with an operation called an inner 
 - a metric space is a set together with a notion of distance between its elements, usually called points. The distance is measured by a function called a metric or distance function.
 - The most familiar example of a metric space is 3-dimensional Euclidean space with its usual notion of distance.
 
+### Measure Space
+A triple (X, A, μ) where X is is a set, A is a σ-algebra on the set X, and μ is a measure on (X, A)
+
+#### Measure
+μ: A->R and satisfies certain conditions similar to axioms of probability.
 
 ### [Affine Space](https://en.wikipedia.org/wiki/Affine_space)
 <img width="1073" alt="Screen Shot 2022-12-28 at 10 03 57 AM" src="https://user-images.githubusercontent.com/36484215/209847134-ee2e37ee-3611-4855-8576-602114afc5dd.png">
