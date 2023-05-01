@@ -1,9 +1,14 @@
-## Group, Ring, Field, Space
+# Group, Ring, Field, Space
 [The Very Basics of Groups, Rings, and Fields](https://www-users.cse.umn.edu/~brubaker/docs/152/152groups.pdf)
 
 <img width="600" alt="Screen Shot 2022-12-27 at 8 11 28 PM" src="https://user-images.githubusercontent.com/36484215/209751312-d5187ff2-2716-4fc7-b93c-354f42ef69d2.png">
 
-It seems that set theory and other associated number theories are the foundamentals of applied math I was looking for. They provide mathematically rigorous definitions (formal languages) to things.
+## Group
+### Power Set
+Power set of a set S is the set of all subsets of S, including the empty set and S itself
+
+## Space
+In mathematics, a space is a set (sometimes called a universe) with some added structure. While modern mathematics uses many types of spaces, such as Euclidean spaces, linear spaces, topological spaces, Hilbert spaces, or probability spaces, it does not define the notion of "space" itself.
 
 ### Vector Space
 - A vector space over a field F is a set V together with two binary operations that satisfy the eight axioms. the elements of V are commonly called vectors, and the elements of F are called scalars.
@@ -28,8 +33,27 @@ a real vector space or a complex vector space with an operation called an inner 
 ### Measure Space
 A triple (X, A, μ) where X is is a set, A is a σ-algebra on the set X, and μ is a measure on (X, A)
 
+#### σ-algebra
+a σ-algebra (also σ-field) on a set X is a nonempty collection Σ of subsets of X closed under complement, countable unions, and countable intersections.
+
+Formal:
+Σ⊆Power set of X and satisfies 3 properties:
+1. X ∈ Σ
+2. if A ∈ Σ, then X \ A ∈ Σ
+3. if A1, A2, ... in  Σ, then A1∪A2∪... in Σ
+
+#### Measurable Space
+(X, A)
+
 #### Measure
 μ: A->R and satisfies certain conditions similar to axioms of probability.
+
+![](/images/measure.png)
+
+Common measures:
+- The counting measure is defined by μ(S) = number of elements in S.
+- A probability measure is a measure with total measure one – that is, P(X)=1. A probability space is a measure space with a probability measure.
+
 
 ### [Affine Space](https://en.wikipedia.org/wiki/Affine_space)
 <img width="1073" alt="Screen Shot 2022-12-28 at 10 03 57 AM" src="https://user-images.githubusercontent.com/36484215/209847134-ee2e37ee-3611-4855-8576-602114afc5dd.png">
@@ -51,12 +75,12 @@ A function f: X to Y between two topological spaces is a homeomorphism if it has
 
 -------------------------------------------------------------------------------------------------------------------------------
 
-## Function/Mapping
+# Function/Mapping
 A map or mapping is a function in its general sense.
-### Function
+## Function
 A function from a set X to a set Y assigns to each element of X exactly one element of Y.
 
-### Linear Mapping （Linear Operator)
+## Linear Mapping （Linear Operator)
 <img width="1091" alt="Screen Shot 2022-12-28 at 1 24 17 PM" src="https://user-images.githubusercontent.com/36484215/209868110-d10b668f-37c4-4b8e-ba1f-40b0e6ebc2a9.png">
 
 - A linear mapping is usually represented by a matrix. 
@@ -64,21 +88,22 @@ A function from a set X to a set Y assigns to each element of X exactly one elem
 - "Matrix multiplication was first described by the French mathematician Jacques Philippe Marie Binet in 1812, to represent the composition of linear maps that are represented by matrices."
 - A linear map L is often written as L[⋅] to refer to the function itself rather than function evaluated at a particular point.
 
-### Homomorphism
+## Homomorphism
 Homomorphisms of vector spaces are also called linear maps
 
 <img width="1245" alt="Screen Shot 2022-12-28 at 1 19 11 PM" src="https://user-images.githubusercontent.com/36484215/209867613-878b666e-e178-4a60-b896-b57e173638be.png">
 
-## Math (Geometry) --------
+-------------------------------
+# Geometry 
 Geometry (from Ancient Greek γεωμετρία (geōmetría) 'land measurement'; from γῆ (gê) 'earth, land', and μέτρον (métron) 'a measure') is, with arithmetic, one of the oldest branches of mathematics. It is concerned with properties of space such as the distance, shape, size, and relative position of figures.
 
 Until the 19th century, geometry was almost exclusively devoted to Euclidean geometry, which includes the notions of point, line, plane, distance, angle, surface, and curve, as fundamental concepts.
 
 > Arithmetic (from Ancient Greek ἀριθμός (arithmós) 'number', and τική [τέχνη] (tikḗ [tékhnē]) 'art, craft') is an elementary part of mathematics that consists of the study of the properties of the traditional operations on numbers—addition, subtraction, multiplication, division, exponentiation, and extraction of roots.
 
--------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------
 
-## Calculus & Optimization
+# Calculus & Optimization
 ### Approximation
 - Linear: F(x)=F(x0)+∇F(x)⋅(x-x0) ⟺ F(x)=Ax+B
 - Quadratic: F(x)=F(x0)+∇F(x)⋅(x-x0)+1/2⋅(x-x0)H(x-x0) ⟺ F(x)=xAx+Bx+C
@@ -127,9 +152,9 @@ Lagrangian example:
 - Gradient descent
 
 
--------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------
 
-## Variational Calculus
+# Variational Calculus
 ### Functional
 - a functional is a certain type of function.
 - In linear algebra, it is synonymous with linear forms, which are linear mapping from a vector space V into its field of scalars

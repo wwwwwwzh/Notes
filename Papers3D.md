@@ -3,6 +3,7 @@
 implicitly represent the 3D surface as the continuous decision boundary of a deep neural network classifier. f(xyz, latent)->[0,1]. Can be used to do 3D reconstruction from single images, noisy point clouds and coarse discrete voxel grids. Loss=cross entropy between true occupancy and prediction + KL of latent code prior
 
 ## Deep SDF
+3D supervision. Directly predicts signed distance from surface given xyz. Used auto decoder to optimize jointly on a shape prior. 
 
 ## SRN
 Proposed a differentiable ray marching algorithm and represented scene as coordinate->color.
@@ -17,6 +18,16 @@ Proposed a differentiable ray marching algorithm and represented scene as coordi
 We can see that NeRF wins by using a naturally differentiable algorithm that's well established in traditional graphics.
 
 # NeRF
+https://dellaert.github.io/NeRF22/
+
+## Improvements
+### [NeuS NeurIPS 21 SL](https://lingjie0206.github.io/papers/NeuS/)
+NeRF's surface reconstruction is noisy due to its density field nature. Use SDF instead. To optimize SDF without 3d gt, convert signed distance to density and do volume rendering. One key challenge is to construct an unbiased and occlusion aware weight function
+
+![](/images/neus.png)
+f is sdf, sigma and ɸ below is logistic density function with learnable variance based on sdf. 
+![](/images/neus2.png)
+
 ## Dynamic
 ### Time + NeRF
 Can give reasonable results in low motion parts of the scene (with enough features). Though theoretically each time input can interrupt the whole scene representation thus give bad reconstruction near camera for all frames, in practice time and xyz are input to the first layer (skipped to 4th too) and they become entangled in the MLP layers.
@@ -35,7 +46,7 @@ It's difficult to train since all blending, forward and backward flow, and rgbd 
 ------------------------------------------------
 # Explicit
 # Point
-### [PointNet](http://stanford.edu/~rqi/pointnet/docs/cvpr17_pointnet_slides.pdf)
+### [PointNet CVPR 17](http://stanford.edu/~rqi/pointnet/docs/cvpr17_pointnet_slides.pdf)
 <img width="1000" alt="Screen Shot 2023-01-04 at 2 24 20 PM" src="https://user-images.githubusercontent.com/36484215/210652646-6a69efd5-b508-4a75-8166-88257994d5dd.png">
 Note mlp(64,64) means two mlp with output feature size 64 and 64.
 
@@ -142,6 +153,13 @@ Scene prior is necessary because 4d light field itself isn't 3d consistent (nerf
 ![](/images/ibr.png)
 ![](/images/ibr2.png)
 
+### [NeRFormer ICCV 21]
+Similar to IBR net
+![](/images/nerformer.png)
+
+### [NeRFusion CVPR 22 Oral](https://jetd1.github.io/NeRFusion-Web/)
+![](/images/nerfusion.png)
+
 ### [Light Field Neural Rendering 2022 Oral](https://light-field-neural-rendering.github.io/)
 Light field formulation with epipolar feature aggregation and learned rendering function (both transformers). 
 ![](/images/nlf.png)
@@ -193,6 +211,13 @@ Model p(x), where x is distribution of real 3d objects, with Gθ. Given shape an
 ![](/images/graf.png)
 ![](/images/graf1.png)
 
+### [giraffe CVPR 21 BP](https://m-niemeyer.github.io/project-pages/giraffe/index.html)
+Similar to GRAF but disentangle objects in a scene with multiple shared GRAF.
+
+![](/images/giraffe.png)
+
+A real world scene may have: multiple objects, and multiple viewing angle and transformation on each object.
+
 ### [CLIP NeRF 21](https://arxiv.org/abs/2112.05139)
 Feed forward generation. Given caption output a nerf representation of the described object. First train like GRAF with GAN loss, then fix conditional nerf model and train caption prior mapper with CLIP loss.
 
@@ -231,6 +256,9 @@ Regularizations:
 First dreamfusion like low res nerf optimization with instant-ngp to get coarse 3d mesh. High res latent diffusion SDS loss on rendered mesh image to update mesh directly. 
 ![](/images/magic3d.png)
 
+### Others
+#### [Roses](https://jiajunwu.com/papers/rose_cvpr.pdf)
+Generative modeling from a single image that contains multiple instances of the same object.
 
 ## Geometry Free
 ### [3DiM 22](https://3d-diffusion.github.io/)

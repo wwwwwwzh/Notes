@@ -3,7 +3,7 @@ Probability is the mathematical field concerned with reasoning under uncertainty
 
 The use of probabilities to describe the frequencies of repeatable events (like coin tosses) is fairly uncontroversial. In fact, frequentist scholars adhere to an interpretation of probability that applies only to such repeatable events. By contrast Bayesian scholars use the language of probability more broadly to formalize our reasoning under uncertainty. 
 
-Bayesian probability is characterized by two unique features: (i) assigning degrees of belief to non-repeatable events, e.g., what is the probability that the moon is made out of cheese?; and (ii) subjectivity—while Bayesian probability provides unambiguous rules for how one should update their beliefs in light of new evidence, it allows for different individuals to start off with different prior beliefs.
+Bayesian probability is characterized by two unique features: (i) assigning degrees of belief to non-repeatable events, e.g., what is the probability that the moon is made out of cheese?; and (ii) subjectivity. While Bayesian probability provides unambiguous rules for how one should update their beliefs in light of new evidence, it allows for different individuals to start off with different prior beliefs.
 
 Statistics helps us to reason backwards, starting off with collection and organization of data and backing out to what inferences we might draw about the process that generated the data. Whenever we analyze a dataset, hunting for patterns that we hope might characterize a broader population, we are employing statistical thinking.
 
@@ -14,19 +14,38 @@ Statistics helps us to reason backwards, starting off with collection and organi
 - Probability Function/Probability/Probability Measure (P): mapping from events onto real values that satisfies the axioms
 - Kolmogorov Axioms: P(A) >= 0; P(S) = 1; Aᵢ∩Aⱼ≠0 → P(Aᵢ∪Aⱼ)=P(Aᵢ)+P(Aⱼ)
 
+> See Math notes about measure 
+
 > Also see Cox's theorem as an alternative axiom for Bayesian Probability
 
+### Frequentism VS Bayesian
+defines an event's probability as the limit of its relative frequency in many trials (the long-run probability). Probabilities can be found (in principle) by a repeatable objective process (and are thus ideally devoid of opinion). In the classical interpretation, probability was defined in terms of the principle of indifference, based on the natural symmetry of a problem, so, e.g. the probabilities of dice games arise from the natural symmetric 6-sidedness of the cube. This classical interpretation stumbled at any statistical problem that has no natural symmetry for reasoning.
+
+In the frequentist interpretation, probabilities are discussed only when dealing with well-defined random experiments. For any given event, only one of two possibilities may hold: it occurs or it does not. The relative frequency of occurrence of an event, observed in a number of repetitions of the experiment, is a measure of the probability of that event. This is the core conception of probability in the frequentist interpretation.
+
+A claim of the frequentist approach is that, as the number of trials increases, the change in the relative frequency will diminish. Hence, one can view a probability as the limiting value of the corresponding relative frequencies.
+
+
+
 ### Conditional and Joint Probability
-- P(A|B): P(A intersect B)/P(B), probability of A in the universe of B
-- P(A, B): P(A intersect B)=P(A)P(B|A) multiplication rule
-- P(A)=P(A)P(B|A)/P(B|A)=P(A,B)/P(B|A)
-- P(A)=Σp(A|Bᵢ)p(Bᵢ) Total probability theorem
-- Independence: p(A|B)=p(A)->p(A intersect B)=p(A)*p(B)
+- P(A|B): $\frac{P(A intersect B)}{P(B)}$, probability of A in the universe of B
+- P(A, B): P(A intersect B)=P(A)⋅P(B|A) multiplication rule
+- P(A)=$\frac{P(A)⋅P(B|A)}{P(B|A)}=\frac{P(A,B)}{P(B|A)}$
+- P(A)=$\sum_{i}P(A, B_i)=\sum_{i}P(A|Bᵢ)⋅P(Bᵢ)$ Total probability theorem
+
 
 ![](/images/prob1.png)
 
-> Note that A and B are events and P is probability function
+> Note that A and B are events and P is probability measure function
 
+### (Conditional) Independence
+- Independence: P(A|B)=P(A)->P(A, B)=P(A)⋅P(B)
+- Conditional independence: P(A|B,C)=P(A|C)->P(A,B|C)=P(A|C)⋅P(B|C)
+
+> Proof of conditional independence: $P(A|B,C)=P(A|C)=\frac{P(A,B,C)}{P(B,C)}=\frac{P(A,B,C)}{P(C)⋅P(B|C)}=\frac{P(A,C)}{P(C)}\iff\frac{P(A,C)⋅P(B|C)}{P(C)}=\frac{P(A,B,C)}{P(C)}=P(A|C)⋅P(B|C)$
+
+#### Pairwise & Mutual Independence
+![](/images/pairwiseIndependence.png)
 
 ### Random Variable
 - Random Variable: An assignment of a value (number) to every possible outcome. Formally, a mapping from sample space to real numbers (from headings of coin to 0 and 1)
@@ -38,20 +57,21 @@ A probability distribution is a mathematical description of the probabilities of
 
 However, when dealing with random variables, we often use the image of X as the sample space instead of domain of X. This way it's easier to understand probability of events that have been quantified and the sample space becomes a numerical set instead of arbitrary non-numerical values like heads or tails.
 
-The most general descriptions is in the form of P: A->R where A is related to sample space. So when using the general probability function/measure form, A is the set of all subsets E ⊂ X whose probability can be measured. And in the case of using random variables which is more common, A is the image of event space under random variable X which is a numerical set. 
+The most general descriptions is in the form of P: A->R where A is related to sample space Ω. So when using the general probability function/measure form, A is the σ-algebra of Ω. And in the case of using random variables which is more common, A is the image of Ω under random variable X which is a numerical set. 
 
-Key takeaway is that anything of the form P: A->R satisfying certain conditions are probability distributions since the describe probability of outcomes. A plain big P mapping events to R, PMF and PDF are all probability distributions.
+Key takeaway is that anything of the form P: A->R satisfying certain conditions are probability distributions since the describe probability of outcomes. A plain capital P mapping events to R, PMF and PDF are all probability distributions.
 
 ### PMF & PDF
 - PMF: Probability mass function is the probability distribution of a discrete random variable. It is the function p: R to [0,1] defined by $p_X(x)$ = P(X=x) which is P({ω∈Ω s.t. X(ω)=x}) where P is a probability measure. It's normally written as p(x)
 - PDF: $P(a \le X \le b)\\=P(\{ω∈Ω\ s.t.\ a\le X(ω)\le b\})\\=\int_{a}^{b}f_X(x)dx\\$ $f_X(x)⋅δ \approx P(x \le X \le x+δ) $
 
 
-> Note: Probability function maps **event** to values (real number) while PMF maps **values** to values.
+> Note: Probability function maps **event** to values (real number), RV maps **outcome** to values, PMF maps **values** to values.
 
-> Note: PMF is lower case p while probability is capital P.
+> Note: PMF is lower case p while probability measure is capital P.
 
 > Note: in p(x) x should be X=x which gives the set of solutions to X=x.  
+![](/images/rvInverseImg.png)
 
 ### Joint & Conditional Distribution
 - Joint PMF: $p_{X,Y}(x,y)\\=P(X=x\ and\ Y=y)\\=P(\{ω∈Ω\ s.t.\ X(ω)=x\}∩\{ω∈Ω\ s.t.\ Y(ω)=y\})$
@@ -64,14 +84,17 @@ Key takeaway is that anything of the form P: A->R satisfying certain conditions 
 
 > Note that X and Y should be defined on the same sample space. When pairing random variables, we create tuples of their outcomes as element of the new sample space (Though in reality everything is always in the same big sample space, we normally ignore most irrelevant states).
 
+> Note that when you have multiple RV, you could essentially combine them to a single random vector/element with a complex outcome space but that entangles information and is not good for modeling and inference. 
+
 > Note that conditional probability/distribution is defined on joint probability/distribution. There are some other definitions.
 
 ### Mean & Variance
-- E(X): $∫x⋅p_X(x)dx=∫X(ω)⋅P(ω)dω$
+- E(X): $∫x⋅f_X(x)dx=∫X(e)⋅P(e)de$ where e ∈ E
 - Var(X): E[(X-EX)²]=E(X²)-EX²
 - Var(X+Y)=Var(X)+Var(Y)+2Cov(X,Y)
 - Chebyshev’s inequality
-- Covariance: ∫(xᵢ-μx)(yⱼ-μy)pᵢⱼ=E(XY)-E(X)E(Y)
+- Covariance: $E[(X-E[X])⋅(Y-E[Y])]=E(XY)-E(X)E(Y)=∫∫f_{xy}(x,y)(x-μ_x)⋅(y-μ_y)dxdy$
+- Random variables whose covariance is zero are called uncorrelated.
 - Covariance Matrices: covariance can only be calculated between two variables, use covariance matrix represents covariance values of each pair of variables in multivariate data
 
 ![](/images/probE.png)
@@ -80,20 +103,25 @@ Key takeaway is that anything of the form P: A->R satisfying certain conditions 
 > Mean & Variance are properties of the image of events under random variable X. Not properties of the events themselves. Thus to make these properties meaningful wrt the underlying random events which we truly want to measure, the mapping X should assign meaningful values to corresponding events.
 
 
-# Distributions
+## Distributions
 http://d2l.ai/chapter_appendix-mathematics-for-deep-learning/distributions.html#exponential-family
-
-Probability function describes probability distribution. So both PMF and PDF define probability distributions. Note that probability distribution can take different forms.
 
 X~N(0,1) means random variable X follows a probability distribution N(0,1). Though it really means that the underlying sample space of X follow the probability function N(0,1). 
 
 x~P(X) means a value x sampled from distribution P
-## Bernoulli
-![](/images/bernoulli.png)
-## Binomial
 
-## Poisson
+### Bernoulli
+![](/images/bernoulli.png)
+
+### Binomial
+the binomial distribution with parameters n and p is the discrete probability distribution of the number of successes in a sequence of n independent experiments, each asking a yes–no question, and each with its own Boolean-valued outcome: success (with probability p) or failure (with probability q=1-p). A single success/failure experiment is also called a Bernoulli trial or Bernoulli experiment, and a sequence of outcomes is called a Bernoulli process; for a single trial, i.e., n = 1, the binomial distribution is a Bernoulli distribution.
+
+### Poisson
+Poisson distribution is a discrete probability distribution that expresses the probability of a given number of events occurring in a fixed interval of time or space if these events occur with a known constant mean rate and independently of the time since the last event.
 ![](/images/poisson.png)
+
+> The difference between binomial and poisson is that poisson views the experiment process as continuous (binomial with p->0 and n->infinity)
+
 ## Exponential Family
 
 ## Law of Large Numbers
@@ -103,6 +131,24 @@ Sample mean converges to population mean
 Distribution of sample mean is normal
 
 
+# Stochastic Process
+A stochastic process is defined as a collection of random variables defined on a common probability space (Ω, F, P) where Ω is a sample space, F is a σ-algebra, and P is a probability measure; and the random variables, indexed by some set T, all take values in the same mathematical space S, which must be measurable with respect to some  σ-algebra Σ
+
+## Bernoulli
+In probability and statistics, a Bernoulli process is a finite or infinite sequence of binary random variables, so it is a discrete-time stochastic process that takes only two values, canonically 0 and 1. The component Bernoulli variables Xi are identically distributed and independent.
+
+## Markov
+A discrete-time Markov chain is a sequence of random variables X1, X2, X3, ... with the Markov property, namely that the probability of moving to the next state depends only on the present state and not on the previous states.
+
+The possible values of Xi form a countable set S called the state space of the chain.
+
+> X encodes the states in its values and in most real world cases should be a random element
+
+# Bayes
+## Bayes' Theorem
+P(A|B)=P(B|A)P(A)/P(B)
+
+Although Bayes' theorem is a fundamental result of probability theory, it has a specific interpretation in Bayesian statistics. In the above equation, A usually represents a proposition (such as the statement that a coin lands on heads fifty percent of the time) and B represents the evidence, or new data that is to be taken into account (such as the result of a series of coin flips). P(A) is the prior probability of which expresses one's beliefs about A before evidence is taken into account. The prior probability may also quantify prior knowledge or information about A. P(B|A) is the likelihood function, which can be interpreted as the probability of the evidence B given that A is true. The likelihood quantifies the extent to which the evidence B supports the proposition A. P(A|B) is the posterior probability, the probability of the proposition A after taking the evidence B into account. Essentially, Bayes' theorem updates one's prior beliefs P(A) after considering the new evidence B.
 
 # ML
 ## Naive Bayes
@@ -115,8 +161,6 @@ Digit classification. Have image x want P(y|x) where y is a number from 0-9. Pro
 Now we can estimate P(xᵢ|y) for every pixel. We count the number of occurrences for each of the n digits and divide it by the total amount of data.
 
 ## [Variational Bayeisan](https://blog.evjang.com/2016/08/variational-bayes.html)
-VB methods allow us to re-write statistical inference problems (i.e. infer the value of a random variable given the value of another random variable) as optimization problems (i.e. find the parameter values that minimize some objective function).
-
 Hidden variables can be interpreted from a Bayesian Statistics framework as prior beliefs attached to the observed variables. For example, if we believe X is a multivariate Gaussian, the hidden variable Z might represent the mean and variance of the Gaussian distribution. The distribution over parameters P(Z) is then a prior distribution to P(X).
 
 ### [ELBO](https://calvinyluo.com/2022/08/26/diffusion-tutorial.html)
@@ -124,10 +168,17 @@ Hidden variables can be interpreted from a Bayesian Statistics framework as prio
 ![](/images/elbo.png)
 - Why is ELBO lower bound for logp(x): KL is non negative.
 - Why maximize ELBO: p(x) is a constant, so maximizing ELBO simultaneously minimizes KL of posterior (which can't be minimized directly without ground-truth posterior). We want to learn posterior because it models underlying latent structure of observed data.
-
+- Interpretation of 15: probability of x is p(x,z)/p(z|x). If we replace p(z|x) with q(z|x), then p(x) will drop. The amount of drop is KL of p(z|x) and q(z|x).
 
 
 ### VAE
+![](/images/vaeLoss.png)
+ELBO can be further decomposed into 2 terms which correspond to a reconstruction and prior matching term. 
+![](/images/vaeIntuition.png)
+
+### Hierarchical VAE
+
+### Diffusion
 
 
 # Information Theory
@@ -188,6 +239,8 @@ $D_{KL}(P||Q)=E_{x\sim P}[log\frac{p(x)}{q(x)}]$
 - KL(P,Q)!=KL(Q,P)
 - KL(P,Q)>=0, KL(P,Q)=0 if P=Q
 - if there is an x such that p(x)>0 and q(x)=0, KL=∞
+
+![](/images/forward_vs_reversed_KL.png)
 
 ### Cross Entropy
 $CE(P,Q)=-E_{x \sim P}[log(q(x))]$

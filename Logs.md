@@ -79,13 +79,34 @@ If we can "train a complete adult" model it will fulfill half of the quest. The 
 
 # Util/Tools
 ## Commands
+### Git
+https://learngitbranching.js.org/
+- git commit
+- git branch branchName
+- git checkout branchName
+- git checkout -b branchName
+- git merge branchName
+- git rebase branchName
+
+#### Relative 
+- git log
+- git checkout commitHash
+- git checkout branchName^
+- git checkout HEAD^
+
+- git reset --hard commitHash
+- git reset HEAD~1
+- git revert HEAD: new commit with content as previous commit. Use with pushed commits.
+
 ### Linux Commands 
+- conda env list
+- conda list
 - df -h: view storage devices
 - du -sh: view directory size
 - scp -r /path/to/directory zhw@hires-gpu1.cs.unc.edu:/playpen1/wzh/files/: copies the directory itself into files folder
 - cp -r ~/folder1/. ~/new_folder1: copies contents of folder1 to a new folder (will create if not exist)
 - screen -S 12917.tdnerf_baseline -X sessionname torf_gpu1
-- tensorboard --logdir log; ssh -L 16006:127.0.0.1:6006 zhw@hires-gpu1.cs.unc.edu + http://127.0.0.1:16006: tensor board on ssh
+- tensorboard --logdir log; ssh -L 16006:127.0.0.1:6006 zhw@hires-gpu1.cs.unc.edu then go to http://127.0.0.1:16006: tensor board on ssh
 - pstree / ps aux: show running processes
 
 - jupyter notebook --no-browser --port=8080; ssh -L 8081:localhost:8081 zhw@hires-gpu1.cs.unc.edu
@@ -97,6 +118,7 @@ copy line done: command + D
 
 ### VSCode Shortcut
 copy line done/up: shift + opt + arrow
+select next occurrence: command + D
 
 ## Code
 ### Torch
@@ -203,3 +225,5 @@ Not eating after 12.25 dinner makes me starve early in the morning and feel bad 
 - Constrained optimization (Lagrange multiplier)
 - It seems that SVM is a more traditional way to do optimization but intuition guided neural network somehow is more flexible
 
+earendil macbook token:
+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

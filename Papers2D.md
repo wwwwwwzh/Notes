@@ -31,6 +31,8 @@ This design is motivated by the fact that humans can easily recognize an object 
 
 For high dimensional input with high redundancy, like images, the model is likely to depend on evidence gathered from a combination of many input dimensions to recover the denoised version rather than to overfit one dimension. This builds up a good foundation for learning robust latent representation.
 
+![](/images/denoising-autoencoder-architecture.png)
+
 ### Other Robustness Improving Models
 - Sparse autoencoder: It forces the model to only have a small number of hidden units being activated at the same time, or in other words, one hidden neuron should be inactivate most of time. Done with a KL loss on bernoulli of activate or not.
 - k-Sparse Autoencoder: only k top activated neurons of z is kept so backprop only through those neurons
@@ -46,7 +48,7 @@ Plain autoencoders overfit by either having low variance or making mean far from
 
 ![](/images/vae-reg.png)
 
-### Variational Inference (Motivation for VAE)
+### Variational Inference (real motivation for VAE)
 Images are projection of their underlying structures (latent). So the real world generation of image is always graphical: from z to x. Want to find this relationship to learn p(x)
 
 1. want argmaxΣlogpθ(x) where x is real data
@@ -58,14 +60,45 @@ For computing loss:
 2. equivalent to maximizing ELBO
 3. See Statistics note for complete derivation
 
+![](/images/vaeLoss.png)
+ELBO can be further decomposed into 2 terms which correspond to a reconstruction and prior matching term. 
+![](/images/vaeIntuition.png)
+
+### Hierarchical VAE
+Latent variables themselves are interpreted as generated from other higher-level, more abstract latents.
+
+In addition to layers of latent variables, treat the conditional generation process as a markov process so Zt only depends on Zt+1. The joint distribution is then:
+$p(x, z_{1:T}) = p(z_T)p_{\theta}(x\mid z_1)\prod_{t=2}^{T}p_{\theta}(z_{t-1}\mid z_{t})$
+
+Posterior:
+$q_{\phi}(z_{1:T}\mid x) = q_{\phi}(z_1\mid x)\prod_{t=2}^{T}q_{\phi}(z_{t}\mid z_{t-1})$
+
 ## VQ-VAE
 learns a discrete latent variable by the encoder
 
 # [GANs](https://lilianweng.github.io/posts/2017-08-20-gan/)
 https://colinraffel.com/blog/gans-and-divergence-minimization.html
 
+Problem of generative modeling:
 - Minimizing Forward KL is equivalent to MLE, but it tries to cover all the mode (since the log(p/q) term becomes infinite when p!=0 and q->0) 
 - Minimizing Backward KL is equivalent to maximizing entropy of q and second is log probability of samples from qθ(x) under the true distribution p(x)
+
+Objective:
+![](/images/gan.png)
+
+Propositions:
+1. For G ﬁxed, the optimal discriminator D is $D^*_G(x)=\frac{p_{data}(x)}{p_{data}(x)+p_g(x)}$.
+This can be proved for V=the chosen objective with the fact that the function f: y → a⋅log(y) + b⋅log(1 − y) achieves its maximum in [0, 1] at a/(a+b). Since D(x) can be interpreted as estimating P(from data or not|x), optimal D assigns 1 to image certainly from data and certainly not from generator, 0 to certainly not from data and 0.5 to equally likely from either.
+2. The global minimum of the virtual training criterion C(G) is achieved if and only if p g = p data . At that point, C(G) achieves the value − log 4.
+![](/images/ganV.png)
+![](/images/ganJSD.png)
+This means given an optimal discriminator, the generator tries to minimize the JSD of pdata and pg which moves pg to pdata and at which time minimum of -log4 is achieved.
+
+Conclusion:
+The alternating minimax objective can be seen as divergence minimization but the divergence is given by the discriminator. The whole process first makes the divergence more accurate (discriminator training) then minimizes it (generator training) then repeat until generator describes the true divergence.
+
+[Question]: Can JSD be interpreted as expectation of cross entropy of discriminator P(y|x) and true P(y|x)?
+
 
 ## [Progressive GANs](https://arxiv.org/pdf/1710.10196.pdf)
 ![](/images/progGAN.png)

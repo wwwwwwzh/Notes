@@ -1,4 +1,4 @@
-# Graphics
+# Light Transport
 ## Color and Radiometry
 https://www.pbr-book.org/3ed-2018/Color_and_Radiometry/Radiometry
 https://computergraphics.stackexchange.com/questions/7503/what-is-the-difference-between-radiance-and-irradiance-in-brdf
@@ -11,18 +11,23 @@ https://computergraphics.stackexchange.com/questions/7503/what-is-the-difference
 - I (W/sr) is intensity, here angular density of emitted power. Intensity describes the directional distribution of light, but it is only meaningful for point light sources.
 - L (W/sr/m²) is radiance, is flux density per unit area, per unit solid angle. E acounts for only spatial distribution of power, not directional. L can be defined as dE/dω where E is irradiance at the surface that is perpendicular to ω. L can also be defined as dϕ/dωdA⟂ where dA⟂ is dA projected along the direction of dω. Try understanding this with surfaces illuminated by many directional lights.
 
-> Calculus review: Difference between area/time/solid angle, sqaured meters/seconds/steradians, and point/timestamp/direction. Power (flux density) at a point or radiance at a particlular direction are zero because they are defined differentially. You have to move the point to cover some area or move the direction to cover some solid angle to integrate power or irradiance. When integrating something, we say we integrate (quantity of measurement) and we are adding infinitesimal (unit of measurement) over the initegral range (e.g. integrate time/mass/angle by adding small seconds/kilograms/radians). 
+> Quantity vs unit of measurement: Difference between area/time/solid angle, sqaured meters/seconds/steradians, and point/timestamp/direction. Power (flux density) at a point or radiance at a particlular direction are zero because they are defined differentially. You have to move the point to cover some area or move the direction to cover some solid angle to integrate power or irradiance. When integrating something, we say we integrate (quantity of measurement) and we are adding infinitesimal (unit of measurement) over the initegral range (e.g. integrate time/mass/angle by adding small seconds/kilograms/radians). 
 
 ## BRDF
-> Calculus Review: dx is h->h and dy is really f'(x(h))dx(h) or f'(x)dx. In multivariable calculus, df(xᵢ) means f'xᵢ(x)dxᵢ. df itself would be a vector of gradients. dy has same unit as y.
+> Calculus Review: dx is infinitely small change in the variable and dy is really f'dx. In multivariable calculus, df(xᵢ) means f'xᵢdxᵢ. df itself would be a vector. 
+
 ### Radiance and Irradiance
 Irradiance can be computed by integrating radiance over Ω. 
 <img width="200" alt="Screen Shot 2022-12-21 at 8 32 46 PM" src="https://user-images.githubusercontent.com/36484215/209056734-01c365f1-13d9-46bb-887b-ee8e96526326.png">
 
 ### BRDF
-The relationship can be defined as a constant for every (ωi,ωo,p) based on the linearity assumption from geometric optics: the reflected differential radiance is proportional to the irradiance. 
-
 <img width="700" alt="Screen Shot 2022-12-22 at 10 22 41 AM" src="https://user-images.githubusercontent.com/36484215/209201522-c2f04a6b-ee4f-4e5f-9d51-dd17c53d4c4a.png">
+
+The first equation can be seen as a light coming in at a certain direction (radiance at wᵢ) that produces a differential amount of irradiance E, i.e. dE/dwᵢ=L->dE=L*dwᵢ. Any such produced irradiance will induce certain amount of output radiance (reflection) to all possible output directions wo. Note that position input is omitted for simplicity.
+
+These induced radiance, due to optics priors, is linear wrt the irradiance, i.e. for all ωo, radiance at wo due to E(wᵢ) is a real number times E(wᵢ). We rewrite this dependency as differential radiance dL(ωo) such that dL(wo)=L(wo)/dwᵢ. 
+
+We can store every such linear relationship in a BRDF function fr.
 
 
 ### BRDF, BTDF, BSDF, BSSRDF
@@ -74,5 +79,9 @@ Part of the radiation can pass the object unchanged, which is called transmissio
 <img width="500" alt="Screen Shot 2022-12-22 at 1 55 17 PM" src="https://user-images.githubusercontent.com/36484215/209232685-741b8794-7f22-409b-beed-5045a95c5ebf.png">
 
 
+# Baked Lighting
 ## Environment Map 
 Assumption is all light infinite far. Reflection map->diffuse map. box vs sphere map.
+
+## Spherical Gaussian
+$G(v;\mu,\lambda,a) = ae^{\lambda(\mu \cdot v - 1)}$ where μ controls center of lobe, λ sharpness just like they do in regular gaussian function. a is amplitude
