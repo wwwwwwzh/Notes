@@ -28,6 +28,18 @@ NeRF's surface reconstruction is noisy due to its density field nature. Use SDF 
 f is sdf, sigma and ɸ below is logistic density function with learnable variance based on sdf. 
 ![](/images/neus2.png)
 
+### [Mip NeRF ICCV 21 Oral](https://jonbarron.info/mipnerf/)
+Color of a pixel is determined by the whole frustum instead of a ray. NeRF's ray sampling thus causes aliasing problems. Solution: sample sub-volume from the conical frustum and approximate with multivariate gaussian and use expected value. A new positional encoding is also designed for this.
+
+### [Mip360 CVPR 22 Oral](https://jonbarron.info/mipnerf360/)
+"We use non-linear scene parameterization, online distillation, and a novel distortion-based regularizer to overcome the challenges presented by unbounded scenes"
+
+### [NeRF Studio](https://docs.nerf.studio/en/latest/)
+The library supports a more interpretable implementation of NeRFs by modularizing each component. With more modular NeRFs, we hope to create a more user-friendly experience in exploring the technology.
+
+### [Zip NeRF](https://jonbarron.info/zipnerf/)
+
+
 ## Dynamic
 ### Time + NeRF
 Can give reasonable results in low motion parts of the scene (with enough features). Though theoretically each time input can interrupt the whole scene representation thus give bad reconstruction near camera for all frames, in practice time and xyz are input to the first layer (skipped to 4th too) and they become entangled in the MLP layers.
