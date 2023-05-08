@@ -144,11 +144,36 @@ The possible values of Xi form a countable set S called the state space of the c
 
 > X encodes the states in its values and in most real world cases should be a random element
 
+
 # Bayes
 ## Bayes' Theorem
 P(A|B)=P(B|A)P(A)/P(B)
 
-Although Bayes' theorem is a fundamental result of probability theory, it has a specific interpretation in Bayesian statistics. In the above equation, A usually represents a proposition (such as the statement that a coin lands on heads fifty percent of the time) and B represents the evidence, or new data that is to be taken into account (such as the result of a series of coin flips). P(A) is the prior probability of which expresses one's beliefs about A before evidence is taken into account. The prior probability may also quantify prior knowledge or information about A. P(B|A) is the likelihood function, which can be interpreted as the probability of the evidence B given that A is true. The likelihood quantifies the extent to which the evidence B supports the proposition A. P(A|B) is the posterior probability, the probability of the proposition A after taking the evidence B into account. Essentially, Bayes' theorem updates one's prior beliefs P(A) after considering the new evidence B.
+Although Bayes' theorem is a fundamental result of probability theory, it has a specific interpretation in Bayesian statistics. In the above equation, A usually represents a proposition (such as the statement that a coin lands on heads fifty percent of the time) and B represents the evidence, or new data that is to be taken into account (such as the result of a series of coin flips). P(A) is the prior probability which expresses one's beliefs about A before evidence is taken into account. The prior probability may also quantify prior knowledge or information about A. P(B|A) is the likelihood function, which can be interpreted as the probability of the evidence B given that A is true. The likelihood quantifies the extent to which the evidence B supports the proposition A. P(A|B) is the posterior probability, the probability of the proposition A after taking the evidence B into account. Essentially, Bayes' theorem updates one's prior beliefs P(A) after considering the new evidence B.
+
+> Note that we use probability and probability distribution interchangeably. In a single trial, we have P(A) as a distribution, B is fixed so P(B|A) is maps parameters to values. The resulting P(A|B) is also parameter to value and requires a simple function multiplication.
+
+
+# [Statistical Inference](https://en.wikipedia.org/wiki/Statistical_inference)
+Statistical inference is the process of using data analysis to infer properties of an underlying distribution of probability. Inferential statistical analysis infers properties of a population, for example by testing hypotheses and deriving estimates. It is assumed that the observed data set is sampled from a larger population.
+
+## MLE & MAP
+### Maximum Likelihood Estimation
+In statistics, maximum likelihood estimation (MLE) is a method of estimating the parameters of an assumed probability distribution, given some observed data. This is achieved by maximizing a likelihood function so that, under the assumed statistical model, the observed data is most probable. The point in the parameter space that maximizes the likelihood function is called the maximum likelihood estimate.
+
+Likelihood function: L(θ): θ↦R = f(y; θ) where f is a distribution modeled as a parametric family and y is the observed data sample. Note that θ∈Θ where Θ is parameter space, subset of Euclidean space. More on this in comparison with MAP.
+
+The goal of maximum likelihood estimation is to find the values of the model parameters that maximize the likelihood function over the parameter space
+
+> Recall: a parametric family or a parameterized family is a family of objects (a set of related objects) whose differences depend only on the chosen values for a set of parameters
+
+### Maximum a Posteriori Estimation
+In Bayesian statistics, a maximum a posteriori probability (MAP) estimate is an estimate of an unknown quantity, that equals the mode of the posterior distribution.
+
+Likelihood function: θ↦R = f(x | θ) where x is the observation. Note θ is viewed here as a random variable. 
+
+Since we have f(θ), we can get posterior using bayes rule. Then we choose θ as the mode of the posterior distribution f(x | θ)⋅f(θ)
+
 
 # ML
 ## Naive Bayes

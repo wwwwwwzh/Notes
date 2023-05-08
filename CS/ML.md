@@ -1,3 +1,71 @@
+# 
+## History
+### Symbolic AI
+https://www.cs.toronto.edu/~hinton/HintonMumbai.pdf
+
+I think the whole history of AI might have been quite different if the two major figures who believed in neural nets in the 1950's had not died before their time. One was Alan Turing and the other was John von Neumann. Neither of them could be accused of being ignorant of logic, but they were both convinced that it was not the way to understand how the brain computed.
+
+The rejection of neural networks was even more vociferous in the school of linguistics led by Noam Chomsky. I remember watching a TV program called Nova about linguistics. One after another, the leading linguists of the day looked straight at the camera and said that there was a lot we do not know about language, but one thing we know for sure is that it is not learned. 
+
+## Motivation of DNN
+### Perceptron Learning
+Add or subtract value of x. Since wx > 0 or < 0, wx=0 is the line separating good and bad weights. X is the normal vector of that line so going in the direction of x guarantees better weight. 
+
+### Weight Optimization VS Error Optimization
+Old perceptron learning algorithms guarantees to make weight closer to good weight space (if it exists) every iteration. Delta rule learning makes residual error smaller.  
+
+The linear case of perceptron learning and chain rule error minimization can be connected:
+![](/images/perceptron-backprop.png)
+![](/images/weight-space.png)
+
+### Motivation of Backprop
+https://youtu.be/VCT1N0EsGj0?t=313
+1. Perceptron features->hidden neurons: perceptron learning requires good features but they come from trial and error; want a way to automatically learn features 
+2. Evolution algorithm (randomly perturb weights) is inefficient
+3. Instead we could perturb activities since there're fewer neural activities than weights, but still inefficient
+4. Backprop gives us change of error wrt activities.
+
+### Learning Ability (Backprop paper)
+In the family tree learning example, the network is capable of producing weights that exhibit human like reasoning behavior. For example, one neuron has weights such that it outputs 1 for English people and 0 for italian. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OLD-------------
 # CNN
 ## Inside CNN
 ### Activation
@@ -55,6 +123,9 @@ To get reconstruction of a feature/activation map: forward all images in dataset
 
 1. Global max pooling to enforce permutation invariance (points with different ordering should be the same scene)
 2. Learned transformation to enforce invariance under geometric transformations (rotation)
+
+
+
 
 
 
