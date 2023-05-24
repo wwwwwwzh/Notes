@@ -152,6 +152,8 @@ Find salient feature of things to teach. e.g. ni language, what's different and 
 > 20 years ago SVD (invented 1873) wasn't in linear algebra and 100 years ago no one use linear algebra.
 Were they actively looking for and discovered ancient technics when they need more math to solve problems? How could they discover it? Did they use to know everything?
 
+#### Knowledge Map
+It's useful to connect everything to everything else but that requires n^2 computaion. Even future AI can't do it. But in the case of scenary information, we know how every location relates to every other location and we know how to go from anywhere to anywhere with little thinking. It's because we have a map that gives us overall view of everything. Manifold learning is thus important.
 ### On ML and optimization
 To fit a function as complex as a DNN, some properties in the middle of the network have to emerge. If they are human understandable then it "learned" something.
 
