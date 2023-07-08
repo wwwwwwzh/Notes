@@ -1,6 +1,12 @@
 # Cradle of Civilization 
 - 2570 Great Pyramid
+- 630-560 Solon
+- 626-548 Thales
 - 600-530 Cyrus
+- 570-495 Pythagoras
+- c 515-c 440 Parmenides
+- 495-429 Pericles
+- 479 Battle of Plataea
 - 470-399 Socrates
 - 424-347 Plato
 - 384-322 Aristotle
@@ -24,6 +30,7 @@
 - 1492 Reconquista (Granada) [war]
 - 1492 Columbus [discovery]
 - 1564-1616 Shakespeare [people]
+- 1596-1650 Rene Descartes
 - 1600-1874 British East India Company [company]
 - 1602-1799 Dutch East India Company [company]
 - 1620 Mayflower
@@ -53,6 +60,8 @@
 - 1835-1908 Cixi [people]
 - 1848 California gold rush
 - 1850 oil [invention]
+- 1852-1934 Santiago Ramón y Cajal [people]
+- 1956-1939 Sigmund Freud [people]
 - 1856-1943 Tesla [people]
 - 1860 Combustion Engine [invention]
 - 1861-1865 presidency of Lincoln [people]
@@ -75,6 +84,7 @@
 - 1903 John von Neumann was born [people]
 - 1903 Wright Brothers Kitty Hawk [invention]
 - 1904-1997 Deng [people]
+- 1904-1990 B.F. Skinner
 - 1907 Synthetic plastic [invention]
 - 1911 IBM founded [company]
 - 1912 Alan Turing was born [people]

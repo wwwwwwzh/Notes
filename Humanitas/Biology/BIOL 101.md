@@ -18,16 +18,22 @@ Entropy measures disorder, randomness, or uncertainty.
 https://www.khanacademy.org/science/biology/energy-and-enzymes/free-energy-tutorial/a/gibbs-free-energy
 
 ## Misc
+### Motion
+- Momentum (p) = Mass (m) x Velocity (v)
+- Force (F) = ΔP = m x Δv = Mass (m) x Acceleration (a)
+
+### Energy
+Energy is the quantitative property that is transferred to a body or to a physical system, recognizable in the performance of work and in the form of heat and light.
+
 Energy is the ability to do work/cause change
-- Force (F) = Mass (m) x Acceleration (a)
-This equation, known as Newton's second law of motion, states that the force exerted on an object is proportional to its mass and acceleration
+
+
 - Work (W) = Force (F) x Distance (d)
 - Power (P) = Work (W) / Time (t)
 - Kinetic Energy (KE) = 1/2 x Mass (m) x Velocity (v)^2
 energy an object has due to its motion.
 - Potential Energy (PE) = Mass (m) x Gravity (g) x Height (h). It's energy an object has due to its position or configuration. 
 - Total Energy (E) = Kinetic Energy (KE) + Potential Energy (PE)
-- Momentum (p) = Mass (m) x Velocity (v)
 - Thermal energy: a kind of kinetic energy. constant, random bouncing of atoms or molecules
 - Chemical energy: the energy in the chemical bonds of a molecule is related to the structure of the molecule and the positions of its atoms relative to one another
 

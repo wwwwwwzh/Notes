@@ -199,7 +199,7 @@ A=XΛX⁻¹. This means A as a linear transformation has the effect of moving it
 Have n linearly independent eigenvectors. This follows the definition that in A=XΛX⁻¹ X must be invertible. Another way is to check if the algebraic multiplicity of each eigenvalue equals its geometric multiplicity. e.g. if eigenvalue λ appears twice (meaning there's a term when solving eigenvalues that involves (x-λ)²) it's corresponding eigenvectors must span 2d (two independent vectors).
 
 #### Orthonormal Diagonalization
-Orthonormal (orthogonal) matrices are matrices in which 1) the columns vectors form an orthonormal set (each column vector has length one and 2) is orthogonal to all the other colum vectors).
+Orthonormal (orthogonal) matrices are matrices in which the column vectors form an orthonormal set (each column vector has length one and is orthogonal to all the other colum vectors).
 
 Symmetric matrices have orthonormal diagonalization
 
@@ -212,7 +212,7 @@ Symmetric matrices have orthonormal diagonalization
 When x^TAx > 0, observe that the function it represents is convex since its second derivative is 2A which is positive definite. 
 
 ### Where to get
-Normal matrices are nxm, but when we say do projection, we often get A^TA which is square and symmetric and positive definite (if full rank).
+Most matrices are nxm, but when we do projection, we often get A^TA which is square and symmetric and positive definite (if full rank).
 
 ### Eigenvalues and Definiteness 
 For x^TAx, if we use eigenvector of A as x, we have λx^Tx. We can see that the resulting sign is defined by λ since x^Tx is positive except at 0. So if an eigenvector of A is negative, the corresponding eigenvector, when used as x here, gives negative result. Conversely, if we have all eigenvalues to be positive, the corresponding eigenvectors give all positive results.
@@ -220,7 +220,7 @@ For x^TAx, if we use eigenvector of A as x, we have λx^Tx. We can see that the 
 For more general cases, replace A with XΛX⁻¹ and write as (x^TX)Λ(X⁻¹x). (x^TX)^T=X^Tx. So for our previous observation to hold true for all x, X^T must equal X⁻¹. This is true when A is symmetric. 
 
 ### Extrema & Hessian
-When first derivative of a function is 0 and second derivative is positive, we have a minimum. For multivariable functions, the condition for second derivative matrix is positive definite instead of all positive entries. This is because, let Δx=a small nudge in some direction, then HΔx gives a small change of gradient and this times Δx again gives a small change of function output in that direction. Thus if H is PD, ΔxHΔx always give positive change no matter what direction you nudge. Conversely, negative definite Hessian when gradient is 0 implies maxima.
+When first derivative of a function is 0 and second derivative is positive, we have a minimum. For multivariable functions, the condition for second derivative matrix is positive definite instead of all positive entries. This is because, let Δx be a small nudge in some direction, then HΔx gives a small change of gradient and this times Δx again gives a small change of function output in that direction. Thus if H is PD, ΔxHΔx always give positive change no matter what direction you nudge. Conversely, negative definite Hessian when gradient is 0 implies maxima.
 
 This is also why the test involves fxx*fyy-2fxy (determinant). If det < 0, then we know for sure one eigenvalue is negative and the other is positive and this is a saddle point. If det > 0, it might be both eigenvalues are positive or both negative. Then since product(eigenvalues)=det, we only need to know either fxx or fyy to know the other.
 
@@ -246,7 +246,7 @@ An implication is that a matrix with all identical eigenvalues which is not mult
 every square matrix A is similar to a Jordan matrix J, with Jordan blocks on the diagonal
 
 ## SVD
-A=XΛX^T works only for symmetric square matrix. Want something similar for any matrix. AX=ΛX transforms an orthonormal basis of row space of A to an orthonormal basis of column space of A with a multiplier. Since A is diagonalizable, row and column space are the same (?).
+A=XΛX^T where X is orthonormal works only for symmetric square matrix. Want something similar for any matrix. AX=ΛX^T transforms an orthonormal basis of row space of A, i.e. X^T, to an orthonormal basis of column space of A with a multiplier. Since A is diagonalizable, row and column space are the same (?).
 
 For a general matrix A, we want an orthonormal basis of row space of A, denoted V, that can be transformed to a stretched orthonormal basis of column space of A, denoted U. AV=ΣU, or A=UΣV^T.
 

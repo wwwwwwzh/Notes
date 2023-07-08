@@ -157,6 +157,15 @@ Although Bayes' theorem is a fundamental result of probability theory, it has a 
 # [Statistical Inference](https://en.wikipedia.org/wiki/Statistical_inference)
 Statistical inference is the process of using data analysis to infer properties of an underlying distribution of probability. Inferential statistical analysis infers properties of a population, for example by testing hypotheses and deriving estimates. It is assumed that the observed data set is sampled from a larger population.
 
+## Estimator
+An "estimator" or "point estimate" is a statistic (that is, a function of the data) that is used to infer the value of an unknown parameter in a statistical model. A common way of phrasing it is "the estimator is the method selected to obtain an estimate of an unknown parameter". The parameter being estimated is sometimes called the estimand.
+
+Suppose a fixed parameter θ needs to be estimated. Then an "estimator" is a function that maps the sample space to a set of sample estimates. An estimator of 
+θ is usually denoted by the symbol $\hat\theta$
+
+### Bayes Estimator
+
+
 ## MLE & MAP
 ### Maximum Likelihood Estimation
 In statistics, maximum likelihood estimation (MLE) is a method of estimating the parameters of an assumed probability distribution, given some observed data. This is achieved by maximizing a likelihood function so that, under the assumed statistical model, the observed data is most probable. The point in the parameter space that maximizes the likelihood function is called the maximum likelihood estimate.
@@ -172,7 +181,9 @@ In Bayesian statistics, a maximum a posteriori probability (MAP) estimate is an 
 
 Likelihood function: θ↦R = f(x | θ) where x is the observation. Note θ is viewed here as a random variable. 
 
-Since we have f(θ), we can get posterior using bayes rule. Then we choose θ as the mode of the posterior distribution f(x | θ)⋅f(θ)
+Since we have f(θ), we can get posterior using bayes rule. Then we choose θ as the mode of the posterior distribution f(θ|x) ∝ f(x|θ)⋅f(θ)
+
+
 
 
 # ML

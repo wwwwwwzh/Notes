@@ -58,7 +58,9 @@ einsum("b h i j, b h d j -> b h i d", attn, v)
 https://huggingface.co/transformers/v2.9.1/pretrained_models.html: model name and size
 
 ### Language
-
+- https://fluent-forever.com/product/fluent-forever-pronunciation-trainer/
+- [Alphabet: The origin of every letter](https://www.youtube.com/watch?v=CYqqFqoLnnk)
+- [Cyrillic Alphabet](https://www.youtube.com/watch?v=5kDpO9T-z60)
 
 ### Others
 https://www.letras.com/shakira/1657452/
@@ -154,8 +156,20 @@ Were they actively looking for and discovered ancient technics when they need mo
 
 #### Knowledge Map
 It's useful to connect everything to everything else but that requires n^2 computaion. Even future AI can't do it. But in the case of scenary information, we know how every location relates to every other location and we know how to go from anywhere to anywhere with little thinking. It's because we have a map that gives us overall view of everything. Manifold learning is thus important.
-### On ML and optimization
-To fit a function as complex as a DNN, some properties in the middle of the network have to emerge. If they are human understandable then it "learned" something.
+
+### On What is Learning When ML is Just An Optimizer
+To fit a function as complex as a DNN, some properties in the middle of the network have to emerge. If they are human understandable then it "learned" something. This is also the thought of Hinton and what he convinced the Nature reviewer with.
+
+### On Consciousness, Evolution and Optimization
+We do a lot of amazing things, but animals can also do most of them. It's important to identify things that truly make us superior. I think I'll just define those properties as "high consciousness". Through evolution, animals began to have interesting traits and behaviors that offer evolutional advantages. Through kin selection and corporation they can even naturally develop behaviors that optimize complex games like war and social hierarchy. To empower these actions, animal brains must be powerful. We can see animals perform human like behaviors like doing chores and trade. These are not consciousness though. Currently I think language and symbolic thinking is key to consciousness as they establish a clear information flow inside brain (see quotes from The Story of My Life). 
+
+https://www.perkins.org/laura-bridgman/
+
+### Reading The Story of My Life (Helen Keller)
+- At first, when my teacher told me about a new thing I asked very few questions. My ideas were vague, and my vocabulary was inadequate; but as my knowledge of things grew, and I learned more and more words, my field of inquiry broadened, and I would return again and again to the same subject, eager for further information. Sometimes a new word revived an image that some earlier experience had engraved on my brain.
+
+### On Logical and Natural Optimization/Why Our Logical Strategies Coincide Natural Phenomena
+We see tit for tat in animals even when this is also deduced from human analytical thinking. We see learning algorithms reach local minima when human also reach local minima with the exact logic i.e. it looks good from where I came from and without an external nudge this will always be the best solution I can see. This is because systems have to follow the same physical laws and their high level behaviors have to sometimes follow patterns to satisfy those laws.
 
 ### On local minima
 Humans are prone to local minima. The physical configuration of human body admits infinite behaviors. Behaviors lead to consequences within their context. There are only finite context one will encounter. Thus many configurations will fit these seen contexts and people with "bad" configurations will believe they are smart such that they can solve problems they have seen. ML might be able to exhaust the data and learn a "true" good configuration (Roman+enlightenment?). 
@@ -184,11 +198,17 @@ If we can "train a complete adult" model it will fulfill half of the quest. The 
 - Indiana Jones
 
 ## Quotes
+### Books
+#### Da Vinci
+- On flight (not really from him): When once you have tasted flight, you will forever walk the earth with your eyes turned skyward. For there you have been, and there you will always long to return
 ### Talks
-- Alan Kay on David Evans: Dave's way was to make something like a garden, and tend that garden so that many things would have many chance to grow by themselves. His idea was to just do good deeds everywhere and every time you can without any hope of return. And much of the time the angelic side of humans will nudge other humans to start helping themselves.
+#### Alan Kay
+- On David Evans: Dave's way was to make something like a garden, and tend that garden so that many things would have many chance to grow by themselves. His idea was to just do good deeds everywhere and every time you can without any hope of return. And much of the time the angelic side of humans will nudge other humans to start helping themselves.
 #### Hinton
 - On intuition and knowledge distillation: you need to put in a lot of hard work to get sufficient experience in a domain and then you need to trust your intuitions. 
 - On politics and science: I grew up in Britain in the 1950's and 60's and a major puzzle at the time was to understand how civilized and well-educated Germans could have allowed Hitler to gain power. Recent events in the US have made that seem a lot less puzzling. ... I believe that highly selected and extremely well-educated students like yourselves have a moral duty to stand up for the truth in the face of political attempts to suppress it.
+
+
 
 ### Books
 
