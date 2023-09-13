@@ -120,6 +120,9 @@ https://www.youtube.com/watch?v=mFP_AjJeP-M
 ### Eating
 Not eating after 12.25 dinner makes me starve early in the morning and feel bad throughout the day. Ate at 12.26 but still not good after 12.27 breakfast. Took a walk and ate lunch much better. Slept and all good. Ran short late afternoon. 28 morning stomach feeling funny 2p. 29 morning better 2p.  Ran afternoon.
 
+## 23.7.14-20
+Ate salmon 7.14, diarrhea 7.15 but generally feel good. 7.16 went out and all good ate few for dinner. 7.17 very hungry in the morning and hungry though the day. 7.18 played badminton feel good and ate a lot. 7.19 feel good. 7.20 a little nervous and don't feel like eating breakfast but good throughout day.
+
 # Ideas
 ## School Related
 ### Course Plan
@@ -131,6 +134,14 @@ HS CI BN GL
 ### Interested
 - ECON 231 Economic History of Western Europe
 - ECON 234 Survey of the History of Economic Thought
+
+- ARTH 151 History of Western Art I
+
+- NSCI 222 - LEARNING
+- NSCI 423 - NEUROTECHNOLOGY
+- NSCI 421 - PRINCIPLES OF BRAIN CIRCUITS
+- NSCI 434 - COGNITIVE NEUROSCIENCE
+
 - ECON 415 Market Failure
 - Hist 158 Early Modern Europe
 - HIST 266 history of warfare
@@ -138,7 +149,7 @@ HS CI BN GL
 - HIST 340 ETHICS AND BUSINESS IN AFRICA
 - HIST 538 MIDDLE EAST & THE WEST
 - MUSC 120 Foundations in Music
-- ARTH 151 History of Western Art I
+
 
 
 
@@ -166,13 +177,13 @@ We do a lot of amazing things, but animals can also do most of them. It's import
 https://www.perkins.org/laura-bridgman/
 
 ### Reading The Story of My Life (Helen Keller)
-- At first, when my teacher told me about a new thing I asked very few questions. My ideas were vague, and my vocabulary was inadequate; but as my knowledge of things grew, and I learned more and more words, my field of inquiry broadened, and I would return again and again to the same subject, eager for further information. Sometimes a new word revived an image that some earlier experience had engraved on my brain.
+- > At first, when my teacher told me about a new thing I asked very few questions. My ideas were vague, and my vocabulary was inadequate; but as my knowledge of things grew, and I learned more and more words, my field of inquiry broadened, and I would return again and again to the same subject, eager for further information. Sometimes a new word revived an image that some earlier experience had engraved on my brain.
 
 ### On Logical and Natural Optimization/Why Our Logical Strategies Coincide Natural Phenomena
 We see tit for tat in animals even when this is also deduced from human analytical thinking. We see learning algorithms reach local minima when human also reach local minima with the exact logic i.e. it looks good from where I came from and without an external nudge this will always be the best solution I can see. This is because systems have to follow the same physical laws and their high level behaviors have to sometimes follow patterns to satisfy those laws.
 
 ### On local minima
-Humans are prone to local minima. The physical configuration of human body admits infinite behaviors. Behaviors lead to consequences within their context. There are only finite context one will encounter. Thus many configurations will fit these seen contexts and people with "bad" configurations will believe they are smart such that they can solve problems they have seen. ML might be able to exhaust the data and learn a "true" good configuration (Roman+enlightenment?). 
+Humans are prone to local minima. The physical configuration of human body admits infinite behaviors. Behaviors lead to consequences within their context. There are only finite context one will encounter. Thus many configurations will fit these seen contexts and people with "bad" configurations will believe they are smart such that they can solve problems they have seen. ML might be able to exhaust the data and learn a "true" good configuration (Greco-Roman+bad time?). 
 
 ### Learning from examples is superficial
 Related to previous idea.
@@ -193,6 +204,89 @@ If we can "train a complete adult" model it will fulfill half of the quest. The 
 - Neuron plasticity inspired SOM might work on very small tasks where all layers before are frozen and provide a solid inductive bias
 - A brain should distinguish "self" from everything else. Emergent property of complex network?
 
+## Advanced AI and Brain
+### What Counts as Output (Consciousness)
+Since we don't know how consciousness arises,we don't know if it's the spatial or temporal activations of certain neurons or a certain pattern of transmission of potentials that matters as desired output of a network.
+
+### Modeling Relationship Between Interesting Neurons
+We can find certain neurons that's activated by certain things but we don't know connections between these neurons. To study how information is processed, we must either identify all connection strength between neurons of interest or build statistic models to measure how different "metaneurons" relate to each other.
+
+### Function of Hippocampus as Associative Center
+
+
+### Infinite Memory
+If "one memory" corresponds to a pattern of activations of certain neurons, then given infinite connection complexity, different inputs (senses) can leads to (recall) 2^n memories. 
+
+#### Problem of Null Memory
+If recalling of memory means reading from a certain groups of neurons, then attempting to recall when given non recallable inputs should theoretically be still possible and would yield some random memory. But this didn't happen. For example, reading books read before gives some feeling of knowing stuff ahead but reading new books doesn't, though some activities have to be happening at the same region activated in the former event.
+
+### Misc
+- We can sometimes remember if we have recalled a memory or not 
+- What happens in dream can be as influential as reality and thus more powerful than imagination
+
+### Recurrent Connections
+Two way information processing means two way learning (e.g. an image -> an idea + the idea -> the image)
+
+### Horizontal Connections
+Recurrent horizontal connections can be converted to hopfield network
+
+## On Projection
+### The World as Projection of an Underlying Structure and Every Natural Science as Projection Problem
+
+### Logic as an Infallible Structure of the World
+
+### Math as THE structure / Language of the Universe
+
+Math provides language for the structure of things. When we see things happen, we first try to reason abstractly the underlying force that drives the happening. This is abstract. To prove something to be true, a language infinitely precise is needed. With this language can we really say this force produced such results.
+
+See "Math and Physics" for whether math itself provides the structure.
+
+### Math and Physics
+It seems that primitive math emerges everywhere out of basic needs and grows as economy of the region. However, once physics is born, math becomes tool of physics. 
+
+However, in a different lens, math is a desire to precision, and it inevitably leads to reduction to some extremely primitive and precise/self evident postulates. This is similar to physics's attempt to find something basic that explains everything complex. It also follows from these postulates that 
+
+## Metaphysics
+### On Logic
+Since I feel Plato's idea of form is nonsense, I was trying to prove how every idea is derived from senses. It's easy to see that numbers have some clear physical meanings: two object normally result in two complete contours; two sounds are separated or differentiated naturally. However, logic seems more mysterious. Logic like parallel line postulate doesn't correspond to physical things that have clear boundaries. It is from some precise definitions that live on their own. Processing of them doesn't elicit sense memories but is a byproduct of some functions of brain. It's also possible that the most primitive logic are indeed generalizations of senses. For example:
+![](/images/common-notions.png)
+These are completely from senses. And from such generalizations we can build prepositional logic and others. So are also for numbers like: 1-A unit is that by virtue of which each of the things that exist is called one. 2-A number is a multitude composed of units.
+
+![](/images/postulates.png)
+
+
+
+### Ontology
+#### Existence of Idea
+I have an idea of a car because I've seen and rode a car and sensed it with all my sense organs. But does the idea exist by its own, i.e. If there are no humans, do cars exist?
+
+Some people believe that these physical things, these "matter" are always real regardless of observation. However, a more difficult case would be something like this: a program exists because I have written it and run it, but I know there are infinitely many programs that "exist" but are yet to be written. We might solve this by having different levels of existence (exist now, past, future). 
+
+But what about pure ideas? What about the relationship between a circle and its radius? The relationship never changes. But does it exist without being discovered?
+
+## History
+### Assumptions
+- What happens if Medieval is skipped (Rome conquered all of Europe and slavs)
+
+### Comparative
+- Why Muslin golden age didn't produce Enlightenment and Scientific Revolution
+- Different paths Mediterranean and China took in ancient times
+- Compare China with Europe after Rome before Modern Era
+- What exactly powered the train of Renaissance to Industrial Revolution
+- What's lacking in Chinese and Islamic science compared to European science.
+
+### 
+- Why didn't Rome continue Greek legacy
+
+## General
+### 
+- The language of literature is too full of emotions and experience that only looking back at the words as your own memories can you truly understand; the language of political philosophy is too full of hate and beliefs, understanding them is thus to become a cult; only the language of science is impartial, it stands above feelings and senses. 
+
+## Pedagogy
+### Why Learn Everything with History
+It is most natural to learn things from historical perspective. True learning comes from answering questions asked by oneself. The questions arise naturally given historical context since it's that exact same context that prompted people to ask the question that leads to the solution we are trying to learn. The answers also lock tightly with the historical question since we are all humans having essentially similar processes of innate minds.
+
+
 ## Movies to Watch
 - The Last of the Mohicans
 - Indiana Jones
@@ -201,12 +295,24 @@ If we can "train a complete adult" model it will fulfill half of the quest. The 
 ### Books
 #### Da Vinci
 - On flight (not really from him): When once you have tasted flight, you will forever walk the earth with your eyes turned skyward. For there you have been, and there you will always long to return
+
+#### Einstein
+- On physics (from evolution of physics): Physical concepts are free creations of the human mind, and are not, however it may seem, uniquely determined by the external world.
+
+#### Archimedes
+- On love for pure ideas (Plutarch): Archimedes possessed so high a spirit, so profound a soul, and such treasures of scientific knowledge, that though these inventions had now obtained him the renown of more than human sagacity, he yet would not deign to leave behind him any commentary or writing on such subjects; but, repudiating as sordid and ignoble the whole trade of engineering, and every sort of art that lends itself to mere use and profit, he placed his whole affection and ambition in those purer speculations where there can be no reference to the vulgar needs of life.
+- On his proof of area of circle equals triangle of height r and base Q (circumference) (Plutarch): No amount of investigation of yours would succeed in attaining the proof, and yet, once seen, you immediately believe you would have discovered it.
+
+#### Others
+- On Joseph II of the Holy Roman Empire: "Everything for the people, nothing by the people"
+
 ### Talks
 #### Alan Kay
 - On David Evans: Dave's way was to make something like a garden, and tend that garden so that many things would have many chance to grow by themselves. His idea was to just do good deeds everywhere and every time you can without any hope of return. And much of the time the angelic side of humans will nudge other humans to start helping themselves.
+
 #### Hinton
 - On intuition and knowledge distillation: you need to put in a lot of hard work to get sufficient experience in a domain and then you need to trust your intuitions. 
-- On politics and science: I grew up in Britain in the 1950's and 60's and a major puzzle at the time was to understand how civilized and well-educated Germans could have allowed Hitler to gain power. Recent events in the US have made that seem a lot less puzzling. ... I believe that highly selected and extremely well-educated students like yourselves have a moral duty to stand up for the truth in the face of political attempts to suppress it.
+- On politics and science: I grew up in Britain in the 1950's and 60's and a major puzzle at the time was to understand how civilized and well-educated Germans could have allowed Hitler to gain power. Recent events in the US have made that seem a lot less puzzling. ... I believe that highly selected and extremely well-educated students like yourselves have **a moral duty to stand up for the truth in the face of political attempts to suppress it.**
 
 
 

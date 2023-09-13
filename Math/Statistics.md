@@ -1,18 +1,21 @@
 # [Overview](http://d2l.ai/chapter_preliminaries/probability.html#sec-prob)
 Probability is the mathematical field concerned with reasoning under uncertainty. 
 
-The use of probabilities to describe the frequencies of repeatable events (like coin tosses) is fairly uncontroversial. In fact, frequentist scholars adhere to an interpretation of probability that applies only to such repeatable events. By contrast Bayesian scholars use the language of probability more broadly to formalize our reasoning under uncertainty. 
+The use of probabilities to describe the frequencies of repeatable events (like coin tosses) is fairly uncontroversial. In fact, frequentist scholars adhere to an interpretation of probability that applies **only** to such repeatable events. By contrast Bayesian scholars use the language of probability more broadly to formalize our reasoning under uncertainty. 
 
 Bayesian probability is characterized by two unique features: (i) assigning degrees of belief to non-repeatable events, e.g., what is the probability that the moon is made out of cheese?; and (ii) subjectivity. While Bayesian probability provides unambiguous rules for how one should update their beliefs in light of new evidence, it allows for different individuals to start off with different prior beliefs.
 
-Statistics helps us to reason backwards, starting off with collection and organization of data and backing out to what inferences we might draw about the process that generated the data. Whenever we analyze a dataset, hunting for patterns that we hope might characterize a broader population, we are employing statistical thinking.
+*Statistics helps us to reason backwards*, starting off with collection and organization of data and backing out to what inferences we might draw about the process that generated the data. Whenever we analyze a dataset, hunting for patterns that we hope might characterize a broader population, we are employing statistical thinking.
 
 ## Basics
-- Outcome (z): a precise description of the state of the world (as far as our model is concerned) and cannot be split any further
+- Outcome (w): a precise description of the state of the world (as far as our model is concerned) and cannot be split any further
 - Outcome/Sample Space (Ω): 
 - Event (A): subset of sample space (grouping of outcomes we are interested in)
+- Union of events (∪): A∪B={w∈Ω:w∈A or w∈B or w∈both}
+- Intersection of events (∩): A∩B={w∈Ω:w∈A and w∈B}
+- Disjoint events: A∩B=ϕ
 - Probability Function/Probability/Probability Measure (P): mapping from events onto real values that satisfies the axioms
-- Kolmogorov Axioms: P(A) >= 0; P(S) = 1; Aᵢ∩Aⱼ≠0 → P(Aᵢ∪Aⱼ)=P(Aᵢ)+P(Aⱼ)
+- Kolmogorov Axioms: P(A) >= 0 ∀A; P(Ω) = 1; Aᵢ∩Aⱼ=ϕ → P(Aᵢ∪Aⱼ)=P(Aᵢ)+P(Aⱼ)
 
 > See Math notes about measure 
 
@@ -28,8 +31,8 @@ A claim of the frequentist approach is that, as the number of trials increases, 
 
 
 ### Conditional and Joint Probability
-- P(A|B): $\frac{P(A intersect B)}{P(B)}$, probability of A in the universe of B
-- P(A, B): P(A intersect B)=P(A)⋅P(B|A) multiplication rule
+- P(A|B): $\frac{P(A ∩ B)}{P(B)}$, probability of A in the universe of B
+- P(A, B): P(A ∩ B)=P(A)⋅P(B|A) multiplication rule
 - P(A)=$\frac{P(A)⋅P(B|A)}{P(B|A)}=\frac{P(A,B)}{P(B|A)}$
 - P(A)=$\sum_{i}P(A, B_i)=\sum_{i}P(A|Bᵢ)⋅P(Bᵢ)$ Total probability theorem
 
@@ -39,7 +42,7 @@ A claim of the frequentist approach is that, as the number of trials increases, 
 > Note that A and B are events and P is probability measure function
 
 ### (Conditional) Independence
-- Independence: P(A|B)=P(A)->P(A, B)=P(A)⋅P(B)
+- Independence: P(A,B)=P(A)⋅P(B) -> P(A|B)=P(A)
 - Conditional independence: P(A|B,C)=P(A|C)->P(A,B|C)=P(A|C)⋅P(B|C)
 
 > Proof of conditional independence: $P(A|B,C)=P(A|C)=\frac{P(A,B,C)}{P(B,C)}=\frac{P(A,B,C)}{P(C)⋅P(B|C)}=\frac{P(A,C)}{P(C)}\iff\frac{P(A,C)⋅P(B|C)}{P(C)}=\frac{P(A,B,C)}{P(C)}=P(A|C)⋅P(B|C)$

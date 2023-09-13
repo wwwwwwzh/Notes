@@ -1,148 +1,303 @@
 # Cradle of Civilization 
-- 2570 Great Pyramid
-- 630-560 Solon
-- 626-548 Thales
-- 600-530 Cyrus
-- 570-495 Pythagoras
-- c 515-c 440 Parmenides
-- 495-429 Pericles
-- 479 Battle of Plataea
-- 470-399 Socrates
-- 424-347 Plato
-- 384-322 Aristotle
-- 356-323 Alexander
-- 221 China unified
-- 100-44 Julius Caesar
-- 63-14 Augustus
+- 2570 Great Pyramid [wonder]
+- 1810-1750 Hammurabi [people]
+# Sea People
+- 753 Founding of Rome
+- 642-562 Nebuchadnezzar II [people]
+- 630-560 Solon [people]
+- 626-548 Thales [people]
+- 600-530 Cyrus [people]
+- 570-495 Pythagoras [people]
+- c 515-c 440 Parmenides [people]
+# Classical Antiquity
+- 495-429 Pericles [people]
+- 479 Battle of Plataea [war]
+- 470-399 Socrates [people]
+- 424-347 Plato [people]
+- 404 Athens surrender to Sparta [war]
+- 400-350 Eudoxus
+- 387 Founding of Academy
+- 384-322 Aristotle [people]
+- 356-323 Alexander [people]
+- fl. 300 Euclid [people]
+- 287-212 Archimedes [people]
+- 264-241 First Punic War [war]
+- 247-c 181 Hannibal [people]
+- r 247-217 Arsaces I of Parthia [people]
+- 221 China unified [event,EA]
+- 218-201 Second Punic War [war]
+- 202-AD.220 Han Dynasty [EA]
+- 156-87 Emperor Wu [people,monarch,EA]
+- 146 Battle of Corinth [war]
+- 100-44 Julius Caesar [people]
+- 63-14 Augustus [people]
 # Anno Domini
-- 476 Fall WRE [war]
+- 53-117 Trajan [people]
+- 96-180 5 "Good Emperors" [monarch]
+- 100-170 Claudius Ptolemy [science]
+- c.150 Almagest [science]
+- 220-280 Three Kingdoms [EA]
+- 224 Founding of Sassanid Empire [war]
+- r.284-305 Diocletian [people,monarch]
+- 313 Edict of Milan [religion]
+- 325 Council of Nicaea [religion]
+- 476 **Fall WRE** [war]
+---
+- 482-565 Justinian [people]
+- 529 Closing of Alexandrian Library by Christians [science,religion]
 - 570-632 Muhammad [people]
+---
+- 618-907 Tang Dynasty [state]
+- 629 Mecca [war]
+- 632-661 Rashidun Caliphate [state]
+- 641 Alexandrian Library destroyed by Arab [war]
 - 651 Sassanid Empire conquered by Arab [war]
-- 747-814 Charlemagne [people]
-- 912-973 Otto I [people]
+- 661-750 Umayyad Caliphate [state]
+---
+- 711 Umayyad conquest of Hispania [war]
+- 747-814 Charlemagne [people,monarch]
+- 750 Umayyad Caliphate ends [state]
+- 750-1258 Abbasid Caliphate [state]
+---
+- 800 **Charlemagne crowned HRE** [coronation]
+- c.800 Graeco-Arabic translation movement [science]
+- 827-902 Muslin conquest of Sicily [war]
+---
+- c.900 Normandy given to Vikings [war]
+- c.900 First king of Kievan Rus [slav,people,monarch]
+- 912-973 Otto I [people,monarch]
+- 962 Otto crowned HRE [coronation,monarch]
+---
+- 1038-1091 Reconquest of Sicily [war]
+- 1050-1106 Heinrich IV ("Walk to Canossa")[people,monarch]
+- 1054 Great Schism
+- 1066 Conquest of England [war]
+- 1088 University of Bologna [science,civil right]
+- 1096 First Crusade [war]
+- 1099 Siege of Jerusalem [war]
+---
+- 1161-1216 Pope Innocent III [people]
+- 1187 Saladin captured Jerusalem [war]
+- 1194-1250 Fredrick II [people,monarch]
+---
+- r.1206-1227 **Genghis Khan** [people,monarch,conquerer]
+- 1215 Magna Carta [event,civil right]
+- 1258 Sack of Baghdad and end of Abbasid Caliphate [war]
+- 1271-1295 Travel of Marco Polo
+- 1273 Rudolf elected King, House of Habsburg [coronation,monarch]
+- 1279 Yuan conquest of Song [war]
+---
+- 1304-1374 Petrarch (secular achievements do not necessarily preclude an authentic relationship with God, God has given humans their vast intellectual and creative potential to be used to its fullest)[people,science,art,philosophy]
+- 1337 Hundred Years War [war]
 - 1346-1352 Black death [pandemic]
-- 1400s-1600s Renaissance
-- 1432-1481 Mehmed II [people]
+- c. 1345s **Renaissance**
+---
+- 1432-1481 Mehmed II [people,monarch]
 - 1440 Gutenberg printing press [invention]
-- 1452-1519 Da Vinci [people]
-- 1453 Fall Constantinople [war]
-- 1475-1564 Michelangelo [people]
+- 1449-1492 Lorenzo Medici [people,monarch]
+- 1452-1519 Da Vinci [people,science,art]
+- 1453 Fall of Constantinople [war]
+- 1473-1543 **Copernicus** [people,science]
+- 1475-1564 Michelangelo [people,art]
+- 1480-1521 Magellan [people]
+- 1483-1546 Martin Luther [people,religion]
+- r.1486-1519 Maximilian I, the last knight [people,monarch] (intelligent minds deriving their nobility from God)
 - 1492 Reconquista (Granada) [war]
-- 1492 Columbus [discovery]
-- 1564-1616 Shakespeare [people]
-- 1596-1650 Rene Descartes
+- 1492 Columbus reached America [event]
+- c. 1492 **Modern Age**
+---
+- 1519-1521 Hernán Cortés conquered Mexico [war]
+- 1527 Sack of Rome by Charles V [war]
+- 1522, 1534 Luther translated Bible [event]
+- 1533 Henry VIII withdrew England from Catholic Church [event,religion]
+- 1540 Ignatius founded Jesuit [event,religion]
+- 1543 De revolutionibus orbium coelestium
+- c. 1543 **Scientific Revolution**
+---
+- 1546-1601 **Tycho Brahe** [people,science]
+- r.1553-1558 Mary of England [people,monarch]
+- r.1556-1598 Fillip II of Spain [people,monarch]
+- r.1558-1603 Elizabeth I of England [people,monarch]
+- 1559 Elizabethan Religious Settlement
+- 1564-1616 Shakespeare [people,art]
+- 1564-1642 **Galilei** [people,science]
+- 1571-1630 Kepler [people,science]
+- 1588-1589 Invincible Armada and English Armada [war]
+- 1596-1650 Rene Descartes [people,science]
+---
 - 1600-1874 British East India Company [company]
 - 1602-1799 Dutch East India Company [company]
-- 1620 Mayflower
-- 1624 Dutch settlement of New York
-- 1630 Boston
-- 1642-1726 Newton [people]
+- 1607-1665 Fermat [people,science]
+- 1618 Defenestration of Prague [war]
+- 1620 Mayflower [event]
+- 1623-1662 Pascal [people,science,religion]
+- 1624 Dutch settlement of New York [event]
+- 1630 Boston [event]
+- c.1630 Analytic Geometry [science,math]
+- 1638 Two New Sciences by Galileo [book,science]
+- 1642-1726 **Newton** [people,science] (Mortals, congratulate yourselves that so great a man has lived for the honor of the human race.)
+- r.1643-1715 Louis XIV [people,monarch]
+- 1646-1716 Leibniz [people,science]
+- 1648 End of Thirty Years' War [war]
+- 1649 Charles Beheaded [event]
+- r.1653-1658 Oliver Cromwell [people,HOS]
+- 1666 French Academy of Science [science]
+- r.1682-1725 Peter the Great [people,monarch]
+- c1680 Calculus [science,math]
 - 1688 Glorious Revolution [revolution]
-- 1707-1783 Euler [people]
+- 1689 Bill of Rights of England [civil right]
+---
+- 1707 United Kingdom of Britain 
+- 1707-1783 **Euler** [people]
 - 1712 Steam Engine [invention]
-- 1715-1789 Enlightenment 
+- 1712 Last women convicted of witchcraft in England
+
+- 1715-1789 **Enlightenment** 
+---
+- 1721-1917 Russian Empire
+- 1732-1799 **Washington** [people]
+- 1736-1796 Qianlong [people]
 - 1736-1813 Lagrange [people]
-- 1760 Industrial Revolution 
+- c.1760 **Industrial Revolution** 
 - 1768-1830 Fourier [people]
-- 1769-1821 Napoleon [people]
+- 1769-1821 **Napoleon** [people]
 - 1769-1849 Muhammad Ali Pasha [people]
-- 1777-1855 Gauss [people]
-- 1789 Samuel Slater (Father of the American Industrial Revolution) arrived in America [people]
-- 1793 Execution of Louis XVI [people]
-- 1804 Napoleon Emperor of France [people]
-- 1806 Dissolution of the Holy Roman Empire
-- 1809-1882 Darwin [people]
-- 1815-1898 Otto von Bismarck [people]
-- 1819-1901 Queen Victoria [people]
-- 1822-1884 Mendel [people]
+- 1769 Watt invented steam engine [invention]
+- 1776 Declaration of Independence [civil right]
+- 1777-1855 Gauss [people,science]
+- 1789 Samuel Slater (Father of the American Industrial Revolution) arrived in America [event]
+- 1789 Estates General Convened, Bastille [event,war]
+- 1789 Washington sworn in presidency [event]
+- 1791-1867 Faraday [people,science]
+- 1792 French Republic [state]
+- 1792-1797 War of the first coalition [war]
+- 1793 **Louis XVI Executed**
+- 1794 Robespierre Executed 
+---
+- 1804 Napoleon Emperor of France [coronation]
+- 1806 Dissolution of the Holy Roman Empire by Francis II [state]
+- 1809-1882 Darwin [people,science,philosophy]
+- c.1808-1826 Spain lost latin America [war,libration]
+- 1812 Napoleon invaded Russia [war]
+- 1814 Napoleon exiled to Elba and restoration of French monarchy [event]
+- 1814 George Stephenson invented steam locomotive [invention]
+- 1815 **Battle of Waterloo** [war]
+- 1815 German confederation [state]
+- 1815-1898 Otto von Bismarck [people,ruler]
+- 1818-1883 Karl Marx [people,philosophy]
+- 1819-1901 Queen Victoria [people,monarch]
+- 1821-1832 Greek war of independence [war,libration]
+- 1822-1884 Mendel [people,science]
 - 1822 Charles Babbage Difference engine [invention]
-- 1825 Steam locomotive [invention]
-- 1835-1908 Cixi [people]
-- 1848 California gold rush
+- 1825 First railway opened [invention]
+- 1835-1908 Cixi [people,monarch]
+- 1837 Samuel Morse sent first telegraph [invention]
+- 1845-1918 Cantor [people,math]
+- 1848 California gold rush [event]
+- 1848 Communist Manifesto [civil right]
+- 1848-1849 **Springtime of Nations** [revolution]
+- 1848-1852 Presidency of Napoleon III [people]
+- r.1848-1916 Franz Josef emperor of Austria [people,monarch]
+---
 - 1850 oil [invention]
-- 1852-1934 Santiago Ramón y Cajal [people]
-- 1956-1939 Sigmund Freud [people]
-- 1856-1943 Tesla [people]
+- 1852-1870 Napoleon III emperor of France [people,monarch]
+- 1852-1934 Santiago Ramón y Cajal [people,science]
+- 1856-1939 Sigmund Freud [people,science]
+- 1856-1943 Tesla [people,science]
 - 1860 Combustion Engine [invention]
-- 1861-1865 presidency of Lincoln [people]
+- 1861 Serfdom abolished in Russia [civil right]
+- 1861-1865 **presidency of Lincoln** [people]
 - 1865-1910 typewriter [invention]
+- 1866 Unification of Italy [state]
+- 1866 Prussian victory over Austria forced Austria out German confederation [war]
+- 1868 Meiji Restoration [revolution]
 - 1869 Periodic table of elements [invention]
 - 1869 Discovery of nucleus (DNA) [discovery]
-- 1870-1914 Second Industrial Revolution
-- 1870-1924 Lenin [people]
-- 1871 Unification of Germany 
+- 1870-1914 **Second Industrial Revolution**
+- 1870-1924 Lenin [people,HOS]
+- 1870-1871 Franco-Prussian war [war]
+- 1871 **Unification of Germany** [state]
+- 1871-1918 German Empire [state]
+- 1874-1965 Churchill [people,HOS]
 - 1876 telephone [invention]
-- 1878-1953 Stalin [people]
+- 1878-1953 Stalin [people,HOS]
+- 1879-1955 Einstein [people,science,philosophy]
 - 1879 Lightbulb [invention]
 - 1880s steel used in construction [material]
 - 1882 Power plant and power grid [invention]
+- 1882-1945 Roosevelt [people,HOS]
 - 1883 Brooklyn Bridge [landmark]
 - 1885 AT&T founded [company]
 - 1886 Benz Patent Motor Car [invention]
-- 1893-1976 Mao [people]
+- 1887-1975 Jiang Jieshi [people,HOS]
+- 1889-1945 Hitler [people,HOS]
+- 1893-1976 Mao [people,HOS]
+---
 - 1901-1966 Walt Disney [people]
-- 1903 John von Neumann was born [people]
+- 1903 John von Neumann [people]
 - 1903 Wright Brothers Kitty Hawk [invention]
-- 1904-1997 Deng [people]
-- 1904-1990 B.F. Skinner
-- 1907 Synthetic plastic [invention]
+- 1904-1997 Deng [people,HOS]
+- 1904-1990 B.F. Skinner [people,science]
+- 1907 synthetic plastic [invention]
 - 1911 IBM founded [company]
-- 1912 Alan Turing was born [people]
----------
-- 1914-1918 WWI [war]
+- 1912 Alan Turing [people]
+- **WWI**
+---
+- 1914 WWI [war]
 - 1914 Ford assembly line [invention]
 - 1918 Enigma [invention]
+- 1918 WWI ends [war]
 - 1922 Ottoman Empire dissolved [war]
-- 1922 Soviet Union
+- 1922 Soviet Union [state]
+- 1923 Beer Hall Putsch [coup]
 - 1925 Bell lab founded [company]
+- 1926-2022 Elizabeth II [people,monarch]
+- 1929 Great Depression
 - 1931 Empire state building [landmark]
 - 1933 Boeing 247 [invention]
-- 1939-1945 WWII [war]
------
-- 1945-1955 Computing devices booming
-- mid-late 1950 development of transistors, mainframe computers, batch system [invention]
+- 1933 Hitler Chancellor of Germany 
+- **WWII** [war]
+---
+- 1941.6.22 Operation Barbarossa [war]
+- 1941.11.26 Pearl Harbor [war]
+- 1945.4.30 Hitler suicide [people]
+- 1949 first Soviet A-bomb test
+- 1950 Korean war [war]
+- 1952 hydrogen bomb 
 - 1953 Structure of DNA [discovery]
+- 1953 Stalin died -> Khrushchev [people]
+- 1953 Truman -> Eisenhower [people,USP]
+- c. 1955 development of transistors, mainframe computers, batch system [invention]
 - 1955 Disneyland
-- 1957 Fairchild founded [company]
 - 1957 Sputnik 1 [invention]
 - 1958 NASA [company]
 - 1958 DARPA [company]
-- 1959 MOSFET (MOS field-effect transistor) [invention]
-- 1959 Monolithic integrated circuit [invention]
-- 1961 Compatible Time-Sharing System  (first general purpose time sharing os) [invention]
-- 1964 BASIC [invention]
+- 1961 Eisenhower -> Kennedy [people,USP]
+- 1961 Yuri Gagarin [event,people]
+- 1961 Berlin wall
 - 1964 IBM System/360 [invention]
+- 1964 Khrushchev -> 
 - 1968 Intel founded [company]
-- 1969 Moon Landing
+- 1969 Moon Landing [event]
 - 1969 Unix development began on PDP 11 [invention]
 - 1972 C [History of C](https://www.bell-labs.com/usr/dmr/www/chist.html) [invention]
-- 1973 Unix rewritten in C
 - 1974 Intel 8080 [invention]
 - 1974 Motorola 6800 [invention]
 - 1975 Microsoft Founded [company]
 - 1976 Apple Founded [company]
-- 1976 [Apple I](https://www.cnet.com/culture/watch-a-working-apple-1-run-games-and-graphics-like-its-1976/)([Apple I Motherboard Labeled](https://www.theapple-1.com/interactive/apple-1.html)) [invention]
-- 1979 Intel 8088 [invention]
-- 1981 IBM PC [Games in 1981](https://www.youtube.com/watch?v=vW-Rm2-SycQ) [invention]
-- 1981 MS-DOS [invention]
-- 1984 IBM AT [invention]
 - 1984 [Macintosh 1984 Commercial](https://www.youtube.com/watch?v=VtvjbmoDx-I) [invention]
 - 1984 [Macintosh Premier Steve Jobs](https://youtu.be/2B-XwPjn9YY) [invention]
-- 1984 Dell founded [company]
-- 1984 GNU founded [company]
 - 1985 C++ [invention]
 - 1985 Windows 1.0
 - 1985 Steve Jobs resigned from Apple and started NeXT [company]
-- 1987 Macintosh II
 - 1989 Fall of Berlin Wall [war]
 - 1990 Reunification of Germany
 - 1991 Linux 0.01 [invention]
-- 1991 Soviet Union
+- 1991 Soviet Union collapsed
 - 1995 Toy Story 1
 - 1997 Steve Jobs returned to Apple
 - 1999 Star War I
 - 1999 Matrix 1
-- 2000 x86-64 [invention]
 - 2001 Mac OS (X) [invention]
 - 2001 Windows XP [invention]
 
@@ -158,4 +313,4 @@ A **country** is a distinct part of the world, such as a state, nation, or other
 
 A **sovereign state** is a state that has the highest jurisdiction over a territory. International law defines sovereign states as having a permanent population, defined territory (see territorial disputes), a government not under another, and has the capacity to interact with other sovereign states. It is also normally understood that a sovereign state is independent.
 
-A government is the system or group of people governing an organized community, generally a state.
+A **government** is the system or group of people governing an organized community, generally a state.

@@ -1,0 +1,79 @@
+- 1837 Samuel Morse sent first telegraph [invention]
+- 1848 California gold rush
+---
+- 1850 oil [invention]
+- 1856-1943 Tesla [people]
+- 1860 Combustion Engine [invention]
+- 1865-1910 typewriter [invention]
+- 1869 Periodic table of elements [invention]
+- 1869 Discovery of nucleus (DNA) [discovery]
+- 1870-1914 Second Industrial Revolution
+---
+- 1876 telephone [invention]
+- 1879 Lightbulb [invention]
+- 1880s steel used in construction [material]
+- 1882 Power plant and power grid [invention]
+- 1885 AT&T founded [company]
+- 1886 Benz Patent Motor Car [invention]
+---
+- 1903 John von Neumann was born [people]
+- 1903 Wright Brothers Kitty Hawk [invention]
+- 1907 Synthetic plastic [invention]
+- 1911 IBM founded [company]
+- 1912 Alan Turing was born [people]
+- **WWI**
+---
+- 1914-1918 WWI [war]
+- 1914 Ford assembly line [invention]
+- 1918 Enigma [invention]
+- 1925 Bell lab founded [company]
+- 1931 Empire state building [landmark]
+- 1933 Boeing 247 [invention]
+- **WWII** [war]
+---
+- 1945-1955 Computing devices booming
+- mid-late 1950 development of transistors, mainframe computers, batch system [invention]
+- 1953 Structure of DNA [discovery]
+- 1955 Disneyland
+- 1957 Fairchild founded [company]
+- 1957 Sputnik 1 [invention]
+- 1958 NASA [company]
+- 1958 DARPA [company]
+- 1959 MOSFET (MOS field-effect transistor) [invention]
+- 1959 Monolithic integrated circuit [invention]
+- 1961 Compatible Time-Sharing System  (first general purpose time sharing os) [invention]
+- 1964 BASIC [invention]
+- 1964 IBM System/360 [invention]
+- 1968 Intel founded [company]
+- 1969 Moon Landing
+- 1969 Unix development began on PDP 11 [invention]
+- 1972 C [History of C](https://www.bell-labs.com/usr/dmr/www/chist.html) [invention]
+- 1973 Unix rewritten in C
+- 1974 Intel 8080 [invention]
+- 1974 Motorola 6800 [invention]
+- 1975 Microsoft Founded [company]
+- 1976 Apple Founded [company]
+- 1976 [Apple I](https://www.cnet.com/culture/watch-a-working-apple-1-run-games-and-graphics-like-its-1976/)([Apple I Motherboard Labeled](https://www.theapple-1.com/interactive/apple-1.html)) [invention]
+- 1979 Intel 8088 [invention]
+- 1981 IBM PC [Games in 1981](https://www.youtube.com/watch?v=vW-Rm2-SycQ) [invention]
+- 1981 MS-DOS [invention]
+- 1984 IBM AT [invention]
+- 1984 [Macintosh 1984 Commercial](https://www.youtube.com/watch?v=VtvjbmoDx-I) [invention]
+- 1984 [Macintosh Premier Steve Jobs](https://youtu.be/2B-XwPjn9YY) [invention]
+- 1984 Dell founded [company]
+- 1984 GNU founded [company]
+- 1985 C++ [invention]
+- 1985 Windows 1.0
+- 1985 Steve Jobs resigned from Apple and started NeXT [company]
+- 1987 Macintosh II
+- 1989 Fall of Berlin Wall [war]
+- 1990 Reunification of Germany
+- 1991 Linux 0.01 [invention]
+- 1991 Soviet Union
+- 1995 Toy Story 1
+- 1997 Steve Jobs returned to Apple
+- 1999 Star War I
+- 1999 Matrix 1
+- 2000 x86-64 [invention]
+- 2001 Mac OS (X) [invention]
+- 2001 Windows XP [invention]
