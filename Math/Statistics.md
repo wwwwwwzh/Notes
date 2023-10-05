@@ -8,27 +8,45 @@ Bayesian probability is characterized by two unique features: (i) assigning degr
 *Statistics helps us to reason backwards*, starting off with collection and organization of data and backing out to what inferences we might draw about the process that generated the data. Whenever we analyze a dataset, hunting for patterns that we hope might characterize a broader population, we are employing statistical thinking.
 
 ## Basics
+### Statistics and Set Theory
 - Outcome (w): a precise description of the state of the world (as far as our model is concerned) and cannot be split any further
-- Outcome/Sample Space (Ω): 
-- Event (A): subset of sample space (grouping of outcomes we are interested in)
+- Outcome/Sample Space (Ω): **set** of all possible outcomes or results of that experiment.
+- Event (A): **subset** of sample space (grouping of outcomes we are interested in)
+
 - Union of events (∪): A∪B={w∈Ω:w∈A or w∈B or w∈both}
 - Intersection of events (∩): A∩B={w∈Ω:w∈A and w∈B}
 - Disjoint events: A∩B=ϕ
-- Probability Function/Probability/Probability Measure (P): mapping from events onto real values that satisfies the axioms
-- Kolmogorov Axioms: P(A) >= 0 ∀A; P(Ω) = 1; Aᵢ∩Aⱼ=ϕ → P(Aᵢ∪Aⱼ)=P(Aᵢ)+P(Aⱼ)
+
+#### Laws of Boolean Algebra
+A,B,C are sets and are each a subset of X
+1. A∪ϕ=A, A∩ϕ=ϕ
+2. A∪X=X, A∩X=A
+3. A∪A=A, A∩A=A
+4. A∪B=B∪A, A∩B=B∩A
+5. A∪(B∪C)=(A∪B)∪C, A∩(B∩C)=(A∩B)∩C
+6. A∪(B∩C)=(A∪B)∩(A∪C)
+7. A∪(X\A)=X, A∩(X\A)=ϕ
+8. X\(A∪B)=(X\A)∩(X\B)
+
+> Note that they are similar to boolean logic because the "unit" of statement is x∈A, in set the only difference is to check this for every x in the set
+
+### Axioms of Probability
+- σ-algebra F: a set of events such that 1) Ω∈F 2) F is closed under complements 3) F is closed under countable unions
+- Probability Function/Probability/Probability Measure (P): mapping from F to [0,1] that satisfies the following axioms
+- Kolmogorov Axioms: 1 >= P(Ai) >= 0 ∀Ai; P(Ω) = 1; Aᵢ...An are disjoint → P(Aᵢ∪Aⱼ...∪An)=P(Aᵢ)+P(Aⱼ)+...+P(An)
+- Probability Space: (S,F,P) where S is sample space, F is a σ-algebra, P is a probability function satisfying certain axioms
 
 > See Math notes about measure 
 
 > Also see Cox's theorem as an alternative axiom for Bayesian Probability
 
-### Frequentism VS Bayesian
-defines an event's probability as the limit of its relative frequency in many trials (the long-run probability). Probabilities can be found (in principle) by a repeatable objective process (and are thus ideally devoid of opinion). In the classical interpretation, probability was defined in terms of the principle of indifference, based on the natural symmetry of a problem, so, e.g. the probabilities of dice games arise from the natural symmetric 6-sidedness of the cube. This classical interpretation stumbled at any statistical problem that has no natural symmetry for reasoning.
+> Frequentism VS Bayesian:
+Frequentism defines an event's probability as the limit of its relative frequency in many trials (the long-run probability). Probabilities can be found (in principle) by a repeatable objective process (and are thus ideally devoid of opinion). In the classical interpretation, probability was defined in terms of the principle of indifference, based on the **natural symmetry** of a problem, so, e.g. the probabilities of dice games arise from the natural symmetric 6-sidedness of the cube. This classical interpretation stumbled at any statistical problem that has no natural symmetry for reasoning.
 
-In the frequentist interpretation, probabilities are discussed only when dealing with well-defined random experiments. For any given event, only one of two possibilities may hold: it occurs or it does not. The relative frequency of occurrence of an event, observed in a number of repetitions of the experiment, is a measure of the probability of that event. This is the core conception of probability in the frequentist interpretation.
-
-A claim of the frequentist approach is that, as the number of trials increases, the change in the relative frequency will diminish. Hence, one can view a probability as the limiting value of the corresponding relative frequencies.
-
-
+### Propositions of Probability Axioms
+- P(~A)=1-P(A). From 7th law of boolean algebra
+- if E ⊆ F, P(E) ≤ P(F)
+- P(A∪B)=P(A)+P(B)-P(A∩B). https://math.stackexchange.com/a/3367724 the proof requires set theory, laws of boolean algebra, axioms of probability, and probability theory
 
 ### Conditional and Joint Probability
 - P(A|B): $\frac{P(A ∩ B)}{P(B)}$, probability of A in the universe of B
@@ -41,11 +59,20 @@ A claim of the frequentist approach is that, as the number of trials increases, 
 
 > Note that A and B are events and P is probability measure function
 
+> Other useful equations:
+- P(A)=P(A∩B)+P(A∩~B) binary total probability
+- P(A|B,C)⋅P(B|C)=P(A,B|C)
+- P(A|B,C)⋅P(B|C)⋅P(C)=P(A,B,C)
+
 ### (Conditional) Independence
-- Independence: P(A,B)=P(A)⋅P(B) -> P(A|B)=P(A)
+- Independence: P(A,B)=P(A)⋅P(B) i.e. P(A|B)=P(A)
 - Conditional independence: P(A|B,C)=P(A|C)->P(A,B|C)=P(A|C)⋅P(B|C)
 
 > Proof of conditional independence: $P(A|B,C)=P(A|C)=\frac{P(A,B,C)}{P(B,C)}=\frac{P(A,B,C)}{P(C)⋅P(B|C)}=\frac{P(A,C)}{P(C)}\iff\frac{P(A,C)⋅P(B|C)}{P(C)}=\frac{P(A,B,C)}{P(C)}=P(A|C)⋅P(B|C)$
+
+> Note:
+- A and B independent iff A and ~B independent
+- independence is not disjointness; Two disjoint events can never be independent, except in the case that one of the events is null.
 
 #### Pairwise & Mutual Independence
 ![](/images/pairwiseIndependence.png)
@@ -58,22 +85,22 @@ Every probability model comes with its sample space (and a probability). It is o
 ### Probability Distribution
 A probability distribution is a mathematical description of the probabilities of events, subsets of the sample space.
 
-However, when dealing with random variables, we often use the image of X as the sample space instead of domain of X. This way it's easier to understand probability of events that have been quantified and the sample space becomes a numerical set instead of arbitrary non-numerical values like heads or tails.
+However, when dealing with random variables, we often use the range of X as the sample space instead of domain of X. This way it's easier to understand probability of events that have been quantified and the sample space becomes a numerical set instead of arbitrary non-numerical values like heads or tails.
 
 The most general descriptions is in the form of P: A->R where A is related to sample space Ω. So when using the general probability function/measure form, A is the σ-algebra of Ω. And in the case of using random variables which is more common, A is the image of Ω under random variable X which is a numerical set. 
 
-Key takeaway is that anything of the form P: A->R satisfying certain conditions are probability distributions since the describe probability of outcomes. A plain capital P mapping events to R, PMF and PDF are all probability distributions.
+Key takeaway is that anything of the form P: A->R satisfying certain conditions are probability distributions since it describes probability of outcomes. A plain capital P mapping events to R, PMF and PDF are all probability distributions.
 
-### PMF & PDF
-- PMF: Probability mass function is the probability distribution of a discrete random variable. It is the function p: R to [0,1] defined by $p_X(x)$ = P(X=x) which is P({ω∈Ω s.t. X(ω)=x}) where P is a probability measure. It's normally written as p(x)
+### PMF & PDF & CDF
+- PMF: Probability mass function is the probability distribution of a discrete random variable. It is the function p: R to [0,1] defined by $p_X(x)$ = P(X=x) which is P({ω∈Ω: X(ω)=x}) where P is a probability measure. It's normally written as p(x)
 - PDF: $P(a \le X \le b)\\=P(\{ω∈Ω\ s.t.\ a\le X(ω)\le b\})\\=\int_{a}^{b}f_X(x)dx\\$ $f_X(x)⋅δ \approx P(x \le X \le x+δ) $
+- CDF: F(x)=P(x≤X)
 
 
-> Note: Probability function maps **event** to values (real number), RV maps **outcome** to values, PMF maps **values** to values.
+> !Note: Probability function maps **event** to values (real number [0,1]), RV maps **outcome** to values, PMF maps **values** to values.
 
 > Note: PMF is lower case p while probability measure is capital P.
 
-> Note: in p(x) x should be X=x which gives the set of solutions to X=x.  
 ![](/images/rvInverseImg.png)
 
 ### Joint & Conditional Distribution
@@ -109,21 +136,32 @@ Key takeaway is that anything of the form P: A->R satisfying certain conditions 
 ## Distributions
 http://d2l.ai/chapter_appendix-mathematics-for-deep-learning/distributions.html#exponential-family
 
-X~N(0,1) means random variable X follows a probability distribution N(0,1). Though it really means that the underlying sample space of X follow the probability function N(0,1). 
+X~N(0,1) means random variable X follows a probability distribution N(0,1). 
 
 x~P(X) means a value x sampled from distribution P
 
 ### Bernoulli
+- Bernoulli trial/experiment: sample space has only two elements
+- Bernoulli RV: maps the two elements to 0 and 1
+- Bernoulli distribution/pmf of a Bernoulli RV: pX: [0,1]->[0,1] = P(X=x), ie pX(0)=P(X=0), pX(1)=P(X=1)
 ![](/images/bernoulli.png)
 
 ### Binomial
-the binomial distribution with parameters n and p is the discrete probability distribution of the number of successes in a sequence of n independent experiments, each asking a yes–no question, and each with its own Boolean-valued outcome: success (with probability p) or failure (with probability q=1-p). A single success/failure experiment is also called a Bernoulli trial or Bernoulli experiment, and a sequence of outcomes is called a Bernoulli process; for a single trial, i.e., n = 1, the binomial distribution is a Bernoulli distribution.
+The binomial distribution with parameters n and p is the discrete probability distribution of the number of successes in a sequence of n **independent** Bernoulli experiment. A sequence of outcomes is called a Bernoulli process; for a single trial, i.e., n = 1, the binomial distribution is a Bernoulli distribution.
+
+- Bernoulli process:
+- Binomial RV: maps one sequence of outcomes from the Bernoulli process to a number that indicates number of successes (1s) in that sequence
+- Binomial distribution: pX(x): [0,n]->[0,1] = (n choose x)*p^x*q^(n-x)
+- Expectation: np. use MGF to get M=(q+pe^t)^n
+- Var: npq
 
 ### Poisson
 Poisson distribution is a discrete probability distribution that expresses the probability of a given number of events occurring in a fixed interval of time or space if these events occur with a known constant mean rate and independently of the time since the last event.
 ![](/images/poisson.png)
 
 > The difference between binomial and poisson is that poisson views the experiment process as continuous (binomial with p->0 and n->infinity)
+
+p(i)=P(X=i)=e^-λ(λ^i)/i! (Taylor approximation of e^x)
 
 ## Exponential Family
 

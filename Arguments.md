@@ -1,0 +1,1 @@
+1. Nations/Cultures shouldn't care if their influence are absorbed by others when they are gone. As long as they contributed to something, they were great cultures. Just like a scientist is great when he contributes to science, not dominate it, in which case he becomes less than great.

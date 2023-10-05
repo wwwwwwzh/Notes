@@ -160,6 +160,9 @@ basically auto game engine with ML to code stuff from what people tell them to d
 ### ML for Education
 Find salient feature of things to teach. e.g. ni language, what's different and what's the same across and inter languages. Find easiest to remember and most important feature of the material.
 
+### Universal Linker
+Just like how brain links information from different modalities, note taking should focus on relations. e.g. drag a page on pdf to become a link just like url, everything on any software should have a unique location marker for reference.
+
 ## AI and Brain
 ### On Knowledge
 > 20 years ago SVD (invented 1873) wasn't in linear algebra and 100 years ago no one use linear algebra.
@@ -281,6 +284,8 @@ But what about pure ideas? What about the relationship between a circle and its 
 ## General
 ### 
 - The language of literature is too full of emotions and experience that only looking back at the words as your own memories can you truly understand; the language of political philosophy is too full of hate and beliefs, understanding them is thus to become a cult; only the language of science is impartial, it stands above feelings and senses. 
+- People don't have a sense of time yet they care about ideas like "recently" "not long ago" "long time ago" "ancient". As long as they are not born at that time, it doesn't matter to them if you describe a time period as 10 years, 100 years, or 1000 years ago. Lack of historical integrity.
+- Number 3 is very interesting. When we see things the second time, we are excited because we can recognize it, but when we see it the third time, we sense a pattern. Also Taoism says everything is from 3. Also the cocktail treatment use combination of 3 drugs. Triangle has 3 sides and is most stable...
 
 ## Pedagogy
 ### Why Learn Everything with History
@@ -340,3 +345,7 @@ It is most natural to learn things from historical perspective. True learning co
 - COGITO ERGO SUM
 - CUI BONO
 - ALEA LACTA EST
+
+## Recent Thoughts
+- 9.13: reading Dreaming and the brain: from phenomenology to neurophysiology, Building machines that learn and think like people. Consciousness, CNN and k-nn, other inputs coming from working and long term memory to fine tune boundary cases with imagination. Memory of internal thoughts and why are they transient, how are they related to dreams. 
+- 9.29: I've successfully connected a brain thought while waking up in middle of night to "note taking" and remembered it once I saw this app

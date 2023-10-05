@@ -134,6 +134,7 @@
 - 1624 Dutch settlement of New York [event]
 - 1630 Boston [event]
 - c.1630 Analytic Geometry [science,math]
+- 1636 Harvard University
 - 1638 Two New Sciences by Galileo [book,science]
 - 1642-1726 **Newton** [people,science] (Mortals, congratulate yourselves that so great a man has lived for the honor of the human race.)
 - r.1643-1715 Louis XIV [people,monarch]
@@ -238,9 +239,11 @@
 - 1903 Wright Brothers Kitty Hawk [invention]
 - 1904-1997 Deng [people,HOS]
 - 1904-1990 B.F. Skinner [people,science]
+- 1905 First Russian Revolution [revolution]
 - 1907 synthetic plastic [invention]
 - 1911 IBM founded [company]
 - 1912 Alan Turing [people]
+- 1912 Titanic
 - **WWI**
 ---
 - 1914 WWI [war]
@@ -250,17 +253,26 @@
 - 1922 Ottoman Empire dissolved [war]
 - 1922 Soviet Union [state]
 - 1923 Beer Hall Putsch [coup]
+- 1924 Lenin died, Stalin, Leningrad [people,HOS]
 - 1925 Bell lab founded [company]
 - 1926-2022 Elizabeth II [people,monarch]
 - 1929 Great Depression
 - 1931 Empire state building [landmark]
 - 1933 Boeing 247 [invention]
-- 1933 Hitler Chancellor of Germany 
+- 1933 Hitler Chancellor of Germany [HOS]
+- 1938.11 Kristallnacht [war]
+- 1939.9.1 Invasion of Poland [war]
 - **WWII** [war]
 ---
 - 1941.6.22 Operation Barbarossa [war]
 - 1941.11.26 Pearl Harbor [war]
-- 1945.4.30 Hitler suicide [people]
+- 1944.6.6 D-Day [war]
+- 1945.4.12 FDR died [people,HOS]
+- 1945.4.30 Hitler suicide [people,HOS]
+- 1945.5.8 German surrender [war]
+- 1945.8.6-9 Hiroshima and Nagasaki [war]
+- 1945.8.15 Japan surrender [war]
+- 1945.9.2 V-J Day [war]
 - 1949 first Soviet A-bomb test
 - 1950 Korean war [war]
 - 1952 hydrogen bomb 
@@ -268,7 +280,8 @@
 - 1953 Stalin died -> Khrushchev [people]
 - 1953 Truman -> Eisenhower [people,USP]
 - c. 1955 development of transistors, mainframe computers, batch system [invention]
-- 1955 Disneyland
+- 1955.4 Bandung Conference
+- 1955.7 Disneyland
 - 1957 Sputnik 1 [invention]
 - 1958 NASA [company]
 - 1958 DARPA [company]
