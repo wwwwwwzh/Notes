@@ -1,13 +1,22 @@
 # Cradle of Civilization 
+- c.5500-1800 Sumer
+- c.2700-2200 Old Kingdom
 - 2570 Great Pyramid [wonder]
+- c.2334-2154 Akkadian Empire
+- c.2055-1650 Middle Kingdom
+- 1894-1595 Old Babylonian Empire
 - 1810-1750 Hammurabi [people]
+- c.1550-1069 New Kingdom
 # Sea People
+- 911-609 Neo-Assyrian Empire
 - 753 Founding of Rome
 - 642-562 Nebuchadnezzar II [people]
 - 630-560 Solon [people]
 - 626-548 Thales [people]
+- 626-539 Neo-Babylonian Empire
 - 600-530 Cyrus [people]
 - 570-495 Pythagoras [people]
+- 550-330 Achaemenid Empire
 - c 515-c 440 Parmenides [people]
 # Classical Antiquity
 - 495-429 Pericles [people]
@@ -74,13 +83,13 @@
 - 1066 Conquest of England [war]
 - 1088 University of Bologna [science,civil right]
 - 1096 First Crusade [war]
-- 1099 Siege of Jerusalem [war]
+- 1099 Siege of Jerusalem [war,ME]
 ---
 - 1161-1216 Pope Innocent III [people]
-- 1187 Saladin captured Jerusalem [war]
+- 1187 Saladin captured Jerusalem [war,ME]
 - 1194-1250 Fredrick II [people,monarch]
 ---
-- r.1206-1227 **Genghis Khan** [people,monarch,conquerer]
+- r.1206-1227 **Genghis Khan** [people,monarch,conquerer,ME]
 - 1215 Magna Carta [event,civil right]
 - 1258 Sack of Baghdad and end of Abbasid Caliphate [war]
 - 1271-1295 Travel of Marco Polo
@@ -92,7 +101,7 @@
 - 1346-1352 Black death [pandemic]
 - c. 1345s **Renaissance**
 ---
-- 1432-1481 Mehmed II [people,monarch]
+- 1432-1481 Mehmed II [people,monarch,ME]
 - 1440 Gutenberg printing press [invention]
 - 1449-1492 Lorenzo Medici [people,monarch]
 - 1452-1519 Da Vinci [people,science,art]
@@ -107,6 +116,7 @@
 - c. 1492 **Modern Age**
 ---
 - 1519-1521 Hernán Cortés conquered Mexico [war]
+- r.1520-1566 Suleiman the Magnificent [people,monarch,ME]
 - 1527 Sack of Rome by Charles V [war]
 - 1522, 1534 Luther translated Bible [event]
 - 1533 Henry VIII withdrew England from Catholic Church [event,religion]
@@ -140,9 +150,10 @@
 - r.1643-1715 Louis XIV [people,monarch]
 - 1646-1716 Leibniz [people,science]
 - 1648 End of Thirty Years' War [war]
-- 1649 Charles Beheaded [event]
+- 1649 King Charles Beheaded [event]
 - r.1653-1658 Oliver Cromwell [people,HOS]
 - 1666 French Academy of Science [science]
+- 1666 Annus Mirabilis [science]
 - r.1682-1725 Peter the Great [people,monarch]
 - c1680 Calculus [science,math]
 - 1688 Glorious Revolution [revolution]
@@ -163,11 +174,11 @@
 - 1768-1830 Fourier [people]
 - 1769-1821 **Napoleon** [people]
 - 1769-1849 Muhammad Ali Pasha [people]
-- 1769 Watt invented steam engine [invention]
-- 1776 Declaration of Independence [civil right]
+- 1769 Watt reinvented steam engine [invention]
+- 1776 **Declaration of Independence** [civil right]
 - 1777-1855 Gauss [people,science]
 - 1789 Samuel Slater (Father of the American Industrial Revolution) arrived in America [event]
-- 1789 Estates General Convened, Bastille [event,war]
+- 1789 Estates General Convened, **Bastille** [event,war]
 - 1789 Washington sworn in presidency [event]
 - 1791-1867 Faraday [people,science]
 - 1792 French Republic [state]
@@ -175,7 +186,7 @@
 - 1793 **Louis XVI Executed**
 - 1794 Robespierre Executed 
 ---
-- 1804 Napoleon Emperor of France [coronation]
+- 1804 **Napoleon Emperor of France** [coronation]
 - 1806 Dissolution of the Holy Roman Empire by Francis II [state]
 - 1809-1882 Darwin [people,science,philosophy]
 - c.1808-1826 Spain lost latin America [war,libration]
@@ -205,6 +216,7 @@
 - 1852-1934 Santiago Ramón y Cajal [people,science]
 - 1856-1939 Sigmund Freud [people,science]
 - 1856-1943 Tesla [people,science]
+- 1859 **On the Origin of Species by Means of Natural Selection** [science]
 - 1860 Combustion Engine [invention]
 - 1861 Serfdom abolished in Russia [civil right]
 - 1861-1865 **presidency of Lincoln** [people]
@@ -222,7 +234,7 @@
 - 1874-1965 Churchill [people,HOS]
 - 1876 telephone [invention]
 - 1878-1953 Stalin [people,HOS]
-- 1879-1955 Einstein [people,science,philosophy]
+- 1879-1955 **Einstein** [people,science,philosophy]
 - 1879 Lightbulb [invention]
 - 1880s steel used in construction [material]
 - 1882 Power plant and power grid [invention]
@@ -240,6 +252,7 @@
 - 1904-1997 Deng [people,HOS]
 - 1904-1990 B.F. Skinner [people,science]
 - 1905 First Russian Revolution [revolution]
+- 1905 **Annus Mirabilis Einstein** [science]
 - 1907 synthetic plastic [invention]
 - 1911 IBM founded [company]
 - 1912 Alan Turing [people]
@@ -260,12 +273,17 @@
 - 1931 Empire state building [landmark]
 - 1933 Boeing 247 [invention]
 - 1933 Hitler Chancellor of Germany [HOS]
+- 1937 Great Purge 
 - 1938.11 Kristallnacht [war]
 - 1939.9.1 Invasion of Poland [war]
 - **WWII** [war]
 ---
+- 1940.5.26 Dunkirk [war]
+- 1940.6.20 France surrender [war]
 - 1941.6.22 Operation Barbarossa [war]
 - 1941.11.26 Pearl Harbor [war]
+- 1942.6.4 Midway [war]
+- 1943.7 Italian Campaign [war]
 - 1944.6.6 D-Day [war]
 - 1945.4.12 FDR died [people,HOS]
 - 1945.4.30 Hitler suicide [people,HOS]
@@ -276,7 +294,7 @@
 - 1949 first Soviet A-bomb test
 - 1950 Korean war [war]
 - 1952 hydrogen bomb 
-- 1953 Structure of DNA [discovery]
+- 1953 **Structure of DNA** [discovery]
 - 1953 Stalin died -> Khrushchev [people]
 - 1953 Truman -> Eisenhower [people,USP]
 - c. 1955 development of transistors, mainframe computers, batch system [invention]

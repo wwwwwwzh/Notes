@@ -277,6 +277,7 @@ But what about pure ideas? What about the relationship between a circle and its 
 - Compare China with Europe after Rome before Modern Era
 - What exactly powered the train of Renaissance to Industrial Revolution
 - What's lacking in Chinese and Islamic science compared to European science.
+- How is communism different from "good" colonialism.
 
 ### 
 - Why didn't Rome continue Greek legacy
@@ -298,11 +299,15 @@ It is most natural to learn things from historical perspective. True learning co
 
 ## Quotes
 ### Books
+### Heisenberg
+- On physics and philosophy: My mind was formed by studying philosophy, Plato and that sort of thing". "Modern physics has definitely decided in favor of Plato. In fact the smallest units of matter are not physical objects in the ordinary sense; they are forms, ideas which can be expressed unambiguously only in mathematical language"
+
 #### Da Vinci
 - On flight (not really from him): When once you have tasted flight, you will forever walk the earth with your eyes turned skyward. For there you have been, and there you will always long to return
 
 #### Einstein
 - On physics (from evolution of physics): Physical concepts are free creations of the human mind, and are not, however it may seem, uniquely determined by the external world.
+- His love of algebra and geometry was so great that at twelve, he was already confident that nature could be understood as a "mathematical structure".
 
 #### Archimedes
 - On love for pure ideas (Plutarch): Archimedes possessed so high a spirit, so profound a soul, and such treasures of scientific knowledge, that though these inventions had now obtained him the renown of more than human sagacity, he yet would not deign to leave behind him any commentary or writing on such subjects; but, repudiating as sordid and ignoble the whole trade of engineering, and every sort of art that lends itself to mere use and profit, he placed his whole affection and ambition in those purer speculations where there can be no reference to the vulgar needs of life.
@@ -319,9 +324,10 @@ It is most natural to learn things from historical perspective. True learning co
 - On intuition and knowledge distillation: you need to put in a lot of hard work to get sufficient experience in a domain and then you need to trust your intuitions. 
 - On politics and science: I grew up in Britain in the 1950's and 60's and a major puzzle at the time was to understand how civilized and well-educated Germans could have allowed Hitler to gain power. Recent events in the US have made that seem a lot less puzzling. ... I believe that highly selected and extremely well-educated students like yourselves have **a moral duty to stand up for the truth in the face of political attempts to suppress it.**
 
+### Movies
+#### Oppenheimer
+- "When you speak they hear a prophet, when Straus speaks they hear themselves", "They'll listen to the prophet", "The prophet can't be wrong, not once."
 
-
-### Books
 
 ### Forbes
 - Bernard Arnault: I see myself as an ambassador of French heritage and French culture. What we create is emblematic. It's linked to Versailles, to Marie Antoinette.
@@ -345,6 +351,7 @@ It is most natural to learn things from historical perspective. True learning co
 - COGITO ERGO SUM
 - CUI BONO
 - ALEA LACTA EST
+
 
 ## Recent Thoughts
 - 9.13: reading Dreaming and the brain: from phenomenology to neurophysiology, Building machines that learn and think like people. Consciousness, CNN and k-nn, other inputs coming from working and long term memory to fine tune boundary cases with imagination. Memory of internal thoughts and why are they transient, how are they related to dreams. 

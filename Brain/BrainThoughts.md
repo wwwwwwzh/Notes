@@ -38,6 +38,38 @@ On a primitive level, contrast exists in all sensual processing. A dark light is
 ### Algorithms
 Neural circuits are powerful enough to approximate any function and we shouldn't doubt if some function is too complex for biological structures. e.g. pitch differentiation is logarithmic. 
 
+# Language
+## General Model
+1. Understanding and using language are separate but connected tasks
+2. Understanding is auditory input to inner thoughts and using is inner thoughts to language (words and grammar)
+## Aphasia
+### Observation
+- Word cue helps recalling words
+- Writing sometimes easier than speaking
+- Can't really read
+- Seems no problem understanding
+- Can recover 
+### Literature
+- [Impaired reasoning and problem-solving in individuals with language impairment due to aphasia or language delay](https://www.frontiersin.org/articles/10.3389/fpsyg.2015.01523/full): language supports complex reasoning 
+- [Inner Speech in Aphasia](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7233112/): 
+
+### Aphasia and Thought
+
+### Aphasia and Amusia
+Maybe aphasia is similar to how I can sing in my mind "in perfect pitch" but not when really sing out loud.
+
+## Notes
+### Developmental
+- Language is left hemisphere, how did that develop
+
+### Language & Thought
+- Left right hemisphere difference in processing information/thinking, what are biological differences
+- https://www.frontiersin.org/articles/10.3389/fpsyg.2012.00005/full: 1) there is left-hemispheric dominance for more basic features of species-typical communicative sounds rather than just human language 2) all aspects suggest left is more detail oriented and right more global (hardmax vs softmax)
+
+### Language & Consciousness
+- [Scientist with a stroke](https://www.ted.com/talks/jill_bolte_taylor_my_stroke_of_insight?language=en): 1) can't differentiate the boundary between body and world. consciousness shift outside body (compare Feynman) 2) complete silence, then drift to "La La Land", then hear (think) about the problem in self.
+
+
 # Memory
 ## Fundamental Theorem?
 1. All memory results from association i.e. adjustment of synaptic strength between neurons
@@ -60,6 +92,9 @@ Someone looks familiar but can't remember who he resembles whatsoever until you 
 ### Stop of Noise
 At the instant of the stop, you remember/are aware of both the noise before stop and the quietness immediately after. But if no such sudden stop happened, you are neither aware of the noise nor will remember the sound of the noise.
 
+### Attention and Consciousness
+When we see something, we are aware that we are seeing it, all of it and every part of it. If any part of it changes we can notice it. But if not some parts are never attended to. If someone is holding a red bottle and I'm staring at it while thinking about something else, I might never "know" that the bottle is red. I have to allocate some thinking and ask "what is the color of the bottle" to know the color. When I travel, if no attention is paid whatsoever, I might not remember anything about a particular scene. If I'm relaxing, I'll roughly have a sketch in my mind. So rough that not a single edge is actually in place and not a single color is close. We have some powerful compression mechanism that assigns blue to sky, green to all plants and white to all snow. We have to constantly ask questions and answer them to remember details. But sometimes when it's dramatic, we also remember details of the event and its accompanying scene. Also, every time we look at something we notice something different.
+
 ### Consciousness and Memory
 
 ## High Level Processing
@@ -69,9 +104,26 @@ https://youtu.be/Si6NbKqYEd8?si=eNuaYrqI1JWTr7hb&t=337
 ### Why Do We Need Attention or Focus and Much more Energy When We Are Trying to be Precise
 e.g. you have a instant thought that sth is true and have a quick thought and seems like you can prove it. but it takes more time and determination to really pin it done. and you can't do this when you're tired
 
+# LLM
+## General
+### Basics
+1. The input tokens can be seen as inputs crudely processed (after primary sensory modality)
+2. Cross attention serves several purposes including horizontal connection, hidden variable extraction and 
+3. The first layer of FFN serves as keys to second layer which can be seen as memory bank. The nth column of first layer corresponds to the nth row of second. Most heavily connected rows in memory bank contribute more to output.
+4. During training, connections are established in backprop
+
+### Cross Attention
+
+### Memory Bank
+
+### Backprop
+
+
 
 # Major Questions
 - Neural circuits that support episodic memory (hopfield?)
+- Initialization of weights and how inputs determine modality (blind people with V1 processing auditory information)
+- Levels of intermediate neurons and consciousness. Should we really differentiate "thinking" or "inner speech" and final output/behavior.
 - Is perception memory (is memory perception with attention): should perception be regarded as modal specific memory or unconnected memory whereas recall memory stems from either internal or perceptive stimuli and activates connected ideas
 - When distant neurons corresponding to originally distant ideas are associated, how does the synapse take short cuts. How does connections outside hippocampus form once hippocampus has done its job.
 - Are there really different types of functions of neural circuits? imitation->episodic memory->difference&similarity(pattern)->
@@ -103,3 +155,4 @@ Reward vs non reward based learning
 - cortical and nuclei architechture might be for different purposes (storage vs operation)
 - Explicit memory connects specific detail to other specific details that are highly relevant (within the same episode). When it becomes implicit, it can readily be used in thinking and talking without being activated by those specific details.
 - dream memory is sometimes real memory but mostly "fake"
+- Synesthesia
