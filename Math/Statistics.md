@@ -8,11 +8,20 @@ Bayesian probability is characterized by two unique features: (i) assigning degr
 *Statistics helps us to reason backwards*, starting off with collection and organization of data and backing out to what inferences we might draw about the process that generated the data. Whenever we analyze a dataset, hunting for patterns that we hope might characterize a broader population, we are employing statistical thinking.
 
 ## Basics
+### How to Interpret Probability
+As mentioned above, we can record how many times something happened and everything is a counting problem. The sample space is only what has happened and all probabilities are assigned to events in accordance with their real frequencies. Or we can use Bayesian and interpret just as a number with our intuition.
+
+Or we can jump out of time and imagine that we are timeless. So everything does indeed has a definite frequency in this universe. This can be seen as merging frequentism with Bayesian. But since we aren't timeless, we can only imagine and try extrapolate what we have seen to infinity and reason timelessly.
+
+Remember that mathematics is the study of Form, not perception. So we can always argue purely on theoretical ground without relating sample space and events to real things that has or will happen, or probability to frequency and times of happening. They can just be ideas and everything is built from the axioms. 
+
 ### Statistics and Set Theory
 - Outcome (w): a precise description of the state of the world (as far as our model is concerned) and cannot be split any further
 - Outcome/Sample Space (Ω): **set** of all possible outcomes or results of that experiment.
 - Event (A): **subset** of sample space (grouping of outcomes we are interested in)
+- Indicator function (I): I_A(w)=1 if w∈A 0 otherwise
 
+Operations of events follow operations of sets:
 - Union of events (∪): A∪B={w∈Ω:w∈A or w∈B or w∈both}
 - Intersection of events (∩): A∩B={w∈Ω:w∈A and w∈B}
 - Disjoint events: A∩B=ϕ
@@ -28,12 +37,12 @@ A,B,C are sets and are each a subset of X
 7. A∪(X\A)=X, A∩(X\A)=ϕ
 8. X\(A∪B)=(X\A)∩(X\B)
 
-> Note that they are similar to boolean logic because the "unit" of statement is x∈A, in set the only difference is to check this for every x in the set
+> Note that they are similar to boolean logic because the "unit" of statement here is x∈A, in set the only difference is to check this for every x in the set
 
 ### Axioms of Probability
 - σ-algebra F: a set of events such that 1) Ω∈F 2) F is closed under complements 3) F is closed under countable unions
 - Probability Function/Probability/Probability Measure (P): mapping from F to [0,1] that satisfies the following axioms
-- Kolmogorov Axioms: 1 >= P(Ai) >= 0 ∀Ai; P(Ω) = 1; Aᵢ...An are disjoint → P(Aᵢ∪Aⱼ...∪An)=P(Aᵢ)+P(Aⱼ)+...+P(An)
+- Kolmogorov Axioms: P(Ai) >= 0 ∀Ai; P(Ω) = 1; Aᵢ...An are disjoint → P(Aᵢ∪Aⱼ...∪An)=P(Aᵢ)+P(Aⱼ)+...+P(An)
 - Probability Space: (S,F,P) where S is sample space, F is a σ-algebra, P is a probability function satisfying certain axioms
 
 > See Math notes about measure 
@@ -44,6 +53,8 @@ A,B,C are sets and are each a subset of X
 Frequentism defines an event's probability as the limit of its relative frequency in many trials (the long-run probability). Probabilities can be found (in principle) by a repeatable objective process (and are thus ideally devoid of opinion). In the classical interpretation, probability was defined in terms of the principle of indifference, based on the **natural symmetry** of a problem, so, e.g. the probabilities of dice games arise from the natural symmetric 6-sidedness of the cube. This classical interpretation stumbled at any statistical problem that has no natural symmetry for reasoning.
 
 ### Propositions of Probability Axioms
+- P(ɸ)=0
+- P(A)≤1 for all A
 - P(~A)=1-P(A). From 7th law of boolean algebra
 - if E ⊆ F, P(E) ≤ P(F)
 - P(A∪B)=P(A)+P(B)-P(A∩B). https://math.stackexchange.com/a/3367724 the proof requires set theory, laws of boolean algebra, axioms of probability, and probability theory
@@ -53,9 +64,9 @@ Frequentism defines an event's probability as the limit of its relative frequenc
 - P(A, B): P(A ∩ B)=P(A)⋅P(B|A) multiplication rule
 - P(A)=$\frac{P(A)⋅P(B|A)}{P(B|A)}=\frac{P(A,B)}{P(B|A)}$
 - P(A)=$\sum_{i}P(A, B_i)=\sum_{i}P(A|Bᵢ)⋅P(Bᵢ)$ Total probability theorem
-
-
 ![](/images/prob1.png)
+- P(⋅|B) follows axioms of probability. P(UAᵢ|B)=ΣP(Aᵢ|B)
+- In general P(A|B)≠P(B|A)
 
 > Note that A and B are events and P is probability measure function
 
@@ -78,9 +89,11 @@ Frequentism defines an event's probability as the limit of its relative frequenc
 ![](/images/pairwiseIndependence.png)
 
 ### Random Variable
-- Random Variable: An assignment of a value (number) to every possible outcome. Formally, a mapping from sample space to real numbers (from headings of coin to 0 and 1)
+- Random Variable: X: Ω→R. An assignment of a value to every possible outcome. Formally, a mapping from sample space to real numbers (from headings of coin to 0 and 1). Technically, we can't map every outcome.
 
 Every probability model comes with its sample space (and a probability). It is often left out of the discussion because all the action is carried out by random variables, but it always lurks underneath.
+
+> Note that a continuous random variable must have uncountable infinite sample space but an uncountable infinite sample space doesn't imply continuous random variable
 
 ### Probability Distribution
 A probability distribution is a mathematical description of the probabilities of events, subsets of the sample space.
@@ -92,7 +105,7 @@ The most general descriptions is in the form of P: A->R where A is related to sa
 Key takeaway is that anything of the form P: A->R satisfying certain conditions are probability distributions since it describes probability of outcomes. A plain capital P mapping events to R, PMF and PDF are all probability distributions.
 
 ### PMF & PDF & CDF
-- PMF: Probability mass function is the probability distribution of a discrete random variable. It is the function p: R to [0,1] defined by $p_X(x)$ = P(X=x) which is P({ω∈Ω: X(ω)=x}) where P is a probability measure. It's normally written as p(x)
+- PMF: Probability mass function is the probability distribution of a discrete random variable (X takes countably many values). It is the function p: R to [0,1] defined by $p_X(x)$ = P(X=x) which is P({ω∈Ω: X(ω)=x}) where P is a probability measure. It's normally written as p(x)
 - PDF: $P(a \le X \le b)\\=P(\{ω∈Ω\ s.t.\ a\le X(ω)\le b\})\\=\int_{a}^{b}f_X(x)dx\\$ $f_X(x)⋅δ \approx P(x \le X \le x+δ) $
 - CDF: F(x)=P(x≤X)
 
@@ -167,6 +180,47 @@ p(i)=P(X=i)=e^-λ(λ^i)/i! (Taylor approximation of e^x)
 
 ## Law of Large Numbers
 Sample mean converges to population mean
+
+### Markov's Inequality
+If X is a non-negative random variable, then, for any a > 0, then 
+P(X>a)≤EX/a
+
+Proof:
+
+$
+I_A=1 \iff X>a \\ 
+A \implies X>a \implies X/a > 1\ and\ X/a>0 \\
+X/a ≥ I_A \\
+E(X/a) ≥ E(I_A) \\
+E(X)/a ≥ P(X>a)
+$
+
+### Chebyshev's Inequality
+If X is a random variable with mean μ and variance σ², then, for any a > 0, 
+P(|X-μ|≥a)≤σ²/a²
+
+Proof:
+$
+Let\ Y=(X-μ)^2 \\
+P(Y>a)≤EY/a \\
+P((X-μ)^2>a)≤E[(X-μ)^2]/a \\
+P(|X-μ|>\sqrt{a})≤σ²/a \\
+Let a'=\sqrt{a} \\
+P(|X-μ|>a')≤σ²/a'^2
+$
+
+### Weak Law of Large Number
+If X1, X2... are independent identically distributed random variables (i.i.d.) with mean μ and standard deviation σ, then for any ε>0,
+P(|(X1+X2+...)/n-μ|>ε)→0 as n→∞
+
+Proof:
+$
+\tilde{X}=(X_1+X_2+...+X_n)/n \\
+E(\tilde{X})=n\mu/n=\mu \\
+Var(\tilde{X})=n\sigma^2/n^2=\sigma^2/n \\
+P(|\tilde{X}-E(\tilde{X})|>ε)≤\sigma^2/nε^2 \\
+$
+
 
 ## Central Limit Theorem
 Distribution of sample mean is normal

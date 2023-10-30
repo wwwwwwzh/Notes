@@ -123,10 +123,12 @@ Not eating after 12.25 dinner makes me starve early in the morning and feel bad 
 ## 23.7.14-20
 Ate salmon 7.14, diarrhea 7.15 but generally feel good. 7.16 went out and all good ate few for dinner. 7.17 very hungry in the morning and hungry though the day. 7.18 played badminton feel good and ate a lot. 7.19 feel good. 7.20 a little nervous and don't feel like eating breakfast but good throughout day.
 
+## 23.10.27-30
+Sunny and T-shirt. Halloween rush on Saturday
+
 # Ideas
 ## School Related
 ### Course Plan
-- Visual or Performing Arts: APPL 110 (Introduction to Design and Making)
 - Literary Arts: Cicero
 
 HS CI BN GL
@@ -140,7 +142,7 @@ HS CI BN GL
 - NSCI 222 - LEARNING
 - NSCI 423 - NEUROTECHNOLOGY
 - NSCI 421 - PRINCIPLES OF BRAIN CIRCUITS
-- NSCI 434 - COGNITIVE NEUROSCIENCE
+- [NSCI 434 - COGNITIVE NEUROSCIENCE]
 
 - ECON 415 Market Failure
 - Hist 158 Early Modern Europe
@@ -162,6 +164,9 @@ Find salient feature of things to teach. e.g. ni language, what's different and 
 
 ### Universal Linker
 Just like how brain links information from different modalities, note taking should focus on relations. e.g. drag a page on pdf to become a link just like url, everything on any software should have a unique location marker for reference.
+
+### Spirited Away Train
+
 
 ## AI and Brain
 ### On Knowledge
@@ -249,7 +254,17 @@ It seems that primitive math emerges everywhere out of basic needs and grows as 
 
 However, in a different lens, math is a desire to precision, and it inevitably leads to reduction to some extremely primitive and precise/self evident postulates. This is similar to physics's attempt to find something basic that explains everything complex. It also follows from these postulates that 
 
+### The Middle Way and Projection
+We often find theories uniting existing conflicting theories or find a solution mixing several more extreme solutions better. This is just how inverse engineering works. When you have modal specific information/projection, you can only construct a part of it, that's also called bias. When many people see different projections, first of all they are likely all right because a projection is a projection no matter from which angle it is from, the collective knowledge obtained by combining all their reconstruction result will give a better approximation. In terms of partial projection where everyone receives shadow of part of the object, collective knowledge reveals the whole. 
+
 ## Metaphysics
+### Components of Philosophy
+1. Eternity: At some point in life, we ask what's our purpose. By association, we have the natural concept of cause and effect. Further by the behaviorist education methods powered by our existing reward mechanism, we learn to associate everything with purpose. We ask the purpose what we do now and get an answer. We then ask the purpose of whatever that answer is. This can be repeated indefinitely, leading to the concept of eternity. Philosophy is thus the search for eternity. Another way to lead to the thought of eternity might be the search for durable material, similar to Russel's idea. How to build things that last forever. Most study of eternity before enlightenment had focused on Form since form was considered eternal. Religion also has a big component of eternity, and many religious arguments are also inspired from backward tracing (infinite regress) of purpose which leads to logical existence of God.
+
+1.5. Death and happiness: We are driven by happiness and we want happy moments to last longer. As long as we are happy we don't worry about death and [it seems that happiness for life is an ideal goal for human]. 
+
+2. Sceptic: What we see and hear gives association of ideas. And by associating repeating events we have the concept of universal. But association is not universal. One event doesn't always lead to another. We thus acquired an association from everything to a question about universality. The impetus to always ask question forms the the most obvious way to do philosophy: ask and ask more. In asking we break up vague sentences into concepts. We also formalize rules to operate concepts called logic. This relates to eternity because these rules need to be eternal because based on our experience of change, changing rules gives changing observations and one thing cannot be both is and is not. 
+
 ### On Logic
 Since I feel Plato's idea of form is nonsense, I was trying to prove how every idea is derived from senses. It's easy to see that numbers have some clear physical meanings: two object normally result in two complete contours; two sounds are separated or differentiated naturally. However, logic seems more mysterious. Logic like parallel line postulate doesn't correspond to physical things that have clear boundaries. It is from some precise definitions that live on their own. Processing of them doesn't elicit sense memories but is a byproduct of some functions of brain. It's also possible that the most primitive logic are indeed generalizations of senses. For example:
 ![](/images/common-notions.png)
@@ -296,6 +311,8 @@ It is most natural to learn things from historical perspective. True learning co
 ## Movies to Watch
 - The Last of the Mohicans
 - Indiana Jones
+
+
 
 ## Quotes
 ### Books
@@ -351,6 +368,14 @@ It is most natural to learn things from historical perspective. True learning co
 - COGITO ERGO SUM
 - CUI BONO
 - ALEA LACTA EST
+
+## Good Music
+### Classical
+- Shostakovitch - Waltz no.2
+- VIVALDI - The Four Seasons, Concerto No. 2 "Summer": III. Presto
+- DVORAK - Symphony No. 9 in E Minor, "From the New World": IV. Allegro con fuoco
+- Brahms - Hungarian Dance No. 1 in G minor. Allegro molto 
+- Jenkins - Concerto Grosso for Strings "Palladio": I. Allegretto
 
 
 ## Recent Thoughts

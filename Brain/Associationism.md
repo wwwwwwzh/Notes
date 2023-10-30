@@ -50,7 +50,66 @@ Mandelbaum (2016) argued that logical/evidential interventions modulate implicit
 ## Dual Process
 The dual-process strain most relevant to the current discussion posits two systems, one evolutionarily ancient intuitive system underlying unconscious, automatic, fast, parallel and associative processing, the other an evolutionarily recent reflective system characterized by conscious, controlled, slow, “rule-governed” serial processes (see, e.g., Evans and Stanovich 2013).
 
-# Major Questions
+# Associationism Neural Explanations
+### Overview
+Assume initial connection strength are random, then neurons close to each other will be activated more often. An input with one modality activate neurons near its sensory organ. All those neurons activated initially form connections between each other and propagates to nearby regions and gradually diminish. They cannot reach other primary sensory cortex by themselves. When an input involves two modalities, two propagations are initiated and have a chance of meeting, forming some connections. Now these only apply to concrete things we can sense, like the view of a specific apple or sound of "apple". How do we understand general ideas like cat that could eventually help connect infinite cat like things to one idea of cat? When we see two cats, we have two different activations near V1, but some activations must be similar, and will be similar across many cats, either because of evolutionary basic visual discrimination circuits or because of probability. When we see different cats and people say they are cats, two groups of activations remain the same, one for the similar across cats part of V1 and one for A1. By repeated exposure, these invariant parts are connected while the non critical part of image of cat are not since their activations fluctuate and might cancel out. 
+
+### Hidden Neurons
+The consciousness we can concretely feel, the so called access consciousness, are the major senses we have, visual, auditory, tactile, etc. 
+
+We also "think" mostly in these senses. Mostly, it's a loop of auditory memory, namely language. 
+
+Sometimes we have vague ideas, but most of them can still be identified with a particular sense. When I cannot recall a word, I'm still trying with characters and that word has a vague representation. This might be related to the infinite memory/representation idea, specifically the deponent representation where out of scope inputs give output that's only partially recognizable.
+
+However, there are conscious ideas that are very vague and cannot seem to be categorized into external senses. One hypothesis is that there is a conscious organ, like that responsible for vision or inner speech, that processes brain consciousness. That is, it senses activities within the brain. The idea from this modality cannot be retrieved as images or words because it's neither but it can be recalled and manipulated just as in other modalities and can also be partially converted to other modalities. Hippocampus might be related to this rule.
+
+## Episodic Memory
+
+## Abstract Connection (Theory of Form)
+
+### Remember Similar Things
+If I'm given many words with similar pronounciations, I cannot remember them without using linguistic techniques. But if I'm given a whole lecture I can capture many similar ideas. This might be a consequence of probability since confict of neurons connecting two modalities is magnitude rarer than within modality. A counter example is potato tomato.
+
+## Long Short Term Memory
+Memory doesn't go away. Given a group of activations at shallow layer, they are quickly flushed out by constant incoming stimuli. The deeper they go and the more diverse modalities they contain, the less likely they will be flushed out by new random inputs. 
+
+Short term: when about to say thank you and someone said that in front of me, I will copy their tone. This might be that the other person's voice input overwhelmed my toning module and since both my plan of tone and their tone quickly flush through, none has a lasting effect. 
+
+Long term: 
+
+## Dream
+Observations:
+1. Dream is mostly episodic, meaning it's like pieces of events with rich visual and auditory stimuli instead of abstract thinking.
+2. Dream transition can be illogical and abrupt.
+3. Interactions with characters in dream are based on people in real life we are have interacted the most with.
+
+Assumptions:
+1. Abstract thinking is harder or less natural than episodic thinking than episodic recall/imagination
+
+Based on these here is a hypothesis on how dreams work: 
+1. People start any episodic thinking
+2. This sometimes leads to abstract thinking and can prevent sleep.
+3. Episodic thinking becomes more realistic until no abstract thinking naturally arises.
+4. The episode unfolds naturally as a consequence of association weights
+5. Unfolding of episodic memory might lead to physiological changes that underlie both sleep and daydreaming and meditation.
+
+### Abruptness of Dream
+Real life is as abrupt as dreams. When we rotate our heads we don't have smooth transitions, we just see one scene jumps to another. We also have sudden change of states. When we are extremely drowsy in class the whole world looks different than when we suddenly hear the class over and get up sober.
+
+## Behavioral
+### Confidence
+The more connections the given topic you have, the more confident you are. Given the name Napoleon, if you know a lot about him, ideas are quickly activated and you are ready to say many things about him. But if you've never heard of say, Ur, then thinking or hearing about it connects to little, you feel lost and afraid.
+
+### Humor
+Unlike happiness or sadness or fear, humor or funniness is hard to pinpoint. Anything that could damage you cause fear, anything that leads to potential survival chance increase makes you happy. But what types of things are funny. 
+
+Expectedness and unexpectedness both seem to sometimes make people laugh, they also make people not laugh. 
+
+## Language
+### Overview
+When we hear something, we have representations of a sequence of sound. Note that inner speech requires only sound, not speaking ability for normal humans. Thus the ability to hear and even understand things doesn't mean the ability to repeat them or produce similar sounds. There might be wiring facilitated connection between speech producing motor modality and auditory modality. This, by trial and error, helps quickly establish connections between sound and actions to produce that sound. This is by itself unidirectional, from sound to motor plan. But we can almost always hear what we say, thus a backward connection from motor plan to sound is always established.
+
+# Associationism and Neural Network
 ## Associationism and Feedforward Neural Network
 ### Is Neural Network Associative 
 When you have a network, what it does is given inputs give outputs. Or that it's simply a function. A function "maps" things and is by definition associative. 
@@ -60,7 +119,7 @@ When you have a network, what it does is given inputs give outputs. Or that it's
 ### Associationistic Explanation for Single Layer Perceptron
 
 ### Probabilistic Input And High Dimensionality Make Hidden Neurons Discover Structures
-probabilistic input and high dimensional input make it necessary to introduce agent connections/hidden layers
+
 
 ### Unconscious And Conscious Hidden Neurons
 

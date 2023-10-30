@@ -3,3 +3,4 @@
 
 # Projection
 - Democracy is the projection of the collective human mind. The collective wisdom of humanity is vast and cannot be adequately represented by any subset of it. 
+- If someone says LLM is just learning surface level statistical correspondence, one can argue that humans are not good at reconstruction either. We have stupid people who don't really "understand" things but nevertheless make enough good decisions to stay alive. We also have physicists who have deep and strange understanding of the world with which they can come up with revolutionary hypothesis. It's just a spectrum. See BrainThoughts-LLM for how we go deeper in understanding the world.

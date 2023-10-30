@@ -51,16 +51,23 @@ Neural circuits are powerful enough to approximate any function and we shouldn't
 - Can recover 
 ### Literature
 - [Impaired reasoning and problem-solving in individuals with language impairment due to aphasia or language delay](https://www.frontiersin.org/articles/10.3389/fpsyg.2015.01523/full): language supports complex reasoning 
-- [Inner Speech in Aphasia](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7233112/): 
+- [Inner Speech in Aphasia](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7233112/): inner speech can be preserved relative to spoken language, particularly among those with relatively intact word retrieval and difficulty primarily at the level of speech output processing
+- [Numerical skills and aphasia](https://pubmed.ncbi.nlm.nih.gov/10217921/): Broca's and Wernicke's aphasics scored similarly at the quantitative level, and amnesic aphasics were less impaired. Interestingly, qualitative analysis of the errors indicated that each group presented with specific difficulties. In simple calculation, multiplication was found to be the most impaired operation, in particular in Broca's aphasics.
+- [Aphasia and Math](https://www.cambridge.org/core/journals/journal-of-the-international-neuropsychological-society/article/aphasia-and-math-deficits-with-basic-number-comprehension-and-in-numerical-activities-of-daily-living/1ECAC39C43845D1AFB042F79C0D4295E?utm_campaign=shareaholic&utm_medium=copy_link&utm_source=bookmark)
 
 ### Aphasia and Thought
+
 
 ### Aphasia and Amusia
 Maybe aphasia is similar to how I can sing in my mind "in perfect pitch" but not when really sing out loud.
 
+## 
+
 ## Notes
 ### Developmental
 - Language is left hemisphere, how did that develop
+- We think mostly in language and the level of intelligence we have depends on language. We also have Jill B. Taylor who had consciousness but no specific thinking during her stroke. This means consciousness doesn't depend on language or word thinking. On the other hand, if we loss language related regions we can't think clearly. This raises the next question
+- Inner speech and thinking depend on language. Is it incidental that the downstream parts of auditory system takes this job? What's special about sound that makes us truly think? Why do we develop speech before writing? Note that 
 
 ### Language & Thought
 - Left right hemisphere difference in processing information/thinking, what are biological differences
