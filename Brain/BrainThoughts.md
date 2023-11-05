@@ -80,7 +80,7 @@ Maybe aphasia is similar to how I can sing in my mind "in perfect pitch" but not
 # Memory
 ## Fundamental Theorem?
 1. All memory results from association i.e. adjustment of synaptic strength between neurons
-2. Memory strength is a function of time and initial strength. 
+2. Memory strength is a function of time and initial strength. -> (23.11.4) Memory strength changes whenever new stimuli comes in.
 3. Each association has its own strength function (doesn't need to naturally decline)
 3.5. Association and dissociation are the same
 

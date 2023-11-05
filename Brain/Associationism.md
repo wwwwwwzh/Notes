@@ -50,9 +50,15 @@ Mandelbaum (2016) argued that logical/evidential interventions modulate implicit
 ## Dual Process
 The dual-process strain most relevant to the current discussion posits two systems, one evolutionarily ancient intuitive system underlying unconscious, automatic, fast, parallel and associative processing, the other an evolutionarily recent reflective system characterized by conscious, controlled, slow, “rule-governed” serial processes (see, e.g., Evans and Stanovich 2013).
 
+-------------------------------------
+
 # Associationism Neural Explanations
 ### Overview
-Assume initial connection strength are random, then neurons close to each other will be activated more often. An input with one modality activate neurons near its sensory organ. All those neurons activated initially form connections between each other and propagates to nearby regions and gradually diminish. They cannot reach other primary sensory cortex by themselves. When an input involves two modalities, two propagations are initiated and have a chance of meeting, forming some connections. Now these only apply to concrete things we can sense, like the view of a specific apple or sound of "apple". How do we understand general ideas like cat that could eventually help connect infinite cat like things to one idea of cat? When we see two cats, we have two different activations near V1, but some activations must be similar, and will be similar across many cats, either because of evolutionary basic visual discrimination circuits or because of probability. When we see different cats and people say they are cats, two groups of activations remain the same, one for the similar across cats part of V1 and one for A1. By repeated exposure, these invariant parts are connected while the non critical part of image of cat are not since their activations fluctuate and might cancel out. 
+Assume initial connection strength are random, then neurons close to each other will be activated more often. An input with one modality activate neurons near its sensory organ. All those neurons activated initially form connections between each other and propagates to nearby regions and gradually diminish. They cannot reach other primary sensory cortex by themselves. 
+
+When an input involves two modalities, two propagations are initiated and have a chance of meeting, forming some connections. Now these only apply to concrete things we can sense, like the view of a specific apple or sound of "apple". How do we understand general ideas like cat that could eventually help connect infinite cat like things to one idea of cat? When we see two cats, we have two different activations near V1, but some activations must be similar, and will be similar across many cats, either because of evolutionary basic visual discrimination circuits or because of probability. When we see different cats and people say they are cats, two groups of activations remain the same, one for the similar across cats part of V1 and one for A1. By repeated exposure, these invariant parts are connected while the non critical part of image of cat are not since their activations fluctuate and might cancel out. 
+
+Now we can also categorize unknown things within modality, e.g. know the kinds of faces without corresponding them to any other modality like language describing them or emotion. This requires a purely internal modality (See below Hidden Neurons). In principle, faces with very different looks activate a more different set of neurons than those sharing more similarities. By repeated exposure, similar faces will be grouped together by a certain set of neurons that always activate by these faces. 
 
 ### Hidden Neurons
 The consciousness we can concretely feel, the so called access consciousness, are the major senses we have, visual, auditory, tactile, etc. 
@@ -108,6 +114,14 @@ Expectedness and unexpectedness both seem to sometimes make people laugh, they a
 ## Language
 ### Overview
 When we hear something, we have representations of a sequence of sound. Note that inner speech requires only sound, not speaking ability for normal humans. Thus the ability to hear and even understand things doesn't mean the ability to repeat them or produce similar sounds. There might be wiring facilitated connection between speech producing motor modality and auditory modality. This, by trial and error, helps quickly establish connections between sound and actions to produce that sound. This is by itself unidirectional, from sound to motor plan. But we can almost always hear what we say, thus a backward connection from motor plan to sound is always established.
+
+## Failed Connections
+### Similarity Failure
+
+### Overwritten Failure
+
+### Sparse Connection Failure
+People confuse left and right because they are very abstract but their use cases are very wide yet strict (mutually exclusive collectively exhaustive+universal usage). It's hard to link specific things to left or right: an apple is left to me is very different than a building next to another. They are also used in widely varying cases: left to, turn left, left part of, etc. Observe that sometimes people use proxy connection like their hands or rotation of their hands to tell leftness.  
 
 # Associationism and Neural Network
 ## Associationism and Feedforward Neural Network

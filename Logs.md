@@ -316,7 +316,7 @@ It is most natural to learn things from historical perspective. True learning co
 
 ## Quotes
 ### Books
-### Heisenberg
+#### Heisenberg
 - On physics and philosophy: My mind was formed by studying philosophy, Plato and that sort of thing". "Modern physics has definitely decided in favor of Plato. In fact the smallest units of matter are not physical objects in the ordinary sense; they are forms, ideas which can be expressed unambiguously only in mathematical language"
 
 #### Da Vinci
@@ -334,6 +334,9 @@ It is most natural to learn things from historical perspective. True learning co
 - On Joseph II of the Holy Roman Empire: "Everything for the people, nothing by the people"
 
 ### Talks
+#### Ivan Sutherland
+- On research: ”So projects can be wonderful fun. In fact, I have the attitude that if research is not fun, why are you doing it? Are you exploring the unknown, and why in the world would you bother doing that? You cannot do it for rewards, because you do not know what the rewards are. You do not know what you will find, so you do it because it is an adventure, because the spirit and the camaraderie of a research group is one of the things that makes research worth doing. I think that is important. An important thing to know about research is that if the researchers are not happy, there probably is not much research going on. It is hard enough wrestling with nature that you do not want also to have to wrestle with management.”
+
 #### Alan Kay
 - On David Evans: Dave's way was to make something like a garden, and tend that garden so that many things would have many chance to grow by themselves. His idea was to just do good deeds everywhere and every time you can without any hope of return. And much of the time the angelic side of humans will nudge other humans to start helping themselves.
 

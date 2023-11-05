@@ -221,6 +221,7 @@ Var(\tilde{X})=n\sigma^2/n^2=\sigma^2/n \\
 P(|\tilde{X}-E(\tilde{X})|>ε)≤\sigma^2/nε^2 \\
 $
 
+> How do we get iid RV? Suppose that the whole population is determined, then every individual is also determined. e.g. in counting vote, every person either say yes or no, no randomness involved. However, we are selecting these people RANDOMLY. Therefore, the randomness comes from our free choice which we believe to be iid.
 
 ## Central Limit Theorem
 Distribution of sample mean is normal
