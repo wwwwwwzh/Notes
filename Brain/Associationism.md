@@ -76,6 +76,20 @@ However, there are conscious ideas that are very vague and cannot seem to be cat
 ### Remember Similar Things
 If I'm given many words with similar pronounciations, I cannot remember them without using linguistic techniques. But if I'm given a whole lecture I can capture many similar ideas. This might be a consequence of probability since confict of neurons connecting two modalities is magnitude rarer than within modality. A counter example is potato tomato.
 
+### Termination and Consciousness by Mass Hypothesis
+In the question regarding infinite memory, it was discussed that if a network is just like a ANN, then the output space is infinite, leading to infinite unseen memory/consciousness. 
+
+A problem with ANN is that input and output are through a unidirectional network while in brain every modality is connected to each other bidirectionally. 
+
+Another difference is that real networks diminishes. Any stimuli gradually decrease before reaching another modality, meaning that normally it can't activate anything in "output" modality (In ANN this can be controlled by weight initialization, so can real network). Here comes the Mass hypothesis which states that in a group of neurons we can consciously access, the percentage of activation must be above threshold. Otherwise we feel nothing or extremely vague ideas that hardly constitute consciousness.
+
+Only by learning will a pathway be established st enough activation will be seen in the other end of propagation. 
+
+This is also to be understood with attention. Attention is either top-down st an attention modality selects a modality to be conscious, or bottom-up st the most active modality automatically become conscious and center of attention.
+
+### Universal Consciousness
+Based on mass hypothesis, we can further hypothesize that every neuron in brain is consciously accessible, but to induce consciousness they have to be a lot and together. This will eliminate the need for hidden neurons since every neuron is both first input and final output. 
+
 ## Long Short Term Memory
 Memory doesn't go away. Given a group of activations at shallow layer, they are quickly flushed out by constant incoming stimuli. The deeper they go and the more diverse modalities they contain, the less likely they will be flushed out by new random inputs. 
 
@@ -115,6 +129,12 @@ Expectedness and unexpectedness both seem to sometimes make people laugh, they a
 ### Overview
 When we hear something, we have representations of a sequence of sound. Note that inner speech requires only sound, not speaking ability for normal humans. Thus the ability to hear and even understand things doesn't mean the ability to repeat them or produce similar sounds. There might be wiring facilitated connection between speech producing motor modality and auditory modality. This, by trial and error, helps quickly establish connections between sound and actions to produce that sound. This is by itself unidirectional, from sound to motor plan. But we can almost always hear what we say, thus a backward connection from motor plan to sound is always established.
 
+### Auditory Processing
+- Note that we automatically try to produce the sounds we hear, suggesting a strong connection between auditory consciousness and the ability to connect sounds to other modalities like speech motor. If we avoid doing this, sounds become less conscious. For unfamiliar sounds like foreign languages, doing this would lead to lower reproduction rate when repeating. For sounds we can't produce, two case. First we simulate the sound like sound of leaves or frogs. When there's no similar sounded words, we still can remember like sound of waves or music.
+
+### Meaning of Language
+- Note that we never connected some nouns to static objects or verbs to actions. I realized that I have no idea what is 胳膊 (arm) other than it's related to arm. Then I realized I can say there's a thing on your arm or arm higher without defining any words within those phrases. It's the whole phrase connected to the whole concept. They don't require inference on the constituting parts.
+
 ## Failed Connections
 ### Similarity Failure
 
@@ -122,6 +142,9 @@ When we hear something, we have representations of a sequence of sound. Note tha
 
 ### Sparse Connection Failure
 People confuse left and right because they are very abstract but their use cases are very wide yet strict (mutually exclusive collectively exhaustive+universal usage). It's hard to link specific things to left or right: an apple is left to me is very different than a building next to another. They are also used in widely varying cases: left to, turn left, left part of, etc. Observe that sometimes people use proxy connection like their hands or rotation of their hands to tell leftness.  
+
+## Multimodal Distribution
+Since neurons are discrete, they can modal multimodal distriibutions like categorical distributions and there can be many categories. 
 
 # Associationism and Neural Network
 ## Associationism and Feedforward Neural Network

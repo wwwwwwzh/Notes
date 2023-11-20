@@ -1,4 +1,10 @@
 # CNN
+## Trend in Image Networks
+### AlexNet 2012
+### Inception 2014
+### ResNet 2015
+### DenseNet 2016
+
 ## Inside NN (https://youtu.be/gCJCgQW_LKc)
 [Visualizing and Understanding Convolutional Networks](https://arxiv.org/pdf/1311.2901.pdf): 1) forward all images in dataset, find most activated activations, deconv to reconstruct, also find the original part of image. 2) saliency map (gradient of category score on each pixel) 3) occlusion sensitivity
 
@@ -7,7 +13,7 @@
 > saliency map is not as good in object localization as specialized algorithms
 
 ## [Object Detection](https://www.coursera.org/learn/convolutional-neural-networks)
-#### RCNN
+### RCNN
 - use selective search to extract 2000 regions from the image as region proposals.
 - run CNN on each of the 2000 regions
 
@@ -16,6 +22,11 @@
 
 <img width="400" alt="Screen Shot 2023-01-14 at 3 50 12 PM" src="https://user-images.githubusercontent.com/36484215/212498594-d42d85ee-d5f5-4d5c-b09d-3d55e66332bd.png">
 
+## Object Segmentation
+### [Mask-RCNN](https://arxiv.org/abs/1703.06870)
+Summary: In addition to object class and bounding box, outputs binary mask to segment the object
+
+# Generative ---------------
 # Autoencoder
 ## Overview
 https://lilianweng.github.io/posts/2018-08-12-vae/
