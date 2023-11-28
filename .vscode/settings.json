@@ -9,11 +9,15 @@
         "codomain",
         "Connectionism",
         "conv",
+        "covariate",
         "entorhinal",
+        "estimand",
         "Eudoxus",
         "evolutional",
         "Feedforward",
+        "finetune",
         "Frequentism",
+        "frequentist",
         "Hebbian",
         "hippocampal",
         "Hopfield",
@@ -26,6 +30,7 @@
         "neurogenesis",
         "orderness",
         "ponens",
+        "posteriori",
         "pretrained",
         "Pretraining",
         "Purkinje",
@@ -35,6 +40,7 @@
         "saccades",
         "subiculum",
         "transcranial",
+        "uncountably",
         "unnormalized"
     ]
 }

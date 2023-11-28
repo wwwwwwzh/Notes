@@ -126,12 +126,17 @@ Ate salmon 7.14, diarrhea 7.15 but generally feel good. 7.16 went out and all go
 ## 23.10.27-30
 Sunny and T-shirt. Halloween rush on Saturday
 
+## 23.11.22-23
+Door to door in Cary bad food expensive 8 ppl. 23. jade palace
+
 # Ideas
 ## School Related
 ### Course Plan
 - Literary Arts: Cicero
 
 HS CI BN GL
+
+math for physics: https://www.youtube.com/watch?v=m_SbJnpMDD8
 
 ### Interested
 - ECON 231 Economic History of Western Europe
@@ -151,6 +156,7 @@ HS CI BN GL
 - HIST 340 ETHICS AND BUSINESS IN AFRICA
 - HIST 538 MIDDLE EAST & THE WEST
 - MUSC 120 Foundations in Music
+- PWAD 490
 
 
 

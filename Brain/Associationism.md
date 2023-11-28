@@ -101,7 +101,9 @@ Long term:
 Observations:
 1. Dream is mostly episodic, meaning it's like pieces of events with rich visual and auditory stimuli instead of abstract thinking.
 2. Dream transition can be illogical and abrupt.
-3. Interactions with characters in dream are based on people in real life we are have interacted the most with.
+3. Interactions with characters in dream are based on people in real life we have interacted with the most.
+4. Consciousness is low in dream, and increases gradually. Highest level might happen when being anxious or excited. Consciousness might thus mean number of neurons we have access to. e.g. when you are drowsy but you start talking suddenly you are sober.
+5. Dream senses are different from normal senses in that they do resemble memory of senses more than actually conscious feeling of sensing.
 
 Assumptions:
 1. Abstract thinking is harder or less natural than episodic thinking than episodic recall/imagination
@@ -114,7 +116,7 @@ Based on these here is a hypothesis on how dreams work:
 5. Unfolding of episodic memory might lead to physiological changes that underlie both sleep and daydreaming and meditation.
 
 ### Abruptness of Dream
-Real life is as abrupt as dreams. When we rotate our heads we don't have smooth transitions, we just see one scene jumps to another. We also have sudden change of states. When we are extremely drowsy in class the whole world looks different than when we suddenly hear the class over and get up sober.
+Real life is as abrupt as dreams. When we rotate our heads we don't have smooth transitions, we just see one scene jumps to another. We also have sudden change of states. When we are extremely drowsy in class the whole world looks different than when we suddenly hear the class over and get up sober. Also when watching movies, we don't notice transitions at all. When one scene ends we don't expect the camera to hold or follow to next day or year and show next scene, it just transits, nothing unusual.
 
 ## Behavioral
 ### Confidence

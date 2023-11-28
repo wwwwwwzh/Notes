@@ -1,3 +1,8 @@
+# Introduction
+RL is based on the reward hypothesis: all goals can be described as the maximization of the expected cumulative reward.
+
+But unlike supervised learning (SL) which has a known label for every training point, RL doesn't have reward for each step, thus it learn by trial and error. The Markov assumption seems to imply that we can find the exact good actions of a given state no matter what the history or future of states are (a MLP from state to action). But we can't collect all the (state,action) pairs because we don't know if a specific action at a state is good or not. Further, the state space is just too big and by interaction we encounter those likely ones.(see offline training)
+
 
 # Convention
 Note that A, S, O are space.
@@ -22,7 +27,17 @@ RL is based on the reward hypothesis, which is that all goals can be described a
 The main goal of Reinforcement learning is to find the optimal policy π* that will maximize the expected cumulative reward. Because Reinforcement Learning is based on the reward hypothesis: all goals can be described as the maximization of the expected cumulative reward.
 
 ## Policy Gradient
+Subclass of Policy based methods that uses gradient method (gradient ascent on J)
+
 J(θ) = Eτ~π(R(τ)) = ΣP(τ;θ)R(τ). P(τ;θ) = $ΠP(s_{t+1}|s_t,a_t)\pi_\theta(a_t|s_t)$
+
+### Comparison
+- Good on high dimensional space because it outputs a parametrizable distrbution.
+- Smoother training
+
+- Easy to converge on local minima
+- Slower
+- High variance
 
 ### Problem of Optimization
 - Calculating gradient of J involves calculating every probability of τ which is expensive (space of all states and all actions is huge).
@@ -34,7 +49,9 @@ Solution: Policy Gradient Theorem
 https://huggingface.co/learn/deep-rl-course/unit4/pg-theorem
 
 ### Reinforce algorithm (Monte Carlo Reinforce)
+![](/images/policy_gradient.png)
 ![](/images/policy_gradient_multiple.png)
+
 
 # Value Based
 you don’t train the policy: your policy is just a simple pre-specified function (for instance, the Greedy Policy) that uses the values given by the value-function to select its actions.
@@ -96,3 +113,35 @@ state = new_state
 The Q-table size is #(S)*#(A). In a very very simple 4x4 tile based game, this is just 16x4=64. However,  the state space in Atari games can contain 10^9 to 10^11 states.
 
 Solution is to replace the table with a deep Q-network (DQN)
+
+# A2C
+Monte-Carlo sampling to estimate return has significant variance in policy gradient estimation.
+
+Solution:
+- An Actor that controls how our agent behaves (Policy-Based method) πθ(s)
+- A Critic that measures how good the taken action is (Value-Based method) q(a,s)
+
+# Offline Learning
+Online learning is based on the intuition that we humans learn by trial and error and we can gradually Monte Carlo to the best policy. 
+
+The key advantage is that we can sample from the enormous state space and use simple rewards.
+
+If we try to train robots e.g. driver in supervised fashion, what will be the challenges?
+
+## Why Not Supervised 
+1. The state space is too big and plausible state space is also big. So there will likely be distribution shift.
+2. We don't know the "correct" action given state. We simply can't collect all best state action pairs. (In imitation learning, we simply say all demonstrations are good)
+3. If we just use a final reward we risk ignoring the good part of a bad episode or emphasizing the bad part of a good episode. (Like in imitation learning, some sub-optimal actions are learned) 
+4. Even if our generalization is good, there will be points where network prediction is very off and lead the agent to underrepresented state trajectory. 
+
+### Distribution Shift
+![](/images/distribution-shift.png)
+![](/images/distribution-shift-1.png)
+
+# Others
+### [RLHF](https://huggingface.co/blog/rlhf)
+RLHF has enabled language models to begin to align a model trained on a general corpus of text data to that of complex human values.
+
+Process: initial LLM->optional supervised fine-tuning with "expensive augmented data" (text with specific criteria like human value)->train reward model (from scratch or from a LM)->copy and finetune the LLM with RL (KL from original to avoid fooling the RM, r=r-KL)
+![](/images/rlhf.png)
+![](/images/rlhf-2.png)

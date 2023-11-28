@@ -96,17 +96,20 @@ Also see Advanced AI and Brain under ![](/Logs.md)
 Someone looks familiar but can't remember who he resembles whatsoever until you see that person and suddenly knows that's the one you are looking for. Might be related to unidirection and central theorem two
 
 # Consciousness
+## Observations
 ### Stop of Noise
 At the instant of the stop, you remember/are aware of both the noise before stop and the quietness immediately after. But if no such sudden stop happened, you are neither aware of the noise nor will remember the sound of the noise.
 
 ### Attention and Consciousness
 When we see something, we are aware that we are seeing it, all of it and every part of it. If any part of it changes we can notice it. But if not some parts are never attended to. If someone is holding a red bottle and I'm staring at it while thinking about something else, I might never "know" that the bottle is red. I have to allocate some thinking and ask "what is the color of the bottle" to know the color. When I travel, if no attention is paid whatsoever, I might not remember anything about a particular scene. If I'm relaxing, I'll roughly have a sketch in my mind. So rough that not a single edge is actually in place and not a single color is close. We have some powerful compression mechanism that assigns blue to sky, green to all plants and white to all snow. We have to constantly ask questions and answer them to remember details. But sometimes when it's dramatic, we also remember details of the event and its accompanying scene. Also, every time we look at something we notice something different.
 
+## Hypothesis
 ### Consciousness and Memory
+Memory is actually the only thing we have. The future is imagined with memory and the present is really the past once it "is" the present. Nevertheless, we are conscious of "present" and present only. Maybe it has to do with some fundamental aspect of time. 
 
 ## High Level Processing
 ### Different Ways to "See" Things
-https://youtu.be/Si6NbKqYEd8?si=eNuaYrqI1JWTr7hb&t=337
+[Feynman count with image or sound](https://youtu.be/Si6NbKqYEd8?si=eNuaYrqI1JWTr7hb&t=337)
 
 ### Why Do We Need Attention or Focus and Much more Energy When We Are Trying to be Precise
 e.g. you have a instant thought that sth is true and have a quick thought and seems like you can prove it. but it takes more time and determination to really pin it done. and you can't do this when you're tired

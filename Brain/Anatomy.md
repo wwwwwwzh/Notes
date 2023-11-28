@@ -1,3 +1,6 @@
+![](/images/cephalons.png)
+![](/images/brain-skull.jpg)
+
 # Canonical Views
 ## Horizontal
 ![](/images/real-brain-hor.png)
@@ -22,6 +25,9 @@
 ![](/images/internal-capsule.png)
 ![](/images/internal-capsule-2.png)
 ![](/images/interal-capsule-3.png)
+
+### Limbic
+![](/images/lizard-brain.png)
 
 # Areas
 ![](/images/reticular-formation.png)

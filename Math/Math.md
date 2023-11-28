@@ -190,7 +190,11 @@ rank(AB) ≤ min(rank(A), rank(B))
 Dim(Null space of A) + Dim(Column Space of A) = Number of Columns of A
 
 ## Eigen
+### Eigenvector
+v is an eigenvector of linear transformation T iff T(v)=λv
+
 Sum(eigenvalues) = trace
+Product(eigenvalues) = determinant
 
 ### Diagonalization
 A=XΛX⁻¹. This means A as a linear transformation has the effect of moving its eigen basis λ times. In transformation Ab, X⁻¹b gives coordinates of b in X (eigen) basis. Λ stretches each basis. X transform b back to original basis.
@@ -209,15 +213,15 @@ Symmetric matrices have orthonormal diagonalization
 ## Positive Definite Matrix
 [Summary](https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/6e1f793f6c25fd39e002c100e278bf1b_MIT18_06SCF11_Ses3.4sum.pdf)
 
-When x^TAx > 0, observe that the function it represents is convex since its second derivative is 2A which is positive definite. 
+When x^TAx > 0, observe that the function f(x)= x^TAx is convex since its second derivative is 2A which is positive definite. 
 
 ### Where to get
 Most matrices are nxm, but when we do projection, we often get A^TA which is square and symmetric and positive definite (if full rank).
 
 ### Eigenvalues and Definiteness 
-For x^TAx, if we use eigenvector of A as x, we have λx^Tx. We can see that the resulting sign is defined by λ since x^Tx is positive except at 0. So if an eigenvector of A is negative, the corresponding eigenvector, when used as x here, gives negative result. Conversely, if we have all eigenvalues to be positive, the corresponding eigenvectors give all positive results.
+For $x^TAx$, if we use eigenvector of A as x, we have $λx^Tx$. We can see that the resulting sign is defined by λ since $x^Tx$ is positive except at 0. So if an eigenvalue of A is negative, the corresponding eigenvector, when used as x here, gives negative result. Conversely, if we have all eigenvalues to be positive, the corresponding eigenvectors give all positive results.
 
-For more general cases, replace A with XΛX⁻¹ and write as (x^TX)Λ(X⁻¹x). (x^TX)^T=X^Tx. So for our previous observation to hold true for all x, X^T must equal X⁻¹. This is true when A is symmetric. 
+For more general cases, replace A with $XΛX⁻¹$ and write $x^TAx$ as $(x^TX)Λ(X⁻¹x)$. $(x^TX)^T=X^Tx$. So for our previous observation to hold true for all x, $X^T$ must equal $X⁻¹$. This is true when A is symmetric. 
 
 ### Extrema & Hessian
 When first derivative of a function is 0 and second derivative is positive, we have a minimum. For multivariable functions, the condition for second derivative matrix is positive definite instead of all positive entries. This is because, let Δx be a small nudge in some direction, then HΔx gives a small change of gradient and this times Δx again gives a small change of function output in that direction. Thus if H is PD, ΔxHΔx always give positive change no matter what direction you nudge. Conversely, negative definite Hessian when gradient is 0 implies maxima.
@@ -269,8 +273,8 @@ Normally for mxn matrix A we have U: mxn, Σ: nxn, V: nxn but sometimes U is mxm
 Given data X of nxp, compute covariance matrix=X^TX/(n-1). 
 
 ## Pseudoinverse
-- Full column rank: A^TA is full rank and invertible. (A^TA)⁻¹A^TA=I, so (A^TA)⁻¹A^T is left inverse of A.
-- Full row rank: AA^T is full rank and invertible. AA^T(AA^T)⁻¹=I, so A^T(AA^T)⁻¹ is right inverse of A.
+- Full column rank: $A^TA$ is full rank and invertible. $(A^TA)⁻¹A^TA=I$, so $(A^TA)⁻¹A^T$ is left inverse of A.
+- Full row rank: $AA^T$ is full rank and invertible. $AA^T(AA^T)⁻¹=I$, so $A^T(AA^T)⁻¹$ is right inverse of A.
 - Any matrix: the mapping from row space to column space is one to one. 
 
 1. SVD: invert the "good" part of Σ -> Σ⁺. 
@@ -280,8 +284,8 @@ Given data X of nxp, compute covariance matrix=X^TX/(n-1).
 # Fourier
 ### Overview
 https://math.stackexchange.com/questions/1020231/fourier-series-of-real-valued-functions
-- Express any function as combination of simpler functions. Here these functions are sinusoids of different frequencies and phases. f(x)=ΣᵢAᵢsin(2πix+ϕᵢ)
-- Sin and cos are related by phase (sin(2πix+ϕᵢ)=cos(2πix+ϕᵢ+π/2)). So sinusoids of different frequencies and phases can be expressed as sin and cos of different frequencies. f(x)=a₀/2+Σᵢaᵢcos(2πix)+bᵢsin(2πix)
+- Express any function as combination of simpler functions. Here these functions are sinusoids of different frequencies and phases. $f(x)=ΣᵢAᵢsin(2πix+ϕᵢ)$
+- Sin and cos are related by phase $(sin(2πix+ϕᵢ)=cos(2πix+ϕᵢ+π/2))$. So sinusoids of different frequencies and phases can be expressed as sin and cos of different frequencies. $f(x)=a₀/2+Σᵢaᵢcos(2πix)+bᵢsin(2πix)$
 - Sin(2πix) and cos(2πix) are orthogonal. so sin and cos of different frequencies form an orthonormal basis for functions. Dot product of f(x) and sin or cos gives the magnitude/coordinate of the function that particular base. Here the magnitude (aᵢ and bᵢ) is found by integrating f(x)sin(nx) along common period.
 - Use eⁱⁿˣ to express a⋅cos(nx)+b⋅sin(nx). Since eⁱⁿˣ=cos(nx)+i⋅sin(nx), there are imaginary parts for the trigonometry functions. However, if we integrate from -L to L instead of 0 to L (L is common period), because e-ⁱⁿˣ=cos(nx)-i⋅sin(nx), we get conjugates that cancels out the imaginary parts. 
 - So now we can write f(x) as Σₘ from -L to L Aₘ⋅eⁱmˣ where A is a complex number. Note that A an be computed by computing the dot product between f(x) and e⁻ⁱmˣ, so for real f, A has both real and imaginary parts, and A₋ᵢ, Aᵢ are conjugates, thus when translating to f(x)=a₀/2+Σᵢaᵢcos(2πix)+bᵢsin(2πix) this form, a and b are reals.  

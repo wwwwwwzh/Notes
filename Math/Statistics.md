@@ -89,11 +89,24 @@ Frequentism defines an event's probability as the limit of its relative frequenc
 ![](/images/pairwiseIndependence.png)
 
 ### Random Variable
-- Random Variable: X: Ω→R. An assignment of a value to every possible outcome. Formally, a mapping from sample space to real numbers (from headings of coin to 0 and 1). Technically, we can't map every outcome.
+A function X: Ω→R. An assignment of a value to every possible outcome. Formally, a mapping from sample space to real numbers (from headings of coin to 0 and 1). Technically, we can't map every outcome.
 
-Every probability model comes with its sample space (and a probability). It is often left out of the discussion because all the action is carried out by random variables, but it always lurks underneath.
+> Every probability model comes with its sample space (and a probability). It is often left out of the discussion because all the action is carried out by random variables, but it always lurks underneath.
 
-> Note that a continuous random variable must have uncountable infinite sample space but an uncountable infinite sample space doesn't imply continuous random variable
+> Note that a continuous random variable must have uncountably infinite sample space but an uncountably infinite sample space doesn't imply continuous random variable (geometric,poisson)
+
+#### Random Variable VS Algebraic Variable
+Why X+X≠2X while x+x=2x and f+f=2f?
+
+Observe that X is a random variable which depends on a sample space Ω. However, when we have another X, it means the sample space now becomes Ω² since we now care about outcome of both. So X is (ω,ω')→R. Y=X+X is also (ω,ω')→R. This essentially means Y is a multivariate function. When we add f: R→R we don't have multivariate function because its domain is just R. A normal X actually has infinite sample space but we care about only a small subset. 
+
+The probability distribution of the sum of two independent random variables is the convolution of each of their distributions. Observe that 
+$ P(Y=X+X=y) \\
+= P(\{(ω,ω')∈Ω²|Y(ω,ω')=y\}) \\
+= P(\{(ω,ω')∈Ω²|X(ω)+X(ω')=y\}) \\
+= P(\{ω∈Ω|X(ω)=x\}∩\{ω'∈Ω|X(ω')=y-x\}) \\
+= \sum_xP(X=x)P(X=y-x)
+$ which is the exact definition of convolution.
 
 ### Probability Distribution
 A probability distribution is a mathematical description of the probabilities of events, subsets of the sample space.
@@ -179,7 +192,12 @@ p(i)=P(X=i)=e^-λ(λ^i)/i! (Taylor approximation of e^x)
 ## Exponential Family
 
 ## Law of Large Numbers
-Sample mean converges to population mean
+Sample mean converges to population mean.
+
+### Convergence of Probability Distribution
+∃a∀ε,ε'>0∃δ∀n>δP(|Xn-a|>ε)<ε'
+
+> Note the example of convergence on 0 but E is 1 and variance goes to infinity (P(0)=1-1/n, P(n)=1/n)
 
 ### Markov's Inequality
 If X is a non-negative random variable, then, for any a > 0, then 
@@ -188,7 +206,13 @@ P(X>a)≤EX/a
 Proof:
 
 $
-I_A=1 \iff X>a \\ 
+EX=Σxp(x)≥\sum_{x>a}xp(x)≥\sum_{x>a}ap(x)=aP(X>a)
+$
+
+Alternatively
+
+$
+Define\ I_A=1 \iff X>a \\ 
 A \implies X>a \implies X/a > 1\ and\ X/a>0 \\
 X/a ≥ I_A \\
 E(X/a) ≥ E(I_A) \\
@@ -226,20 +250,60 @@ $
 ## Central Limit Theorem
 Distribution of sample mean is normal
 
+> That many natural phenomena are themselves normal can be interpreted as them being sample mean of many hidden events. e.g. brownian motion can be seen as result of interaction with many particles around it
+### Intuition
+$
+Sn=X1+X2+...+Xn \\
+\frac{Sn}{n}\text{ converges to mean of X}\\
+\frac{Sn}{\sqrt{n}}=\frac{Sn}{n}\sqrt{n}\text{ is more spread out and has variance of X} \\
+\frac{Sn-nEX}{\sqrt{n}\sigma} \text{ has zero mean and unit variance }
+$
+### Probability Distribution in Frequency Domain
+![](/images/conv-norm-0.png)
+![](/images/conv-norm-1.png)
+![](/images/conv-norm-2.png)
 
+The only function that keeps its shape after self convolution is Gaussian.
+
+### MGF
+
+### Binomial Poisson & Normal
+Sum of Bernoulli converges to normal. Sum of Bernoulli is Binomial. Binomial converges to poisson. So does Poisson converges to normal? No because if we discretize poisson with tiny slots with p=λ/n, p changes as n changes which doesn't satisfy CLT assumption. What's wrong?
+
+Binomial converges to poisson in a sense that λ=np is fixed, while Bernoulli converges to normal in a sense that p is fixed. 
+
+When λ is big enough (>=10), poisson approaches normal.
 # Stochastic Process
-A stochastic process is defined as a collection of random variables defined on a common probability space (Ω, F, P) where Ω is a sample space, F is a σ-algebra, and P is a probability measure; and the random variables, indexed by some set T, all take values in the same mathematical space S, which must be measurable with respect to some  σ-algebra Σ
+A stochastic process {Xt: t ∈ T} is a collection of random variables defined on a common probability space (Ω, F, P). The variables Xt take values in some set X called the state space which must be measurable with respect to some  σ-algebra Σ. The set T is called the index set and for our purposes can be thought of as time. The index set can be discrete T = {0, 1, 2, . . .} or continuous T = [0, ∞) depending on the application.
 
 ## Bernoulli
-In probability and statistics, a Bernoulli process is a finite or infinite sequence of binary random variables, so it is a discrete-time stochastic process that takes only two values, canonically 0 and 1. The component Bernoulli variables Xi are identically distributed and independent.
+Bernoulli process is a finite or infinite sequence of binary random variables, so it is a discrete-time stochastic process that takes only two values, canonically 0 and 1. The component Bernoulli variables Xi are identically distributed and independent.
 
 ## Markov
 A discrete-time Markov chain is a sequence of random variables X1, X2, X3, ... with the Markov property, namely that the probability of moving to the next state depends only on the present state and not on the previous states.
 
 The possible values of Xi form a countable set S called the state space of the chain.
 
-> X encodes the states in its values and in most real world cases should be a random element
+### Remarks
+A Markov process is just like a physical process but with uncertainty. In an ideal world (you are God), processes are deterministic. For example, S=vt is describing a sequence of random variables Si conditioned on v and t where probability of Si taking the value vi*t is 1 (Note that for degenerate distributions like this, we don't use conditional probability but parametrization). But we are not God. We can only make guesses given incomplete information/noise. 
 
+When the world ends and we count all Si for all i (every possible distance every element traveled at every possible time). Probability of a certain S becomes a deterministic fraction. But suppose I can double the timeline, do we get the same fractions? The answer is yes if we carefully design what to include in the state. S itself is not enough, but (S,v) is enough. If I know (S,v) at anytime anywhere, I know (S,v)' at next instant. Since we model v as a random variable, (S,v) is also random. But because the transition is time homogeneous, it becomes a probabilistic loop where if I go back around to a certain state, my options and their probabilities are the same, much like an ordinary loop where if I go to a certain place in the loop I will take the exact same move as before. 
+
+In conclusion, since we are mortal, we use stochastic processes to make structured guesses. If we can find a state and transition mechanism that's time homogeneous, we also have the wonderful property of a probabilistic loop you are certain about the probability of the process at a certain state.
+
+### Transition VS State
+Classical example of dynamic vs static. There is a duality between the two and knowing one gives you the other. You can say the world is only motion or only state. I prefer only state. You extract the world as small grids not only in space but also in time. You label their state with time. Then you have a set to do normal probability stuff. 
+
+### Convergence
+- Sequence of states Xi: the sequence doesn't converge to a number but the distribution of Xn does. (n means i to infinity)
+- State: probability of any element Si of state space S converges to a real number
+- Transition from Si to Sj: P(Xn=Sj|Xm=Si) when n and m are far apart, P converges to πj=P(Sj)=P(Xn=Sj)
+
+### Steady state
+In a deterministic physical process, say dropping a ball in a bowl, no matter where you drop it, it slides down and slides up a little and eventually settle at the bottom. Being in the bottom is steady in that it doesn't change over time once it's there. But in other processes, say temperature, it goes up in summer and drops in winter. As winter comes to its peak, the temperature drops to its lowest, but there are fluctuations. Nevertheless, the set of temperatures have a steady probability distribution. 
+
+#### Linearity
+Because of time homogeneity, an element of the set of steady states receives incoming transition with a constant rate. The constant rate itself, by duality, is constant steady state probability. 
 
 # Bayes
 ## Bayes' Theorem
@@ -247,41 +311,73 @@ P(A|B)=P(B|A)P(A)/P(B)
 
 Although Bayes' theorem is a fundamental result of probability theory, it has a specific interpretation in Bayesian statistics. In the above equation, A usually represents a proposition (such as the statement that a coin lands on heads fifty percent of the time) and B represents the evidence, or new data that is to be taken into account (such as the result of a series of coin flips). P(A) is the prior probability which expresses one's beliefs about A before evidence is taken into account. The prior probability may also quantify prior knowledge or information about A. P(B|A) is the likelihood function, which can be interpreted as the probability of the evidence B given that A is true. The likelihood quantifies the extent to which the evidence B supports the proposition A. P(A|B) is the posterior probability, the probability of the proposition A after taking the evidence B into account. Essentially, Bayes' theorem updates one's prior beliefs P(A) after considering the new evidence B.
 
-> Note that we use probability and probability distribution interchangeably. In a single trial, we have P(A) as a distribution, B is fixed so P(B|A) is maps parameters to values. The resulting P(A|B) is also parameter to value and requires a simple function multiplication.
+> Note that we use probability and probability distribution interchangeably. In a single trial, we have P(A) as a distribution, B is fixed so P(B|A) maps parameters to values. The resulting P(A|B) is also parameter to value and requires a simple function multiplication.
 
 
 # [Statistical Inference](https://en.wikipedia.org/wiki/Statistical_inference)
-Statistical inference is the process of using data analysis to infer properties of an underlying distribution of probability. Inferential statistical analysis infers properties of a population, for example by testing hypotheses and deriving estimates. It is assumed that the observed data set is sampled from a larger population.
+Statistical inference is the process of using data analysis to infer properties of an underlying probability distribution. It is assumed that the observed data set is sampled from a larger population.
+
+## Statistical Inference & Projection
+Our primary senses used for inference is vision and sense of time. But we transform the 4D senses into language and symbols. In other words, the world projects upon us data. 
+
+There are processes that are simpler in nature and can be modeled exactly with few variables and algebraic relationships, like F=ma. 
+
+Some processes are more complex, like weather. But the method is the same. We try to disentangle inputs that have more direct relationship with outputs. An extreme example would be DNN where every input contributes linearly to hidden variables. 
+
+All of these is based on the belief that our universe has structures such that its projections contain traces of such structures. 
+
+## Basics
+### Parametric Model
+F={f(x;θ):θ∈Θ}
+
+### Point Estimation
+Point estimation refers to providing a single “best guess” $\hat{θ}$ of some quantity of interest θ. θ is fixed (in frequentist view) while $\hat{θ}$ depends on data and is random
 
 ## Estimator
-An "estimator" or "point estimate" is a statistic (that is, a function of the data) that is used to infer the value of an unknown parameter in a statistical model. A common way of phrasing it is "the estimator is the method selected to obtain an estimate of an unknown parameter". The parameter being estimated is sometimes called the estimand.
+An "estimator" or "point estimate" is a statistic (that is, a function of the data) that is used to infer the value of an unknown parameter in a statistical model.  The parameter being estimated is sometimes called the estimand.
 
 Suppose a fixed parameter θ needs to be estimated. Then an "estimator" is a function that maps the sample space to a set of sample estimates. An estimator of 
 θ is usually denoted by the symbol $\hat\theta$
 
-### Bayes Estimator
+> Frequentist and Bayesian difference is to view the parameter as a constant or random variable, similar to God place dice or not.
 
+### Maximum Likelihood Estimation (MLE)
+$\hat{θ}=\argmax_θ p_X(x;θ)$
 
-## MLE & MAP
-### Maximum Likelihood Estimation
-In statistics, maximum likelihood estimation (MLE) is a method of estimating the parameters of an assumed probability distribution, given some observed data. This is achieved by maximizing a likelihood function so that, under the assumed statistical model, the observed data is most probable. The point in the parameter space that maximizes the likelihood function is called the maximum likelihood estimate.
-
-Likelihood function: L(θ): θ↦R = f(y; θ) where f is a distribution modeled as a parametric family and y is the observed data sample. Note that θ∈Θ where Θ is parameter space, subset of Euclidean space. More on this in comparison with MAP.
+Likelihood function: L(θ): θ↦R = p(x; θ)where p is a parametric family of distributions and x is the observed data sample. 
 
 The goal of maximum likelihood estimation is to find the values of the model parameters that maximize the likelihood function over the parameter space
 
 > Recall: a parametric family or a parameterized family is a family of objects (a set of related objects) whose differences depend only on the chosen values for a set of parameters
 
-### Maximum a Posteriori Estimation
+> Example: we have x1,x2,...xn observed iid data with exponential distribution (we set a specific parametric family) with parameter θ. We know that with a given θ, which we believe is not random, an observation of x is $θe^{-θx}$. Since they are independent, the probability of jointly/simultaneously observing x1 through xn is $Π_iθe^{-θxi}$. Maximizing this is equal to maximizing its log. Take derivative and get $\hat{θ}=\frac{n}{x_1+...+x_n}$. The estimator in this case is $\hat{Θ}_n=\frac{n}{X_1+X_2+...+X_n}$
+
+### Maximum a Posteriori Estimation (MAP)
+$\hat{θ}=\argmax_θ p_{Θ|X}(θ|x)$
+
 In Bayesian statistics, a maximum a posteriori probability (MAP) estimate is an estimate of an unknown quantity, that equals the mode of the posterior distribution.
 
-Likelihood function: θ↦R = f(x | θ) where x is the observation. Note θ is viewed here as a random variable. 
+We choose prior p(θ) and the statistical model p(x|θ), then we can get posterior using bayes rule. Finally we get the estimator as the mode of the posterior distribution f(θ|x) ∝ f(x|θ)⋅f(θ) (p(x) doesn't matter because it's fixed after observation)
 
-Since we have f(θ), we can get posterior using bayes rule. Then we choose θ as the mode of the posterior distribution f(θ|x) ∝ f(x|θ)⋅f(θ)
+> The only difference between MLE and MAP is in MAP we have a prior. If the prior is uniform then MAP is the same as MLE.
 
+### Least Mean Squared (LMS)
+minimize E[(Θ-estimate)^2]. optimal estimate E(Θ) where mean squared error is Var(Θ).
 
+When you have data x, apply Bayes rule to get pΘ|X(θ|x) and use E[Θ|X=x] as estimator
 
+# Statistical Models
+## Regression
+Regression is a method for studying the relationship between a response variable Y and a covariate X. The covariate is also called a predictor variable or a feature. One way to summarize the relationship between X and Y is through the regression function
 
+r(x) = E(Y|X=x) = ∫y⋅f(y|x)dy.
+
+Our goal is to estimate the regression function r(x) from data of the form
+
+(Y1, X1),...,(Yn, Xn) ∼ $F_{X,Y}$.
+
+### Simple Linear Regression
+Yi=β₀+β₁Xi+ε where ε is zero mean with variance σ²
 # ML
 ## Naive Bayes
 Digit classification. Have image x want P(y|x) where y is a number from 0-9. Problem: compute P(y|x).

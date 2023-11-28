@@ -5,6 +5,8 @@ The three most pressing problem as of end of 2023 are:
 3. On implementation level, a new training scheme based on simple algebra and probability should replace current complex and unstable gradient based methods.
 
 # Training
+## Reinforcement
+Reinforcement learning is essentially supervised. Extreme case is batch size of one. Batch size of one converges fine with enough data. That is just Bayesian learning. But even without big data, keep in mind that we recall past related experience such that some "typical" or principal trials will have more weight.
 
 # Association
 Whether we use language or images or whatever inputs and outputs, a network connects inputs to outputs, replace those words with "ideas" and we see that a network can be interpreted exactly as an association machine. 
