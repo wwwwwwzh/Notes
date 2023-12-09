@@ -98,13 +98,17 @@ Short term: when about to say thank you and someone said that in front of me, I 
 Long term: 
 
 ## Dream
-Observations:
-1. Dream is mostly episodic, meaning it's like pieces of events with rich visual and auditory stimuli instead of abstract thinking.
+### Observations
+1. Dream is mostly episodic, meaning it's like pieces of events with rich visual and auditory stimuli instead of abstract thinking. (Sometimes during a nap, it's also possible to have linguistic dream where you thought you were awake and were thinking about normal things)
 2. Dream transition can be illogical and abrupt.
 3. Interactions with characters in dream are based on people in real life we have interacted with the most.
 4. Consciousness is low in dream, and increases gradually. Highest level might happen when being anxious or excited. Consciousness might thus mean number of neurons we have access to. e.g. when you are drowsy but you start talking suddenly you are sober.
 5. Dream senses are different from normal senses in that they do resemble memory of senses more than actually conscious feeling of sensing.
 
+### Questions
+- If we imagine something unphysical, we are good, just like in dream. But if we see something unphysical, we are surprised. Which part of brain is in charge of the reality check/nonsense suppression? (Can this be based on what you know is only from what you see?)
+
+### Hypothesis
 Assumptions:
 1. Abstract thinking is harder or less natural than episodic thinking than episodic recall/imagination
 

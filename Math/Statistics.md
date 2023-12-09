@@ -251,13 +251,19 @@ $
 Distribution of sample mean is normal
 
 > That many natural phenomena are themselves normal can be interpreted as them being sample mean of many hidden events. e.g. brownian motion can be seen as result of interaction with many particles around it
+
+> There are many other limit theorems that extend beyond iid rv. A rule of thumb is that in real life, as long as you have enough samples, distributions don't need to be identical nor too independent.
+
 ### Intuition
 $
 Sn=X1+X2+...+Xn \\
 \frac{Sn}{n}\text{ converges to mean of X}\\
 \frac{Sn}{\sqrt{n}}=\frac{Sn}{n}\sqrt{n}\text{ is more spread out and has variance of X} \\
-\frac{Sn-nEX}{\sqrt{n}\sigma} \text{ has zero mean and unit variance }
+\frac{Sn-nEX}{\sqrt{n}\sigma} \text{ has zero mean and unit variance } \\
+Similarly \\
+\frac{\hat{X}-μ_X}{\frac{\sigma}{\sqrt{n}}} \text{ has zero mean and unit variance }
 $
+
 ### Probability Distribution in Frequency Domain
 ![](/images/conv-norm-0.png)
 ![](/images/conv-norm-1.png)

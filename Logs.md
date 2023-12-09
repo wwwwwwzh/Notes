@@ -313,11 +313,13 @@ But what about pure ideas? What about the relationship between a circle and its 
 ### Why Learn Everything with History
 It is most natural to learn things from historical perspective. True learning comes from answering questions asked by oneself. The questions arise naturally given historical context since it's that exact same context that prompted people to ask the question that leads to the solution we are trying to learn. The answers also lock tightly with the historical question since we are all humans having essentially similar processes of innate minds.
 
+Time is totally ordered. Any other categorization is set and by partially ordered.
+
 
 ## Movies to Watch
 - The Last of the Mohicans
 - Indiana Jones
-
+- battle of algiers
 
 
 ## Quotes

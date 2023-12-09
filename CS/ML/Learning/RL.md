@@ -1,5 +1,5 @@
 # Introduction
-RL is based on the reward hypothesis: all goals can be described as the maximization of the expected cumulative reward.
+RL is based on the reward hypothesis: all goals can be described as the maximization of the expected cumulative reward. It's used when data are not or sparsely "labeled".
 
 But unlike supervised learning (SL) which has a known label for every training point, RL doesn't have reward for each step, thus it learn by trial and error. The Markov assumption seems to imply that we can find the exact good actions of a given state no matter what the history or future of states are (a MLP from state to action). But we can't collect all the (state,action) pairs because we don't know if a specific action at a state is good or not. Further, the state space is just too big and by interaction we encounter those likely ones.(see offline training)
 

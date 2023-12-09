@@ -51,9 +51,10 @@ compared to geometric transformations. Thought: natural convergence?
 - [Diffusion MRI decoding 2022](https://doi.org/10.1101/2022.11.18.517004): ![](/images/diffusion-mri.png)![](/images/diffusion-mri-2.png)
 
 ### 24
-- Markov Chain
-- Statistical Methods
+- Markov Chain: transient and recurrent state, steady state as equilibrium
+- Statistical Methods: MAP, MLE, MSE
 - Ice age: a good story doesn't need to show all moral implications all at once, reflections should naturally unfold with the story
+
 ### 25
 - Six Easy Pieces: Feynman has an amazing ability to associate the most general aspects of daily life to physics such that abstract concepts quickly connects to familiar memories and imaginations.
 - [CBMM Deep learning theory](https://youtu.be/pad023JIXVA?si=LAT_LpyvbAjPb3j7): Why DNN converge: large parameter space vs small gradient space of Lz ![](/images/why-convereg.png)
@@ -71,3 +72,22 @@ compared to geometric transformations. Thought: natural convergence?
 - [PaLI](https://arxiv.org/pdf/2209.06794.pdf): Text+Image->Text with ViT and encoder decoder ![](/images/PaLI.png)
 - PaLM: A LLM with hardware training advancement
 - RT-2 2023: See [Robotics](/CS/ML/Robotics.md)
+- GATO 2022: See [Robotics](/CS/ML/Robotics.md)
+
+### 29
+- [Visual MAE 2021](https://arxiv.org/pdf/2111.06377.pdf):![](/images/vmae.png)![](/images/vmae-2.png)
+- [Segment Anything 2023](https://arxiv.org/pdf/2304.02643.pdf):![](/images/sa.png)
+![](/images/sa-1.png)
+
+### 30
+- [CoDi](): ![](/images/codi.png)
+- [Real-World Robot Learning with Masked Visual Pre-training 2022](https://arxiv.org/pdf/2210.03109.pdf) See [Robotics](/CS/ML/Robotics.md)
+- [OVRL-V2 2023](https://arxiv.org/pdf/2303.07798.pdf) See [Robotics](/CS/ML/Robotics.md)
+- [Masked World Models for Visual Control 2022](https://proceedings.mlr.press/v205/seo23a/seo23a.pdf) See [Robotics](/CS/ML/Robotics.md)
+- [Transformer NEXT-FRAME](): frames->next frame on MNIST videos
+- [Sparse Transformer 2019](https://openai.com/research/sparse-transformer)
+- [VQGAN](https://arxiv.org/pdf/2012.09841.pdf) ![](/images/vqgan.png)
+- [VQVAE](https://arxiv.org/pdf/1711.00937.pdf) Try https://github.com/airalcorn2/vqvae-pytorch
+- [Dreamer 2019](https://arxiv.org/pdf/1912.01603.pdf): See [Robotics](/CS/ML/Robotics.md)
+- [VideoGPT 2021](https://wilson1yan.github.io/videogpt/index.html): See [Video/590](/CS/ML/Video/590.md)
+- [OpenAI VPT Minecraft 2022](https://openai.com/research/vpt): See [Robotics](/CS/ML/Robotics.md)

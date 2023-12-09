@@ -82,7 +82,7 @@ Maybe aphasia is similar to how I can sing in my mind "in perfect pitch" but not
 1. All memory results from association i.e. adjustment of synaptic strength between neurons
 2. Memory strength is a function of time and initial strength. -> (23.11.4) Memory strength changes whenever new stimuli comes in.
 3. Each association has its own strength function (doesn't need to naturally decline)
-3.5. Association and dissociation are the same
+3.5. Association and dissociation are the same?
 
 ## Memory and Attention
 
@@ -94,6 +94,9 @@ Also see Advanced AI and Brain under ![](/Logs.md)
 
 ### Face Similar But Can't Recall
 Someone looks familiar but can't remember who he resembles whatsoever until you see that person and suddenly knows that's the one you are looking for. Might be related to unidirection and central theorem two
+
+### Finally Recall Things Wasn't Able to be Recalled
+When seeing a face we think it's familiar but can't recall exactly why it's familiar. When seeing a seemingly familiar scene we can't recall where exactly it is. Sometimes we have vague memory traces, so vague that not a single complete scene nor plot nor character could be recalled, but you know it is there. Then after sometime, maybe a long time, you see that face or movie again and you will immediately know that's the one you were looking for.
 
 # Consciousness
 ## Observations
@@ -113,6 +116,11 @@ Memory is actually the only thing we have. The future is imagined with memory an
 
 ### Why Do We Need Attention or Focus and Much more Energy When We Are Trying to be Precise
 e.g. you have a instant thought that sth is true and have a quick thought and seems like you can prove it. but it takes more time and determination to really pin it done. and you can't do this when you're tired
+
+"We don't understand math, we just get used to it", meaning that the hard math we face when first learning it is hard because of complexity of structure of nature (See universal convergence of natural science, ANN and NN). When we have done many math problems, similar problems are processed unconsciously (passed to a big universal network). We can also imagine someone proficient in science and logic could face new math problems as easily as we face old ones.
+
+### "Working Memory"/Hot Memory
+Why we think faster about a topic after an energetic discussion with others and why we can't sleep after talking to friends at night? Everything we do changes the landscape of memory and if the universal processing network that doesn't involve LTP exists, it is constantly changing (imagine two lakes connected only through a stream, one has strong wind and big wave, the other only minimally affected by current from first lake). When we talk about a specific topic, some parts of the lake wave dramatically, influencing the whole lake. Then when we query it, it just gets more efficient at producing insights because different currents have been blended. Similarly, this network with little irrelavent input can quickly turn to relavent stimuli and converge to energy minimal as those strong inputs, so we always imagine some talking after talking for long time. 
 
 # LLM
 ## General

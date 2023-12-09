@@ -246,6 +246,7 @@
 - 1889-1945 Hitler [people,HOS]
 - 1893-1976 Mao [people,HOS]
 ---
+- 1901 First Nobel Prize
 - 1901-1966 Walt Disney [people]
 - 1903 John von Neumann [people]
 - 1903 Wright Brothers Kitty Hawk [invention]
@@ -269,7 +270,8 @@
 - 1924 Lenin died, Stalin, Leningrad [people,HOS]
 - 1925 Bell lab founded [company]
 - 1926-2022 Elizabeth II [people,monarch]
-- 1929 Great Depression
+- 1928-1932 First Five Year Plan [economy]
+- 1929 Great Depression [economy]
 - 1931 Empire state building [landmark]
 - 1933 Boeing 247 [invention]
 - 1933 Hitler Chancellor of Germany [HOS]
@@ -281,16 +283,17 @@
 - 1940.5.26 Dunkirk [war]
 - 1940.6.20 France surrender [war]
 - 1941.6.22 Operation Barbarossa [war]
-- 1941.11.26 Pearl Harbor [war]
+- 1941.11.26 **Pearl Harbor** [war]
 - 1942.6.4 Midway [war]
 - 1943.7 Italian Campaign [war]
 - 1944.6.6 D-Day [war]
 - 1945.4.12 FDR died [people,HOS]
 - 1945.4.30 Hitler suicide [people,HOS]
-- 1945.5.8 German surrender [war]
+- 1945.5.8 **German surrender** [war]
 - 1945.8.6-9 Hiroshima and Nagasaki [war]
 - 1945.8.15 Japan surrender [war]
 - 1945.9.2 V-J Day [war]
+- 1948 Israel [state]
 - 1949 first Soviet A-bomb test
 - 1950 Korean war [war]
 - 1952 hydrogen bomb 
@@ -306,25 +309,36 @@
 - 1961 Eisenhower -> Kennedy [people,USP]
 - 1961 Yuri Gagarin [event,people]
 - 1961 Berlin wall
+- 1963.11.22 Kennedy -> LBJ [people,USP]
 - 1964 IBM System/360 [invention]
 - 1964 Khrushchev -> 
 - 1968 Intel founded [company]
-- 1969 Moon Landing [event]
+- 1969 LBJ -> Nixon [people,USP]
+- 1969.7.20 **Moon Landing** [event]
 - 1969 Unix development began on PDP 11 [invention]
+- 1970 Nasser died [people]
 - 1972 C [History of C](https://www.bell-labs.com/usr/dmr/www/chist.html) [invention]
+- 1974 Nixon -> Ford [people,USP]
 - 1974 Intel 8080 [invention]
 - 1974 Motorola 6800 [invention]
 - 1975 Microsoft Founded [company]
 - 1976 Apple Founded [company]
+- 1977 Ford -> Carter [people,USP]
+- 1979 Islamic Revolution of Iran [revolution]
+- 1981 Carter -> Reagan [people,USP]
 - 1984 [Macintosh 1984 Commercial](https://www.youtube.com/watch?v=VtvjbmoDx-I) [invention]
 - 1984 [Macintosh Premier Steve Jobs](https://youtu.be/2B-XwPjn9YY) [invention]
+- 1985.3 Gorbachev [people]
 - 1985 C++ [invention]
 - 1985 Windows 1.0
 - 1985 Steve Jobs resigned from Apple and started NeXT [company]
+- 1989 Reagan -> Bush [people,USP]
 - 1989 Fall of Berlin Wall [war]
 - 1990 Reunification of Germany
 - 1991 Linux 0.01 [invention]
 - 1991 Soviet Union collapsed
+- 1993 Bush -> Clinton [people,USP]
+- 1993 Oslo Accords [state]
 - 1995 Toy Story 1
 - 1997 Steve Jobs returned to Apple
 - 1999 Star War I

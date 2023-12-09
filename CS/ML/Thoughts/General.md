@@ -22,12 +22,18 @@ An extreme example would be people speaking all kinds of different languages can
 
 However, since the world is too complex, our hidden variables don't even necessarily map to common real world objects. e.g. there might be a common idea to be generous for 2 people, but they have different reasons. The ML analogy would be that a certain neuron always activates when the input might lead to generous behavoirs and there is a linear relatioinshiip between activation of this neuron and generousity output by the network. They are connencted to different traininig data (real observatioins) but have the same function. 
 
-Note though that I as a network with different traiiniing distributioin than the 2 described above is makiing this argument, which means I'm connecting these to my hidden neuron that inculudees both. Nonetheless, even without me, the 2 above should understand each other because another related idea common ini their notioins are the same, maybe the actiion to give or say similarly good words. 
+Note though that I as a network with different training distribution than the 2 described above is making this argument, which means I'm connecting these to my hidden neuron that includes both. Nonetheless, even without me, the 2 above should understand each other because another related idea common ini their notions are the same, maybe the action to give or say similarly good words. 
 
 Also see Associationism/Thoughts/Explanations/Hidden Neurons
 
 ### Convergence of Evolution and Natural Symmetry
 We have different languages that serve the same purpose, animals evolve in different trajectories but sometimes evolved the same functions and structures. In ML, we see hidden variables with "meaning". If one such neuron has a linear relationship with what we see as "time" then we say this neuron understands time. Note that time is a human inference. We don't sense or see time, it's a useful guess or explanation just as we use god to explain things. The interesting thing here is that both humans and ANN developed the same notion of time. This together with the evolution example might suggest there is somehow some structures of the universe that, no matter how you interpret it, will always be superior to other explanations. Think about the phylogenetic tree. That's both how evolution works and the best guess we have. This might be related some fundamental properties of symmetry.
+
+### Convergence as Alignment
+We align modalities because we have a common reference frame, the physical world. We want machines to also align, and we train them to align based on our own alignments. Thus, humans and NN are also aligned and aligned wrt to the physical world. Such alignment means if we as humans want an image to have certain properties described in words, we can also ask NN, since our words and machine tokens are aligned, to change the image in a way that's aligned to changes observed by both human and machine in data.
+
+### Convergence of Science as a Result of Convergence of Evolution
+We have the ability to identity something is falling, but this specific ability might not be attributed to an evolutional event. It's more likely that we acquired the ability to see any motion under evolutional stress (hunting, escaping). This stress itself is a result of nature (organisms move based ultimately on the fundamental forces). With this stress that's from nature we are given a structure again based on nature that can infer nature. This is the most amazing fact about human and universe, a creation that understands the creator.
 
 ### Uncategorized
 #### Convergence of Language
@@ -48,6 +54,14 @@ Observation of the real world helps build a model of how the world should be. In
 A unifying theme of kids' behaviors is connecting one sense with another. They are interested when you both show up and talk or move like something they know. They see things and want to touch it and hold it and see it from different views, sometimes they smell and lick it. They try to shake people because they shook bottles and they saw water turning to an interesting pattern. They threw things off the table to see how it ends. They move and separate things so they know objects are fundamental units and can be arranged. They manipulate the objects to observe their movements. 
 
 But an important aspect of this connection is that they can all be connected to a common central abstract system mediated by language. With this they can connect sound of elephant to look of giraffe to taste banana, and they ask why they can't do that. This adversarial connection is symbolic largely language only.
+
+### Development of Connections
+Kids use only one modality at a time. I explored the world visually and my thoughts were primarily visual imagination. I was more drawn to the visual features as well. Kids open their eyes wide and see the world in detail. This establishes strong in-modality connections. Everything else was a quick response to immediate stimuli and caused a turbulence in memory that doesn't leave permanent traces. 
+
+## Long Short Term Memory
+See Focus/Low Level
+### LSTM for any Network
+Maybe during GD, some big updates mean it's short term, and slow ones mean it's long term. Maybe this is even the case in brain. Maybe the brain is just one big homogeneous network but some parts, because of their nature of being adjacent to inputs, update faster and are thus "short" and those away from primary modalities, eg, limbic system, updates slower.
 
 ## Vision
 lanague itself is very powerful, alwaredy structured, visual is complex, maybe visual+actoin joint 
