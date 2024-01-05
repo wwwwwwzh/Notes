@@ -100,6 +100,10 @@ When seeing a face we think it's familiar but can't recall exactly why it's fami
 
 # Consciousness
 ## Observations
+### Visual Consciousness
+- When we see something, we are processing signals of the past. 
+- When we say we are seeing something/something is visually accessible for consciousness, are we conscious of its memory or of "real" present (real at most mean signal as they enter some part of brain since they can't be real time)?
+- When we don't pay attention or forgets complletely a part of the scene, were we conscious of it? Since we are conscious of the whole, it's reasonable to argue that we must were conscious of all its parts.  
 ### Stop of Noise
 At the instant of the stop, you remember/are aware of both the noise before stop and the quietness immediately after. But if no such sudden stop happened, you are neither aware of the noise nor will remember the sound of the noise.
 

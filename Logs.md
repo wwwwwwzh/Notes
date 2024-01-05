@@ -324,6 +324,8 @@ Time is totally ordered. Any other categorization is set and by partially ordere
 
 ## Quotes
 ### Books
+#### Feynman
+- On meaning of physical laws: Although it is interesting and worth while to study the physical laws simply because they help us to understand and to use nature, one ought to stop every once in a while and think, "What do they really mean?" The meaning of any statement is a subject that has interested and troubled philosophers from time immemorial, and the meaning of physical laws is even more interesting, because it is generally believed that these laws represent some kind of real knowledge. The meaning of knowledge is a deep problem in philosophy, and it is always important to ask, "What does it mean?"
 #### Heisenberg
 - On physics and philosophy: My mind was formed by studying philosophy, Plato and that sort of thing". "Modern physics has definitely decided in favor of Plato. In fact the smallest units of matter are not physical objects in the ordinary sense; they are forms, ideas which can be expressed unambiguously only in mathematical language"
 

@@ -1,0 +1,7 @@
+- Vinci 1452 – 1464 
+- Florence 1464 – 1482 
+- Milan 1482 – 1499 
+- Florence 1500 – 1506 
+- Milan 1506 – 1513 
+- Rome 1513 – 1516 
+- France 1516 – 1519

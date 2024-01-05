@@ -195,7 +195,7 @@ p(i)=P(X=i)=e^-λ(λ^i)/i! (Taylor approximation of e^x)
 Sample mean converges to population mean.
 
 ### Convergence of Probability Distribution
-∃a∀ε,ε'>0∃δ∀n>δP(|Xn-a|>ε)<ε'
+$∃a∀ε,ε'>0∃δ∀n>δP(|Xn-a|>ε)<ε'$
 
 > Note the example of convergence on 0 but E is 1 and variance goes to infinity (P(0)=1-1/n, P(n)=1/n)
 

@@ -96,7 +96,11 @@ Memory doesn't go away. Given a group of activations at shallow layer, they are 
 Short term: when about to say thank you and someone said that in front of me, I will copy their tone. This might be that the other person's voice input overwhelmed my toning module and since both my plan of tone and their tone quickly flush through, none has a lasting effect. 
 
 Long term: 
+## Thought
+### Flow of Thought
 
+### Random Thoughts
+Sometimes whether by explicit query or out of nowhere, a thought, auditory or visual or other will emerge. 
 ## Dream
 ### Observations
 1. Dream is mostly episodic, meaning it's like pieces of events with rich visual and auditory stimuli instead of abstract thinking. (Sometimes during a nap, it's also possible to have linguistic dream where you thought you were awake and were thinking about normal things)
@@ -122,6 +126,9 @@ Based on these here is a hypothesis on how dreams work:
 ### Abruptness of Dream
 Real life is as abrupt as dreams. When we rotate our heads we don't have smooth transitions, we just see one scene jumps to another. We also have sudden change of states. When we are extremely drowsy in class the whole world looks different than when we suddenly hear the class over and get up sober. Also when watching movies, we don't notice transitions at all. When one scene ends we don't expect the camera to hold or follow to next day or year and show next scene, it just transits, nothing unusual.
 
+### Papers
+- https://pubmed.ncbi.nlm.nih.gov/3384570/: female recall > male; right hander > mix/left
+- [Dreams and interhemispheric asymmetry](https://pubmed.ncbi.nlm.nih.gov/11811128/): the left hemisphere seems to provide dream origin while the right hemisphere provides dream vividness, figurativeness and affective activation level.
 ## Behavioral
 ### Confidence
 The more connections the given topic you have, the more confident you are. Given the name Napoleon, if you know a lot about him, ideas are quickly activated and you are ready to say many things about him. But if you've never heard of say, Ur, then thinking or hearing about it connects to little, you feel lost and afraid.

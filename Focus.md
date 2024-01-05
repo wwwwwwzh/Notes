@@ -1,6 +1,9 @@
+# Log
+- 12.20 Calculus as language of change. Equilibrium. Patterns of e, sine, π in math and nature. Structure/law from observation out of necessity (Laws of universe and our guesses).
+
 # Brain-AI
 ## Low Level
-- A simple spatial temporal probabilistic network configured solely by connection and initialization.
+- A simple spatial temporal probabilistic network configured solely by connection and initialization (See Lottery Ticket Hypothesis,).
 - A simple training scheme with above model
 - Physics inspired short term memory as smooth surface with incoming stimuli rolling and leaving trace
 - LSTM vs brain, how to represent and continuously update memory with any network.
@@ -16,6 +19,7 @@
 - Prediction of next frame of world with and without interaction by self. (how to train/what's objective/what network structure supports spontanneous learning)
 - Jointly predict the whole action consequence (input current understanding of scene and action description, output low res imagined time frame and complete action trajectory) and high time resolution visual consequences (input current frame, action and tactile feedback, output next frame and feedback). Use surprise as strong weigght change indicator. Hidden variables should include: intuitive physics, self, (Why doing is better than watching? Because you have control of every variable and is observing causation more than mere correlation)
 - Pinpoint activations/group of neurons responsible for specific ideas by diverse inputs (verb, tall, rich, not, car...)
+https://github.com/sayakpaul/probing-vits
 - A small LM runs in loop to produce outputs, the intermidiary outputs should be reasonable intermiadiary thought processes for that input and could be aligned using LLM.
 
 

@@ -4,12 +4,25 @@ The three most pressing problem as of end of 2023 are:
 2. Still on behavioral level, models should incorporate all other human sensorimotor modalities, most importantly to aid interaction with the world.
 3. On implementation level, a new training scheme based on simple algebra and probability should replace current complex and unstable gradient based methods.
 
+
 # Training
-## Reinforcement
+## Traditional ML
+### Reinforcement
 Reinforcement learning is essentially supervised. Extreme case is batch size of one. Batch size of one converges fine with enough data. That is just Bayesian learning. But even without big data, keep in mind that we recall past related experience such that some "typical" or principal trials will have more weight.
+
+## Human 
+### Curiosity
+### Order Following
+We seem to follow orders by default: your friend ask you to hand you a paper and you do it without asking; ancient people do whatever a king asks without questioning or emerging thoughts about "equality" or "freedom". Kids seem to do everything they are told to: at home they do whatever they are asked by parents and at school teachers. A closer examination reveals that there are counter examples and it might not be that we are born to follow orders, but that some evolutionarily deeper mechanisms set motion for order following in some specific situations which happen to be common in childhood. Parents are followed because they are right and only thing to follow at the very start. They provide means for survival so their actions are naturally connected to things that are good and should be followed. Some other mechanisms include fear aversion for doctors, social and other innate emotions for teacher and other relatives.
+
+### Order Rejection
 
 # Association
 Whether we use language or images or whatever inputs and outputs, a network connects inputs to outputs, replace those words with "ideas" and we see that a network can be interpreted exactly as an association machine. 
+
+## All Networks Are the Same
+### Hopfield and Transformer
+https://mcbal.github.io/post/an-energy-based-perspective-on-attention-mechanisms-in-transformers/
 
 ## On Convergence of Inference
 ### Bias Variance Tradeoff
@@ -34,6 +47,9 @@ We align modalities because we have a common reference frame, the physical world
 
 ### Convergence of Science as a Result of Convergence of Evolution
 We have the ability to identity something is falling, but this specific ability might not be attributed to an evolutional event. It's more likely that we acquired the ability to see any motion under evolutional stress (hunting, escaping). This stress itself is a result of nature (organisms move based ultimately on the fundamental forces). With this stress that's from nature we are given a structure again based on nature that can infer nature. This is the most amazing fact about human and universe, a creation that understands the creator.
+
+### Convergence of Human Behaviors 
+(See Training/Human/) Throughout childhood for humans and early months of most animals, kids learn or reemember that some predictions/actions/outputs among all seemingly possible ones are better than others. For example in primary school we fill in blanks. Some answers are right but not what teachers want. 
 
 ### Uncategorized
 #### Convergence of Language
@@ -64,7 +80,7 @@ See Focus/Low Level
 Maybe during GD, some big updates mean it's short term, and slow ones mean it's long term. Maybe this is even the case in brain. Maybe the brain is just one big homogeneous network but some parts, because of their nature of being adjacent to inputs, update faster and are thus "short" and those away from primary modalities, eg, limbic system, updates slower.
 
 ## Vision
-lanague itself is very powerful, alwaredy structured, visual is complex, maybe visual+actoin joint 
+Language itself is very powerful, already structured, visual is complex, maybe visual+action joint 
 attention 
 
 ### Classification
@@ -96,6 +112,9 @@ Language starts with classification of sound while vision starts with that of li
 
 Vision in AI is harder because the inputs are "raw". Language is well structured. The words are already clustered into easily separable domains and by formalizing random sounds or ideas which are infinite just like all possible visual stimuli into well defined symbols, the dimensionality reduced to a very finite one with words already scattering nicely alone each axis. 
 
-After the classification task usage for language and vision diverged. We identify items and dangers, plan actions to see obstructed objects or grab things, construct mental maps to navigate, abstract actions to mimic, etc. For language, we also start with identifying items with words, then relationship of words as an abstraction of relationship of objects, (language dependece on visiion?)
+After the classification task usage for language and vision diverged. We identify items and dangers, plan actions to see obstructed objects or grab things, construct mental maps to navigate, abstract actions to mimic, etc. For language, we also start with identifying items with words, then relationship of words as an abstraction of relationship of objects, (language dependence on vision?)
 
 We thus need more processing for visual inputs in AI than language. In language, we use CLIP embedding which finds representations that likely align with the real brain representations. In vision we need to first 
+
+### Convergence of World Model with VL Model
+Classification alone is very powerful since we need many deeper structures to do it. But VL is just a more complex classification task with overlapping sets of labels for each image. In humans, when we learn to say thank you, we are classifying situations, or when 

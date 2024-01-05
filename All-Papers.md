@@ -61,7 +61,7 @@ compared to geometric transformations. Thought: natural convergence?
 
 ### 26
 - Electrophysiology reveals that intuitive physics guides visual tracking and working memory 2023: EEG evidence of how visual tracking can be interrupted and restored by violation of expectation and explanation![](/images/EEG-intuitive-phys.png)
-- Intuitive physics learning in a deep-learning model inspired by developmental psychology 2022: object centered (object segmented autoencoder) and LSTM to predict next frame. Calculate VOE by error between prediction and actual. ![](/images/ml-voe.png)
+- [Intuitive physics learning in a deep-learning model inspired by developmental psychology 2022](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9489531/pdf/41562_2022_Article_1394.pdf): object centered (object segmented autoencoder) and LSTM to predict next frame. Calculate VOE by error between prediction and actual. ![](/images/ml-voe.png)
 - [Offline Learning](https://www.youtube.com/watch?v=k08N5a0gG0A): See offline learning of RL
 - Offline Reinforcement Learning as One Big Sequence Modeling Problem 2021: See [Robotics](/CS/ML/Robotics.md)
 - [FiLM](https://arxiv.org/pdf/1709.07871.pdf): method to embed text tokens to image network so image network output is conditioned on text input
@@ -84,10 +84,21 @@ compared to geometric transformations. Thought: natural convergence?
 - [Real-World Robot Learning with Masked Visual Pre-training 2022](https://arxiv.org/pdf/2210.03109.pdf) See [Robotics](/CS/ML/Robotics.md)
 - [OVRL-V2 2023](https://arxiv.org/pdf/2303.07798.pdf) See [Robotics](/CS/ML/Robotics.md)
 - [Masked World Models for Visual Control 2022](https://proceedings.mlr.press/v205/seo23a/seo23a.pdf) See [Robotics](/CS/ML/Robotics.md)
-- [Transformer NEXT-FRAME](): frames->next frame on MNIST videos
+- [Transformer NEXT-FRAME](https://arxiv.org/pdf/2108.08224.pdf): frames->next frame on MNIST videos
 - [Sparse Transformer 2019](https://openai.com/research/sparse-transformer)
 - [VQGAN](https://arxiv.org/pdf/2012.09841.pdf) ![](/images/vqgan.png)
 - [VQVAE](https://arxiv.org/pdf/1711.00937.pdf) Try https://github.com/airalcorn2/vqvae-pytorch
 - [Dreamer 2019](https://arxiv.org/pdf/1912.01603.pdf): See [Robotics](/CS/ML/Robotics.md)
 - [VideoGPT 2021](https://wilson1yan.github.io/videogpt/index.html): See [Video/590](/CS/ML/Video/590.md)
 - [OpenAI VPT Minecraft 2022](https://openai.com/research/vpt): See [Robotics](/CS/ML/Robotics.md)
+
+## Dec
+### 11
+- Lottery Ticket Hypothesis
+- Early Bird Ticket
+- Grokking:
+- ROME
+- Learning and Education
+
+### 13
+- MaskGIT: Summary: generative transformer beats GANs with iterative masked modeling instead of autoregressive. ![](/images/maskgit-1.png)![](/images/maskgit-2.png)

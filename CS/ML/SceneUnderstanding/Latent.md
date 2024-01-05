@@ -4,3 +4,4 @@
 ![](/images/srt-1.png)
 - Ablations: Without pose input or using volume rendering achieves comparable results
 - Results: ![](/images/srt-2.png)
+- Thoughts: The input images are combined with excessive geometric information (o,d)

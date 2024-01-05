@@ -100,10 +100,13 @@
 - 1337 Hundred Years War [war]
 - 1346-1352 Black death [pandemic]
 - c. 1345s **Renaissance**
+- 1377-1446 Brunelleschi [people,art]
 ---
 - 1432-1481 Mehmed II [people,monarch,ME]
 - 1440 Gutenberg printing press [invention]
 - 1449-1492 Lorenzo Medici [people,monarch]
+- 1451-1506 Columbus [people]
+- 1451-1512 Amerigo [people]
 - 1452-1519 Da Vinci [people,science,art]
 - 1453 Fall of Constantinople [war]
 - 1473-1543 **Copernicus** [people,science]

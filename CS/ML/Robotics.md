@@ -64,6 +64,7 @@ p(at|o1...oT)
 - Summary: pretrained visual language model (Visual Question Answering/VQA) to output action as text token directly
 - Network: Image+Question/Task->Action ![](/images/rt-2.png)
 - Thought: Humans connect actions with proprioception and vision first, then they use sound and later language to connect to these hidden ideas within those aforementioned connections. Human languages, taken for itself, because they are fundamentally connected to (or can be said to result from) real world things/senses, contain structures of the world. So language also already has structures for human actions that could be easily decoded to produce either robotic or human action command. So is it necessary to use visual prediction to further constrain and empower the structure of such network? 
+- Explore: plan at first frame, 
 
 ### SMAE [VisualCortex-1 2023]()
 - Summary: Large ViT model trained with MAE on 9 datasets as backbone and standard RL (Policy network) for 7 tasks. Comparable performance with SOTA PVR. Improvements upon adaptation (end to end finetuning or finetuning MAE with domain specific)
@@ -81,6 +82,6 @@ p(at|o1...oT)
 - Arch: CNN token, ViT MAE+reward prediction, RNN dynamics
 
 ### [OpenAI VPT Minecraft 2022](https://openai.com/research/vpt)
-- Summary: large unlabeled data pretraining for visual behavioral learning. Use Small labeled data to train inverse dynamics model (easier to train) + large unlabeled to get causal foundation model + additional RL finetuning 
+- Summary: large unlabeled data pretraining for visual behavioral learning. Use Small labeled data to train inverse dynamics model (easier to train) + large unlabeled (label with said model) to get causal foundation model + additional RL finetuning 
 - Arch: ![](/images/oa-vpt.png)
 - Network: 128x128x128x3->temporal conv->ResNet->128x131072->MLP(256,4096)->128x4096->transformer->action
