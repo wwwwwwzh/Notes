@@ -1,7 +1,7 @@
 # Introduction
-RL is based on the reward hypothesis: all goals can be described as the maximization of the expected cumulative reward. It's used when data are not or sparsely "labeled".
+RL is based on the reward hypothesis: all goals can be described as the maximization of the expected cumulative reward. It's used when data are not or sparsely "labeled". (This means, for example, if your goal is to "succeed", then you can quantize this goal by believing, say, that success means maximization of money and fame. In addition, this means each intermediate position has a definite value such that to maximize the final goal you need to maximize each intermediate goal. For example, you might need to be in a good school at 18, have a good family at 30 etc.)
 
-But unlike supervised learning (SL) which has a known label for every training point, RL doesn't have reward for each step, thus it learn by trial and error. The Markov assumption seems to imply that we can find the exact good actions of a given state no matter what the history or future of states are (a MLP from state to action). But we can't collect all the (state,action) pairs because we don't know if a specific action at a state is good or not. Further, the state space is just too big and by interaction we encounter those likely ones.(see offline training)
+But unlike supervised learning (SL) which has a known label for every training point, RL doesn't have reward for each step, thus it learn by trial and error. The Markov assumption seems to imply that we can find the exact good actions of a given state no matter what the history or future of states are (a MLP from state to action). But we can't collect all the (state,action) pairs because we don't know if a specific action at a state is good or not. Further, the state space is just too big and by interaction we encounter those likely ones. (see offline training)
 
 
 # Convention
@@ -12,12 +12,13 @@ Also note that subscript t for any of the first section symbols mean the value o
 - O: observation. partial state
 - A: action
 - τ: sequence of states and actions
-- r: feedback I get from the environment after performing an action at a state. i.e.g. a golden apple gives reward of 5. So if I get a golden apple at t=3 without anything else happening, r3=5
-- R: reward function from τ to real number. R(τ)=rt+γ[rt+1]+γ^2[rt+2]...
+- r: S,A→R. feedback I get from the environment after performing an action at a state. i.e.g. a golden apple gives reward of 5. So if I get a golden apple at t=3 without anything else happening, r3=5
+- R: τ→R. reward function from τ to real number. R(τ)=rt+γ[rt+1]+γ^2[rt+2]...
 
-- π: Policy function from state to a probability distribution over the set of actions. i.e πθ(s)=P(A|s;θ). In huggingface's blog, π(at|st) is the probability of action at given st
-- J: Objective function from space of  parametrization θ of policy to expected cumulative reward. J(θ) = ΣP(τ;θ)R(τ) written as Eτ~π(R(τ)). P(τ;θ) = $ΠP(s_{t+1}|s_t,a_t)\pi_\theta(a_t|s_t)$
-- V: Value function from state to expected cumulative reward if following a certain policy. Note that R is deterministic while V is an expectation
+- V: S→R. Value function from state to expected cumulative reward if following a certain policy. Note that R is deterministic while V is an expectation
+- π: S→P(A). Policy function from state to a probability distribution over the set of actions. i.e πθ(s)=P(A|s;θ). In huggingface's blog, π(at|st) is the probability of action at given st
+- J: Θ→R. Objective function from space of  parametrization θ of policy to expected cumulative reward. J(θ) = ΣP(τ;θ)R(τ) written as Eτ~π(R(τ)). P(τ;θ) = $ΠP(s_{t+1}|s_t,a_t)\pi_\theta(a_t|s_t)$
+
 
 
 

@@ -16,7 +16,10 @@
 - Electron orbitals (electrum ‘amber’): region where it's likely to find electrons, each hold up to 2 electrons
 - Electron configuration: Neon (1s2 2s2 2p6)
 
-## Bonds
+
+# Bonds
+![](/images/molecular-interaction.png)
+## Intramolecular 
 ### Ions and ionic bonds
 - Ion: Atoms (or molecules) gaining or losing an entire electron
 - Cation: positive ions formed by losing electrons
@@ -41,15 +44,20 @@ The shared electrons split their time between the valence shells of the hydrogen
 - Covalent bonds are characterized by their strong bond strength and the sharing of electrons 
 - Ionic bonds form when electrons are transferred from one atom to another, creating ions. These bonds are characterized by their ionic nature and the strong attractive forces between positive and negative ions. Ionic bonds tend to be weaker than covalent bonds
 
+## Intermolecular (Van der Waal)
+The attractive or repulsive forces between molecular entities (or between groups within the same molecular entity) other than those due to bond formation or to the electrostatic interaction of ions or of ionic groups with one another or with neutral molecules. The term includes: dipole–dipole, dipole-induced dipole and London (instantaneous induced dipole-induced dipole) forces. The term is sometimes used loosely for the totality of nonspecific attractive or repulsive intermolecular forces.
+
 ### Hydrogen bonds
 In a polar covalent bond containing hydrogen (e.g., an O-H bond in a water molecule), the hydrogen will have a slight positive charge because the bond electrons are pulled more strongly toward the other element. Because of this slight positive charge, the hydrogen will be attracted to any neighboring negative charges. This interaction is called a hydrogen bond.
 
-
+### Dipole-Dipole
+Intermolecular or intramolecular interaction between molecules or groups having a permanent electric dipole moment.
 
 ### London dispersion forces
 Because electrons are in constant motion, there will be some moments when the electrons of an atom or molecule are clustered together, creating a partial negative charge in one part of the molecule (and a partial positive charge in another). If a molecule with this kind of charge imbalance is very close to another molecule, it can cause a similar charge redistribution in the second molecule, and the temporary positive and negative charges of the two molecules will attract each other.
 
 ### Summary
+ionic bonds are completely polar bonds 
 Covalent and ionic bonds are both typically considered strong bonds.
 
 Hydrogen bonds and London dispersion forces are both examples of van der Waals forces, a general term for intermolecular interactions that do not involve covalent bonds or ions.

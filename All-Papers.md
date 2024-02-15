@@ -102,3 +102,25 @@ compared to geometric transformations. Thought: natural convergence?
 
 ### 13
 - MaskGIT: Summary: generative transformer beats GANs with iterative masked modeling instead of autoregressive. ![](/images/maskgit-1.png)![](/images/maskgit-2.png)
+
+# 2024
+## Jan
+### 20
+[Pleasure systems in the brain](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4425246/)
+- In a sense, pleasure can be thought of as evolution’s boldest trick, serving to motivate an individual to pursue rewards necessary for fitness. 
+- rewards involve a composite of several psychological components: liking (core reactions to hedonic impact), wanting (motivation process of incentive salience), and learning (Pavlovian or instrumental associations and cognitive representations) 
+- The basic sensorimotor circuitry of these affective expressions resides in the brainstem, but such affective expressions are not mere brainstem reflexes, but rather are hierarchically controlled by forebrain structures. loss of dopamine doesn’t necessarily reduce pleasure after all
+
+[Neural correlates of long-term intense romantic love](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3277362)
+- early-stage romantic love and long-term romantic love: right VTA and posterior caudate body; bilateral anterior caudate body, mid-insula and posterior hippocampus; and left cerebellum. The right amygdala showed deactivation in early-stage love, while the left amygdala showed activation for the long-term love group.
+- maternal love and long-term romantic love: right VTA/SN, PAG and hypothalamus; bilateral SN, anterior caudate, putamen, posterior GP, thalamus, mid-insula, dorsal Raphe and posterior cingulate; the left anterior cingulate and insular cortex.
+- maternal, early-stage and long-term love: VTA, bilateral anterior caudate body and middle insula.
+
+### 25
+[The Neural Basis of Timing: Distributed Mechanisms for Diverse Functions](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5962026/): Time and space might be similar in brain. The passage of "physical time" corresponds to "physical progression" of events. So a simple timed task could just rely on environmental inputs. In fact, sometimes we count by periods of background noise. / taxonomy of time: requiring a precise internal clock or not (simultaneity, temporal order vs Duration discrimination, reproduction, production); sensory or motor;
+
+pacemaker-accumulator models, Weber’s law (standard deviation of the response time across trials increases linearly with the mean time of the responses)
+
+> When the world is better than expected, phasic increases in dopamine neuron activity may act to slow striatal population dynamics, either by causing a net decrease in the excitatory drive to the striatal network or by altering the dynamics of synaptic plasticity. Such an effect may underlie common observations that fearful or pleasurable experiences can have opposites effects on perceived duration 
+
+Space time is perceived because they are. Spatial and temporal patterns of the "real world" should remain when processed. All our sensory modality captures both space and time.

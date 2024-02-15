@@ -358,6 +358,11 @@ Time is totally ordered. Any other categorization is set and by partially ordere
 #### Oppenheimer
 - "When you speak they hear a prophet, when Straus speaks they hear themselves", "They'll listen to the prophet", "The prophet can't be wrong, not once."
 
+#### The Green Book
+- You? Mr. Big Shot. You live on top of a castle. Traveling around the world doing concerts for rich people.  I live on the streets. You sit on a throne. 
+- The world's full of lonely people afraid to make the first move
+
+
 
 ### Forbes
 - Bernard Arnault: I see myself as an ambassador of French heritage and French culture. What we create is emblematic. It's linked to Versailles, to Marie Antoinette.
@@ -381,6 +386,10 @@ Time is totally ordered. Any other categorization is set and by partially ordere
 - COGITO ERGO SUM
 - CUI BONO
 - ALEA LACTA EST
+
+### Internet
+- On Merry go around life: it makes you miss a life you never had
+- On Miyazaki's answer of who No Face is: I was always wondering who no face was, little did I knew, I was the no face all along
 
 ## Good Music
 ### Classical

@@ -425,8 +425,7 @@ Suppose we have a set of possible events whose probabilities of occurrence are p
 If there is such a measure, say H(p1, p2,... pn), it is reasonable to require of it the following properties:
 1. H should be continuous in the pi.
 2. If all the pi are equal, pi = 1/n, then H should be a monotonic increasing function of n. With equally n likely events there is more choice, or uncertainty, when there are more possible events.
-3. If a choice be broken down into two successive choices, the original H should be the weighted sum
-of the individual values of H.
+3. If a choice be broken down into two successive choices, the original H should be the weighted sum of the individual values of H.
 
 The only H satisfying the three above assumptions is of the form: H=-KΣpᵢlogpᵢ
 

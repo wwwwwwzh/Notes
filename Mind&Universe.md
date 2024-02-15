@@ -1,5 +1,5 @@
 # Evolutional Explanation for Certain Concepts of Human
-The universe gave as only measurement of space and time, and senses of various concepts like force, motion, proportionality, circle, etc, that we would develop into ideas or guesses verified by the direct measurement of space and time. The verified ideas we call truth. 
+The universe gave as only direct measurement of space and time by virtue of their significance in evolution (navigation, motion, biological cycles...), and senses of various kinds like force, motion, proportionality, circle, etc, that we would develop into ideas or guesses verified by the direct measurement of space and time. 
 
 ## Fundamental Concepts
 ### Physics
@@ -54,3 +54,63 @@ We often describe our emotions or state of mind as peaceful like a lake or tempe
 A key feature of wave is periodicity. We see the waves rise and fall, and we feel our emotions come and go. 
 
 ### "Echo"/Empathy
+
+# Geometry
+## Euclidean
+
+### Logic and Reality
+
+### Approximation
+
+## Non-Euclidean and Relativity
+> What is meant by the statement that our three-dimensional space has a Euclidean character? The meaning is that all logically proved statements of the Euclidean geometry can also be confirmed by actual experiment. -Einstein
+
+# What If Evolution Went Wrong
+## Vision
+### Light
+Imagine the whole science without the concept of light. The field of optics will be gone. The development of electromagnetism, the determination of speed of light will obviously need other inspirations. Most importantly, we won't see the stars.
+
+Without the stars there will be no astronomy, and universal gravitation might never be introduced. 
+
+But what might still happen? Periodicity is still there. The concept of a circle can be replaced with the periodic heating and cooling of days. 
+
+# Motion
+In a changing world, we developed a system to detect and react rapidly. The existence of perception-neuron-muscle system is a testament of the necessity of nature to plant a mechanism that understands motion in life.
+
+# Necessity of Universal Convergence
+## Primitive Features
+### Energy View
+Saves wiring. Important in early evolution.
+
+### Statistical View (Necessary)
+Only those with features/deep understandings of stimuli can successfully map accurately the large amounts of associations
+
+### Statistical View 2 (It just happens)
+Different cats example
+
+# Process of Universal Convergence
+## Comtemptation
+maybe mediated by dopamine. to test goodness of Universal Convergence, just see how much one understands about the world. The goal of Universal Convergence is to model. good model means good prediictoin and explanatiion. 
+
+When kids, we don't understand well. thiings are always special casses and exceptoins occur all the time. when  grown up, thnigs settled, everythign can be explained. 
+
+ONe feature is deepness of Universal Convergence, or how much in the reverse projectioin you up to. if shallow, special cases a lot. if deep enough, seldom will be special cases. 
+
+If we only think about supercifial things, simple facts and reasons most people can talk about, the model will never be deep. Depth require comtemplation. But why just by thinking, or querying deep into our brain can this magic happen? 
+
+Everytime you connect relevant things, a relationship will be strengthened. When you do this for a topic many times, deeper and deepre structures will emerge. This is a consequence of how synaptisity work. If you found a feeatuer behind multiple things, it got added to all of them and all are now optimized a bit more. 
+
+We also need to agree with our selfs. when that happens theres dopamiine and learning occurs. This is the basis of thinking. You have to want to think in order to thnk. Whenever you want sth, dopamiie. Whenever something seems right, you are happy, dopamne. 
+
+# Notes on A Brief History of Intelligence
+## Dopamine and RL
+- Temporal role without action (Some bad thing follows a certain stimuli 1 day later, how to learn to associate them)
+- Action role (How do you find an action that maximizes expected reward)
+- Role of recall and imagine
+
+## Curiosity and Exploration
+When an animal faces a challenge, it tries different actions. It explores actions to fit the current situation. In other cases, there's no challenge but they still explore what they can do. So there must be an intrinsic curiosity circuit.
+
+## Biology
+### Observations 
+- Some stimuli, like porn, or a needle sting, have slow decay in excitation. However, the expectation for them, if the same porn or same needle, drops quickly after first trial. The anxiety from needle almost extinguishes after a single trial even though the actual pain almost doesn't change

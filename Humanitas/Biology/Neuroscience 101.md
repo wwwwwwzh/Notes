@@ -105,7 +105,24 @@ Synapses can occur in three places: on dendrites, on the soma, and on other axon
 ### Basal Ganglia
 ![](/images/basal-ganglia-coronal.png)
 
+# Pathways
+## Neurotranmitter
+### Dopamine
+nematode reduces locomotion and increases food-exploratory movements; in flatworms it produces "screw-like" movements; in leeches it inhibits swimming and promotes crawling. Across a wide range of vertebrates, dopamine has an "activating" effect on behavior-switching and response selection, comparable to its effect in mammals.
 
+As in all vertebrates – invertebrates such as roundworms, flatworms, molluscs and common fruit flies can all be trained to repeat an action if it is consistently followed by an increase in dopamine levels. in fruit flies, different groups of dopamine neurons mediate reward signals for short- and long-term memories.[141]
+
+### Serotonin
+For example, in the roundworm Caenorhabditis elegans, which feeds on bacteria, serotonin is released as a signal in response to positive events, such as finding a new source of food or in male animals finding a female with which to mate.[129] When a well-fed worm feels bacteria on its cuticle, dopamine is released, which slows it down; if it is starved, serotonin also is released, which slows the animal down further. This mechanism increases the amount of time animals spend in the presence of food.[130] The released serotonin activates the muscles used for feeding, while octopamine suppresses them.[131][132] Serotonin diffuses to serotonin-sensitive neurons, which control the animal's perception of nutrient availability.
+
+
+If lobsters are injected with serotonin, they behave like dominant individuals whereas octopamine causes subordinate behavior.[29] A crayfish that is frightened may flip its tail to flee, and the effect of serotonin on this behavior depends largely on the animal's social status. Serotonin inhibits the fleeing reaction in subordinates, but enhances it in socially dominant or isolated individuals. The reason for this is social experience alters the proportion between serotonin receptors (5-HT receptors) that have opposing effects on the fight-or-flight response.[clarification needed] The effect of 5-HT1 receptors predominates in subordinate animals, while 5-HT2 receptors predominates in dominants.[133]
+
+### Acetylcholine
+Acetylcholine is used by organisms in all domains of life for a variety of purposes. It is believed that choline, a precursor to acetylcholine, was used by single celled organisms billions of years ago
+
+### Norepinephrine
+Norepinephrine has been reported to exist in a wide variety of animal species, including protozoa,[68] placozoa and cnidaria (jellyfish and related species),[69] but not in ctenophores (comb jellies), whose nervous systems differ greatly from those of other animals.[70] It is generally present in deuterostomes (vertebrates, etc.), but in protostomes (arthropods, molluscs, flatworms, nematodes, annelids, etc.) it is replaced by octopamine, a closely related chemical with a closely related synthesis pathway.[68] In insects, octopamine has alerting and activating functions that correspond (at least roughly) with the functions of norepinephrine in vertebrates
 
 # Learning & Memory
 ![](/images/basal-ganglia-and-limbic-system.png)
@@ -130,6 +147,7 @@ Synapses can occur in three places: on dendrites, on the soma, and on other axon
 ![](/images/cerebullum-function.png)
 
 ### Cerebellar Microarchitecture
+Mossy fiber->granule cell (100B) (4/granule cell)->Purkinje (10k/Purkinje)
 ![](/images/cerebellum-cortex.png)
 ![](/images/cerebellum-arch.png)
 

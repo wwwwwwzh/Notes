@@ -38,7 +38,7 @@ Similarly, $cos(cos^{-1}(y))=y \\
 
 So derivative of arccos differs from arcsin just by a minus sign. What does this mean? arcsin+arccos has derivative 0, so arcsin+arccos is a constant. And what is that constant? π/2.
 ### Sine and e
-
+Natural periodicity has two forms. Things that repeat with a definite period and things that change (grow or decay) by a definite fraction for a definite period. We count year and day with the regular rotation of celestial bodies and we defined their period to be "time". One day means one rotation of earth. We can also count another form of periodicity, for example radioactive decay. We define a time period to be the time required for a certain element to decay to a certain fraction. If we have 1 gram now, we expect after time T it will be 0.8, after another T 0.64 and so on. So naturally, there seems to be some connection between exponential and periodic functions. 
 
 ## e
 ### Why e
@@ -128,88 +128,6 @@ Why Taylor series can approximate almost any function? Because any function has 
 - 10^si,s->0
 - e^si,s->0
 
-
-# Physics
-> Physical concepts are free creations of the human mind, and are not, however it may seem, uniquely determined by the external world. -Einstein
-### Equations
-## Physics as a Science of Change
-### Base Units
-These are the only things we can measure. They are of course themselves imagined by humans, but they are good starting points, which are ultimately based on truth by seeing, a revolution from Greek science of truth of the high/forms/ideas to empiricism. 
-
-- Length (m): where in space (angle can be derived from length)
-- Time (s): change of space
-- Mass (kg): not weight (measured in Newton)
-- Current (A): 
-- Temperature (K):
-- Quantity (mole): 
-- Brightness:
-
-### Note on Physical Laws
-Physical laws are usually written as equations like F=ma. There are many ways to interpret an equation. One is to imagine a plane through 3D space where everything on that plane represents a possible F,m,a combination in our universe. Or that when holding one thing constant, like F, what will happen to m  when changing a. 
-
-This helps you understand the numerical relationship between things. But you could also use an equation to loosely define things. For example, in F=ma you could define force as m times a or define mass as force divided by acceleration (acceleration itself is defined clearly as a second derivative of easily measurable units so probably no need to redefine). Note however that this helps you understand certain aspects of the quantities involved. A force can "exist" without acceleration: e.g. objects on earth without relative movement experience gravity all the time. In addition, if we define force this way, then imagine you accelerating while watching me standing still, it would seem that I am being pulled by some mysterious force ().
-
-### Where it is
-
-
-### Change of Where it is
-After being able to observe and note down where things are, we notice that things change where they are. An object at location a might, after some time, be seen at location b. We denote this change as displacement. 
-
-The world is sadly too continuous for humans, and things change continuously. Every moment things change where they are. When describing a continuously moving object, it's insufficient to measure its location at intervals, no matter how small those intervals are. There's always a hidden process in between the two small measured locations that may or may not be of interest. So we ask, can location along describe the state of the world or maybe there's something else as intrinsic as location that's underlying every object? We give it the name speed. At the moment, we don't know how the property "speed" is related to locations, but miraculously, there's a mathematically accurate way to relate this speed with location and displacement. 
-
-> Math of change: we have now discovered 2 property of things that are of interest to us but that may or may not be related. It turns out that through experiments, the derivative of distance IS speed. The inspiration we had of taking smaller and smaller intervals ad infinitum actually give us a definite number. We hope this number is speed, it looks like speed, it works as if it's speed, it matches everything we want in a property we have called speed, so it is speed. One of the important mathematical property of this speed we calculated with calculus is that its anti-derivative IS distance. So no more philosophical questions on whether the hypothetical speed really is the mathematical speed or not as long as t does the job. This is miraculous and groundbreaking and that's why Newton named his work mathematical principles of natural philosophy, no one before him had proved to such an extent the relationship between math and nature. 
-
-### Change of Where for a Certain Object (Momentum)
-The word here doesn't matter. Historically it's been given many names but "momentum" became the consensus. Newton for example simply used "motion". 
-
-### Change of Momentum (Force)
-Force changes momentum. It's just like how speed changes location. It's the derivative of momentum: dp/dt=df. 
-
-### Why Things Move
-The discussion till now had been about what is motion and how do things move. Naturally we want to ask why do they move at all. It's perfectly reasonable to imagine a universe where nothing moves. So what is there in our universe that make things go around. 
-
-(Greek)
-
-Till Enlightenment, the word for the problem was "vis viva" or living force. It's the thing in wind, waves, and living things that make themselves or others move. This, together with many other related concepts, gave rise to two modern concepts about mechanism of motion: force and energy. Force had long been described and used in engineering but Newton made the groundbreaking discovery that force changes momentum, or F=ma. 
-
-### Heads Up
-This section serves as a primer on how physics studies change. Future sections will also rely on this idea and are by no means separated based on whether they are topics of change or not.
-
-## Energy
-### Development
-(direct research needed) The concept of energy is old and is just how one would intuitively think it is. It's the feeling that moving things, the sun, the waves of water, etc contain something in common which they called energy. Energy was later largely taken as the "vis viva" in which moving things contain a certain force. Parralell to all this is the philosophical idea that the elements in the universe "flows" but never changes and there's a heavenly balance controlling this flow which later became the conservation of XXX. The energy in living things was thought by Newton to be mv and he thought this quantity is conserved. However, imagine a particle with v speed hit another same mass particle and afterwards the first particle moves backward at -2v and the hit particle moves at 3v. Energy is conserved but everything moved faster. Later it was revised to be mv². 
-
-Using the newly defined kinetic energy one can define how it will convert to height. With speed v going upward a particle of mass m will stop at height v²/2g. This height times 2mg would equal mv². So we say the mv² at the bottom has been converted to 2hmg and that the quantity 2hmg means we can convert it back to a speed of v. 
-
-"It was soon recognized that these kinds of energy, mechanical and heat, are many forms. Everything which can be converted into either of them is also a form of energy."
-
-### Kinetic Energy
-
-### Potential Energy
-
-### Change of Energy
-
-### Conservation of Energy and Matter
-
-### E=mc²
-
-### Energy and Quantum Mechanics
-
-## Heat
-### Change of Temperature
-Compare Q=cmΔT to F=ma. 
-
-### Substance or Energy
-
-## Universal Gravitation
-> While we are admiring the human mind, we should take some time off to stand in awe of a nature that could follow with such completeness and generality such an elegantly simple principle as the law of gravitation. -Feynman
-
-### Kepler's Laws
-- Each star follows the sun in ellipse, with the sun at one of the foci.
-- The line connecting star and sun sweeps out equal area in equal time.
-- T^2~a^3
-## Time
-> we find that the regularity of one kind fits the regularity of another kind
 
 # Math and Nature
 > a habit of keeping the eyes open to every thing that is going on in the ordinary course of the business of life has oftener led, as it were by accident,...to useful doubts, and sensible schemes for investigation and improvement, than all the more intense meditations of philosophers, in the hours expressly set apart for study -Rumford
@@ -304,12 +222,19 @@ https://youtu.be/DUPLRe5PHvE?si=DBzZwOFKJ6bNWpfp
 The standard frequency is 440hz corresponds to A4. An octave higher means doubling the frequency. There are 12 notes called semitones for each octave. Since an octave means doubling, one note higher should correspond to something analogous in exponential scale. This is fundamentally a result of human ear where we process absolute pitch in a log manner. So if 440hz is scale 1, 880 should be 2, i.e. what we hear=log₂(pitch/220). Now what is scale 1+1/12 which should be one note higher than A4? 13/12=log₂(B4/220), B4=$220*2^{13/12}=440*2^{1/12}≈440*1.05946$. So each time we get up an semitone, we multiply the previous semitone's frequency by 1.05946. 
 
 Some jargons:
-- Musical scale: 8 notes from the note chosen e.g. Major C scale from C to C 
+- Middle C: Center of Grand Staff. Easy to recognize and used as educational tool.
+- Musical scale: 8 notes from the note chosen e.g. Major C scale from C to C. The 8 notes A-G-A is a consequence of ancient tradition and human hearing. Two notes octaves apart are perceived by humans as high similar (same pith class).
+- Pythagorean tuning: using only octave and fifth for tuning. Choose 7 Notes.
 - Major scale: whole, whole, half, whole, whole, whole, half
 - Minor scale: whole, half, whole, whole, half, whole, whole
 - Interval: a difference in pitch between two sounds. 1:1 (unison), 2:1 (octave), 5:3 (major sixth), 3:2 (perfect fifth), 4:3 (perfect fourth), 5:4 (major third), 6:5 (minor third). Intervals with small-integer ratios are often called just intervals, or pure intervals.
-### Overtone
 
+### History of Tuning
+
+### Overtone/Harmonics
+
+### Music and Psychology
+https://www.youtube.com/watch?v=LF6M_aNAIeo
 ### Harmony
 
 ### Chladni Patterns

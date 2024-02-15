@@ -159,12 +159,13 @@
 - 1666 Annus Mirabilis [science]
 - r.1682-1725 Peter the Great [people,monarch]
 - c1680 Calculus [science,math]
+- 1687 Principia [science]
 - 1688 Glorious Revolution [revolution]
 - 1689 Bill of Rights of England [civil right]
 ---
 - 1707 United Kingdom of Britain 
 - 1707-1783 **Euler** [people]
-- 1712 Steam Engine [invention]
+- 1712 Newcomen steam engine [invention]
 - 1712 Last women convicted of witchcraft in England
 
 - 1715-1789 **Enlightenment** 
@@ -177,7 +178,7 @@
 - 1768-1830 Fourier [people]
 - 1769-1821 **Napoleon** [people]
 - 1769-1849 Muhammad Ali Pasha [people]
-- 1769 Watt reinvented steam engine [invention]
+- 1776 Watt steam engine [invention]
 - 1776 **Declaration of Independence** [civil right]
 - 1777-1855 Gauss [people,science]
 - 1789 Samuel Slater (Father of the American Industrial Revolution) arrived in America [event]
@@ -188,6 +189,7 @@
 - 1792-1797 War of the first coalition [war]
 - 1793 **Louis XVI Executed**
 - 1794 Robespierre Executed 
+- 1796-1832 Carnot [people,science]
 ---
 - 1804 **Napoleon Emperor of France** [coronation]
 - 1806 Dissolution of the Holy Roman Empire by Francis II [state]
@@ -204,7 +206,9 @@
 - 1821-1832 Greek war of independence [war,libration]
 - 1822-1884 Mendel [people,science]
 - 1822 Charles Babbage Difference engine [invention]
+- 1824-1907 William Thompson (Lord Kelvin) [people,science]
 - 1825 First railway opened [invention]
+- 1831-1879 **Maxwell** [people,science]
 - 1835-1908 Cixi [people,monarch]
 - 1837 Samuel Morse sent first telegraph [invention]
 - 1845-1918 Cantor [people,math]
@@ -219,15 +223,18 @@
 - 1852-1934 Santiago Ramón y Cajal [people,science]
 - 1856-1939 Sigmund Freud [people,science]
 - 1856-1943 Tesla [people,science]
+- 1858 First transatlantic cable [invention]
 - 1859 **On the Origin of Species by Means of Natural Selection** [science]
 - 1860 Combustion Engine [invention]
 - 1861 Serfdom abolished in Russia [civil right]
 - 1861-1865 **presidency of Lincoln** [people]
+- 1862 **Maxwell–Heaviside equations** [science]
 - 1865-1910 typewriter [invention]
 - 1866 Unification of Italy [state]
 - 1866 Prussian victory over Austria forced Austria out German confederation [war]
 - 1868 Meiji Restoration [revolution]
 - 1869 Periodic table of elements [invention]
+- 1869 Transcontinental Railroad 
 - 1869 Discovery of nucleus (DNA) [discovery]
 - 1870-1914 **Second Industrial Revolution**
 - 1870-1924 Lenin [people,HOS]
