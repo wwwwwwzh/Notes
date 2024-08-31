@@ -108,6 +108,9 @@ Sometimes whether by explicit query or out of nowhere, a thought, auditory or vi
 3. Interactions with characters in dream are based on people in real life we have interacted with the most.
 4. Consciousness is low in dream, and increases gradually. Highest level might happen when being anxious or excited. Consciousness might thus mean number of neurons we have access to. e.g. when you are drowsy but you start talking suddenly you are sober.
 5. Dream senses are different from normal senses in that they do resemble memory of senses more than actually conscious feeling of sensing.
+6. There appears to be 3 states of brain. One is very sensory in that sensory input overwhelms all other modalities and we focus on things and changes of the sense. The second is deep thought mode where senses are cut off and thoughts flow uninterruptedly. The third might be the same as the second and just different in modality, it's when thoughts in image or audio flow uninterruptedly, mostly happens in dreaming or daydreaming.
+7. It's easier to remember dreams while approaching dreaming/sleep but it's doubtful if those memories of dreams are real. 
+7.5 we have memories in dreams and possibly memories about dreams in dreams. Are they real? How are they formed if not?
 
 ### Questions
 - If we imagine something unphysical, we are good, just like in dream. But if we see something unphysical, we are surprised. Which part of brain is in charge of the reality check/nonsense suppression? (Can this be based on what you know is only from what you see?)
@@ -115,6 +118,8 @@ Sometimes whether by explicit query or out of nowhere, a thought, auditory or vi
 ### Hypothesis
 Assumptions:
 1. Abstract thinking is harder or less natural than episodic thinking than episodic recall/imagination
+2. Dreaming cause different kinds of surprise
+3. Dreams have no temporal-spatial signature and are hard to relate/associate (that's why it's also harder to remember because few traces lead to a particular dream)
 
 Based on these here is a hypothesis on how dreams work: 
 1. People start any episodic thinking

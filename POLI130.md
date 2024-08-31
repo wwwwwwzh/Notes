@@ -84,3 +84,58 @@ Chicago boys
 - Down inflation
 - Bad education
 
+# Regime
+## Democracy
+Procedural democracy
+Parties (division of interest values and opinions), competetion (no one knows who will win), periodic winner and loser
+
+### Polyarchy
+polyarchy (Dahl): contestation, inclusion/participation, 
+
+closed hegemony
+competitive oligarchy polyarchy inclusive hegemony
+
+### Measurement of Democracy
+- right to vote and be elected
+- right to compete for support
+- free and fair election 
+- freedom of association and expression
+
+### Influence of regime
+- culture: education, diversity, individualism, trust, tolerance 
+- religion (Confucianism and Islam): church and state, hierarchy, communalism
+- modernization: more complex social structure->autocrats can't manage, GDP-democracy (transition) corelation
+- leadership
+
+### Critics
+- euro/anglo centric
+- historically inaccuracy
+
+# Hybrid Regime
+## Zambia
+Copper mine
+1964 independence
+https://en.wikipedia.org/wiki/President_of_Zambia
+
+## Competitive Authoritarianism (hybrid regimes)
+harder for other party
+
+### Nayib Bukele (El Salvador)
+- mob electoral authority
+- police to compel vote
+- fire attorney general
+- cyber fraud network to silence news
+
+### Russia
+- regular election
+- creation of dominant party (United Russia)
+- propaganda
+
+### Dictator's Dilemma
+- repression makes dictators not know people's opinion
+- fake elections help dictators know 
+
+## Sum
+- no single path to dem
+- actions of international community
+- democratiic transition doesn't always lead to dem

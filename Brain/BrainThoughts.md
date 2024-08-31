@@ -76,6 +76,12 @@ Maybe aphasia is similar to how I can sing in my mind "in perfect pitch" but not
 ### Language & Consciousness
 - [Scientist with a stroke](https://www.ted.com/talks/jill_bolte_taylor_my_stroke_of_insight?language=en): 1) can't differentiate the boundary between body and world. consciousness shift outside body (compare Feynman) 2) complete silence, then drift to "La La Land", then hear (think) about the problem in self.
 
+# Music
+- [harmony and entropy of neuronal response, entropy  of  art, evolutionary benefit of beats](https://www.youtube.com/watch?v=Gc5eICzHkFU)
+# Sleep
+## States and Transitions
+### language - vision transition
+it appears that sleep begins with closiing eyes, thus cutting off real visual input, meanwhile ccosiiousness is  taken by language/auditory simulations (note that this is purely  language instead of thoughts). Then language gradually give way to visual simulation. One theory is that this process is mediated by memory/sensory simulation, whereby the first phase is dominated by real memory, which for me focuses on conversations. There is an interesting interphase where real memory gives way to "drowsy memory" (eg consiousness is recalling an event which is fake memory, this can be tested by waking person in this phase up and they will realize the memory is out of no where). There's a blending between memory and simulation happening as I get more asleep, whiich  could support the imaginatioin as future memory hypothsis. Asleep is marked by complete visual consciiousness and complete imagination.
 
 # Memory
 ## Fundamental Theorem?
@@ -87,6 +93,10 @@ Maybe aphasia is similar to how I can sing in my mind "in perfect pitch" but not
 ## Memory and Attention
 
 ## Dream Memory
+### Types of Memory
+- 2 axis
+- axis 1: belief about type of memory (dream, predream, awake)
+- axis 2: under what state is the memory recalled (dream, predream, awake)
 
 
 ## Others
@@ -98,7 +108,35 @@ Someone looks familiar but can't remember who he resembles whatsoever until you 
 ### Finally Recall Things Wasn't Able to be Recalled
 When seeing a face we think it's familiar but can't recall exactly why it's familiar. When seeing a seemingly familiar scene we can't recall where exactly it is. Sometimes we have vague memory traces, so vague that not a single complete scene nor plot nor character could be recalled, but you know it is there. Then after sometime, maybe a long time, you see that face or movie again and you will immediately know that's the one you were looking for.
 
+### Forgetting after certain not forgetable
+might be repeated activation but after seeing it stops exciting
+
+# Representation
+##
+### 
+You can manipulate a mental representaion and feel its change. For example, search tensegrity and at first you might believe this structuere is unstable. Concretely, if you nudge the mental represetnaion of this in your brain, it collapses. However, after some study of the structure, nudge it again and you can feel the structure turned more stable in just minutes. 
+
+# Exectutive 
+## Uncertainty
+- when doing or thinking something, like adding two numbers or walking, sometimes when the  result is uncertain, you can feel something. If you give the result of addition very fast you feel something not good.
+
+## 
+### Perception of Scale
+how do we think about a transaction of 10 dollars when we have 100 and how do we think about 10 million when we have 100 million. How does this relate to rythms of brain and recognition of places. Is grid cell like representation ubiquous in brain?
+
 # Consciousness
+## Uninspectability
+It's rare that peopple can consciously perform an activity while consciously inspecting themselves. IIt's also interesting to see how time relates to consciousess since information at different parts of brain reflect events in different time in the past. Does consciousness reside 1ms ago or 1ns ago or is truly part of presence.
+
+## Consiousness study
+### Dream 
+- using breath pattern to communicate with people running the experiement
+- thinking about marker (as in MRI signal) words or images 
+
+## Area of Consciousness
+### Motion
+- When I was looking for something and didn't find, I "realized" it's in somewhere else, so I rotated my head to that direction. However, I didn't consciously realize. It appears that my motion control independently solved the problem, and that my consciousness followed the movement in order to realize what was happening.
+
 ## Observations
 ### Visual Consciousness
 - When we see something, we are processing signals of the past. 
@@ -128,6 +166,13 @@ e.g. you have a instant thought that sth is true and have a quick thought and se
 ### "Working Memory"/Hot Memory
 Why we think faster about a topic after an energetic discussion with others and why we can't sleep after talking to friends at night? Everything we do changes the landscape of memory and if the universal processing network that doesn't involve LTP exists, it is constantly changing (imagine two lakes connected only through a stream, one has strong wind and big wave, the other only minimally affected by current from first lake). When we talk about a specific topic, some parts of the lake wave dramatically, influencing the whole lake. Then when we query it, it just gets more efficient at producing insights because different currents have been blended. Similarly, this network with little irrelavent input can quickly turn to relavent stimuli and converge to energy minimal as those strong inputs, so we always imagine some talking after talking for long time. 
 
+# Cerebellum
+[man without cerebellum](https://www.npr.org/sections/health-shots/2015/03/16/392789753/a-man-s-incomplete-brain-reveals-cerebellum-s-role-in-thought-and-emotion)
+Research on Jonathan and people like him supports the idea that the cerebellum really has just one job: It takes clumsy actions or functions and makes them more refined. "It doesn't make things. It makes things better," Schmahmann says.
+
+"He doesn't really get into this deeper level of conversation that builds strong relationships, things that would be the foundation for a romantic relationship or deep enduring friendships," she says. Jonathan, who is sitting beside her, says he agrees.
+
+Jonathan also needed to be taught a lot of things that people with a cerebellum learn automatically, Sarah says: how to speak clearly, how to behave in social situations and how to show emotion.
 # LLM
 ## General
 ### Basics

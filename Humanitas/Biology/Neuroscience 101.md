@@ -17,6 +17,8 @@
 ![](/images/myelin.png)
 
 ### Intra Neuron Communication
+https://www.khanacademy.org/science/biology/human-biology/neuron-nervous-system/a/the-membrane-potential
+
 Neurons pump Na+ outside to maintain negative resting potential and activates by 2 other pumps that increase to positive action potential and decrease afterwards.
 
 - Resting potential: The membrane potential of a neuron when it is not being altered by excitatory or inhibitory postsynaptic potentials; approximately –70 mV in the giant squid axon. 
@@ -32,6 +34,8 @@ Neurons pump Na+ outside to maintain negative resting potential and activates by
 ![](/images/Ion_channel.jpg)
 
 ### Inter Neuron 
+https://www.khanacademy.org/science/ap-biology/cell-communication-and-cell-cycle/changes-in-signal-transduction-pathways/a/intracellular-signal-transduction
+
 Neurotransmitters bind to ionotropic or metabotropic receptors that open up 3 kinds of ion channels. Reuptake or enzyme digestion afterwards.
 
 Synapses can occur in three places: on dendrites, on the soma, and on other axons. These synapses are referred to as axodendritic, axosomatic, and axoaxonic.
@@ -85,6 +89,9 @@ Synapses can occur in three places: on dendrites, on the soma, and on other axon
 ![](/images/neuraxis.png)
 ![](/images/anatomicalPlanes.png)
 ![](/images/ventricles.png)
+![](/images/real-brain-mid.png)
+![](/images/real-brain-mid-l.png)
+
 
 ### Development
 ![](/images/brain-development.png)

@@ -80,7 +80,7 @@ A map or mapping is a function in its general sense.
 ## Function
 A function from a set X to a set Y assigns to each element of X exactly one element of Y.
 
-## Linear Mapping （Linear Operator)
+## Linear Mapping (Linear Operator)
 <img width="1091" alt="Screen Shot 2022-12-28 at 1 24 17 PM" src="https://user-images.githubusercontent.com/36484215/209868110-d10b668f-37c4-4b8e-ba1f-40b0e6ebc2a9.png">
 
 - A linear mapping is usually represented by a matrix. 
@@ -141,7 +141,7 @@ Until the 19th century, geometry was almost exclusively devoted to Euclidean geo
 - Intuition 1: contour of f(x)=extrema is tangent to level set of g(x), or gradient g is parallel to gradient of f.
 - Intuition 2: The intersection of f and g is a surface. A small perturbation that takes a point on this surface to another point on the surface will not change f if the point is extrema. Conversely, if the point is not extrema, a small perturbation can maintain the point on surface while changing f.
 - Lagrangian multiplier: ∇f=λ∇g. λ is gradient of f(b), meaning that λ is the rate of change of the extrema we found with respect to the constant in constraint g.
-- The Lagrangian: L(x,λ)=f(x)-λ⋅g(x). Solution to ∇L=0 is the extrema because ∇L=0 encapsulates both parallel condition (∇Lx) and constraint (∇Lλ)
+- The Lagrangian: L(x,λ)=f(x)-λ⋅g(x). Solution to ∇L=0 is the extrema because ∇L=0 encapsulates both parallel condition (∇Lx) and constraint (∇Lλ). This can be seen as the profit if f is revenue and g is cost. In this case λ is the cost revenue ratio at stationary point. 
 
 Lagrangian example:
 
@@ -177,9 +177,15 @@ Lagrangian example:
 
 -------------------------------------------------------------------------------------------------------------------------------
 
-# Fourier
+# Transforming Time to Frequency
+## Fourier
+### Trig Review
+
 ### Overview
 https://math.stackexchange.com/questions/1020231/fourier-series-of-real-valued-functions
+
+music notes/heat on metal bar->combination of pure trig waves->similarity measure->constructing trig func based axis->fourier->transfer function
+
 - Express any function as combination of simpler functions. Here these functions are sinusoids of different frequencies and phases. $f(x)=ΣᵢAᵢsin(2πix+ϕᵢ)$
 - Sin and cos are related by phase $(sin(2πix+ϕᵢ)=cos(2πix+ϕᵢ+π/2))$. So sinusoids of different frequencies and phases can be expressed as sin and cos of different frequencies. $f(x)=a₀/2+Σᵢaᵢcos(2πix)+bᵢsin(2πix)$
 - Sin(2πix) and cos(2πix) are orthogonal. so sin and cos of different frequencies form an orthonormal basis for functions. Dot product of f(x) and sin or cos gives the magnitude/coordinate of the function that particular base. Here the magnitude (aᵢ and bᵢ) is found by integrating f(x)sin(nx) along common period.
@@ -201,3 +207,9 @@ https://see.stanford.edu/Course/EE261/137 (last 10 mins proves A=f⋅e⁻ⁱπˣ
 ### Frequency Convolution Theorem 
 https://www.tutorialspoint.com/frequency-convolution-theorem
 
+## Laplace
+
+
+## Discrete Fourier
+
+## Z-Transform

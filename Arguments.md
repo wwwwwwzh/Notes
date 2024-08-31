@@ -14,6 +14,9 @@ Like all other social topics, I believe fairness lies only in good heart. Only a
 
 Luck of lottery and of science or of having the lucky epiphemy for studying better and solving exam peoblems better or ideas in genral 
 
+### In defense of asking silly questions
+We need to model the world in order to explain and predict things of interest to us. Luckily, evolution has given us this powerful modeling tool, the brain, with which little information is given and much is modeled accurately. But the information is scarse and redundant. It's enough to live with a model from these scarse information. But the true model created by god is not so simple. It sometimes generates things that are hard to explain. And I choose to explain them. And I want these outliers, to refine my model. "seek and you will find". 99 out 100 times you get something you already know, but it's that 1 time that makes you a more advanced being.
+
 ## Nationalism
 - Nations/Cultures shouldn't care if their influence are absorbed by others when they are gone. As long as they contributed to something, they are great cultures. Just like a scientist is great when he contributes to science, not dominate it, in which case he becomes lesser. This is also the reason modern science has steadily progressed for centuries while nations continue to fight each other.
 
@@ -22,11 +25,28 @@ Luck of lottery and of science or of having the lucky epiphemy for studying bett
 ## Democracy
 - Why should we choose to protect natural instincts, the natural impulse to be free and equal, to be happy and virtuous? These impulses are forces, or energy. Energy means work. If we can control these natural forces we unleash great potential of work. A democratic system maximizes global work propelled by such energy. This is also why restrictions of a democracy focus on not infringing others' rights, preventing others from unleashing their energy.
 
+
+
 ### Materialism
 How could materialist believe in power of mind (willpower). In fact, how could they "believe" anything at all.
 
 ### City-States
 VQ-Gan, europe, evolution, initialization, democracy, individualism, level of individualism
+
+
+## Capitalism
+### Coorporate
+people hate big companies but admire emperors
+
+## Science
+### Comparision with CHina
+There was this central idea in greek philosophy that forms are real, that ideal forms not only exist, but are designed by god and govern the world of we sense. Importantly, one of the forms was number, and this tradition, or even religion, was passed on for two thousand years. Therefore, the discovery of Galileo was no chance work, and the subsequent revolution was not novel, but long dominant and awaken by a strong confirmation. (Galileo discovered that a ball rolling on inclined surface travel distance in proportion to t^2, and more mysteriously the increments form the odd numbers)
+
+
+
+
+
+
 
 # Projection
 - Democracy is the projection of the collective human mind. The collective wisdom of humanity is vast and cannot be adequately represented by any subset of it. 

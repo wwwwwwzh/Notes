@@ -1,17 +1,37 @@
 # Util/Tools
 ## Commands
 ### Linux Commands 
+- wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+- sh Miniconda3-latest-Linux-x86_64.sh
+
+- conda create -n your_env_name
+- conda activate your_env_name
 - conda env list
 - conda list
+
+- source ~/.bashrc
 - df -h: view storage devices
 - du -sh: view directory size
-- scp -r /path/to/directory zhw@hires-gpu1.cs.unc.edu:/playpen1/wzh/files/: copies the directory itself into files folder
-- cp -r ~/folder1/. ~/new_folder1: copies contents of folder1 to a new folder (will create if not exist)
-- screen -S "12917.tdnerf_baseline" -X sessionname "newname"
-- tensorboard --logdir log; ssh -L 16006:127.0.0.1:6006 zhw@hires-gpu1.cs.unc.edu then go to http://127.0.0.1:16006: tensor board on ssh
 - pstree / ps aux: show running processes
 
+- screen -S "12917.tdnerf_baseline" -X sessionname "newname"
+
+- watch -n 0.5 nvidia-smi 	# shows the GPU usage
+- htop				# shows CPU usage
+
+- scp -r /path/to/directory zhw@hires-gpu1.cs.unc.edu:/playpen1/wzh/files/: copies the directory itself into files folder
+- cp -r ~/folder1/. ~/new_folder1: copies contents of folder1 to a new folder (will create if not exist)
+
+
+- tensorboard --logdir log; ssh -L 16006:127.0.0.1:6006 zhw@hires-gpu1.cs.unc.edu then go to http://127.0.0.1:16006: tensor board on ssh
+
+
 - jupyter notebook --no-browser --port=8080; ssh -L 8081:localhost:8081 zhw@hires-gpu1.cs.unc.edu
+
+#### cuda
+- export PATH=/usr/local/cuda-11.1/bin:$PATH: change cuda version
+
+> https://docs.google.com/document/d/1S8PU4EbigzlvSx4x_Ay835hMAjB8bCpouoWcNIyvTbc/edit
 
 #### Tools
 CMake: https://askubuntu.com/questions/829310/how-to-upgrade-cmake-in-ubuntu
@@ -27,12 +47,28 @@ select next occurrence: command + D
 
 ### Git
 https://learngitbranching.js.org/
-- git commit
+- git clone
+
+- git init: initialize current directory
+- git add .
+- git commit -m "initial"
+- go to github.com and create repo, or use gh command 
+- git remote add origin git@github.com:wwwwwwzh/binder-manim.git
+- git push -u origin main
+
 - git branch branchName
 - git checkout branchName
 - git checkout -b branchName
 - git merge branchName
 - git rebase branchName
+
+### ssh
+The process is as follows: you run a git clone command with an SSH URL; Git starts ssh to connect to the github.com host as git user; ssh connects and successfully authenticates by the 1st keypair; GitHub recognizes that it's the user that has access to the repository so it accepts the request at the Git protocol level
+
+- create new key for github: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
+- add key to github: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+- multiple keys for multiple github accounts: https://stackoverflow.com/questions/3225862/multiple-github-accounts-ssh-config
+
 
 #### Relative 
 - git log
@@ -52,6 +88,10 @@ einsum("b h d i, b h d j -> b h i j", q, k) # if index is in result (b h i j), i
 einsum("b h i j, b h d j -> b h i d", attn, v) 
 ```
 
+## People
+### Science
+- [multidiscplinary education guy](https://www.youtube.com/@physicsforthebirds)
+
 ## Websites
 ### ML
 #### HuggingFace
@@ -62,9 +102,21 @@ https://huggingface.co/transformers/v2.9.1/pretrained_models.html: model name an
 - [Alphabet: The origin of every letter](https://www.youtube.com/watch?v=CYqqFqoLnnk)
 - [Cyrillic Alphabet](https://www.youtube.com/watch?v=5kDpO9T-z60)
 
+### Blog/Notes/Writing
+- Interactive blog: https://idyll-lang.org/docs example: https://github.com/mathisonian/trig/blob/master/etymology/index.idl
+
 ### Others
-https://www.letras.com/shakira/1657452/
+- music: https://www.letras.com/shakira/1657452/
+
+### Math
+- Laplace transform visualization: https://www.youtube.com/watch?v=n2y7n6jw5d0
+
+
 ----------------------------------------------------------
+
+## Env 
+### Node
+- upgrading node by first 'brew upgrade node' then 'brew link --overwrite --dry-run node' then 'brew link --overwrite node'
 
 # Logs
 ## 12.19
@@ -129,6 +181,66 @@ Sunny and T-shirt. Halloween rush on Saturday
 ## 23.11.22-23
 Door to door in Cary bad food expensive 8 ppl. 23. jade palace
 
+## 24
+### 1.6
+scz 2000 + wzh 1600 robinhood
+
+### 1.16 
+dzy amd
+
+### 3.6
+dzy super trump
+
+### 3.11-13
+getting up with less than 6 hours of sleep, heartache, bad stomoch feeling after breakfast. well after lunch in Liming and walk Duke garden. 
+
+sleep better 13 and all good
+
+### 3.13
+started transforming all mathematical ideas to visual experience (starting with linear algebra)
+
+### 3.16 
+very sleepy in the afternoon, had dinner with wzh last night probably infected but no sign. also very tired when trying running
+
+### 5.4
+btc from 58000 to 64000 in two days, major altcoins not moving, major meme coins and new shitcoins rise fast
+
+### 5.8
+major altcoins rising fast after trump made statements about being fine with crypto
+
+### 5.10 
+semester summury on trading/gambling. It's aweful. should not have entered but valuable lesson gained. Never do things you don't know about with great risk and no fantasy when you have flat prior. It's terrible to fall into gambler's mindset where you are destined to lose everything.
+
+### 5.10
+Totoro and book of trump rug pull. they do 2 pumps at 2 threshold and there are 2 major spikes. Best to buy after at the dip after first pump and sell immediately or 10 minutes after 2nd pump. ATH/5 is where to buy again and sell at double. No fantasy afterwards.
+
+### 5.11
+Extreme loneliness after graduation ceremony. Always feel this when coming from one place to another. Domescrolling doesn't work. Reading seems like only thing conforting.
+
+### 5.14
+Long flight is terrible, 7h east to west then 15h to xiamen. 
+
+### 5.15 
+hair. one year of long hair seems to make head vulnerable to cold air. after cutting, head is constantly slightly cold, wind sound is big.
+
+### 5.12-7.12
+Recovery from the psychological crisis. It's interesting that things follow similar patterns. For a bad stock to rise, you have to wait until it fully reached the bottom. The test is to see the reccovery response after artificially induced dips. After the final dip, it will settle for a short while then begin to rise. Also interesting how psychological trauma is. I developed a unconscious fear for phones after the experience. Also how state of mind can be manipulated and state has much power to determine behavior.
+
+### 7.12
+It occured to me that what I'm learning now of electromegnetism is but what I learned in AP physics 5 years ago. How did I answer all those questions? If my state of mind at that time solved the problems. How can I be sure that my state of mind rn is better? How interesting it is that I didn't know anything about calculus when I entered college and spent weeks trying to understand first page of differential equations. 
+
+###  8.15
+An account of an interesting recent change in mental state. After the crypto incident or perhaps earlier, possibly as early as end of 2023, I began to develop constant fatigue, especially in the afternoons. The primary symptoms are: fatigue of the body, shortness of involuntary breath, brain fog in the morning and early afternoon, drowsiness in whole afternoon even after napping. Interestingly, the following activities eradicacte the symptoms: talking to friends, including heavy texting; mentally talk about something I'm very interested about; imagining as I did as teenager (this can only be done when not drowsy). 
+
+The weridest part is how instatnly can my mental state change between teh good and bad. There's an intereting dynamic between a constant drag to sleeping and ativities and oppose the drag by either creating a countering force or increasing mental inertia. 
+
+Note that unlike pure psychological down state, I actually feel sleepy more often regardless of activities. Even when doing my favoritte activities, I feel sleepy earlier than I used to. Night sleep time qaulity is not controlled and I might use my watch to monitor it.
+
+### 8.16
+It seems that after a long flight, tired and hungry, my spirit is still high, albeit unstable (easy to collapse). The time is 6am in France and 12am in China. It's around 5 hours after stopping to sleep. In any case, it should be my drowsy time. But I'm not tired. Although intelligence is low. Reading in advanced physics is hard. Pictorial thinking intact. Conversation and imaginaiton of cconversation intact. 
+
+At 9am france or 3pm china, sppirit is very stable. I can do anything except that hunger keeps physical work difficcult. THere's slight diziness when moving too much.
+
 # Ideas
 ## School Related
 ### Course Plan
@@ -149,7 +261,6 @@ math for physics: https://www.youtube.com/watch?v=m_SbJnpMDD8
 - NSCI 421 - PRINCIPLES OF BRAIN CIRCUITS
 - [NSCI 434 - COGNITIVE NEUROSCIENCE]
 
-- ECON 415 Market Failure
 - Hist 158 Early Modern Europe
 - HIST 266 history of warfare
 - HIST 315 NATION BUILDING LATIN AMERICA
@@ -263,6 +374,8 @@ However, in a different lens, math is a desire to precision, and it inevitably l
 ### The Middle Way and Projection
 We often find theories uniting existing conflicting theories or find a solution mixing several more extreme solutions better. This is just how inverse engineering works. When you have modal specific information/projection, you can only construct a part of it, that's also called bias. When many people see different projections, first of all they are likely all right because a projection is a projection no matter from which angle it is from, the collective knowledge obtained by combining all their reconstruction result will give a better approximation. In terms of partial projection where everyone receives shadow of part of the object, collective knowledge reveals the whole. 
 
+### P-NP
+
 ## Metaphysics
 ### Components of Philosophy
 1. Eternity: At some point in life, we ask what's our purpose. By association, we have the natural concept of cause and effect. Further by the behaviorist education methods powered by our existing reward mechanism, we learn to associate everything with purpose. We ask the purpose what we do now and get an answer. We then ask the purpose of whatever that answer is. This can be repeated indefinitely, leading to the concept of eternity. Philosophy is thus the search for eternity. Another way to lead to the thought of eternity might be the search for durable material, similar to Russel's idea. How to build things that last forever. Most study of eternity before enlightenment had focused on Form since form was considered eternal. Religion also has a big component of eternity, and many religious arguments are also inspired from backward tracing (infinite regress) of purpose which leads to logical existence of God.
@@ -345,7 +458,7 @@ Time is totally ordered. Any other categorization is set and by partially ordere
 
 ### Talks
 #### Ivan Sutherland
-- On research: ”So projects can be wonderful fun. In fact, I have the attitude that if research is not fun, why are you doing it? Are you exploring the unknown, and why in the world would you bother doing that? You cannot do it for rewards, because you do not know what the rewards are. You do not know what you will find, so you do it because it is an adventure, because the spirit and the camaraderie of a research group is one of the things that makes research worth doing. I think that is important. An important thing to know about research is that if the researchers are not happy, there probably is not much research going on. It is hard enough wrestling with nature that you do not want also to have to wrestle with management.”
+- On research: ”So projects can be wonderful fun. In fact, I have the attitude that if research is not fun, why are you doing it? Are you exploring the unknown, and why in the world would you bother doing that? You cannot do it for rewards, because you do not know what the rewards are. You do not know what you will find, so you do it because it is an adventure, because the spirit and the camaraderie of a research group is one of the things that makes research worth doing. I think that is important. An important thing to know about research is that **if the researchers are not happy, there probably is not much research going on. It is hard enough wrestling with nature that you do not want also to have to wrestle with management.**”
 
 #### Alan Kay
 - On David Evans: Dave's way was to make something like a garden, and tend that garden so that many things would have many chance to grow by themselves. His idea was to just do good deeds everywhere and every time you can without any hope of return. And much of the time the angelic side of humans will nudge other humans to start helping themselves.
@@ -353,6 +466,9 @@ Time is totally ordered. Any other categorization is set and by partially ordere
 #### Hinton
 - On intuition and knowledge distillation: you need to put in a lot of hard work to get sufficient experience in a domain and then you need to trust your intuitions. 
 - On politics and science: I grew up in Britain in the 1950's and 60's and a major puzzle at the time was to understand how civilized and well-educated Germans could have allowed Hitler to gain power. Recent events in the US have made that seem a lot less puzzling. ... I believe that highly selected and extremely well-educated students like yourselves have **a moral duty to stand up for the truth in the face of political attempts to suppress it.**
+
+#### Dirac
+- On art: The aim of science is to make difficult things understandable in a simpler way; the aim of poetry is to state simple things in an incomprehensible way. The two are incompatible.
 
 ### Movies
 #### Oppenheimer
@@ -403,3 +519,12 @@ Time is totally ordered. Any other categorization is set and by partially ordere
 ## Recent Thoughts
 - 9.13: reading Dreaming and the brain: from phenomenology to neurophysiology, Building machines that learn and think like people. Consciousness, CNN and k-nn, other inputs coming from working and long term memory to fine tune boundary cases with imagination. Memory of internal thoughts and why are they transient, how are they related to dreams. 
 - 9.29: I've successfully connected a brain thought while waking up in middle of night to "note taking" and remembered it once I saw this app
+
+# Reviews
+### Brilliant.org
+Very good visual and interactive interface. Sequences are good as long as you know what they want to teach you. But for beginners, lack overarching insights are what users are being taught. Consider promoting more reflections from the user instead of old style multiple choice questions.
+
+Gets interesting starting at Light and Quantum in Physics module. Best intro to this subject I've seen so far.
+
+# 
+91.79K

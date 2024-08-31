@@ -103,19 +103,19 @@
 - 1377-1446 Brunelleschi [people,art]
 ---
 - 1432-1481 Mehmed II [people,monarch,ME]
-- 1440 Gutenberg printing press [invention]
+- 1440 **Gutenberg printing press** [invention]
 - 1449-1492 Lorenzo Medici [people,monarch]
 - 1451-1506 Columbus [people]
 - 1451-1512 Amerigo [people]
 - 1452-1519 Da Vinci [people,science,art]
-- 1453 Fall of Constantinople [war]
+- 1453 **Fall of Constantinople** [war]
 - 1473-1543 **Copernicus** [people,science]
 - 1475-1564 Michelangelo [people,art]
 - 1480-1521 Magellan [people]
-- 1483-1546 Martin Luther [people,religion]
+- 1483-1546 **Martin Luther** [people,religion]
 - r.1486-1519 Maximilian I, the last knight [people,monarch] (intelligent minds deriving their nobility from God)
 - 1492 Reconquista (Granada) [war]
-- 1492 Columbus reached America [event]
+- 1492 **Columbus reached America** [event]
 - c. 1492 **Modern Age**
 ---
 - 1519-1521 Hernán Cortés conquered Mexico [war]
@@ -133,20 +133,21 @@
 - r.1558-1603 Elizabeth I of England [people,monarch]
 - 1559 Elizabethan Religious Settlement
 - 1564-1616 Shakespeare [people,art]
-- 1564-1642 **Galilei** [people,science]
+- 1564-1642 **Galileo Galilei** [people,science]
 - 1571-1630 Kepler [people,science]
 - 1588-1589 Invincible Armada and English Armada [war]
-- 1596-1650 Rene Descartes [people,science]
+- 1596-1650 *Rene Descartes* [people,science]
 ---
 - 1600-1874 British East India Company [company]
 - 1602-1799 Dutch East India Company [company]
-- 1607-1665 Fermat [people,science]
+- 1607-1665 *Fermat* [people,science]
 - 1618 Defenestration of Prague [war]
 - 1620 Mayflower [event]
 - 1623-1662 Pascal [people,science,religion]
 - 1624 Dutch settlement of New York [event]
 - 1630 Boston [event]
 - c.1630 Analytic Geometry [science,math]
+- c.1630 Dutch tulip bubble [economy]
 - 1636 Harvard University
 - 1638 Two New Sciences by Galileo [book,science]
 - 1642-1726 **Newton** [people,science] (Mortals, congratulate yourselves that so great a man has lived for the honor of the human race.)
@@ -159,7 +160,7 @@
 - 1666 Annus Mirabilis [science]
 - r.1682-1725 Peter the Great [people,monarch]
 - c1680 Calculus [science,math]
-- 1687 Principia [science]
+- 1687 **Principia** [science]
 - 1688 Glorious Revolution [revolution]
 - 1689 Bill of Rights of England [civil right]
 ---
@@ -212,6 +213,7 @@
 - 1835-1908 Cixi [people,monarch]
 - 1837 Samuel Morse sent first telegraph [invention]
 - 1845-1918 Cantor [people,math]
+- 1847 James Simpson chloroform [medicine]
 - 1848 California gold rush [event]
 - 1848 Communist Manifesto [civil right]
 - 1848-1849 **Springtime of Nations** [revolution]
@@ -253,6 +255,7 @@
 - 1885 AT&T founded [company]
 - 1886 Benz Patent Motor Car [invention]
 - 1887-1975 Jiang Jieshi [people,HOS]
+- 1887-1951 Schrödinger [people,science]
 - 1889-1945 Hitler [people,HOS]
 - 1893-1976 Mao [people,HOS]
 ---
@@ -343,10 +346,10 @@
 - 1985 Windows 1.0
 - 1985 Steve Jobs resigned from Apple and started NeXT [company]
 - 1989 Reagan -> Bush [people,USP]
-- 1989 Fall of Berlin Wall [war]
+- 1989 **Fall of Berlin Wall** [war]
 - 1990 Reunification of Germany
 - 1991 Linux 0.01 [invention]
-- 1991 Soviet Union collapsed
+- 1991 **Soviet Union collapsed**
 - 1993 Bush -> Clinton [people,USP]
 - 1993 Oslo Accords [state]
 - 1995 Toy Story 1

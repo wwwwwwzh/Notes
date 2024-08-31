@@ -1,3 +1,33 @@
+# Who Are We?
+## Why Things Exist
+### What it Means to be?
+Iamgine a drop of black ink in water. The droplet immediately disspates after touching water and later become part of the water. This is analogous to dead things. If you are dead, you fall on groud and over time, become part of the environment. So it seems to be alive means to maintain some form, to not to be easily influenced by the random things going on in your surronding. For the droplet, it means to resist the brownian motion of surrounding water particles and various other small forces that piece the droplet apart. For humans, it means to maintain your body as a whole, to resist wind and a push, etc.
+
+Imagine a magical drop of ink. After dropping it to water, it maintains its bundry, it even navigaggtes the water like a small submarine. Now you might thinnk this thinng is more "alive" than our previous droplet. What might this droplet need to do this? If a molecule on surface of the droplet is hit by a water molecule, it might bounce off. So for the whole drop to be alive, every molecule needs to somehow not bounnce off when hit by water.
+### Why We Exist
+
+## Association
+### Patterns
+The universe contains patterns. The sun rises every day; finding a living fish very likely means there's water; a rock stays where it is unless something moves it. These sounds so common sense, but they are non-trivial. Imagine a world without any order or natural laws. A rock may suddenly jump up and throw itself at you; a fish sometimes swim on trees; the sun rises randomly. 
+
+Patterns allow us to learn. Patterns means we can manipulate the world. We can learn when the sun rises and adjust our activities accordingly. We can learn that rocks don't want to murder you so we don't need to spend energy worrying about potential harm when seeing a rock. 
+
+### Patterns and Science
+Science is all about identifying patterns or structures or laws or whatever it's called. (motion of stars, Galileo, Einstein)
+
+### Patterns and Math
+(gears, pulley, geometry)
+
+### Effecient Association
+
+## Why are we alive
+
+## Digital and Analog Computers
+### Analog Computers in Nature
+
+### Brain as a Digital Computer
+which is superior
+
 # Evolutional Explanation for Certain Concepts of Human
 The universe gave as only direct measurement of space and time by virtue of their significance in evolution (navigation, motion, biological cycles...), and senses of various kinds like force, motion, proportionality, circle, etc, that we would develop into ideas or guesses verified by the direct measurement of space and time. 
 
@@ -39,21 +69,73 @@ Geometric objects like circle, triangle, or rectangles didn't just pop up glowin
 
 
 # Structure of the World
+## Basic Physics
+### Billard Example
+observe rules->laws of motion->energy based laws
+
 ## Math
 ### "We hold these truths to be self-evident"
+
+### Functions
+It took people a long while to invent this thing called function. When you've understood it, it's obvious that many daily things and events could be well described as functions. But that just shows how powerful and deep this structure is in the projector. 
+
+Functions establish connections. It actually connects everything. Connections are good, but people used to be afraid of certain ones like connecting length with area, or money with time, since they have different units and the number that represent them were thought to be "different kinds of numbers" that should not be mixed up. 
+
+Luckily we mixed it, and with some clever insight from Descartes we can even visualize it and teach to primary school kids. 
+
+### Linear Algebra
+Linear algebra was a painful subject for me. I could solve any problems, but they meant little to me. I couldn't fit it to my daily life and visualize it with ease. 
+
+Fortunately I decided I have to. And it took only a day. But before visualizing linear algebra, let's talk about where linear algebra sits in the projector.
+
+A function like y=bx is linear algebra. As said before it connects one thing with another. So naturally it gives you two hidden variables of the universe that characterize other things and a nice and easy way to get one from another. Why things can be connected at all is a much deeper question that will be touched on later. 
+
+Sometimes y=ax1+bx2+.... It connects many things to one thing. And by have multiple xs, you have performed the one fundamental operation of inverse projection: dimension separation. For example, your happiness = money you have * 2 + time spent with friends * 5. By characterizing happiness with two variables, you unconsciously understood that money and time spend with friends are non convertible. They are kind of independent of each other and getting one won't really affect getting or not getting the other. So you have 2 dimensions now. It's also interesting that most times you can just add these different variables with their coefficients together and they miraculously accurately give you the output. 
+
+In more complex cases you have y1=a1x1+b1x2 and y2=a2x1+a2x2. Simplest example is buying at food market. Money spent on meat=10*beef + 5*chicken. Energy from these meat=200*beef + 150*chicken. As before, you have just created 4 hidden variables out of this messy and complex world, and they are organized in a straightforward and patterned manner. This is exactly what the matrix is for. You have some dimensions you can control, and you know how to get some new dimensions from simple multiplication and summation from these dimensions. 
+
+Visually you can imagine a 3d grid with the origin 3 items you are interested in. Then populate the space with combinations of these items that increase. If you want more than 3 dimensions, practice an illusion where you just keep adding axis perpendicular to previous ones. The trick is to forget about how perpendicular lines look like in "real" world. just adding lines with like 30 degree angle to existing lines and say to yourself that they are perpendicular. Then imagine the output space in a similar way. Finally, the operator, or the matrix is nothing more than some nudges to the input space that will give the output space. If it's a 3x3 matrix, then each nudge all 3 input axis to get one output axis, do this 3 times to get 3 output axis. 
+
 
 ### Calculus
 > By assuming his laws of motion and gravity as axioms and using his calculus as a deductive instrument, Newton proved that all three of Kepler’s laws followed as logical necessities. The same was true for Galileo’s law of inertia, the isochronism of pendulums, the odd number rule for balls rolling down ramps, and the parabolic arcs of projectiles. Each of them was a corollary of the inverse-square law and F = ma. This appeal to deductive reasoning shocked Newton’s colleagues and disturbed them on philosophical grounds. Many of them were empiricists. They thought that logic applied only within mathematics itself.
 
-### 
+### Calculus with Linear Algebra
+#### Gradient
+
+#### Jacobian
+
+#### Hessian
+
 
 ## Harmony
 ### Wave of Mind
-We often describe our emotions or state of mind as peaceful like a lake or tempestuous as the sea. We have certainly seen lakes and seas, and we have felt our feelings, but how is it that we naturally related the two concepts? 
+We often describe our emotions or state of mind as peaceful like a lake or tempestuous as the sea. We have certainly seen lakes and seas, and we have felt our feelings, but how is it that we naturally relate the two concepts? 
 
 A key feature of wave is periodicity. We see the waves rise and fall, and we feel our emotions come and go. 
 
-### "Echo"/Empathy
+# Decoding the Structure
+## Projection and Inverse Projection
+### Projection and "the Cave"
+
+### Inverse Problem
+
+### P-NP
+https://www.youtube.com/watch?v=YX40hbAHx3s
+
+P and NP basically correspond to the forward and backward problem. Note that in preceding discussion we didn't claim that the inverse problem is mathematically or proven to be harder than the forward problem. Think about genius. They see patterns in data easier than you calculate data given patterns. Now can everyone be a genius? That is, is it possible that for every inverse problem there is a short cut that makes finding the hidden pattern as easily as the calculating a projection. We don't know yet. But before discussion the possibility of a equility between P and NP, think about this phrase "I didn’t have time to write a short letter, so I wrote a long one instead". From a certian perspetive, it says that to give the pattern directly is harder than to give projections. A personal example would be I always write lots of examples before spoiling the theorem and I always learn by first reading through bunch of applications and exampels before working on the theory. (learning problem?) 
+
+### How do we "Echo"/Empathy
+
+## Randomness 
+## Scale
+### A Perfect Clock
+Schrodinger what is life, clock made of number of molecoles but its movement is almost deterministic
+
+### Scaling Up
+sometimes things break up but sometimes things become easier when scaled up. people are not predictable, but their collective behaviors can be modeled to some extent
+### Detective Novels
+Large number of molecules project to something (truth we want to find out), they move forward in time in unpredictable manner and project to evidence t2. We can somehow deterministicly get truth from eviidence.
 
 # Geometry
 ## Euclidean
@@ -68,7 +150,7 @@ A key feature of wave is periodicity. We see the waves rise and fall, and we fee
 # What If Evolution Went Wrong
 ## Vision
 ### Light
-Imagine the whole science without the concept of light. The field of optics will be gone. The development of electromagnetism, the determination of speed of light will obviously need other inspirations. Most importantly, we won't see the stars.
+Imagine the whole science without the concept of light. The field of optics will be gone. The development of electromagnetism, the determination of speed of light will obviously need other inspirations. More importantly, we won't see the clock of the universe tick as manifested in movement of stars of falling of apples.
 
 Without the stars there will be no astronomy, and universal gravitation might never be introduced. 
 
@@ -114,3 +196,7 @@ When an animal faces a challenge, it tries different actions. It explores action
 ## Biology
 ### Observations 
 - Some stimuli, like porn, or a needle sting, have slow decay in excitation. However, the expectation for them, if the same porn or same needle, drops quickly after first trial. The anxiety from needle almost extinguishes after a single trial even though the actual pain almost doesn't change
+
+# Associationism
+### Examples of Bad Connections
+- who needs to leave early when taking oral exam. having to leave early associates with good thing because people will care for your need, but here whoever needs to leave early take the exam first. 

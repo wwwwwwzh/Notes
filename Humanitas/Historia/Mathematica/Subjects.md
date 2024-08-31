@@ -322,3 +322,6 @@ In early calculus, the use of infinitesimal quantities was thought unrigorous an
 ### Infinity
 - Induction
 - Epsilon-Delta definition of limit
+
+# Physics and Life
+- [entropy by veritasium](https://www.youtube.com/watch?v=DxL2HoqLbyA)

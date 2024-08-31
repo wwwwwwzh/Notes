@@ -109,6 +109,10 @@ $ P(Y=X+X=y) \\
 $ which is the exact definition of convolution.
 
 ### Probability Distribution
+> Note: Probability function maps **event** to values (real number [0,1]), RV maps **outcome** to values, PMF maps **values** to values. PD maps A to R where A is related to sample space. Both P and PMF/PDF are PDs.
+
+> Note that sometimes people don't follow the exact definition of PMF/PDF which defines them on probability measures. Instead they say PMF/PDF are themselves probability measures/function.
+
 A probability distribution is a mathematical description of the probabilities of events, subsets of the sample space.
 
 However, when dealing with random variables, we often use the range of X as the sample space instead of domain of X. This way it's easier to understand probability of events that have been quantified and the sample space becomes a numerical set instead of arbitrary non-numerical values like heads or tails.
@@ -123,7 +127,6 @@ Key takeaway is that anything of the form P: A->R satisfying certain conditions 
 - CDF: F(x)=P(x≤X)
 
 
-> !Note: Probability function maps **event** to values (real number [0,1]), RV maps **outcome** to values, PMF maps **values** to values.
 
 > Note: PMF is lower case p while probability measure is capital P.
 
@@ -189,6 +192,18 @@ Poisson distribution is a discrete probability distribution that expresses the p
 
 p(i)=P(X=i)=e^-λ(λ^i)/i! (Taylor approximation of e^x)
 
+### Power Law
+
+
+Log scale:
+
+Examples:
+- biomass
+- income
+- firm size
+
+> species and firms/people
+
 ## Exponential Family
 
 ## Law of Large Numbers
@@ -253,6 +268,8 @@ Distribution of sample mean is normal
 > That many natural phenomena are themselves normal can be interpreted as them being sample mean of many hidden events. e.g. brownian motion can be seen as result of interaction with many particles around it
 
 > There are many other limit theorems that extend beyond iid rv. A rule of thumb is that in real life, as long as you have enough samples, distributions don't need to be identical nor too independent.
+
+> I know of scarcely anything so apt to impress the imagination as the wonderful form of cosmic order expressed by the "Law of Frequency of Error". The law would have been personified by the Greeks and deified, if they had known of it. It reigns with serenity and in complete self-effacement, amidst the wildest confusion. The huger the mob, and the greater the apparent anarchy, the more perfect is its sway. It is the supreme law of Unreason. Whenever a large sample of chaotic elements are taken in hand and marshalled in the order of their magnitude, an unsuspected and most beautiful form of regularity proves to have been latent all along. -Francis Galton
 
 ### Intuition
 $
@@ -427,6 +444,11 @@ If there is such a measure, say H(p1, p2,... pn), it is reasonable to require of
 2. If all the pi are equal, pi = 1/n, then H should be a monotonic increasing function of n. With equally n likely events there is more choice, or uncertainty, when there are more possible events.
 3. If a choice be broken down into two successive choices, the original H should be the weighted sum of the individual values of H.
 
+Alternatively:
+1. The information we gain by observing a random variable does not depend on what we call the elements, or the presence of additional elements which have probability zero.
+2. The information we gain by observing two random variables is no more than the sum of the information we gain by observing them separately. If they are independent, then it is exactly the sum.
+3. The information gained when observing (nearly) certain events is (nearly) zero.
+
 The only H satisfying the three above assumptions is of the form: H=-KΣpᵢlogpᵢ
 
 ### Self-Information
@@ -466,12 +488,21 @@ $pmi(x,y)=log\frac{p_{X,Y}(x,y)}{p_X(x)p_Y(y)}$
 
 This can be seen as measuring amount of surprise of seeing two things happening together compared to seeing them happen separately. Note that pmi can be positive and negative.
 
+### Entropy and Information
+Self information can be seen as amount of things that add to your understanding. For example, in a coin flip, if you see a head, that's more information you have before the flip. So in another way, information is the amount missing before you see. 
+
+Entropy is a macrostate variable that doesn't depend on specific outcomes. You can't say entropy of a head. But the flip itself contains entropy. A news arguably contains more information than a flip. Or it gives you more knowledge about some states of the world. Or it is more random and harder to guess since news can be billions of combinations of events but coin flip has only 2 outcomes.
+
 ### KL (Kullback–Leibler)
 $D_{KL}(P||Q)=E_{x\sim P}[log\frac{p(x)}{q(x)}]$
 
 - KL(P,Q)!=KL(Q,P)
 - KL(P,Q)>=0, KL(P,Q)=0 if P=Q
 - if there is an x such that p(x)>0 and q(x)=0, KL=∞
+
+From the perspective of information theory, the KL divergence can be thought of as scoring the amount of information one would need to reconstruct p(x) given full knowledge of q(x).
+
+When thinking about the code used to optimize information transmition, KL also measures how bad the code for P is when using this code to transmit Q. 
 
 ![](/images/forward_vs_reversed_KL.png)
 

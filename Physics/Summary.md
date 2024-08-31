@@ -130,6 +130,21 @@ Flow of energy changes movement of matter we see. In the next chapter we shall s
 
 - Heat lost in ideal engine (Sadi Carnot): "some caloric is always lost" in the conversion into work, even in his idealized reversible heat engine. He also discovered that this idealized efficiency was dependent only on the temperatures of the heat reservoirs between which the engine was working, and not on the types of working fluids
 
+- The algebraic sum of all the transformations occurring in a cyclical process can only be positive, or, as an extreme case, equal to nothing.
+
+### Macrostate Variables
+It would be nice to have some quantity either directly observable or calculable  on a complex system, such that even though we don't know what's happening at lower levels, we can find rules or laws governing these varibles themseves, as if such laws are themselves the laws of the universe. And in fact they are. And in fact we have been dealing with these floating high and imaginary quantities for a long time. For example, we never defined mass as a function of the microscopic combination of its atoms or even sub-atomic structures, we just say this big complex thing has such mass, and it's a useful quantity. The laws like F=ma are all every macro compared to what we now know. The point is, it is ok to use such fuzzy overall descriptions of the world instead of cutting it up into infinitesimal pieces. 
+
+When studying thermodynamics, or gas, we don't care what each air molecule is doing, we care about something big and these things are actually useful. It's intuitive to have measures like pressure and volume and temperature. They are easy to measure and useful. What else do we need? Remember that temperature is not heat. If temperature is high (say 200F) on a small ball, and imagine heat as flow of some imaginary particle, some heat will flow to you when you touch it, but a huge ball with lower temperature (say 150F), can deliver much more such "heat". So it seems we need to have a variable called heat. It's later discovered that heat is a form of energy, another imaginary macrostate variable that's useful. So with the first law we know the lost heat energy is converted to work. If we describe the system with heat energy, we notice that with each cycle of a heat engine, some net heat is added to the engine. But we want a macrostate variable that's conserved during each cycle since apparently the whole system looks the same after each cycle. Also we know we can't use temperature since we can't differentiate between a big system and a small one. So we invent a thing called entropy. 
+
+## Gibbs Free Energy
+https://qr.ae/ps1evZ
+
+## Entropy and Life
+The 1944 book What is Life? by Nobel-laureate physicist Erwin Schrödinger stimulated further research in the field. In his book, Schrödinger originally stated that life feeds on negative entropy, or negentropy as it is sometimes called, but in a later edition corrected himself in response to complaints and stated that the true source is free energy. More recent work has restricted the discussion to Gibbs free energy because biological processes on Earth normally occur at a constant temperature and pressure,
+
+Applying Boltzmann's perspective of the second law, the change of state from a more probable, less ordered, and higher entropy arrangement to one of less probability, more order, and lower entropy (as is seen in biological ordering) calls for a function like that known of DNA. DNA's apparent information-processing function provides a resolution of the Schrödinger paradox posed by life and the entropy requirement of the second law
+
 ## Field 
 ### Electromagnetism
 > Not only does the force fail to lie on the line connecting charge and magnet, but the intensity of the force depends on the velocity of the charge. The whole mechanical point of view was based on the belief that all phenomena can be explained in terms of forces depending only on the distance and not on the velocity.
