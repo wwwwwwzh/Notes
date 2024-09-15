@@ -111,6 +111,9 @@ When seeing a face we think it's familiar but can't recall exactly why it's fami
 ### Forgetting after certain not forgetable
 might be repeated activation but after seeing it stops exciting
 
+### What counts as rememberiing
+what happens when you say you can't remember someone's face waht's the differentce when you can remembre
+
 # Representation
 ##
 ### 

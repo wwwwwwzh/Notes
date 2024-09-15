@@ -1,15 +1,28 @@
 # Util/Tools
-## Commands
-### Linux Commands 
-- wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-- sh Miniconda3-latest-Linux-x86_64.sh
+## System Setup
+### UNC Computers
+- AD means onyen
+- AD needs internet access
+- 
+### General Troubleshooting
+Step 1: Follow the below guide
+Step 2: Use ChatGPT
+Step 36: Go do something else 
+#### Conda
+see conda troubleshoot
+#### module/command not found: 
+- is your library in system path in ~/.bashrc or ~/.bash_profile
+- can you run the command in terminal? If yes, then 1) check if there are package specific path loaction 2) are there multiple versions of a package. If no, 1) have you downloaded the right thing 2) have you linked it in system path
+#### Python
+https://jakevdp.github.io/blog/2017/12/05/installing-python-packages-from-jupyter/#How-Python-locates-packages
+- there are multiple pythons in your computer. Your conda environment (including base) has a copy of a version of python. Your system also have its own python version. Also check your PATH to see which pythons are seen. Use 'which python' to see where current python is.
+### Package Not Installing
+- Check python version
+- copy paste the whole error message to chatgpt
+- --no-build-isolation
 
-- conda create -n your_env_name
-- conda activate your_env_name
-- conda env list
-- conda list
-
-- source ~/.bashrc
+### General Bash Commands 
+- source ~/.bashrc or ~/.bash_profile
 - df -h: view storage devices
 - du -sh: view directory size
 - pstree / ps aux: show running processes
@@ -22,28 +35,35 @@
 - scp -r /path/to/directory zhw@hires-gpu1.cs.unc.edu:/playpen1/wzh/files/: copies the directory itself into files folder
 - cp -r ~/folder1/. ~/new_folder1: copies contents of folder1 to a new folder (will create if not exist)
 
-
+### Tensorboard
 - tensorboard --logdir log; ssh -L 16006:127.0.0.1:6006 zhw@hires-gpu1.cs.unc.edu then go to http://127.0.0.1:16006: tensor board on ssh
 
-
+### Jupyter Notebook
 - jupyter notebook --no-browser --port=8080; ssh -L 8081:localhost:8081 zhw@hires-gpu1.cs.unc.edu
 
-#### cuda
-- export PATH=/usr/local/cuda-11.1/bin:$PATH: change cuda version
+#### Troubleshooting
+- Module not found: check if you can use the module in terminal, if yes, install jupyter in your current env. If no, 
+- Restart terminal
+- 
 
-> https://docs.google.com/document/d/1S8PU4EbigzlvSx4x_Ay835hMAjB8bCpouoWcNIyvTbc/edit
+### Conda
+#### Installation
+https://docs.anaconda.com/miniconda/
+- wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+- sh Miniconda3-latest-Linux-x86_64.sh
 
-#### Tools
-CMake: https://askubuntu.com/questions/829310/how-to-upgrade-cmake-in-ubuntu
+- conda create -n your_env_name
+- conda activate your_env_name
+- conda env list
+- conda list
 
-### PyCharm Shortcut
-select next occurrence: control + G 
-deselect previous occurrence: shift + control + G 
-copy line done: command + D
+#### Removal
+https://docs.anaconda.com/anaconda/install/uninstall/
+On macbook pro my miniconda is in home directory
 
-### VSCode Shortcut
-copy line done/up: shift + opt + arrow
-select next occurrence: command + D
+#### Troubleshoot
+- solve environment forever (making new env should not take more than 2 minutes and installing a package should not solve for more than 1 minute): remove and reinstall conda
+
 
 ### Git
 https://learngitbranching.js.org/
@@ -62,7 +82,7 @@ https://learngitbranching.js.org/
 - git merge branchName
 - git rebase branchName
 
-### ssh
+#### ssh
 The process is as follows: you run a git clone command with an SSH URL; Git starts ssh to connect to the github.com host as git user; ssh connects and successfully authenticates by the 1st keypair; GitHub recognizes that it's the user that has access to the repository so it accepts the request at the Git protocol level
 
 - create new key for github: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
@@ -80,6 +100,27 @@ The process is as follows: you run a git clone command with an SSH URL; Git star
 - git reset HEAD~1
 - git revert HEAD: new commit with content as previous commit. Use with pushed commits.
 
+### Node
+- upgrading node by first 'brew upgrade node' then 'brew link --overwrite --dry-run node' then 'brew link --overwrite node'
+
+### cuda
+- export PATH=/usr/local/cuda-11.1/bin:$PATH: change cuda version
+
+> https://docs.google.com/document/d/1S8PU4EbigzlvSx4x_Ay835hMAjB8bCpouoWcNIyvTbc/edit
+
+### Tools
+- CMake: https://askubuntu.com/questions/829310/how-to-upgrade-cmake-in-ubuntu
+
+## App Shortcuts
+### PyCharm
+select next occurrence: control + G 
+deselect previous occurrence: shift + control + G 
+copy line done: command + D
+
+### VSCode
+copy line done/up: shift + opt + arrow
+select next occurrence: command + D
+
 ## Code
 ### Torch
 ```py
@@ -88,6 +129,7 @@ einsum("b h d i, b h d j -> b h i j", q, k) # if index is in result (b h i j), i
 einsum("b h i j, b h d j -> b h i d", attn, v) 
 ```
 
+# Reference
 ## People
 ### Science
 - [multidiscplinary education guy](https://www.youtube.com/@physicsforthebirds)
@@ -113,10 +155,6 @@ https://huggingface.co/transformers/v2.9.1/pretrained_models.html: model name an
 
 
 ----------------------------------------------------------
-
-## Env 
-### Node
-- upgrading node by first 'brew upgrade node' then 'brew link --overwrite --dry-run node' then 'brew link --overwrite node'
 
 # Logs
 ## 12.19
@@ -241,6 +279,64 @@ It seems that after a long flight, tired and hungry, my spirit is still high, al
 
 At 9am france or 3pm china, sppirit is very stable. I can do anything except that hunger keeps physical work difficcult. THere's slight diziness when moving too much.
 
+Met unc classmate who might infect me
+
+### 8.18
+Feelig like fever without fever. 
+
+### 8.19
+FDOC. Feeling  great, audited schocastic process, so many chinese. Went to gym
+
+### 8.20
+infected a friend (symptoms: mucus, no fever) gym again. Embasy event (haoge). Ran for 30 minutes after dinner.
+
+### 8.21 
+gym
+
+### 8.22 
+coughing hard and extremely sleepy in evening, friend worse
+
+### 8.24
+completely recovered, running nose. Night talked too much and coughiing again
+
+### 8.25 
+gym
+
+### 8.28 
+gym
+
+### 9.2
+megaman feeling extremely great, run
+
+### 9.3
+tried wawter placebo, not as good as yesterday.
+
+### 9.5
+setting up desktops in lab
+
+### 9.6
+friend still ill. Computers connected ethernet can ping each other
+
+### 9.9
+Lab meeting about some attention tasks on humans and testing some eeg region of interest. Some graphs of alpha and beta activities as function of time. Tried nfblab selflooping which was successful on both computers. LSL still no luck.
+
+### 9.10
+friend went to hospital but nothing abnormal. Tried directly using soccket to send keyboard events and worked. But lsl not working. Tried various firewall settings includingg inbound rules and closing firewall, also changed ip to 192.168.1.1. Not working. Granding some basic networking. https://cs.lmu.edu/~ray/notes/netsandinets/. socket is the os level tool for networking
+
+### 9.11
+Now multicast directly can work. At first  ports from 224.0.0.0-224.0.0.255 are shown on wireshark as red and the receiver script not working. If firewall is disabled, this would work and netsh would show ethernet has joined the group ip. lsl still not working btw computers and no wireshark nor netsh signal. checking lsl library. The whole time vr is connected to internet.
+
+Trying on macbook: 1) manual creation of multicast followiing https://stackoverflow.com/questions/603852/how-do-you-udp-multicast-in-python first shows a *[7	440.985751	152.23.129.132	224.0.0.183	IGMPv2	46	Membership Report group 224.0.0.183]* packet in wireshark, each transmission is a *[8	447.728175	152.23.129.132	224.0.0.183	UDP	45	64907 → 5007 Len=3]* packet. This UDP packet is shown on wireshark regardless of reception. 2) using lsl https://github.com/labstreaminglayer/pylsl/blob/master/pylsl/examples, now changed to wireshark to see all loopback data. sender showed nothing by itself. When listener starts, a udp and tcp server are setup with info data and then tcp is used for transmission. Switching to all interfaces, it seems udp and tcp are both transmitting. Again sender alone does nothing on udp tcp level. (dst net 224.0.0.0/4 or host 255.255.255.255). 
+
+The IGMPv2 is seen only once and maybe it's not leaving membership so have to wait till reopen computer. 
+
+### 9.12
+Cleaning mac storage memory disk. Library is 11G, System is 13G, usr is 10G, yuwawng is 114G so next time just target that directly. Library under yuwang is 50G
+
+### 9.13
+ON 9.11 the computer can't access internet. It's solved by resetting IP. It was 192.168 IP. Luckily I stored the original IP on Wrike.
+
+Following up on the wireshark tests. Selecting all interfaces and set filter to "dst net 224.0.0.0/4 or host 255.255.255.255". The VR computer which is connected to UNC Guest showed IGMPv3 join and leave group packet for LSLsender script. MulticastReceiver showed similar join packets.
 # Ideas
 ## School Related
 ### Course Plan

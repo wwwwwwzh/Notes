@@ -82,7 +82,7 @@ All trig functions are easier to think about as projections of cirles. For examp
 to represent 2 states you need 2 types of numbers. 
 
 ## Primer on e^i
-### (Complex) Exponential Function
+### World of Change and Periodicity
 exponential (like 2^x) and complex exponential functions (like 3^ix) are ubiqutous. Why? What's special about them?
 
 There are two properties of the world that underlie many natural phenomena: change depends on state and periodicity.
@@ -93,6 +93,7 @@ Periodicity means that things, while in perpetual change, returns to states it h
 
 > OPTIOINAL: There are generally 2 questions regarding the claim that everything is periodic. First is like: the production of human civilization seems to be always going up. The explanation is that we might have an extremely slow periodicty in addition to the periods of cennturies and decacdes, such that we are still on the rising phase but in the far future humans might be decline. Second is like: if I suddenly get a raise, my life is "elevated" and that breaks the periodic struccture. That is harder to explain intuitively but mathematiccally, it could be proven that, with enough (infinite to be precise) periodicities adding up altogether, you will describe that kind of phenomenon.
 
+### Exponentials for state dependency
 Now let's dive into the math and see how those natural phenomena make it necessary for us to invent exponentials and complex exponentials.
 
 We'll use t, or time, as the independent variable since intuitively, time flows independent of anything else. We use x, or state, as the dependent variable according to convention. Be careful how you interpret x if you've only seen functions of the form y=f(x). A function x=f(t) describes what states you are in as time flows. 
@@ -101,10 +102,15 @@ Functions you are most familiiar with, like x=t or x=t², are not state dependen
 
 Without any mathematical rigor, I'll claim that the best functiion to account for state dependency is exponential functions. For example, 2ᵗ has derivative of ln(2) times 2ᵗ, or ln(2) tiimes itself. If you are unconfortable with infinitesimals, image you have 8 rabbits which multiply themselves every year. It means next year you will have 16, and the year after 32. The change, or increase of number of rabbits, IS the number of rabbits. As an aside, eᵗ has the property that its derivative is exactly itself, which is a continuous version of the rabbits phenomenon we described (imagine that instead of every year, they give birth to a fractional of a rabbit every instant). Since nature is iin fact mostly continuous, we use e as the lower left part of exponential functions most often, hence the name natural base.
 
+### Complex Exponential for periodicity
+There's an interesting relationship between state dependency and periodicity. If you are a periodic function, you are essentially walking back and forth. No matter how far you go up or down, you have to turn back at some point, otherwiise you are not periodic. To periodicly turn back and forth, you have to know where you are right now, ie, your next move depends on your current state. Note that this is only one way to make sense of why exponential functions are related to periodicity. 
 
+Now the more complex topic is indeed the complex number. Previously I said that in order to have periodic motion, your next move has to depend on your current state. This is actually inaccurate. Suppose that I'm walking back at forth. When I'm at the farthest point in one direction, I need to start moving back. But at that farthest point, I'm actually stopping, before I reverse my walking direction and start accelarating. The rule is therefore: the change of state (speed) should be 0 when the state is in either of the farthest points. This means at that point, I just stop, and because I'm still at that point, I continue to stop, ad infinitum. The correct way to go back and forth is to further specify the change of change of state, or accelaration if we focus on the moving example. The new way to write the rule for going back and forth would be: when the state is at the farthest point, change of state (speed) is 0, but change of change of state is non-zero. 
 
 
 ### Cos, Sin, Circle, and Euler's Formula
+This section will be completely self contained. But if haven't read the previous  sections, I still want to emphasize that first, since 
+
 
 
 ## Fourier Series

@@ -1,15 +1,40 @@
 
+# Game (Economy)
+##
+### 
+- [Valuation class](https://www.youtube.com/watch?v=tjNJx2244Lc&list=PLUkh9m2BorqmtIQKZ1jv3uuZDM_bQIICg)
+# Physics
+## 
+### Lagrangian
+- https://profoundphysics.com/constraints-in-lagrangian-mechanics/
+- https://profoundphysics.com/lagrangian-vs-newtonian-mechanics-the-key-differences/
 
 
-
-#
+# Math
 ##
 ### Math books to read
 https://www.3blue1brown.com/blog/book-recommendations
 
+### Complex Analysis
+- [Euler's formula with introductory group theory](https://www.youtube.com/watch?v=mvmuCPvRoWQ)
+- [Fourier transform as linear algebra](https://www.youtube.com/watch?v=7Vma1G2p6A8)
+- [convolution](https://www.youtube.com/watch?v=aEGboJxmq-w)
+
+### Hyperpolic functions
+- [potentially quantum physics with philosophical isights](https://www.youtube.com/watch?v=WL8l16SWp7g&t)
+
+### Group Theory
+- [Euler's formula with introductory group theory](https://www.youtube.com/watch?v=mvmuCPvRoWQ)
+
+### Linear Algebra
+- [visual matrices](https://www.youtube.com/watch?v=4csuTO7UTMo)
+
+# Life Tools
 ##
 ### Math Animation 
 https://github.com/ManimCommunity/manim/
+
+### 
 
 
 # Neuro
@@ -66,3 +91,8 @@ A *potentially* self-injurious act committed with at least *some wish* to die, a
 ### Time Series
 - NFBLab
 - MNE
+
+## Anatomy
+### Videos
+- [100 MICRO MRI](https://www.youtube.com/watch?v=I0fjPyk1eHM&list=PLlL7CEMX5bxzl1TqkJRK3pMV4Ax6By4bN&index=6)
+
