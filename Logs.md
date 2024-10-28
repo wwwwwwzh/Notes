@@ -1,5 +1,27 @@
 # Util/Tools
 ## System Setup
+### Longleaf
+Basic:
+- ssh zhw@longleaf.unc.edu
+- cd /nas/longleaf/home/zhw
+- store files at /work/users/z/h/zhw/ for high throughput io
+
+SLURM:
+- salloc --mem=4g --ntasks=1 --time=02:00:00
+- srun --partition=interactive --nodes=1 --ntasks=1 --mem=4G --time=02:00:00 --pty bash
+- view jobs: squeue -u zhw
+- scancel job_id
+- scancel -u zhw
+- detailed info: scontrol show job job_id
+- job history: sacct -u zhw
+
+Jupiter:
+- jupyter notebook --no-browser --ip=0.0.0.0 --port=8080
+- ON LOCAL MACHINE: ssh -L 8080:c1121:8080 zhw@longleaf.unc.edu
+- lsof -i :8080
+- kill -9 <id>
+- VSCODE: see vscode section
+
 ### UNC Computers
 - AD means onyen
 - AD needs internet access
@@ -13,9 +35,17 @@ see conda troubleshoot
 #### module/command not found: 
 - is your library in system path in ~/.bashrc or ~/.bash_profile
 - can you run the command in terminal? If yes, then 1) check if there are package specific path loaction 2) are there multiple versions of a package. If no, 1) have you downloaded the right thing 2) have you linked it in system path
+
+use for checking python path:
+```
+import sys
+print(sys.executable)
+```
+
 #### Python
 https://jakevdp.github.io/blog/2017/12/05/installing-python-packages-from-jupyter/#How-Python-locates-packages
 - there are multiple pythons in your computer. Your conda environment (including base) has a copy of a version of python. Your system also have its own python version. Also check your PATH to see which pythons are seen. Use 'which python' to see where current python is.
+
 ### Package Not Installing
 - Check python version
 - copy paste the whole error message to chatgpt
@@ -48,9 +78,7 @@ https://jakevdp.github.io/blog/2017/12/05/installing-python-packages-from-jupyte
 
 ### Conda
 #### Installation
-https://docs.anaconda.com/miniconda/
-- wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-- sh Miniconda3-latest-Linux-x86_64.sh
+follow codes here https://docs.anaconda.com/miniconda/#quick-command-line-install 
 
 - conda create -n your_env_name
 - conda activate your_env_name
@@ -120,6 +148,9 @@ copy line done: command + D
 ### VSCode
 copy line done/up: shift + opt + arrow
 select next occurrence: command + D
+
+- setup remote developing: https://code.visualstudio.com/docs/remote/ssh
+- remote jupiter notebook: run salloc and srun, THEN activate conda env and run jupiter, in vscode, add kernel to be the one in jupiter output (like http://c1123.ll.unc.edu) use 'import sys; print(sys.executable)' to check which env conda is using.
 
 ## Code
 ### Torch
@@ -321,7 +352,8 @@ friend still ill. Computers connected ethernet can ping each other
 Lab meeting about some attention tasks on humans and testing some eeg region of interest. Some graphs of alpha and beta activities as function of time. Tried nfblab selflooping which was successful on both computers. LSL still no luck.
 
 ### 9.10
-friend went to hospital but nothing abnormal. Tried directly using soccket to send keyboard events and worked. But lsl not working. Tried various firewall settings includingg inbound rules and closing firewall, also changed ip to 192.168.1.1. Not working. Granding some basic networking. https://cs.lmu.edu/~ray/notes/netsandinets/. socket is the os level tool for networking
+friend went to hospital but nothing abnormal.
+Tried directly using socket to send keyboard events and worked. But lsl not working. Tried various firewall settings including inbound rules and closing firewall, also changed ip to 192.168.1.1. Not working. Grinding some basic networking. https://cs.lmu.edu/~ray/notes/netsandinets/. socket is the os level tool for networking
 
 ### 9.11
 Now multicast directly can work. At first  ports from 224.0.0.0-224.0.0.255 are shown on wireshark as red and the receiver script not working. If firewall is disabled, this would work and netsh would show ethernet has joined the group ip. lsl still not working btw computers and no wireshark nor netsh signal. checking lsl library. The whole time vr is connected to internet.
@@ -337,6 +369,428 @@ Cleaning mac storage memory disk. Library is 11G, System is 13G, usr is 10G, yuw
 ON 9.11 the computer can't access internet. It's solved by resetting IP. It was 192.168 IP. Luckily I stored the original IP on Wrike.
 
 Following up on the wireshark tests. Selecting all interfaces and set filter to "dst net 224.0.0.0/4 or host 255.255.255.255". The VR computer which is connected to UNC Guest showed IGMPv3 join and leave group packet for LSLsender script. MulticastReceiver showed similar join packets.
+
+### 9.16
+downloaded psychopy on stiimulus computer, great componentized development and easy to use UI. Created a conda env called psy, py=3.8 with psychopy as required and installed matplotlib=2.2.4 then nfblab. 
+
+### 9.17
+finally working as I used my own computer and tested back and forth. But should have tested my computer with the school computer as well. Combining source code reading, it seems that the outlet creates several UDP and TCP servers and listens for requests. [check who joined mmulticast group] Then the inlet sends request [to the multicast group?] and establishes connection with server. Latency seems to be within millisecond range. Got photodiode
+
+Met the other sttudent freshman in comp and neuro, prominent backgroud in tech and health care. Done some ECE projects and real project with Duke professor on preprocessing LFP data on mice and ships. 
+
+In retrospect, I should have tested my computer with VR tthe first week because that's what I know. By playing around with the firewall and network stuff I was venturing into unfamiliar territory, whist not having tested every known option. The logic is that people in this field are not likely to know network stuff and are likely to have compuuters with similar restrictiive setup. If they have no problem using LSL directly, the first solution is to change computer. But this is nevertheless a very valuable experience iin network. I've almost forgotten my network stuff but now it's hands on refreshment.  
+
+### 9.18
+The complet network behavior of LSL: 
+1. receiver (joins multicast group? and) sends session request to multiple multicast/broadcast/unicast ports from both ipv4 and v6 interfaces, the request contains a short info with name and type 
+2. sender joins multicast groups and listens for requests
+3. upon getting short info, sender sends long info (host info). (seen as udp packages of length around 683)
+4. upon receiving host info, receiver starts TCP connection. 
+5. After connection is esttablished, sender sends LSL::stream feed with data chunks
+
+Format of psychopy: 
+- Main function:
+```py
+expInfo = showExpInfoDlg(expInfo=expInfo)
+thisExp = setupData(expInfo=expInfo)
+logFile = setupLogging(filename=thisExp.dataFileName)
+# this is the screen showing attemping to get frame rate and saved to expInfo['frameRate']
+win = setupWindow(expInfo=expInfo)
+setupDevices(expInfo=expInfo, thisExp=thisExp, win=win)
+run(
+    expInfo=expInfo, 
+    thisExp=thisExp, 
+    win=win,
+    globalClock='float'
+)
+saveData(thisExp=thisExp)
+quit(thisExp=thisExp, win=win)
+```
+1. First 34 import lines are reserved
+2. Run **'before experiment'** code from [names of code blocks that are assigned as before experiment following builder flow order]
+3. setup global variables: create 'deviceManager' and _thisDir = os.path.dirname(os.path.abspath(__file__)), expInfo, _fullScr, _winSize, filename = u'data/%s_%s_%s' % (expInfo['participant'], expName, expInfo['date'])
+4. run()
+    1. Start Code - component code to be run after the window creation:
+    For each Routine in flow order, 2 initializations will be done, first is block initialization like texts or keyboard, second is to run **'Begin Experiment'** code
+    2. timers
+    3. For each Routine:
+        1. Prepare to start routine [routine]
+        2. **Run 'Begin Routine' code**
+        3. Run Routine [first routine]
+        4. End Routine
+    4. endExperiment()
+5. saveData and quit
+
+
+Gradcpt outline:
+1. d
+2. run()
+    1. inits
+    2. here is gradcpt saving and stimuli processing functions
+    3. trial variables are here
+    4. dom_key/key to press when city, random assignment
+    5. estimate_frame_rate Routine: transition_steps = round(refresh_rate * transition_time) # Hz*0.8
+    6. welcome: text and listen for key press
+    7. gradcpt_prep: more text and another key press wait
+    8. thisExp.addLoop(blocks: {nReps:N_blocks})
+        1. block_start: press space and assign city key
+        2. text: image appearing in 5 seconds
+        starting 1435: 
+        ```py
+        probe_count = 0
+        frame_count = 0
+        transition_step = 0
+        next_es_trial = round(random.uniform(next_es_min, next_es_max))
+        gradcpt_trial = 0
+        es_trial = 0
+        gradcpt_data = []
+        es_gradcpt_data = []
+        do_es = False
+
+        routine_start = datetime.now()
+        
+        # stim_set is list of images, conditions is list of strings of either 'dom' or 'nondom'
+        stim_set, conditions = create_stim_sequence(dom_stim, nondom_stim, N_dom, N_nondom)
+        
+        transition_current = np.linspace(np.zeros((256, 256)), # Grey
+                                  stim_set[gradcpt_trial], # Image 1
+                                  transition_steps)
+        transition_next = np.linspace(stim_set[gradcpt_trial], # Image 1
+                                  stim_set[gradcpt_trial+1], # Image 2
+                                  transition_steps)
+        
+        
+        trial_start_time = datetime.now()
+        ```
+        3.  thisExp.addLoop(blocks: {nReps:N_trials*2})
+            1. gradcpt_stim: kb=Keyboard.Keyboard(); Run **Each Frame** code from stim_code
+            ```py
+            # if end of trial
+            if (transition_step == transition_steps):
+                if (gradcpt_trial == N_trials):
+                #end routine
+                elif gradcpt_trial == next_es_trial:
+                    #do the 6 questions/es
+                else:
+                    # Update stimulus set
+            img = transition_current[transition_step]
+            frame_count += 1
+            transition_step += 1
+            if key pressed:
+                gradcpt_data.append(save_gradcpt_data(rt, key))
+            ```
+
+        4. block_rest
+
+```py
+def save_gradcpt_data(rt, key):
+    # Calling vars beyond the local scope of the function
+    out = {
+        'total_runtime_mins': (datetime.now() - experiment_start_time).total_seconds() / 60,
+        # Start trial counter at one
+        'gradcpt_trial': gradcpt_trial+1,
+        'frame_count': frame_count,
+        'transition_step': transition_step,
+        'coherence': transition_step / transition_steps,
+        'condition': conditions[gradcpt_trial],
+        'resp_key': key,
+        'rt': rt
+    }
+    return out
+```
+
+es is experience sample
+
+### 9.19
+an extra frame, test these tommorow:
+1. change time to 400 and then to 17
+2. add a print for each win.flip() and count
+3. check the other frame and counter variables and see if and when they match
+
+added the square, one frame alternation if too quick, still using 0, 400ms per trial.
+
+An interesting phenomenon when discussing GRE vocab with friend. It seems that he's incapable of decomposing a word into its part and thus his memorization of english words is one to one, the least efficient, which kinda contradiicts my hypothesis of innate abstractoin. However, this is a valuable venue of research to compare L1 and L2 acctivation patterns to see how innate and acquired abstraction differ. I believe that there's a critical peroid of innate and acquired can be gradually transfered to iinnate by trimming the physical connections. The same phenomena applies to any field where you see gifted people compared to learned people. Arts and music and literature and investment can be good examples.
+
+### 9.20
+Catching the extra "frame". setting to 0.017s results in 1 frame per image and the ending time is exactly 0.167s. 0.8 or 1s per image results in approxiamtely 0.017s extra per image. 5s, or 300 frames per image, results in 5.0838s per image. Thus the extra frame is actually a precision overflow or frame drop. Consider using a high precision timer to ennforce the 0.8s transition time.
+
+Forked the gradcpt repo and now working on git.
+
+Now testing lsl. The first problem is my macbook can't initizlaze ioHub used by psychopy. This is solved by enabling psychopy in input monitorinig and accessibility in security & safety settings.
+
+LSL or NDFlab uses XDF which is mostly used by electrophisiological data. Basically a custom xml.
+
+---
+On the research side, Danniel talks about left right asymetry in affective component (approach-avoidance in left and right prefrontal cortex). A stereotype was from lesion study. then EEG  alpha asymetry, greater relative left prefrontal activation reported higher levels of BAS strength, greater  right prefrontal activation reported higher levels of BIS strength (Behavioral Approach and Inhibition System (BAS and BIS))
+
+Daniel's theory of sword and shield model was that people attack with dominant hand and defend with non-dominant hand. Which he then uses to propose modificatoin to tDCs treatment: identify the approach hemisphere first (tDCs assumes activating approach hemisphere makes you happy)
+
+### 9.21
+Now it's decided by me that frame doesn't matter, only time matters. So I'll modify the code such that everythiing is relative to current time. 
+
+Wow I didn't expect this to take me soo long. First Psychopy just freezes when a bug happens so the debugging procdure becomes tedious. Later it was found that by killing a process (we know the port) the app defreeze. It's caused by index out of range and should have been tested easily with a simple test script. 
+
+Now transition step is calculated by current time and next trial decision is still by this calculated step. The saved data show that for 4 trials, time elapsed is 3202ms which is good (800.5ms/trial). Actual frames during that 4 trials is 196 (supposed to be around 280). So this seems like a universal solution since we can't control frame drops.
+
+Next is to study NFBLab:
+- saving happens at next_protocol() in experiment.py, dir+experiment_data.h5 Using h5py to view it. No good graphical viewer found. Refer to https://nfb-lab.readthedocs.io/en/latest/experiment_results_file.html. Data in protocol0
+- experiment is composed of sequences of blocks or block groups specificed in Protocals sequence. Block groups are composed of several blocks specificed in Protocal groups. A protocal is a block. A typical experiment has baseline, rest, and feedback blocks.
+- A block ends when sample number (duration * sample rate/nominal_srate in stream info) is reached. Click the replay button enables you to run the block again and data will be saved in protocol1
+
+['channels', 'fs', 'protocol0', 'protocol1', 'settings.xml', 'stream_info.xml']
+
+### 9.22
+Work on what exactly to transmit. Here are the questions:
+- allow multiple presses within trial? what to do with extra presses?
+- what should be transmitted when mountain appear and ppt either responded or didn't, or should we also assign a key for mountain? (if we don't do anything then ppt can just keep pressing whenever image changes)
+- what should sampling frequecy be and if it's higher than image freq, then what should be recorded during the blanks
+
+Matlab integration (ask gpt how do i incorporate mathlab scripts into python with matlab engine or pymatlab)
+
+### 9.24
+It seems that the only thing needs is rt and dom/nondom. The later can be sent at before trial starts along with trial numbers keys and transition time. rt should be sent on every press. The algorithm should be as follows:
+1. create a list of rts of size N_trials
+2. anything wihtin first 800*1.7ms is assigned to trial 1, rts[0]=data
+3. 
+
+### 9.25-27
+R code for response assignment:
+1. if rt==0, assign timeout, else if rt < unambig_low, assign previous trial, else if rt > unambig_high, assign current trial, else it's ambibugous. So ambiguous iff unambig_low < rt < unambig_high. At this step, trialcode1 is a list of length presses and contains either "timeout", a trial number or "ambiguous"
+2. for ambiguous trials, check if there is response on current and previous trials. If exactly one of them is empty, assign to that trial. If both empty, assign to the current trial if current trial is dom otherwise to previous trial. If both trials are  assigned, assign it as duplicate to current trial. At this step, trialcode2 is a list of length number of presses, not number of trials. It contains either "timeout" or a trial number.
+3. remove duplicates and timeout. Seems like no comparison of rt is made but might be implied in the logic. Need to check more.
+
+It's so great that VSCode can integrate (show helps and run code directly) both matlab and R so no need to open up those gigantic apps. 
+
+Since I have changed the transition step assignment to align with time, it's probably best to use rt directly in the r code.
+
+The analysis suite contains bunch of behanioral data statistics, read https://phonetics.linguistics.ucla.edu/facilities/statistics/discrim.htm and [d-prime](https://phonetics.linguistics.ucla.edu/facilities/statistics/dprime.htm) 
+
+Gradcpt-GP:
+- note that x is onset time, y is rt interpolated. This assumption looks good (a quick rt followed by slow rt means rt might be rising for time in between)
+1. log-transform and z-transform RT
+2. linear detrend
+3. use the last 2 minutes as test data
+
+Potential changes:
+- why log transform
+
+
+Results:
+- rbf+per:
+![](/images/rbf-per.png)
+- rbf:
+![](/images/rbf.png)
+
+### 9.28
+Sleep data is disasterous, changing room layout (didn't do).
+
+### 9.30
+VSCode with ssh is amazing. Now using longleaf and vscode and jupiter notebook. Setup every time takes less than 1 min. See vscode references for implementation.
+
+### 10.1
+VR is 3080 ti. But longleaf is ok for Gaussian models for now. Strange problems with Gaussian regressor, need to read book
+
+### 10.2
+It's decided that I should watch the Khan economics series and study some technical analysis/financial time series processing. Therefore the main focus now has increased to 2: deterministic systems (linear and non-linear) and stochastic systems (history of statistics and time series forecasting)
+
+### 10.4
+Matlab eeglab basic eeg hands on on dummy, I think I've known the basic procedure for related studies.
+
+Khan economics, damn Adam Smith said the exact thing I thought about (by promoting self interest the public interest fares better)
+
+### 10.5
+Economics is the study of human behavior when they have to reason about value of something. This reasoning of value should be fundamentally based on associationism, where each thing is associatetd to a representation of value when a decision needs to be made. The complex thing is that there are many interacting agents. Association can still account for value representation under more variables. Statistical physics has already established frameworks for such studies. 
+
+Microeconomics is the study of decision making likely with “value” as a main influence on the association  process. Value is not a number, but a universal construct. It could be number, it could be an equivalence with something physical or abstract, it could be the concept of very big or very small. Normal decision making usually doesn’t involve such high level mental consctruct. This kind of study, being a decision process, fits stochastic process the best. 
+
+Macroeconomics studies the result of many such decision making processes, which is exactly like study of many molecules. 
+
+All of statistical studies, as always, exhibit phenomena that in the long term give a boost to the agent(s), in a Darwinian sense. In physical words, economics behaviors minimize entropy. 
+
+### 10.6
+Applied FFT on gradcpt data and some worded remarkebly well. Agnieszka is suprised about the results. Maybe explore more timeseries forecasting. 
+
+I'd say this is helped by reading Simon's biography that same weekend and I'm growing more and more intreesred in signals and statistiacal analysis of signals.
+
+### 10.8
+Hinton and Hopsfield awarded Nobel Prize in Physcis! Physics students are very upset. 
+
+- Hinton graduated college at 23 with Bachelor in experimental psychology after switching btween natural sciences, history of art, and philosophy. 
+- He completed PhD in 31 (1978) at the University of Edinburgh in artificial intelligence supervised by Christopher Longuet-Higgins. This was at a time of AI winter when perceptron model (1958) was proven limited (1968). Higgins switched to symbolic AI and but was tolerant with Hinton who insisted on neural network research. 
+- In 1985, Hinton co-invented Boltzmann machines with David Ackley and Terry Sejnowski. In 1986, while a postdoc at UC San Diego, David E. Rumelhart and Hinton and Ronald J. Williams applied the backpropagation algorithm to multi-layer neural networks.
+- Hinton said he didn't like math once he learned functions because they meant little to him. He reformed his thinking once he learned about functions in programming. (another proof that a general non definition based pre-college teaching is harder than thought because different people are able to successfully associate to different ways of introducing a topic)
+
+### 10.9
+Starting chaos and statistics. Getting an understanding that statistics and probability can indeed be separated. eg your height or population of a country are statistics, deterministic. They chance we say of somthing happening is probabilistiic. But usually to measure and analyse statistics you need laws of probability. That's also how probability emerged. 
+
+This offers a new perspective of projection. Projection is nature's statistics. We observe statistics of the world and infer or analyze this statistics. This view even adds to the original projection formulation. The forward and backward projection are now probabilistic, meaning that there are mathematical ways to better understand these two non deterministic mechanisms. 
+
+### 10.10
+Interestingly, the radiation chapters are now understandable possibly bc I have since learned electromagnetism and trignometry. The method to add 2 trig waves of same freq is explored in 29-7 which was expected.
+
+### 10.11
+It's interesting that music notes just look like stock data showing trends and periods and other things
+
+Finally understood convolution after reading Feymann's chapter on EM wave. Inpulse response is indeed good for understanding this. Thnk of as input * impulse response=output. If there's a way to  normalize the signals, then can also think as input * pattern=match response
+
+### 10.12
+Probability means uncertainty. Statistics deal with numbers. Your height is a statistic, your number of outings with friends in a year is statistic, your schools budget is statistic. These numbers have certain structures. The framework to study these structure involves randomness. Thus in a sense, proabbility deals with microscopic uncertainties that give rise to structured behaviors, usually through large quantity or time, the numbers given by these behaviors is studied through statistics. One way to differetiate these is probability deals with distributiions and statistiics deals with numbers. As always, when you have a model/structure, you can predict. 
+
+> In the Brownian motion problem and all its variants, one deals with a phenomenon that is the outcome of many unpredictable and sometimes unobservable events, which individually contribute a negligible amount to the observed phenomenon, but collectively lead to an observable effect. The individual events cannot sensibly be treated in detail, but their statistical properties may be known, and, in the end, it is these that determine the observed macroscopic behavior.
+
+### 10.13
+- Read some papers on ML enabled EEG classification. Impressive eeg to image or text results.  See reference/neuro/eeg/classification
+- Read about PCA, ICA, IC and dipole fitting (similar in principle to COLMAP)
+- Read Feymann. Now pausing this endeaver since I missed too much on light chapters. Should read these to get a fuller understanding of waves before doing quantum.
+
+### 10.14
+- now understood ICA, a good paper is worth everything. It's literally INDEPENDENT COMPONENT. The interesting thing is how you can get independent variables. Amazing how CLT is the key here. Also interesting how kurtosis and negentropy can be used to define "non-gaussianity".
+- finally beginnning to understand MGF. From characteristic functions which is just FT. The moments are generated because fourier transform near 0 gives more global information and Taylor expansion can be used to prove how the moments are generated.
+- Also with this understanding of MGF, CLT can be proven with ease. Though still confused why the multiplication won't collapse gaussian FT to delta.
+
+### 10.17
+- trying wavelets. very hard math and not many clear tutorials. 
+
+### 10.18
+- Reviewing Howl's moving castle orchestration, it's interesting how many DOF is involved. A simple strength or timing difference makes the sound much better. I wonder if machines can identify these
+- Also makes me wonder if the brain is an orchestra. You have many instruments playing according to certain rules and results in harmony. Is harmony ini brain activity necessary from first principle? Would inharmonic rythms be synchronized or cause utter dysfunction? Can we somehow "listen" to this harmony? https://www.youtube.com/watch?v=X6s6YKlTpfw. Are neurons more like this or the view of people on a busy business center?
+- [eeg to music GT](https://brainmusiclab.gatech.edu/publications/); [columbia neuroscientist eeg music](http://sites.music.columbia.edu/brad/brainwave-project/); [seizure rapsody](https://datadrivendj.com/tracks/brain/); [imapact of music on brain](https://pmc.ncbi.nlm.nih.gov/articles/PMC6130927/)
+
+### 10.22
+- 2 datasets both with pupil but diffeernt format. 
+- tubingen data unprocessed but could supposedly be easy to do with analysis suite (unfortunately data is messy). pupil maybe should process with the code there. not eveerey subject has both behavioral and pupil data
+- original data need to understand the pupil index (no this is random data so not useful)
+- really want image type data. 
+- muse electrogel still no alpha peak trying the website when i got time
+
+### 10.23
+- there seems to be many gradcpt datasets. Now understanding how important qualitied data are
+- reading https://phonetics.linguistics.ucla.edu/facilities/statistics/discrim.htm not much useful so just wiki and chatgpt: d prime and criterion score.
+- tubingen dataset different format than esterman. also it seems that matlab people use ambiguous short abbreviations and inconsistent naming formats. no wonder why python prevailed.
+- finally beginneing to understand chaos. interesting how chaos exhibit fractal order.
+
+### 10.24
+- got original tubingen code that geenrate aforementioned data. now things can be converted 
+- working on a method to orgnaize the growing number of python notebooks:
+    - should have a data processing notebook with just functions and variables so other nottebooks can use it with %run MyOtherNotebook.ipynb. 
+    - then also a visualization function that takes arguments and produce graphs. need to be easy to call
+
+### 10.25
+- got tubingen original codes and now understood what they are, but it seems they don't exactly use the code bc some data that should defintiely be genrated by the code is not in the actual data
+- experimenting with muse again with ble dongle, muselsl and eeg-notebooks. settign up environment took some time bc with the dongle on Mac you need to explicitly provide the bluetooth interface address (can be found with ls /dev/tty.* ). Tried muselsl first and that's quite easy. eeg-notebooks have some bugs include the above and not getting data although muselab can show it. Solution  was to restart computer.  Now fianlly ran the whole n170. also tested SSVEP
+- eegnotebook: The class for eeg device is EEG which is a wrapper for muselsl and brainflow. Experiments are run with subclass of BaseExperiment class which ennforces preparestimulus() presentstimulus() setup() and run(). UI is done with psychopy 
+
+### 10.26
+Great experience at reality fest and very profesional organization. 
+
+Looks like 67.5 hz signal is recorded. It seems that in jupyter notebook psychopy window can't quit naturally.
+Structure: 
+```py
+ssvep = VisualSSVEP(duration=record_duration, eeg=eeg_device, save_fn=save_fn)
+ssvep.run() # run calls setup, which calls load_stimulus and show_instructions, and calls self.eeg.start() and starts trial loop
+```
+run trials loop:
+```py
+start = time()
+current_trial = current_trial_end = -1
+current_trial_begin = None
+
+# Current trial being rendered
+rendering_trial = -1
+while (time() - start) < self.record_duration:
+
+    current_experiment_seconds = time() - start
+    # Do not present stimulus until current trial begins(Adhere to inter-trial interval).
+    if current_trial_end < current_experiment_seconds:
+        current_trial += 1
+        current_trial_begin = current_experiment_seconds + iti_with_jitter()
+        current_trial_end = current_trial_begin + self.soa
+
+    # Do not present stimulus after trial has ended(stimulus on arrival interval).
+    elif current_trial_begin < current_experiment_seconds:
+
+        # if current trial number changed get new choice of image.
+        if rendering_trial < current_trial:
+            # Some form of presenting the stimulus - sometimes order changed in lower files like ssvep
+            # Stimulus presentation overwritten by specific experiment
+            self.__draw(lambda: self.present_stimulus(current_trial, current_trial))
+            rendering_trial = current_trial
+    else:
+        self.__draw(lambda: self.window.flip())
+```
+inside ssvep experiment:
+```py
+# self.trials has columns parameter and timestamp. parameter is 0 or 1 randomly drawn to represent the 2 frequencies.
+
+def present_stimulus(self, idx, trial):
+        
+    # Select stimulus frequency
+    ind = self.trials["parameter"].iloc[idx] # 0 or 1
+
+    # Push sample
+    timestamp = time()
+    marker = [self.markernames[ind]] # 1 or 2 as defined by experiment base class setup()
+    self.eeg.push_sample(marker=marker, timestamp=timestamp)
+
+    # Present flickering stim
+    for _ in range(int(self.stim_patterns[ind]["n_cycles"])):
+        # array of 2 each has {"cycle": cycle, "freq": stim_freq, "n_cycles": n_cycles}
+        for _ in range(int(self.stim_patterns[ind]["cycle"][0])):
+            if self.use_vr:
+                tracking_state = self.window.getTrackingState()
+                self.window.calcEyePoses(tracking_state.headPose.thePose)
+                self.window.setDefaultView()
+            self.grating.draw()
+            self.fixation.draw()
+            self.window.flip()
+
+        for _ in range(self.stim_patterns[ind]["cycle"][1]):
+            if self.use_vr:
+                tracking_state = self.window.getTrackingState()
+                self.window.calcEyePoses(tracking_state.headPose.thePose)
+                self.window.setDefaultView()
+            self.grating_neg.draw()
+            self.fixation.draw()
+            self.window.flip()
+    pass
+```
+
+mirabile dictu, I recorded muse without ble. wasted that ble dongle?
+
+### 10.27
+- funny as it sounds the problem of predicting next instant vtc is no problem at all because you can just follow a trend. That's why a most basic network with only current vtc as input gives almost perfect results. Experimenting with long distance forecasting failed as expected. 
+![](/images/fl-vtc-pred-transformer-test.png)
+- also the smooth vtc is given which contains future information. Should redo the data processor so it generates smooth vtc at current time or don't use smooth at all. need to make sure what is being evaluated. maybe a good idea to start tacs first.
+- also should do the muse thing in real time. the experiment class started the lsl stream so you ccan just write a custom receiver in a nontebook and do a moving window fft.
+
+
+# Periodiciity
+- 10.15 (2): ate before sleep 10:30, had phone call with lhl.
+- 10.16 (3, 4.56-0.54): energetic, watched, back workout, run aborted due to cold air
+- 10.17 (4 Fall break, 5.41-1.11): very drowsy, m, late lunch, feels like there's a diminished part of brain constantly operating but not very efficiient, can't easily stop it either, loss of motivation at all things
+- 10.18 (5, 6.41-0.44): very concentrated, wet feet, not sleepy throughout day but tired in the afternoon. Did some workout but didn't run much due to dry air. Ate at night 9:35
+- 10.24 (4, m, chase): feeling good
+- 10.25 (5, milk and sqm): tired for no obvious reason
+- 10.26 (6, reality fest, milk and sqm): sleep late and extremely tired after coming back
+- 10.27 (7, m, cold): not well even with mega and m late afternoon feel better  afterwards
+- 10.28
+
+# Log Summary
+## September 2024
+### 2-8
+
+### 9-15
+
+### 16-22
+
+### 23-30
+## October 2024
+3 focus now, is it possible? 
+- foundations of classical mechanics and control (differential equation and signal processing)
+- stochastic processes (brownian physics, quantum, theory of probability, laws of statistics, stochastic differential equations)
+- statistical mechanics (entropy models, physical and computational models)
+
+
 # Ideas
 ## School Related
 ### Course Plan
@@ -535,6 +989,7 @@ Time is totally ordered. Any other categorization is set and by partially ordere
 ### Books
 #### Feynman
 - On meaning of physical laws: Although it is interesting and worth while to study the physical laws simply because they help us to understand and to use nature, one ought to stop every once in a while and think, "What do they really mean?" The meaning of any statement is a subject that has interested and troubled philosophers from time immemorial, and the meaning of physical laws is even more interesting, because it is generally believed that these laws represent some kind of real knowledge. The meaning of knowledge is a deep problem in philosophy, and it is always important to ask, "What does it mean?"
+- "science is the belief in the ignorance of experts"
 #### Heisenberg
 - On physics and philosophy: My mind was formed by studying philosophy, Plato and that sort of thing". "Modern physics has definitely decided in favor of Plato. In fact the smallest units of matter are not physical objects in the ordinary sense; they are forms, ideas which can be expressed unambiguously only in mathematical language"
 

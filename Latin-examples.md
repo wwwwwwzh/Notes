@@ -141,12 +141,27 @@ suom defrudans genium compersit miser
 --------------------------------
 
 ## Nouns
-### copia
-- obsecrat ut sibi eius faciat copiam.
-
 ### aequum
 - illa enim se negat neque eum aequom facere ait.
 - nil est aeque quod faciam lubens.
+### agmen, agminis 3n stream,troop,herd
+### arbor, arboris 3f
+### arx, arcis 3f stronghold
+### augur, auguris 3m
+### copia
+- obsecrat ut sibi eius faciat copiam.
+
+### corpus, corporis 3n
+### crinis, crinis 3m
+### cutis, cutis 3f skin
+
+
+
+### cervix, cervicis 3f neck
+
+### comes, comitis 3m companion
+
+### decus, decoris 3n glory
 
 ### erus,era,erilis/e
 - nam erilem filium eius duxisse audio
@@ -154,7 +169,12 @@ uxorem 39
 - porro autem Geta ferietur alio munere ubi era pepererit 46
 
 ### facinus
+### finis, finis 3m
+### fons, fontis 3m
+### furor, furoris 3m
 
+### genus, generis 3n
+### imago, imaginis 3f image
 ### modus
 - modo ut tacere possis. 59
 - modo non montis auri. 68
@@ -163,9 +183,20 @@ uxorem 39
 - neque illi benivolus neque notus neque vicinus
 
 ### opus
+### os, oris 3n face, mouth
 
-### usus 4
+### prex, precis 3f
+### quies, quietis 3f rest, peace
+### rete, retis 3n net retina
+### rubor, ruboris 3m flush, redness
+### superbia 1f arrogance
+
+### usus 4m
 - mi usus venit 74
+
+### volucris, volucris 3f
+### vortex, vorticis 3m
+### vox, vocis 3f
 
 --------------------------------
 
@@ -183,6 +214,7 @@ uxorem 39
 - filium narras mihi? quoius de stultitia dici ut ut dignumst non potest
 - tuis dignum factis faceris
 
+### fatidicus prophetic E fatidic
 ### quot
 - quot homines tot sententiae
 
@@ -307,6 +339,8 @@ et eam plorare
 ### respice (look at, consider)
 - respice finem
 - respice aetatem tuam (phormio to demipho)
+
+### reticeo 2 keep silent E reticent
 
 ### sino 3
 - exoret sine

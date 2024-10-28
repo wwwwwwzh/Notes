@@ -114,6 +114,13 @@ might be repeated activation but after seeing it stops exciting
 ### What counts as rememberiing
 what happens when you say you can't remember someone's face waht's the differentce when you can remembre
 
+### Unstoppable voice/music
+start replaying a favorite music piece in your head and notice that it just keeps going. You need to apply a big "force" to divert your attention from it. I wonder what physiological data can show when this transition happens.
+
+## Logic
+### Truth
+What is representation of truth? What differentiates it from non truth, levels of truth and feeling of uncertainty
+
 # Representation
 ##
 ### 
@@ -153,6 +160,8 @@ At the instant of the stop, you remember/are aware of both the noise before stop
 ### Attention and Consciousness
 When we see something, we are aware that we are seeing it, all of it and every part of it. If any part of it changes we can notice it. But if not some parts are never attended to. If someone is holding a red bottle and I'm staring at it while thinking about something else, I might never "know" that the bottle is red. I have to allocate some thinking and ask "what is the color of the bottle" to know the color. When I travel, if no attention is paid whatsoever, I might not remember anything about a particular scene. If I'm relaxing, I'll roughly have a sketch in my mind. So rough that not a single edge is actually in place and not a single color is close. We have some powerful compression mechanism that assigns blue to sky, green to all plants and white to all snow. We have to constantly ask questions and answer them to remember details. But sometimes when it's dramatic, we also remember details of the event and its accompanying scene. Also, every time we look at something we notice something different.
 
+### Weakening of Couscious control before sleep
+Before being asleep, imagery of music will appear that "flow on their own". It's still possible at this time to mentally cchange what's being thought about or heard. But this ability weakens until completely asleep.
 ## Hypothesis
 ### Consciousness and Memory
 Memory is actually the only thing we have. The future is imagined with memory and the present is really the past once it "is" the present. Nevertheless, we are conscious of "present" and present only. Maybe it has to do with some fundamental aspect of time. 
