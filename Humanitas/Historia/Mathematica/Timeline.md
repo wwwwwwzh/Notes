@@ -49,7 +49,7 @@ Different ways to do optimization and find tangent->differential calculus
 
 sin and cos, circle, π and triangle
 
-Fermat's calculation of refraction bridges physics and calculus. Principle of least action
+Fermat's calculation of refraction bridges physics and calculus. Principle of least action https://www.youtube.com/watch?v=Q10_srZ-pbs
 
 Simplification of reality and linear function
 

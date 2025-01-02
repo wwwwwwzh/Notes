@@ -185,3 +185,6 @@ When you have a network, what it does is given inputs give outputs. Or that it's
 ## Associationism and Recurrent Neural Network
 
 ## Associationism and Hopfield Neural Network
+
+# Arguments
+- if you are constantly asking what what you learned can be applied, then you are not learning efficiently. Learning always comes after asking the problem.

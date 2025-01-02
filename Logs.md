@@ -15,6 +15,15 @@ SLURM:
 - detailed info: scontrol show job job_id
 - job history: sacct -u zhw
 
+GPU: 
+- 1080 8G: srun --partition=gpu --gres=gpu:1 --time=02:00:00 --qos=gpu_access --pty bash
+- V100 16G: srun --partition=volta-gpu --gres=gpu:4 --time=02:00:00 --qos=gpu_access --pty bash
+
+CUDA:
+- view cudas: module avail cuda
+- module load cuda/12.5
+- check cuda version: nvcc --version
+
 Jupiter:
 - jupyter notebook --no-browser --ip=0.0.0.0 --port=8080
 - ON LOCAL MACHINE: ssh -L 8080:c1121:8080 zhw@longleaf.unc.edu
@@ -89,6 +98,8 @@ follow codes here https://docs.anaconda.com/miniconda/#quick-command-line-instal
 https://docs.anaconda.com/anaconda/install/uninstall/
 On macbook pro my miniconda is in home directory
 
+#### Export Environment 
+- conda env export > environment_gp.yml
 #### Troubleshoot
 - solve environment forever (making new env should not take more than 2 minutes and installing a package should not solve for more than 1 minute): remove and reinstall conda
 
@@ -103,6 +114,7 @@ https://learngitbranching.js.org/
 - go to github.com and create repo, or use gh command 
 - git remote add origin git@github.com:wwwwwwzh/binder-manim.git
 - git push -u origin main
+- password is the ssh private key in keys.txt file alternatively it's in slack
 
 - git branch branchName
 - git checkout branchName
@@ -363,7 +375,7 @@ Trying on macbook: 1) manual creation of multicast followiing https://stackoverf
 The IGMPv2 is seen only once and maybe it's not leaving membership so have to wait till reopen computer. 
 
 ### 9.12
-Cleaning mac storage memory disk. Library is 11G, System is 13G, usr is 10G, yuwawng is 114G so next time just target that directly. Library under yuwang is 50G
+Cleaning mac storage memory disk. Library is 11G, System is 13G, usr is 10G, yuwawng is 114G so next time just target that directly. Library under yuwang is 50G. Removed /Users/yuwang/Library/Developer/CoreSimulator which took 10G
 
 ### 9.13
 ON 9.11 the computer can't access internet. It's solved by resetting IP. It was 192.168 IP. Luckily I stored the original IP on Wrike.
@@ -626,7 +638,7 @@ Starting chaos and statistics. Getting an understanding that statistics and prob
 This offers a new perspective of projection. Projection is nature's statistics. We observe statistics of the world and infer or analyze this statistics. This view even adds to the original projection formulation. The forward and backward projection are now probabilistic, meaning that there are mathematical ways to better understand these two non deterministic mechanisms. 
 
 ### 10.10
-Interestingly, the radiation chapters are now understandable possibly bc I have since learned electromagnetism and trignometry. The method to add 2 trig waves of same freq is explored in 29-7 which was expected.
+Interestingly, the Feynman radiation chapters are now understandable possibly bc I have since learned electromagnetism and trignometry. The method to add 2 trig waves of same freq is explored in 29-7 which was expected.
 
 ### 10.11
 It's interesting that music notes just look like stock data showing trends and periods and other things
@@ -657,7 +669,7 @@ Probability means uncertainty. Statistics deal with numbers. Your height is a st
 - [eeg to music GT](https://brainmusiclab.gatech.edu/publications/); [columbia neuroscientist eeg music](http://sites.music.columbia.edu/brad/brainwave-project/); [seizure rapsody](https://datadrivendj.com/tracks/brain/); [imapact of music on brain](https://pmc.ncbi.nlm.nih.gov/articles/PMC6130927/)
 
 ### 10.22
-- 2 datasets both with pupil but diffeernt format. 
+- 2 datasets both with pupil but diffeernt format. (original boston one actually don't have pupil)
 - tubingen data unprocessed but could supposedly be easy to do with analysis suite (unfortunately data is messy). pupil maybe should process with the code there. not eveerey subject has both behavioral and pupil data
 - original data need to understand the pupil index (no this is random data so not useful)
 - really want image type data. 
@@ -677,8 +689,9 @@ Probability means uncertainty. Statistics deal with numbers. Your height is a st
 
 ### 10.25
 - got tubingen original codes and now understood what they are, but it seems they don't exactly use the code bc some data that should defintiely be genrated by the code is not in the actual data
-- experimenting with muse again with ble dongle, muselsl and eeg-notebooks. settign up environment took some time bc with the dongle on Mac you need to explicitly provide the bluetooth interface address (can be found with ls /dev/tty.* ). Tried muselsl first and that's quite easy. eeg-notebooks have some bugs include the above and not getting data although muselab can show it. Solution  was to restart computer.  Now fianlly ran the whole n170. also tested SSVEP
-- eegnotebook: The class for eeg device is EEG which is a wrapper for muselsl and brainflow. Experiments are run with subclass of BaseExperiment class which ennforces preparestimulus() presentstimulus() setup() and run(). UI is done with psychopy 
+- experimenting with muse again with ble dongle, muselsl and eeg-notebooks. settign up environment took some time bc with the dongle on Mac you need to explicitly provide the bluetooth interface address (can be found with ls /dev/tty.* ). You might get the stupid BleakError("Bluetooth device is turned off") which means your bluetooth is turned off. Tried muselsl first and that's quite easy. eeg-notebooks have some bugs include the above and not getting data although muselab can show it. Solution  was to restart computer.  Now fianlly ran the whole n170. also tested SSVEP
+- eeg-notebook: The class for eeg device is EEG which is a wrapper for **muselsl** and brainflow. Experiments are run with subclass of BaseExperiment class which ennforces preparestimulus() presentstimulus() setup() and run(). UI is done with **psychopy**. Analysis is done with **mne**
+- mne: analysis functions used by eeg-notebook is in mne->io->base.py. of which compute_psd calls initialzer of Spectrum class which computes psd with Welch's method
 
 ### 10.26
 Great experience at reality fest and very profesional organization. 
@@ -761,19 +774,170 @@ mirabile dictu, I recorded muse without ble. wasted that ble dongle?
 - funny as it sounds the problem of predicting next instant vtc is no problem at all because you can just follow a trend. That's why a most basic network with only current vtc as input gives almost perfect results. Experimenting with long distance forecasting failed as expected. 
 ![](/images/fl-vtc-pred-transformer-test.png)
 - also the smooth vtc is given which contains future information. Should redo the data processor so it generates smooth vtc at current time or don't use smooth at all. need to make sure what is being evaluated. maybe a good idea to start tacs first.
+- try fft with rnn?
 - also should do the muse thing in real time. the experiment class started the lsl stream so you ccan just write a custom receiver in a nontebook and do a moving window fft.
 
+### 10.28
+- discussion about stimulation threshold and duration with Agnieszka.
+- need to see how the 4 types of response directly affect rt. 1. is commision error recorded as rt? (anser is no, all errors don't contribute to rt, they are 0ed) 2. what is shown in rt on ommision error (city no response) (same as above, no rt here) then also 1. when mountain is presented, how will real time rt go? 2. when user didn't respond how should that count towards vtc since it indicates something.
 
-# Periodiciity
-- 10.15 (2): ate before sleep 10:30, had phone call with lhl.
-- 10.16 (3, 4.56-0.54): energetic, watched, back workout, run aborted due to cold air
-- 10.17 (4 Fall break, 5.41-1.11): very drowsy, m, late lunch, feels like there's a diminished part of brain constantly operating but not very efficiient, can't easily stop it either, loss of motivation at all things
-- 10.18 (5, 6.41-0.44): very concentrated, wet feet, not sleepy throughout day but tired in the afternoon. Did some workout but didn't run much due to dry air. Ate at night 9:35
-- 10.24 (4, m, chase): feeling good
-- 10.25 (5, milk and sqm): tired for no obvious reason
-- 10.26 (6, reality fest, milk and sqm): sleep late and extremely tired after coming back
-- 10.27 (7, m, cold): not well even with mega and m late afternoon feel better  afterwards
-- 10.28
+### 10.29
+- using cursor.com shame they can't do ssh below is account used: wzh@unc.edu; 
+
+### 10.30
+- processing tubingen data. note that onset in original dataset is onset of stimuli so it increments 800ms. I'm creating an onset this way for tubingen but they also have actual press time so i added a press_onset column
+- I'm still doing one big file in accordance with original structure with id and run columns
+- ppt 15 has run 0
+- found very interesting correlation btw pupil size and vtc turns out to be 0.3 overall is it good?
+- while reviewing latin: is there education efforts to teach people many languages at once? Can we find the most efficient structure of language and meanings? can we use LLM to find etymological connections?
+- also language, what does the entropy theory do with different languages? are languages linear? this lead to the reinforcement of the idea that the "linear space" of ffeatures are mutally indicative or have low conditional entropy. Knowing lux means knowing light. But this is a fake argument in that feature can be found this way (or is it?). There has to be some extra constraint.
+- DOGE wormwhole on sol. doubled in one hour upon announcement. I don't understand how price works so can't risk too much. This is the kind of opportunity that can be combined with knowledge to create giant gain for certainty.
+
+### 11.2
+- From Neuron to Brain has a chapter 18 that has introductory circutory information about leach. 
+
+### 11.9
+- A realization of a derailmemnt from the imagined track of life. It seems that reality has finally presented itself. 
+- Berkshire house no light, roommate is good. bus is 15 min to MEJ
+- Sudden temperature drop. ate the second day megaman and feels exited until around 11 when it's still increasing. (cold feet for the whole time) Feels fainting or nauseus after pooping until lunch where I ate little or otherwise want to throwup. At berkshire nice talk and everything normal except ffeels numb and fainting after talking too long. PPee a lot. Feels better after dinner and talking is normal but still faitning if laugh too much. After hot bath finally normal again.
+
+### 11.10
+- btc breaks 80k after trump victory from below 70k a week ago. ether to 3200 from 2400
+- Formulating the closed loop: 
+
+
+### 11.12
+- ppt 22 of tubingen data has weird 1st run data and is not processed. ppt 36 is not included bc run 3 and 4 are invalid in behavioral data, this is done in pupil_behavioral_all()
+
+### 11.14
+- Meeting with prof easterman. New idea of having more zones with pupil and vtc. Looking at some pupil literature  and hopefully can devise a usefull derivative of pupil to be used with vtc. 
+- should experiment with directly categorizing zones with vtc and pupil and see if same statistical significance remain. Also need a measure of those 4 parameters.
+- Regretting not selling doge? It seems that after the initial send, there aren't more impetus for more infflow and the k-line can't tell you everything. However, memes like pnut and moodeng are also without such impetus but were still sending waves after waves. Maybe it's because those SOL coins were sending while the general market was sending, but the rise of DOGE coincided with the first moderate correction of BTC after election pump. DOGE has been established as a mainstream elon based focus and I expect exciting news from elon in the upcoming days. The team is legit. So I'm holding. But it IS important to decide when to sell next. This is like venture capitalists who only do pre-IPOs, they take profits no matter the outlook after IPO. It's also confirming that SOL is a very volatile market. You have pnut and ACT sending within weeks of creation but most coins that look legit will shrink in the order of 10s in market backset. So in a expected bull rise, it's wise to invest some little portions to such "little coins" but sol money always rotate back to the big ones like popcat and ponke. Luce and Ban also look promising but luce may be too religious to be listed on binance. Ponke might be listed spot soon. 
+
+### 11.15
+- found some "a very short introduction" series books. got probability nothing and consciousness. Hopefully will be good casual reads
+- doing muse  again. Let's get the protocol right: 1. turn on bluetooth and (optional) plug in ble-dongle. 2. check for settings bluetooth permission on whatever is starting the connection. 3. open muse app to check connections 4. close muse app so connection is not sent to phone. 
+
+### 11.16
+- Muse experiemnts are running. N170 is clear but ssvep is still problematic since my computer has not fixed refresh rate. Also changing UI to be pygame based. 
+- For analysis, studying mne. The basic data structure is a mne.io.RawArray and this explain the basic:
+```py
+data = np.random.randn(10, 1000)
+sfreq = 100  # Sampling frequency in Hz
+ch_names = ['ch1', 'ch2', 'ch3', 'ch4', 'ch5', 'ch6', 'ch7', 'ch8', 'ch9', 'ch10']
+ch_types = ['eeg'] * 10  # All channels are EEG
+
+info = mne.create_info(ch_names, sfreq, ch_types)
+
+raw = mne.io.RawArray(data, info)
+```
+
+### 11.17
+I was extremely tireless after dinner last night and tired this morning even after day1 megaman, is my attentional resource depleted? now at night energetic again
+
+### 11.18
+so the closed loop thing is a bang-bang controller. The validity of the stimulation procedure should only be statistically verified by existing data. It's yet clear if the final hypothesis is just about a control that improved attention or if we need to chain it to the claim that stimulations happen at real "out zones". Current protocol is to directly stimulate 20s every time it went out and because the average number of times it went out is consistent it should work (except that the constant 20s is now blocking some otherwise short transitions)
+- Should try a rnn that pinalize numberr of switches. 
+- rnn directly predicting if next 20 seconds should stimulate? transformer with one output?
+- greek personification might led to science because they are studying/analysing forms instead of instantiations.
+
+### 11.21
+- met with Conner and Agnieszka and introduced the project. Learned that tES is usually just to find a certain phase on a certain frequency and see what happens. Flavio was involved in early works that proved tACS can treat depression. 
+- (to be transfered elsewhere) After several days of thinking about the language/feature entropy problem, as started from the art-language-math problem, new insights from within natural language differences are included (latin-english-chinese) and this paragraph aims to provide a comprehensive update. [shannon english entropy](https://languagelog.ldc.upenn.edu/myl/Shannon1950.pdf)
+
+
+### 11.24
+- [aeneid](https://youtu.be/QH6tVkxeGM8): iliad, Virgil's Aeneid to merge Romans to Greek universe, Aeneas filial piety (Octavian to Caesar and patriarchy), merging all founding stories (Romos, Romulus and Remus, Evander, Aeneas -> iulus/Julius), Dido, Dante, 
+
+
+### 12.1
+- idea 1: the art-language-math problem may be formulated using expected entropy of symbols of that language (in the general sense), denoting as E[H]. E[H] should also imply somthing about the geometry of the symbols. A high E[H] means directions are highly dependent and you may not find orthogonal directions in information/representaion space.
+- idea 2: when thinking, there's a spectrum of difficulty of a thought. For example, a math problem is harder to think about than something you like to imagine. There's also the power of control spectrum, where when you're about to go to sleep it's weekest. When it's week, you can observe that thinking about hard problems requires a mental capacity/modality different from easy problems. Also thinkign about easy things lead to sleep. Relatedly, these 2 modalities can coexsist. eg. when counting but start visual imagination when sleeping. 
+- https://www.youtube.com/@manshi_math https://lr32768.github.io/
+- working on gradCPT EEG data. downloading from dropbox using the link and wget and got a zip file but it was corrupted for some reason (zip bomb). Used UNZIP_DISABLE_ZIPBOMB_DETECTION=TRUE unzip fixed_eeg_data.zip. Also it's stored in /work/users/z/h/zhw/FL/projects/gradCPT-combined/gradCPT_Tubingen/data/eeg/ because that's where it's recommended to store large working file with 10TB storage. /nas/longleaf/home/zhw has only 50GB.
+
+### 12.2
+- pupil and behavioral seems to show some significance, tested mixed effect and trynig to understand it. 
+- talked with Conner about Magdeburg dataset problem was behaviral data is absent. 
+- Magdelena said the EEG is 10-20 64 channels will try mne standard model.
+
+### 12.3
+- mixed effect example (students learn more and get worse grade->add class and its the opposiite effect) only ce show combined significance
+- tubingen pupil is  processed by unkown guy so menalli redid the processing from the raw csv files, which is already processed online by the camera to remove artifcats, to txt files and I converted them back tto the subjectid/subject_run.txt structure to be read by pupil_behavioral_all
+- oh no pupil doesn't have time data. Well the time data is actually made up in the old processed pupil data. But Menalli's data now has extra time so need to figure that out (give this prompt: i have a pupil_folder string and inside are files like 007_run1.txt i need to restructure the folder so that there are folders like 007 and inside it file smoothed_participant_008_run_1.txt there are invalid files where it's all 0 but should check first 5 lines and if it's all 0.000000 then this file should not be included)
+- consider saving the dicts by get_data() since the loading pipeline is more stable now. 
+
+### 12.4
+- got conner setup everything on longlead took 80min which is good. Nice to have all the instructiions at hand but still some missed simple things like installing VSCode extensions (remote explorer and jupyter) and also the ssh has to be done exactly as in github manneul. note that permission denied problem was solved by adding:
+Host sc.unc.edu
+    HostName sc.unc.edu
+    User git
+    IdentityFile ~/.ssh/gitlab
+to config file under ~/.ssh/
+
+
+### 12.6
+use matlab dirrecctly in python with matlab engnine:
+1. matlab is stored in /nas/longleaf/rhel8/apps/matlab/2024a
+2. in .bashrc add 
+    ```
+    export PATH="/nas/longleaf/rhel8/apps/matlab/2024a/bin:$PATH"
+    export LD_LIBRARY_PATH="/nas/longleaf/rhel8/apps/matlab/2024a/bin/glnxa64:$LD_LIBRARY_PATH"
+    ```
+3. if python version is incompatible with matlab, do conda install python=3.11
+4. find compatiple matlabengine on https://pypi.org/project/matlabengine (mine is pip install matlabengine==24.1.2)
+
+### 12.7
+- to use scripts as packages add the project root path to bashrc and create __init__.py files. then all folders from root are modules
+- converted some key notebooks to python scripts: jupyter nbconvert visual.ipynb --to python
+- new error pushing: fatal: unable to access 'https://sc.unc.edu/frohlichlab/gradCPT-TuebingenEEG.git/': error setting certificate file: /etc/ssl/certs/ca-certificates.crt 
+- this might be caused by the numerous path and dynamic link variables change. Temporary solution was to use git config --global http.sslCAInfo /etc/ssl/certs/ca-bundle.crt
+
+- on observing many people going out of stadium: the randomness of walking comes from the fact that if the left side if fully parked people had to go right. All "random" processes should be understood as a basic necessity that if one side (of an elementary binary "coin") is chosen too much, then they have to begin choosing more of the other side.
+
+
+### 12.19
+- btc crashes following fed less cut 2025 105k to 95k eth 4k to 3.3k
+- the gradCPT task paradiam can all be infered in response and ttt. ttt is just number of trials by nummber of frames per trial. The press onset minus rt in response will equal its corresponding ttt starting time (column 1). It's found that Magdeburg trial time is 1.2s instead of 1.3. 
+- a good way of teaching might be to left some key calculations or graphs out so students have to come up themselves
+
+### 12.20
+- Hopfield on consciousness: he said the human brain is completely governed by classical dynamics and the complexity comes from complex system with 10^14 parts instead of quantum mechanics ("the physics of complex system is at least as badly understood as the physics of phase coherence in quantum mechanics" https://www.youtube.com/watch?v=KrdZ46MfNrM)
+- L=T-V finally explained https://www.youtube.com/watch?v=Q10_srZ-pbs
+- [body language](https://www.youtube.com/watch?v=VHUrdELKjDw), it's verifying how associationism works: your body gestures and other cues are all presenting information and for visual viewers these might actually convery more memorable information
+- [LLM actually generalize, tested by creating many ability grouped dataset and learn on subset of them](https://www.youtube.com/watch?v=fTMMsreAqX0)
+- to be watched Hopfield https://www.youtube.com/watch?v=7dplBHOq-yY
+- Feynman actually introduced the visual system better than any neuroscientist
+- And I realized that if one reads through that chapter, one will understand why people in mirrors look farther apart! So it takes 36 chapters to answer my middle school question.
+
+### 12.21
+- [critical brain hypothesis](https://www.youtube.com/watch?v=hjGFp7lMi9A)
+
+### 12.22
+ data processing procedure for Magdeburg
+- fs36 is invalid
+
+- problem of importing error: check if other variables can be imported and if only old var do, restart jupiter.
+
+### 12.23
+- Thomas Mazzoni's quantitive finance has actually a very good intro on prob theory with examples. An application based prob class could be built on this. The linear algebra intro is also superb but requires some prior training
+
+### 12.24
+- since i'm using music to excite myself nowadays, I wonder if it's a replacement to other sensory excitement. I used to be excited so much by people and visual stuff, now this kind of stimuli is just fading. Maybe auditory stimuli was not exploited too much before so I can still use them. But in the future this too might lose potency.
+- [“网赌”平台Polymarket，如何暴打全球玩家](https://www.bilibili.com/video/BV1askGYYET3/?share_source=copy_web&vd_source=3bec0bb565604586cf0a7846abb0a768) an very interesting mentioned is why polymarket is a "real" use of blockchain. Things like NFT are inspired from art collection market but arts are tangible. Knowledge however, is inherently metaphysical. Recall the view that math exists outside of the physical world, and that computers are instantiations of these metaphysical objects to our physical world. Therefore, it's best to run a metaphysical object on computers. So pure ideas are best aligned with blockchain. Of course, to succeed the pure ideas you want to put on chain have to be connected back to the real world. They have to be interesting. The problem for Polymarket is how oligarchs might control it.
+
+### 12.25
+- sleep idea: processing of uncertainty in brain with example of myself and 阿诺, focusing on the marvelous creation of the word "荒燥". Extended examples include kids and people with psychiatric disorders.
+    - hypothesis
+    - information theoretic model: a creative/ambiguous agent assigns both inputs and outputs with distributions of high entropy, ie, there is a high randomness in its thought behavior. We further assume that such observation implies an underlying high entropy input-output information flow. 
+    - experiment: We model AN with a LLM, adjusting output temperature as an indirect mean to control output entropy.
+        - input: [阿诺文学 在油的光彩里微笑](https://www.bilibili.com/video/BV1G9qrYBEXk/?share_source=copy_web&vd_source=3bec0bb565604586cf0a7846abb0a768) "主播脸怎么油油的，（说明有光彩啊），脸不油，怎么能有光彩呢？你们谁看到哪个人那个脸上是，是那个，比较那个。啊。脸上油是好事，难道你脸上是（荒的），（荒燥的）"
+    - result: 
+
+### 12.26
+- on nap: interesting feeling sometimes when you want to wake up but cannot, and have to struggle to do it, accompanied by very strong sensory inputs, today music specifiically, likely due to whole morning of loud classic music playing. maybe the motor system is shut out and some executive parts also not fully functional because the "wanting" to wake up definitely feels not as when awake.
+- stochastic calculus: 
+- lol the if you put all sorts of financial charts together it looks like EEG data
 
 # Log Summary
 ## September 2024
@@ -789,6 +953,47 @@ mirabile dictu, I recorded muse without ble. wasted that ble dongle?
 - foundations of classical mechanics and control (differential equation and signal processing)
 - stochastic processes (brownian physics, quantum, theory of probability, laws of statistics, stochastic differential equations)
 - statistical mechanics (entropy models, physical and computational models)
+
+## Dec 2024
+- when moving out, had dinner for consecutive nights with friends and lots of physical activity while moving out. there was brief periods of normality coming back at night when i feel everything is good and exciting, so it's in fact important to talk in person with groups of people, as this is me. This actually happened last time beginning of semester but it's interesting I can't remember it vividly. By vivid memory, I mean the desire to recall it and the accompanying happiness that's usually associated with all memory. My last vivid memory seems to be Siggraph. So it's likely that beginning of 2024 events did impact the memory structure. I also proved that memory can in fact be eliminated or altered after extremely strong emotional manipulation. The M+2 effect is still there. Also the music stimulation works stochastically so would be interesting to see how exactly stimullting music "resonate" with brain.
+
+# Tracks
+## Economics
+- finiancial intro (mathematical finance, Paul Wilmott on quantitative finance)
+- modeling (brownian motion calculus)
+
+## Statistics
+### Traditional
+- naked statistics
+
+### 
+## Programming
+
+## AI
+- RL
+- Hinton Youtube class
+- cs229 notes (traditional methods)
+
+## Computational Neuroscience
+- dynamics (after Chaos book, read we are electric, rythms of brain (if problems, read also system dynamics), Neurodynamics)
+- 
+
+## Physics
+- Feynman
+- Taylor Hamilton chapter and profoundphysics book
+- relativity (einstein and einstein book)
+
+
+# Periodiciity
+- 10.15 (2): ate before sleep 10:30, had phone call with lhl.
+- 10.16 (3, 4.56-0.54): energetic, watched, back workout, run aborted due to cold air
+- 10.17 (4 Fall break, 5.41-1.11): very drowsy, m, late lunch, feels like there's a diminished part of brain constantly operating but not very efficiient, can't easily stop it either, loss of motivation at all things
+- 10.18 (5, 6.41-0.44): very concentrated, wet feet, not sleepy throughout day but tired in the afternoon. Did some workout but didn't run much due to dry air. Ate at night 9:35
+- 10.24 (4, m, chase): feeling good
+- 10.25 (5, milk and sqm): tired for no obvious reason
+- 10.26 (6, reality fest, milk and sqm): sleep late and extremely tired after coming back
+- 10.27 (7, m, cold): not well even with mega and m late afternoon feel better  afterwards
+- 10.28 
 
 
 # Ideas
@@ -819,8 +1024,10 @@ math for physics: https://www.youtube.com/watch?v=m_SbJnpMDD8
 - MUSC 120 Foundations in Music
 - PWAD 490
 
-
-
+## Psychology
+### Visual and Auditory Logic
+- maybe people who use linguistic logic better are aided by music or sound, and those who use visual logic are aided by light, or other visual stumuli. This could explain why I feel scattered in rainy days. This could also explain the old days in school where Chinese schools have very bright lights (need to verify).
+ 
 
 ## Projects
 ### Talk to make a world
@@ -1004,8 +1211,13 @@ Time is totally ordered. Any other categorization is set and by partially ordere
 - On love for pure ideas (Plutarch): Archimedes possessed so high a spirit, so profound a soul, and such treasures of scientific knowledge, that though these inventions had now obtained him the renown of more than human sagacity, he yet would not deign to leave behind him any commentary or writing on such subjects; but, repudiating as sordid and ignoble the whole trade of engineering, and every sort of art that lends itself to mere use and profit, he placed his whole affection and ambition in those purer speculations where there can be no reference to the vulgar needs of life.
 - On his proof of area of circle equals triangle of height r and base Q (circumference) (Plutarch): No amount of investigation of yours would succeed in attaining the proof, and yet, once seen, you immediately believe you would have discovered it.
 
+#### J. R. R. Tolkien.
+- I love not the sword for it's sharpness, nor the arrow for it's swiftness, nor the warrior for his glory, I love only that which they defend.
+
 #### Others
 - On Joseph II of the Holy Roman Empire: "Everything for the people, nothing by the people"
+
+
 
 ### Talks
 #### Ivan Sutherland
@@ -1053,10 +1265,16 @@ Time is totally ordered. Any other categorization is set and by partially ordere
 - COGITO ERGO SUM
 - CUI BONO
 - ALEA LACTA EST
+- dimidium facti, qui coepit, habet; sapere aude, incipe (He who has begun is half done; dare to know; begin!)
+- novus ordo seclorum
+- annuit coeptis/deo faventi
+- invia virtuti nulla est via
+- seu dea tu praesens, seu dis gratissima, numinis instar eris semper mihi
 
 ### Internet
 - On Merry go around life: it makes you miss a life you never had
 - On Miyazaki's answer of who No Face is: I was always wondering who no face was, little did I knew, I was the no face all along
+- "The battle make a man a hero... Death makes the hero a legend... Time makes the legend a myth... ...and that myth inspire a man.
 
 ## Good Music
 ### Classical

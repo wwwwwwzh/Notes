@@ -87,12 +87,20 @@ functions. Laplace is not orthogonal](https://math.stackexchange.com/questions/3
 ## Lagrangian
 ### Fermat and Light
 
+
+### Maupertuis
+mv^2
+
+### Building the Lagrangian
+Our problem is given a start and end position and total time, how will an object move, or what's the trajectory in btw the end points. The least action principle states that ∫mv²dt has to be minimized. Without any force, it's easy to see that the object has to follow a straight line with constant speed. This is essentially Newton's first law. Now an object is subject to energy fields. So this effectively becomes a control problem, where the object steers through fields that infleunce it's trajectory and has to minimze total action. Denote the potential energy by V(x). We consider a system with energy conservation, ie, T+V=E where E is constant. Therefore dV=-dT. 
+
 ### Parametrized path
 x=(x(t), y(t))
 
 ###
 https://en.wikipedia.org/wiki/Noether%27s_theorem
 
+### Linear algebra, fourier analysis and MGF
 
 ## Shorts
 ### Dot and Cross Product
@@ -147,14 +155,14 @@ More on Random walk:
 
 
 ## Notes
-### Adding Trig Functions
+### (need further work) Adding Trig Functions
 https://www.desmos.com/calculator/f78m1f5knh
 
 We shall focus on 2 trig functions. The general form is acos(w1t+h1)+bcos(w2+h2)
 - Same frequency (w1=w2): result has same frequency, basically scaled and shifted version of cos
 - Same phase and amplitude different frequency: frequency difference changes shape of curve. If amplitude difference is big, the curve looks smoother.
 
-### Statistical Modeling of Time Series
+### (should be incorportaetd to a more well defined topic) Statistical Modeling of Time Series
 - RV
 - iid
 - stochastic/random process as collection of RVs
@@ -164,8 +172,15 @@ We shall focus on 2 trig functions. The general form is acos(w1t+h1)+bcos(w2+h2)
 - consider the stochastic process as a markov chain, if the chain changes then it's non stationary. For example, chirp is not.
 - https://otexts.com/fpp2/stationarity.html
 
-### Covariance Matrix
-Alwways remember  that data and distributions/functions are the same thing. The value/probability from a function is calculated exactly by number of data.
+### PCA, ICA, SVD, Covariance, Eigen
+When you calcularte svd, https://courses.grainger.illinois.edu/cs357/sp2021/notes/ref-16-svd.html, you first do A times A^T. That effectively gives you the covariance matrix S. S is a transformation that maps (samples from ) a standard normal distrubution to a normal distribution with S covariance. Therefore svd of S gives PCs. This way, PC means data on that direction is unchanged by the transformatoin. 
+
+### Attention, Covariance, Correlation, Cosine Similarity
+#### 
+Cosine similarity scales the two vectors to unit length. Correlation scales the two vectors to unit variance. The main part are both dot product. So they are the same up to scaling. Attention diretly use dot product and it can be argued that since the data are alreeady normalized, and since the dimension is big enough, the dot product actually has the role of correlation. But this should not come as a suprise since correlation and cosine similarity can both used to measure distance btw 2 vectors. 
+
+#### Covariance Matrix
+Alwways remember that data and distributions/functions are the same thing. 
 
 If x is a direction vector, xSx represents the variance (or weighted variance) of the data in the direction of x. In other words, it gives variance of data if projected onto x.
 
@@ -180,3 +195,62 @@ Examples of cov matrix and xSx:
 In the context of multivariate statistics, S can be seen as transforming a standard normal random vector into a vector with the covariance structure described by S
 
 In relation to least squares and PCA: in least squares you have x and y and you want a matrix A such that Ax and y is closest. 
+
+### MGF and CLT
+
+
+Proof that adding Gaussian results in Gaussian
+- using standard normal: $g(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}}$
+- Fourier of g: $\mathcal{F}\{g(x)\}(\xi) = \hat{g}(\xi) = \hat{g}(\xi) = \int_{-\infty}^\infty \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}} e^{-2\pi i x \xi} dx = e^{-\frac{\xi^2}{2}}.$
+- Multiply Fg and Fg: $e^{-\xi^2}$
+- Convolution of 2 normals: $\mathcal{F}^{-1} \left({e^{-\xi^2}} \right) = \frac{1}{\sqrt{\pi}} e^{-\frac{x^2}{2}}$
+- divide by n square root 
+
+> Odd moments are exclusively related to asymmetries of the distribution. For example the (standardized) third moment is called the “skewness” of the distribution. Even moments are related to the proportion of probability mass located in the tails of the distribution.
+
+### Linear Algebra
+there are many applications of LA and each fascilitates a new of visualization. Therefore to build the LA system it's best to build each with reference to some applications grouped by visualization
+
+By subject
+- quantum
+- dynamics 
+- DE
+- geometry
+- algebra
+- graphics
+- calculus
+- statitistics
+- fourier
+
+
+By visualization
+
+By LA
+- Gaussian elimination
+- dot product (construct a unit circle and show that dot product between two unit vectors are cosθ₁cosθ₂+sinθ₁sinθ₂=cos(θ₁-θ₂)=cos(θ₂-θ₁). Any 2 non unit vectors A and B can be seen as $a\hat{A}b\hat{B}=ab\cos(θ_A-θ_B)=a\cos(θ_A)b\cos(θ_B)+a\sin(θ_A)b\sin(θ_B)=A⋅B$)
+- determinant (this shoud be invented by solvinng systems of equations. visualization should include the area/volume, and also using the intersection between vectors and planes, eg, if singular, the planes are parrallel, so intersection counts are always in proportion with either ac or bd)
+- orthogonality
+- subspace (let them find redundency in desctiption of data, say, from monthly inome and annual income to gender and height)
+- the 4 subspaces 
+    - visual relationship btw row and column space. starting from column space as 3 arrows and the space is linear combination of the arrows. then row space is the space of y that has solution. so it's 3 set of planes made from the row vectors (note these are not the above 3 arrows) with one random arrow denoting x.  
+    - using the linearity of intersections, can prove (in 2d case) that if no planes are parallel, then there will always be solutions.  so the space will be such that there's a ratio btw the non parallel planes' axes intersections, ie, their coefficient. In 3d case, the 3 set of planes can be viewed from an angle where all planes are orthogonal to. Therefore, if you draw an arrow, you can only vary two number of intersections. The number of intersectoin from the thrd set of planes is thus a functoin of the other two, ie, the column space is  On the other hand, if the rank is full, the third set will reach out of the view angle so you can fix the other and vary the third. the null space is introduced as both orthogonal to column space and space of x st y is 0. to have a 0 y, the arrow has to be parallel to a set of planes. in 2d this just means having the arrow pointing parallel to the 2 sets of planes which are themself parallel. in 3d, we found the view angle where all planes become lines, the arrow ponitinig out of the viewing plane is therefore parallel to all 3 planes. 
+    - the relationship btw column and raw space is convoluted. Starting with column space, the 3 arrows span the space. another 3 arrows are drawn from row space, converted to planes as per column row isomorphism. if the column space is complete, the null space is empty, meaning the 3 planes point in independent directioins, implying their co-vectors, the row vectors are independent. 
+    - not sure if a easy visual geometric realtionship exist btw row and column hyperpplanes. 
+- determinant again (if determinant is 0, the system of equations can't be satisfied for all y, ie, the column space is smaller than column count. so  )
+- eigen
+- change of basis (rotation)
+- inverse 
+- projection
+
+- svd
+- rotation
+- hermissian
+- hessian
+
+- co-vector
+- inner product 
+- hilbert space
+
+### Probability
+By topic
+- geometric distributon: St. Petersburg paradox, martingale strategy
