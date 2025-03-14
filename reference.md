@@ -83,7 +83,33 @@ Divergence:
 - Doji
 - Spinning Top
 
+## Option Strategies
+### Mine
+bullish covered call
+- buy a put immediately 
+- when price went down, roll down and use the new money to buy underlying so when price goes up you can roll back with a likely net gain. sell the put and use the money to DCA underlying or buy call
+
+
 # Blockchain
+## Learning
+Problems of traditional finance or what blockchain can solve
+- someone can change the truth. 
+- maybe something about inflation
+
+## DEX
+### AMM
+- suppose a coin is minted with 100 coin 100 usd lp. k=10000
+- the price shown would be 1
+- now if i want to buy 10 coins i need to pay 10000/90-100=11.111, slippage is 11.1%
+- now lp has 90 coins and 111.11 usd. price shown is 1.23457
+- now if i provide all coins to lp i also need to provide 12.3457 usd
+- lp now has 100 coins and 123.457 usd and k=12345, price shown is still 1.23457
+- now if someone buys 10 coins he need to pay 12345/90-123.45=13.7167. slippage is still 11.1%. 
+- but i hadn't provided liquidity, price would be 10000/80-111.11=13.89 and slippage is 12.5%. So bigger lp makes slippage lower.
+- lp has 90 coins and 137.1667 usd.
+- if both the dev and i remove liquidity dev will get 90% and i 10% or dev 123.4 and i 13.7. i lose 11.1+12.3-13.7=9.7 and the other guy 13.7. 13.7+9.7=123.4-100=23.4 is thus what the dev gained.
+
+### Resources
 - [investopedia series](https://www.investopedia.com/terms/b/blockchain.asp)
 - [Vitalik blog](vitalik.eth.limo)
 
@@ -123,11 +149,20 @@ Using onchain information, telegram, x to predict which cabal group is behind a 
 ## Crypto Specific
 [vida](https://www.zhihu.com/question/615961251/answer/3377989786)
 ### Data Source
+General
+- [apify](https://apify.com/templates/python-start)
 - [yahoo finance intro](https://algotrading101.com/learn/yfinance-guide/)
 - [coin gecko](https://www.coingecko.com/learn/python-query-coingecko-api)
 - [py crypto compare](https://github.com/lagerfeuer/cryptocompare?tab=readme-ov-file)
 - [py coinbase](https://github.com/David-Woroniuk/Historic_Crypto)
 
+Telegram
+- [rt tg](https://github.com/sabber-slt/telegram-real-time)
+- [Telethon](https://github.com/LonamiWebs/Telethon)
+
+X
+- [havent' check](https://www.kaggle.com/code/kaushiksuresh147/twitter-data-extraction-for-ipl2020)
+- [havent' check](https://www.kaggle.com/datasets/gautamchettiar/bitcoin-sentiment-analysis-twitter-data)
 ### Tutorials
 - [ether python bot](https://medium.com/@crjameson)
 - [ether sandwitch](https://medium.com/@rjaloudi)
@@ -150,6 +185,7 @@ Using onchain information, telegram, x to predict which cabal group is behind a 
 - [algotrading sub wiki](https://www.reddit.com/r/algotrading/wiki/index/#wiki_strategy)
 
 
+
 ## Kaggle
 ### Data
 - [news](https://www.kaggle.com/datasets/aaron7sun/stocknews)
@@ -169,7 +205,7 @@ Using onchain information, telegram, x to predict which cabal group is behind a 
 ### Angular Momentum
 - [comprehensive guide to why we use it](https://math.stackexchange.com/questions/349907/cross-product-intuition)
 ### Lagrangian
-- [history of least action Veritasium](https://www.youtube.com/watch?v=Q10_srZ-pbs): Maupertuis principle of mvs given start and end point in space, Euler improvement to ∫mvds constrained on constant E and equal E. Lagrange ∫mv²dt=∫2Tdt=∫[T-V+E]dt so δ∫[T-V]dt=-Eδt=0 (same time constraint). Not sure why E is constant for all paths.
+- [history of least action Veritasium](https://www.youtube.com/watch?v=Q10_srZ-pbs): Hero of Alexandria, Fermat, Maupertuis principle of **mvs** given start and end point in space, Euler improvement to **∫mvds** constrained on constant E and equal E. Lagrange and Hamilton: ∫mv²dt=∫2Tdt=∫[T-V+E]dt so δ∫[T-V]dt=-Eδt=0 (same time constraint). Not sure why E is constant for all paths.
 - minimize 2T while ensuring conservation of energy (define V as E-T) so T-V is 2T-E. Bc E is constant this doesn’t change the minimization. Therefore minimizing 2T is same as minimizing T-V if you view V as just a constant-T. But when you give V a meaning, T-V means conservation of energy. if L=2T, we get essentially p'=0 meaning constant momentum. If you want to introduce forces, you need to account for where the extra T comes from, so you need V as a source of change in momentum. Since T+V is conserved, you can replace T with E-V. Of course you can replace 0.1T with 0.1E-0.1V and get something like 10F=ma, but that's just changing unit of force or length. 
 - Theoretical minimum has extremely beginner friendly proof of Euler-Lagrange purely with delta. 
 - [intro to differential with entropy example](https://mbernste.github.io/posts/functionals/)
@@ -177,6 +213,14 @@ Using onchain information, telegram, x to predict which cabal group is behind a 
 - https://profoundphysics.com/constraints-in-lagrangian-mechanics/
 - https://profoundphysics.com/lagrangian-vs-newtonian-mechanics-the-key-differences/
 
+Calculus of Variation: see math section
+
+### Hamiltonian
+
+### Hamilton-Jacobi
+- [blog not comprehensive but links to another source](https://www.samartigliere.com/physics/other-classical-mechanics/hamilton-jacobi-equation/)
+- a paper that introduces HJE is in control papers folder (on local file system)
+- comprehensive book on least action is in the physics book folder(on local file system)
 
 ## Chaos
 ### General Material
@@ -301,7 +345,28 @@ Applications:
 - [dwt and nn predict DOW blog](https://medium.com/@crisvelasquez/riding-the-waves-of-stock-prices-with-wavelet-transform-signals-in-python-e2e81217f9fd)
 
 ## Group Theory
-- [Euler's formula with introductory group theory](https://www.youtube.com/watch?v=mvmuCPvRoWQ)
+- [Euler's formula with introductory group theory](https://www.youtube.com/watch?v=mvmuCPvRoWQ): additive and multiplicative groups of real and complex numbers and symmetries that leave the number line or plane invariant. The definition of i^2=-1 defines the stretching mechanism on the complex plane, with multiplying by i corresponding to a (unit) rotation symmetry. Exponentiation is an isomorphism between the additive and multiplicative groups. With the definition of $x^{(a+b)}=x^ax^b$, sliding the additive number line is same as stretching the multiplicative number line. Thus in the complex plane, sliding along the complex line is the same as stretching by that complex number and when along i, it is rotation.
+- see Brilliant->Group Theory for intro
+
+
+### Space
+Inner product space
+- any matrix A can define a inner product like this: $\langle \mathbf{u}, \mathbf{v} \rangle = \mathbf{u}^T A \mathbf{v}.$
+- a vector space has basis vectors and thus dimension regardless of inner product. People assume these together because right after they learn vector space they are thaught how to dot product 2 vectors. Note that all dot products are inner products by definition. Also note that linear transformations can also be defiend without inner product. The bracket notation and the trick of writing vector prodcut of a and b by seperating their basis are defined on inner product space. 
+
+Dual vector space
+- any vector space V has a corresponding dual vector space (or just dual space for short) consisting of **all** linear forms on V together with the vector space structure of pointwise addition and scalar multiplication by constants
+- a linear form (also known as a linear functional, a one-form, or a covector) is a linear map[nb 1] from a vector space to its field of scalars (often, the real numbers or the complex numbers).
+- Note that when you have |a> from a vector space, <a| is a convenient notation that means they are elementwise equal. 
+
+Metric Space
+- In mathematics, a metric space is a set together with a notion of distance between its elements, usually called points. The distance is measured by a function called a metric or distance function.
+
+### Topology
+
+
+## Geometry
+[chengtong qiu intro and history](https://www.youtube.com/watch?v=g0yufksQMJU): only Euclid, or the Greeks, made the systems of foundamental laws where all results follow; harmony and simplicity; 
 
 ## Linear Algebra
 - [visual matrices general](https://www.youtube.com/watch?v=4csuTO7UTMo)
@@ -320,6 +385,37 @@ Another way:
 ## Optimization
 ### Linear Programming
 - [great simple intro with graphs](https://medium.com/@mengsaylms/a-brief-introduction-to-linear-programming-2107e769a1fe)
+
+## Stochastic Calculus
+interpreting ∫f dX as a limit of partial sums of integral is tricky, because these partial sums won't converge in the usual way that standard partial sum estimates for the integrals of continuous / Riemann integrable functions behave.
+
+Riemann-Stieljes integral is a generalization of the standard Riemann integral, which allows you to put different weights to different intervals in the partition used to compute the Riemann integral. This weight usually comes from a function (usually a nondecreasing, continuous function). In stochastic calculus, we want to do something similar except we replace this monotone weight function with a random variable (typically a brownian motion).
+
+https://en.wikipedia.org/wiki/It%C3%B4%27s_lemma
+
+### Ito's Lemma
+Taylor
+
+Example:
+imagine a discrete random walk X(t). Let Y(t)=X^2. Now imagine the first step at t=0 and X=0 is +1. So at t=1, X=1 and Y=1. dY(0)=1 but 2X(0)dX=0. This is corrected by the second order 0.5\*2\*dt=1. Let's walk further. Say X(2)=2 so Y(2)=4. dY(1)=3=2\*1+1. X(3)=1 and Y(3)=1. dY(2)=-3=4\*-1+1. 
+
+Now let Y=X^3 so ito's lemma gives dY=3X^2dX+3Xdt. Again X(0)=0, and X(1)=1, Y(1)=1. dY=1=0+0
+
+
+
+Expectation:
+Let Y(t)=f(X(t)). In deterministic calculus, E[Yt]=f(E[Xt])=E[f(Xt)] for all t. However, take the example of Y=X^2 where X is wiener. E[X] is always 0, but E[Y] is E[X^2]=t. 
+
+## Calculus of Variation
+> On multivariate function where the variables are dependent: let $y=f(x,t)=x^2-t, x=t^2$. For example, we want y=0 by setting dy to 0. $\delta y=\frac{\partial y}{\partial x}\delta x+\frac{\partial y}{\partial t}\delta t=2x\delta x-\delta t$, since x and t are dependent, their variations are as well $\delta x=2t\delta t$. So $\delta y=2x2t-1\delta t=0$, $4xt=1\ or\ 4x^3=1$
+
+
+### Euler-Lagrange
+$A=\int L(q,\dot q, t)dt$
+
+$\delta L=\frac{\partial L}{\partial q}\delta q+\frac{\partial L}{\partial \dot q}\delta \dot q+\frac{\partial L}{\partial t}\delta t  \\ 
+\delta L = \frac{\partial L}{\partial q} \delta q + \frac{\partial L}{\partial \dot{q}} \frac{d (\delta q)}{dt} \\ 
+\delta S = \int_{t_1}^{t_2} \left[ \frac{\partial L}{\partial q} - \frac{d}{dt} \left( \frac{\partial L}{\partial \dot{q}} \right) \right] \delta q dt$
 
 # Statistics and Probability
 See Log 2024.10.12 for overview
@@ -445,13 +541,13 @@ Common moments:
 Expectation: 
 - ${\displaystyle \frac{d\phi_X(t)}{dt} = i\int_{-\infty}^{\infty} xe^{itx} f_X(x) \, dx}$
 - ${\displaystyle \frac{d\phi_X(0)}{dt} = i\int_{-\infty}^{\infty} x f_X(x) \, dx=iE[X]}$ 
-- Note that since X is real valued, its fourier transform is conjugate symmetric, so the derivative at 0 is 0 for real component, but there's a shift in phase if derivative is non 0 in complex axis, the shift corresponds to the shift of center of mass of the distribution, ie, expectation.
+- Note that since X is real valued, its fourier transform is conjugate symmetric, so the derivative at 0 is 0 for real component, but there's a non 0 derivative in complex axis if there's a shift in phase of the frequency components, the shift corresponds to the shift of center of mass of the distribution, ie, expectation.
 
 Variance: 
 - $\frac{d^2\phi_X(t)}{dt^2} = -\int_{-\infty}^{\infty} x^2e^{itx} f_X(x) \, dx$
 - $\frac{d^2\phi_X(0)}{dt^2} = -\int_{-\infty}^{\infty} x^2 f_X(x) dx=-E[X^2]$
 - $\text{Var}(X) = \mathbb{E}[X^2] - (\mathbb{E}[X])^2$
-- The second derivative is a non positive real number. When it's 0, the original distribution is delta, and it's fourier transform is 1, which has all derivatives 0. The more negative it is, the more spiky the transform/power at 0.
+- The second derivative is a non positive real number. When it's 0, the original distribution is delta, and it's fourier transform is 1, whose characteristic function derivatives are always 0 (0 mean, 0 variance etc). The more negative it is, the more spiky the transform at 0. On the other extreme, if the second derivative were -inf, the transform is delta, and the original distribution would be flat (uniform across -inf to +inf), which indeed has inf variance.
 
 In general: $\frac{d^k\phi_X(0)}{dt^k} = i^kE[X^k]$
 
@@ -508,7 +604,7 @@ $ last step by Chebyshev's inequality which states: ${P(|X - E(X)| > \epsilon) \
 
 
 Quotes:
-- I know of scarcely anything so apt to impress the imagination as the wonderful form of cosmic order expressed by the "Law of Frequency of Error". The law would have been personified by the Greeks and deified, if they had known of it. It reigns with serenity and in complete self-effacement, amidst the wildest confusion. The huger the mob, and the greater the apparent anarchy, the more perfect is its sway. It is the supreme law of Unreason. Whenever a large sample of chaotic elements are taken in hand and marshalled in the order of their magnitude, an unsuspected and most beautiful form of regularity proves to have been latent all along. -Francis Galton
+- **I know of scarcely anything so apt to impress the imagination as the wonderful form of cosmic order expressed by the "Law of Frequency of Error".** The law would have been personified by the Greeks and deified, if they had known of it. It reigns with serenity and in complete self-effacement, amidst the wildest confusion. The huger the mob, and the greater the apparent anarchy, the more perfect is its sway. **It is the supreme law of Unreason.** Whenever a large sample of chaotic elements are taken in hand and marshalled in the order of their magnitude, an unsuspected and most beautiful form of regularity proves to have been latent all along. -Francis Galton
 
 Proof:
 - intuition: when you add many iid RVs you get a normal distribution as per MGF proof. If you divide by n, you get a single number bc n is too big. If you divide by n square root then you get a distribution bc it's not as big. The boundary exponent is 1/2 and anything bigger collapse the distribution to mean while anything smaller makes the distribution's variance infinite.
@@ -573,6 +669,10 @@ Alpha:
 ### Introduction
 - [advanced lecture](https://www.cns.nyu.edu/~rinzel/CMNSS10/)
 - [sources?](https://www.cns.nyu.edu/~eero/teaching.html)
+
+### Predictive Coding
+Rao 1999
+- feedback connections from a higher- to a lower-order visual cortical area carry predictions of lower-level neural activities, whereas the feedforward connections carry the residual errors between the predictions and the actual lower-level activities.
 
 ## Anatomical
 ### Mapping
@@ -722,14 +822,71 @@ CS229:
 - linear model: $h(x)=\theta^Tx$
 - LMS update: ${\theta_j:=\theta_j+\alpha(y^i-h_{\theta}(x^i))x_j^i}$
 - superscript is sample number usually i from 0 to d; subscript is data dimension also i from 0 to n
+
 ## Traditional
 ### SVM
 See CS229 notes
 
-## NN
+## NN Basics
+
+### Autoencoder
+- impose a bottleneck in the network which forces a compressed knowledge representation of the original input.
+> if weights were linear, this is similar to PCA
+- techniques to impose the bottleneck
+    - less nodes in middle layers. no explicit regularization term. 
+    > note that even when middle layer has 1 node, the network can still learn no representation by simply having a good decoder that memorized all mappings from unique numbers of the middle node to images
+    - sparse activation to encourage using less middle layer nodes. L1 reg or KL of a bernoulli where p is desired percentage of activation of a certain neuron.
+    - denoising autoencoder
+    - contractive: enforce small derivative of hidden layer activation wrt input. Model contracts a neighborhood of inputs into a smaller neighborhood of outputs. reg is Frobenius of Jacobian
+
+
+### VAE
+- make latent of autoencoder a dstribution instead of single number. eg. Mona Lisa's "smile" latent should be a wide distribution instead of a definitive number
+- another motivation is the problem of powerful decoder mentioned above: ![](/images/vae-reg.png)
+- to use a distribution instead of number as latent, a statistical trick needs to be applied, which results in this loss: $min[L(x, \hat{x}) + \sum_j KL(q_j (z|x)||p (z))]$
+- training also involves a reparametrization trick: ![](/images/vae-reparam.png)
+- clustering result comparision: ![](/images/vae-clustering.png)
+
+
+### Diffusion as Score based model
+[author's blog, score based](https://yang-song.net/blog/2021/score/)
+- score function: gradient of the log probability density function
+- p(x) requires a normalizing constant Z which is iintractable: ${s_\theta (x) = \nabla_{x} \log p_\theta (x ) = -\nabla_{x} f_\theta (x) - \underbrace{\nabla_x \log Z_\theta}_{=0} = -\nabla_x f_\theta(x)}$ 
+- The key challenge is the fact that the estimated score functions are inaccurate in low density regions, where few data points are available
+- solution is to add Gaussian noise to produce low prob data 
+
+### CLIP
+![](/images/clip.png)
+Both encoders are pretrained transformers. Text encoder is GPT like while image encoder is based on a vision transformer. Training involves cross-modal similarity loss and weight updates jointly on the two encoders
+
+### Word2Vec & GloVe
+![](/images/word-2-vec.png)
+note that there are two embedding matrices for context and non context word. Otherwise similar words will have similar embed with themselves AND next words and this repeats so everyone has same embed. 
+
+### ELMo: Context Matters
+- A word has multiple meanings depending on context
+- Instead of using a fixed embedding for each word, ELMo looks at the entire sentence before assigning each word in it an embedding. 
+- It uses a bi-directional LSTM trained on language modeling task
+
+### Transformer
+arch
+
+normalization
+- Byte-Pair Encoding or WordPiece for raw words mapped to unique int ids (30k–50k subword types)
+-  $\text{InputVec}_i = \text{TokenEmbedding}_i \times \sqrt{d_\text{model}}+\text{PositionEmbedding}_i$
+- $ \text{LayerNorm}(h) = \frac{h - \mu}{\sigma} \odot \gamma + \beta$, h is the individual input vector 1xd, gamma and beta are learnable params
+> batch normalization is tricky to apply to sequence models (like transformers) where each input sequence can be a different length. Second, layer normalization is trivial to parallelize when doing distributed training, whereas batch normalization requires extra communication overhead between gpus because the batch is split up.
+
+> Note that mean of a vector is beta and var gamma squared. There's a property of such vectors X. $|x|^2=\sum^n x_i^2=n\frac{\sum^n (x_i-\beta)^2-\beta^2+2x_i\beta}{n}=nVar(x)-n\beta^2+2\beta\sum x_i$.  Attention computes the dot product of 2 such vectors, $\sum^n x_i y_i=n\frac{\sum^n x_i y_i}{n}$. If x and y are 0 mean, then their dot product is nCov(x,y). If they are further of unit variance, then dot product equals nCorr(x,y)
+- drop out, MHA, Residual connection
+
+## Inside NN
+See Intelligence section below
 ### Loss Landscape
+
 ### Representation Manifold
 - [best visual intro](https://colah.github.io/posts/2014-03-NN-Manifolds-Topology/)
+
 ### Representation
 - [linear representation hypothesis](https://arxiv.org/abs/2311.03658): high-level concepts are represented linearly as directions in some representation space
 - [UNIVERSAL NEURONS IN GPT2](https://arxiv.org/abs/2401.12181): 
@@ -740,7 +897,82 @@ See CS229 notes
 ### World Models
 - [SORA doesn't learn physical law](https://phyworld.github.io/)
 
+## Practicality
+
+## Tuning
+### LOTTERY TICKET HYPOTHESIS
+Train a network, prune low magnitude weights, revert the rest to initialization state, train again, iterate several times.
+
+When randomly reinitialized, winning tickets perform far worse, meaning structure alone cannot explain a winning ticket’s success.
+
+One possible explanation for this behavior is the good initial weights are close to their final values after training—that in the most extreme case, they are already trained. However, experiments show the opposite—that the winning ticket weights move further than other weights.
+
+we hypothesize that the structure of our winning tickets encodes an inductive bias customized to the learning task at hand. Cohen & Shashua (2016) show that the inductive bias embedded in the structure of a deep network determines the kinds of data that it can separate more parameter-efficiently than can a shallow network
+
+#### Early Bird Tickets
+we discover for the first time that the winning tickets can be identified at a very early training stage, which we term as Early-Bird (EB) tickets, via low- cost training schemes
+
+## Other Topics
+### Audio Transformer
+[wav2vec2](https://arxiv.org/abs/2006.11477)
+- convnet encoder on spectrogram
+
+[openai whisper](https://cdn.openai.com/papers/whisper.pdf)
+- Mel spectrogram + conv
+- encoder-decoder
+
+# Intelligence
+## Representation/concept
+It's observed that neural networks, from LLM to basic MLP with a few dozen neurons (Hinton Nature), from autoencoders to RNNs, and with all learning paradiams from classification to RL and diffusion, there are activations of certain neurons that match our intuitive understanding of concepts. It feels to good to be true that one neuron can tell if an input is about a male or female, or that the input is about somthing old or new. 
+
+We first need to understand why. Why do they "have to" develop these concepts. Or why do WE have to develop these concepts. Theoretically, the network can perfectly fit the distribution without developing such intuitive features, just as we humans can think about each person as competely distinct things without the help of labels such as species or genders. To understand why we need such features we first analyze the differences when we do and do not abstract such regularities. We will use a the seemingly controversial example of deciding what to say when seeing a stranger. We have a concept of nationality and it's intuitive to use whatever language you believe is the person's native language based on your nationality guess. In contrast, if we don't use such a nice feature, but focus on, say, the length of his middle finger or the color of his lips, then even if we could end up using the right language based on these strange features, it would require a more complex decision rule. We should further develop a quantitative description of this example. Suppose that one nationality correspond to exactly one language preference, then we can say that the language we need to use depends exclusively on his nationality. It's important then to understand things that are "excluded" when making this decision. For example, it may not depend at all on their finger length or lip color. We borrow from physics and say that one's language preference is symmetric under change of lip color or finger length. Symmetric just mean being the same under those actions. 
+
+Once we established that it's good to have this feature extraction ability, we can ask how. 
+
+
+
+### Concept as Symmetry
+
+## Linear
+### Concept Algebra
+- Y: set of images, 
+- X: set of prompts, 
+- C: set of latent variabels used to generate X from Y, st $P(y \mid X = x) = \int P(y|C = c)P(C=c|X=x)dc$
+- C is complicated so we introduce Z that's C-measurable. So Z maps C to Z which is the σ-algebra of ℤ which is the set of concepts (that's easier to work with than the set C)
+- now instead of using P(c|X) which describes how prompts induce latent distribution, we use P(c|Z). To define the situation in which information of Z is same as that of X, we define the notion of "sufficency". A set of concepts ℤ1,...ℤk is sufficient for a prompt X if 
+- $p(y |X=x) = \sum_{z_{i:k}} p(y | z_{1:k} )p(z_{1:k} | X=x)$ note how the integral over C becomes sum over Z 
+
 # Engineering
+## AI
+### Computer Use
+Computer Use (Anthropic)
+- screenshot based, move cursor (so OS wide)
+
+Operator/Computer Using Agent/CUA (openai)
+- 
+
+Manus
+
+
+Browser Use
+- optional screenshot, mainly DOM tree parser. 
+
+A5-Browser-Use
+- chrome extention with server side Browser Use 
+
+CrewAI
+
+Atomic Agents
+
+## Automation
+Also see AI-Computer Use
+### Browser
+beautifulsoup
+
+selenium webdriver 
+- [tutorial](https://youtu.be/NB8OceGZGjA)
+
+
 ## AR
 ### Interaction
 - [contact lens RF detection](https://www.nature.com/articles/s41467-024-47851-y)
@@ -791,130 +1023,73 @@ https://github.com/ManimCommunity/manim/
 ## Books
 ### The man who solved the market (Simons biography)
 
+### Investments
+An investment is the current commitment of money or other resources in the expectation of reaping future benefits.
+
+### RL
+
+
+### Analysis I and II
+See references/books/Analysis
 
 ## Online Classes
-### [Classical Mechanics](https://www.youtube.com/playlist?list=PL47F408D36D4CF129) 
-1
-- something about conservation laws and acceptable laws of motion. predictability and reversibility in terms of resolving power. 
-- vectors and coordinate system, polar coordinate
+### Hinton Old Coursera
 
-2 Dynamics
-- Aristotle's law of motion F=mv tested on spring produces x=e^-t so it's irreversible because when there will be a t where x is indistinguisable (given finite resolving power) from 0, thus if x=0 you don't know where it comes from. 
-- Newton's law, inertial frame, define F, m and a using springs. state with x and p. phase space and dynamics of motion as 2 first order DEs. Harmonic oscillator. 
-- time reversion. imagine something dropping to group from infinite high and choose t=0 arbitarily. x(t) will show this thing dropping, as t increases; x(-t) will show this thing rising, as t increases. So swapping t with -t is the natural way to reverse progressioin of physical events. Now for Newton, $v(-t)=\frac{dx(-t)}{d(-t)}=-\frac{dx(-t)}{dt}$, meaning that v as derivative of x(-t) at -t is inverse of v as derivative of x(t) at -t. What's interesting is that acceleration and thus force is unchanged $a(-t)=\frac{d^2x(-t)}{d(-t)^2}=\frac{d^2x(-t)}{dt^2}$, meaning a as second derivative of x(-t) at -t is the same as a as derivative of x(t) at -t. For example, imagine an object accelerating to the ground and play it in reverse. The object flies up quickly and gradually comes to a stop, showing downward gravity in both cases. Actually, the reverse of dropping is like firework to sky. In conclusion, Newtonian laws of motion are time-reversal symmetric, meaning you can't tell if which direction time is going. In contrast, if F=mv, then reversing time also reverses all forces.
 
-4 System of particles, momentum
-- state of a system: everything you need to know to precisely predict the future, given laws of motion. (a trick to select state is to ask what do we need at the very beginning)
-- phase space, configuration space+momentum space
-- the 3rd law, conservation of momentum
 
-5 Energy
-- The basic principle—call it the potential energy principle-asserts that all forces derive from a potential energy function denoted V(x)
-- would be nice to introduce how energy was invented from greeks' living force to measure of motion to mv^2 and then to height equivalence of work and formulation of V as related to height at which an object will have gained K=V. 
-- conservation by showing dE/dt=0
-- It is quite possible to imagine force laws that do not come from differentiating a potential energy function, but nature does not make use of such nonconservative forces.
-- V defined to satisfy conservation of energy
-- how types of energy relate to K and V
+### [Classical Mechanics]
 
-6 Action
-- convert initial state of x and p to initial and final x
-- benefit: easy transformation btw reference frames
-- generalized conjugate momentum and example in polar coordinate,  
-- more on polar coordinate: ${x=rcos\theta,\ y=rsin\theta}$ ${\dot{x} = \frac{dx}{dt} = \dot{r} \cos\theta - r \dot{\theta} \sin\theta}\\ {\dot{y} = \frac{dy}{dt} = \dot{r} \sin\theta + r \dot{\theta} \cos\theta}$ ${v^2 = \dot{r}^2 (\cos^2\theta + \sin^2\theta) + r^2 \dot{\theta}^2 (\sin^2\theta + \cos^2\theta) + 2 \dot{r} r \dot{\theta} (\cos\theta \sin\theta - \sin\theta \cos\theta)}\\v^2 = \dot{r}^2 + r^2 \dot{\theta}^2.$
-- cyclic coordinate (coordinates not in V term and therefore subject to 0 total force on that coordinate axis/conserved momentum)
+### Quantum Mechanics
 
-7 symmetry and conservation laws
-- A symmetry is an active coordinate transformation that does not change the value of the Lagrangian.
-- $\delta L=\sum_i\frac{\partial L}{\partial q_i}\delta q_i+\frac{\partial L}{\partial \dot{q_i}}\delta \dot{q_i}\\= \sum_i \dot{p_i}\delta q_i+p_i\delta \dot{q_i}\\=\sum_i\frac{d}{dt}p_i\delta q_i=0\\$ so $\sum_ip_i\delta q_i$ is a conserved quantity. For example, if delta is 1 as in pure translation, then the conserved quantity is total momentum
-- double pendulum and recipe for lagrangian problem: 1) choose coordinates 2) find K and V
 
-8 Hamiltonian
-- $\frac{dL}{dt}=\frac{\partial L}{\partial q}\frac{dq}{dt}+\frac{\partial L}{\partial \dot{q}}\frac{d\dot{q}}{dt}+\frac{\partial L}{\partial t}\\= \dot{p}\dot{q}+p\ddot{q}+\frac{\partial L}{\partial t}\\= \frac{d}{dt}p\dot{q}+\frac{\partial L}{\partial t}$
-- define $H=p\dot{q}-L$. We have  $\frac{dH}{dt}=-\frac{\partial L}{\partial t}$. H is constant if L is not explicitly dependent on time. H is also the energy since $p\dot{q}=m\dot{p}^2=2K$ so H=2K-K+V=E
-- $-\dot{p}=\frac{\partial H}{\partial q},\ \dot{q}=\frac{\partial H}{\partial p}$
-- convenience of having first order system and simple phase plane
-- note that H is based on L and uses result of EL equation
 
-9 Liouville and Poisson bracket
-- Liouville: ${\displaystyle \rho \sum _{i=1}^{n}\left({\frac {\partial {\dot {q}}_{i}}{\partial q_{i}}}+{\frac {\partial {\dot {p}}_{i}}{\partial p_{i}}}\right)=\rho \sum _{i=1}^{n}\left({\frac {\partial ^{2}H}{\partial q_{i}\,\partial p_{i}}}-{\frac {\partial ^{2}H}{\partial p_{i}\partial q_{i}}}\right)=0,}$
-- Poisson bracket: ${\{f,g\}=\sum _{i=1}^{N}\left({\frac {\partial f}{\partial q_{i}}}{\frac {\partial g}{\partial p_{i}}}-{\frac {\partial f}{\partial p_{i}}}{\frac {\partial g}{\partial q_{i}}}\right)}$
-- $\dot{f}=\sum _{i=1}^{N}\left({\frac {\partial f}{\partial q_{i}}}{\dot{q_i}}-{\frac {\partial f}{\partial p_{i}}}{\dot{p_i}}\right)=\{f,H\}$
-- $\dot{q_k}=\{q_k,H\}, \dot{p_k}=\{p_k,H\}$
+### Statistical Mechanics
+See references/classes/TM-StatMech.md
 
-10 Poisson bracket, angular momentum and symmetry
-- Axioms: 
-    - {A,B}=-{B,A}, {A,A}=0
-    - 
-- Properties
-    - $\{q_i,p_j\}=\delta_{ij}$
-    - 
+### Particle Physics
+evolution of the concept of particle
 
+energy of photon
+- wave length, frequency and speed of light: $\boldsymbol{\lambda f=c}, 2\pi f=\omega, \lambda\omega=2\pi c,\boldsymbol{\omega=\frac{2\pi c}{\lambda}}$
+- $E=\hbar\omega$
+- total energy of harmonic oscillator is determined by both amplitude squared and frequency, but energy of radio  wave is dependent on just amplitude squared. However, individual photon energy depend on only frequency. Radio waves are made by lots of photons. This is a question.
+
+unit
+
+momentum
+
+
+### Eth.build
+[eth.build illustration on all basics](https://www.youtube.com/list=PLJz1HruEnenCXH7KW7wBCEBnBLOVkiqIi)
+
+### Khan Macro
+
+### Khan Finance
+- APR and effective APR
+- credit system (retailer pays to visa, issuing bank and acquirer): ![](/images/credit-system.png)
+- payday loans (very high interest, ~700 APR)
+- Personal bankruptcy
+    - chapter 7 straight bankruptcy. 10 year on credit record, some debt like student loan can't be forgiven
+    - chapter 13 reorganization. 10 year credit record. repayment plan and 3-5 years to pay back.
+
+- present value, future value, discount rate, interest rate (discount rate is used to determine the present value of future cash flows while interest rate is the cost of borrowing money) (The interest rate and discount rate might differ due to factors like inflation, risk premium, or differing compounding conventions.)
+
+housing
+- personal balance sheet, equity=asset-liability
 
 ## Brilliant
 ### Crypto
-Money
-- barter->commodity currency (sth many ppl will exachange for because they need it)->precious metal (rich people want it, a transition to centralized currency)->paper money, now completely centralized
-- note the theme of incresing centralization and convinience, which is like political development where people exchange power/freedom for safety/convinience
-- credit is essentailly the same as paper money. It's going a little decentralized now since everyone can issue credit now, but it's still backed by companies which represent a transition from monarchy to aristocracy.
-- impersonation risk: whenever you assign power to someone other than youself, you create the risk that someone will steal the power, ie, people can bluff. Increasing political power, wealth, and credit are the same.
-- current power balance: In politics we are essentially aristocracy with the modification of universal human rights including rights to own things, implying social fluidity. In America power has been allocated significantly to minorities (in the sense of less power) including middle class men. It is currently impossible to allocate more, though the decetralization process has been steady. 
-- current wealth balance: total wealth by Americans 134t. Asset of US 269t, debt 145t, net 123t. Total asset of US banks 24t. Total assets of China's financial institutions 480t yuan (68.03t usd)
 
-Cryptonia 
-- gold is subject to robbery->powerful benevolent error free dragon 
-- tiresome trip to change amount
-- DragonBucks: equilavence to a portion fo the the deposit with dragon's signature->stolable->instead of face value, issue checks that has entries of 2 parties' names written by dragon and amount written by villager
-- everyone needs n notes (n = number of villigers); recipient can change amount; villiger and outsiders can steal the checks
-- need authentification and tamper resistence together: Without authentication, someone could just write a new note even if existing notes are tamper-resistant. Without tamper resistance, someone could modify a note that already has a legitimate signature.
-- use the sender's unique spell on the magic wax to seal the amount. 
+### Group Theory
 
-Encryption
-- everyone has a unique private key and shared public key which is f(private). A signiture is private x message. If the function has the property that f(a)*b=f(ab), then signiture=f(private x message)=f(private) x message=public x message. So people can verify if the signiture is really signed by someone by checking if public x message=signiture. However, anyone can get secret key from public key if f is linear. 
-- We reduce the linearity of f to f(a x b)=f(f(a) x f(b))
-- the verification is signiture=f(private x message)=f(f(private) x message)=f(public x message). You see that anyone can see the public key and therefore make up a signiture
-- We need to ensure that public key doesn't directly enable one to make the signiture. That is, f(public x message) != signiture. We reformulate public = f(private x g) so f(public x message)=f(private x g x message) and there is no way to produce f(private x message) with f(private x g x message). Verification is f(sig x g) = f(private x message x g) = f(public x message)
-
-Decentralization
-- note that previously we were concerned with how to veriify transactions but not the absolute amount of money one holds, which depends compeltely on the dragon. In other words, we lack a decentralized balance sheet/ledger
-- solution is to give everyone a ledger
-
-Minting problem
-- if it was too easy to make new CCs, some people would stop doing useful work in the town and just try to mint new currency:
-
-Signiture uniqueness
-- no duplicate sig should exist because then you would use one message and its sig over and over to fake transactions
-
-Secret key uniqueness
-- if your public key is same as some one else, your verification f(private1 x message x g)=f(f(private1 x g) x message)=f(public1 x message)=f(public2 x message)=f(f(private2 x g) x message)=f(private2 x message x g)
-
-Attacks
-- If someone knows your s mod n or s x g.
-- s mod n can be calculated by public/g mod n, iff g x s < n
-- or you can find g inverse p such that p x g mod n = 1 so p x g x s mod n = p x (g x s mod n) mod n = p x public mod n = s mod n. The solution is to choose large n. But there exists a way to compute p in logn time. 
-- now we see modular multiplication isn't secure. We try modular exponentiation. public = g^s mod n. This protects against finding s mod n but you will have people's secret key?
-
-Hash collision
-- why we want collision resistence (hard to find x and y st H(x)=H(y)): 
-- cryptographic hash function — collision resistance and preimage resistance. Preimage resistance means that, given a hash value y, it’s hard to find a “pre-image” x that leads to H(x)=y. We’ve skipped over preimage resistance because, for the types of hash functions we care about, collision resistance implies preimage resistance.
-
-Design a hash function
-- 8bit register automatically does mod 256
-- first try: split into 8 bit chunks and add them together
-- second try: ((x1 x 31)+x2)x31...
-
-Inverting hash function
-- 
+## Websites
+### Ethereum & web3
 
 
+## Online Videos
+### [Hologram](https://www.youtube.com/watch?v=EmKQsSDlaa4)
+- we need the whole EM field from the scene
+- at 20:44, great animation on diffraction grating  
 
-
-Block Chain
-- linked list
-- hash pointer: as long as you have an authentic copy of one block, any change in previous blocks will propagate to last block before yours and you can check if it matches.
-
-Ledger
-- suppose we have a online banking system where you can only send money you have and the ledger is a big excel sheet on bank's server. 
-- hackers might change their money amount. the bank could sign all changes with the bank's secret key to the ledger and verify. However, bank itself might be bad. 
-- publish the ledger as a blockchain. Each block would contain transaction information and updated account balances so anyone suspicious about ZooCash’s operation would be able to audit its entire history. Note that audit is not enough since centralized agency can usually get away even if audit fails
-- payCash(amount:sender→recipient,sender's signature) and createCash().
-- at this point, only sender can sign his own transaction; but only the bank can record it on chain and use createCash(). So it's still centralized. Also the bank's secret key is now vulnerable since it decides everything. 
+## Papers
+### Representation

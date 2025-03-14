@@ -81,7 +81,19 @@ https://jakevdp.github.io/blog/2017/12/05/installing-python-packages-from-jupyte
 - jupyter notebook --no-browser --port=8080; ssh -L 8081:localhost:8081 zhw@hires-gpu1.cs.unc.edu
 
 #### Troubleshooting
-- Module not found: check if you can use the module in terminal, if yes, install jupyter in your current env. If no, 
+- Module not found: 1) if python file check interpreter setting 2) if notebook: check if you can use the module in terminal, if yes, install jupyter in your current env. If no, in command line "pip show pkg_name" and add the path to code 
+```
+import sys
+sys.path.append('/nas/longleaf/home/zhw/miniconda3/envs/scrap/lib/python3.11/site-packages')
+```
+- check which version of a package is used, if version is wrong, change the kernel inside jupiter notebook UI, select another kernel->Python environments
+```
+import bs4, sys
+
+print("Python version:", sys.version)
+print("Python executable:", sys.executable)
+print("bs4 module path:", bs4.__file__)
+```
 - Restart terminal
 - 
 
@@ -915,7 +927,9 @@ use matlab dirrecctly in python with matlab engnine:
 
 ### 12.22
  data processing procedure for Magdeburg
+- note that before starting notebook you have to be in the project folder bc all the constants use ./ relative path
 - fs36 is invalid
+- 9 thought probes per ppt
 
 - problem of importing error: check if other variables can be imported and if only old var do, restart jupiter.
 
@@ -937,7 +951,43 @@ use matlab dirrecctly in python with matlab engnine:
 ### 12.26
 - on nap: interesting feeling sometimes when you want to wake up but cannot, and have to struggle to do it, accompanied by very strong sensory inputs, today music specifiically, likely due to whole morning of loud classic music playing. maybe the motor system is shut out and some executive parts also not fully functional because the "wanting" to wake up definitely feels not as when awake.
 - stochastic calculus: 
-- lol the if you put all sorts of financial charts together it looks like EEG data
+- lol if you put all sorts of financial charts together it looks like EEG data
+
+## 25
+### 1.9
+- interesting observation that since i always keep mail browser to the rightmost screen it appears that the notification sound actually originate from the right side and i look immediately to the right of screen when it sounds
+- also observe that you don't actually have a direct map of your keyboard (if i say what's row 1 col 3 you prob don't know), but if i say where is e you immediately know. This unidirectional mapping is interesting and can be used as an example of how projection, especially language related, is unsymmetric
+
+### 1.10
+- watched Flavio's new year plan. Interesting he mentioned that if you make a goal and start working towards it you might not end up there, but if you work backwards from the goal it's more efficient. This sounds right at first but the problem is just like the forward path from the present might not lead to the goal, the backward path from the goal might not lead to the present. So in terms of RL, 
+- everyone has great ideas, it's the executiioin that makes the difference
+
+### 1.16
+- if someone asks why 2d complex space isn't just 4d real space, you can say why don't we say 1d real space is infinite-d integer space
+
+### 1.17
+headache but at night saw trump coin 1h after launch at 7. bought immediately with trump spx and pnut and got 100usd worth of new trump. depleted sol because used too high fee and couldn't get transfers from rh into solflare which is always the case in crazy times. too much headche and slept
+
+### 1.18
+- wake up and saw it at 22, converted the rest of old trump to it and started transfering money from rh (yesterday's failed). bought a little more stoic and ufd 
+- made some contracts on sol and got some money (very few) since the pattern is very strong and everyone wants to buy after they woke up
+- noon reached 33 and bought more with rh money. bought little  metav and eliza because some KOLs kept saying money will flow back to ai
+- bought a tiny more trump at 4pm and some spx. bought some trump because sol eth arbitrage
+- bought more metav trump and eliza at 9pm trump at 25
+- from noon 35 high there had been 3 tops descending
+- at 10 after 3 tops a fourth ascending is at 30, which is equal to previous top, swapped 1 to ufd 1 to stoic 3 to metav 1 to doge 2 to sol because sleep is long and risk is high. sold all old trump because after dev buy back pumped it from 1.4 to 3.3, demand has been low and eth in general was underperforming. Also i was sure ppl want the official one. 
+
+
+### 1.19
+- morning woke up at 6 and it reached 72, swapped 1 to doge 1 to stoic 1 to eliza 1 to metav 3 to usd. Got up at 8 and at 65. sold more after chatting with xcz: 2 to jlp and 1 to ufd. 
+- trump bought eth so it pumped from 4250 to 4450. did 30x contract and lost all later.
+- i'm kinda sure eth will eventually pump but at the moment i just bought more doge and spx and swapped some trump to these totaling 800.
+- noon sold 3 more at 65 and bought jlp
+- 5pm meleinia launched coin and trump from 74 to 32. Bought dip with the 200 at 40. 
+- before sleep trump is 60 again
+
+### 1.20
+- 
 
 # Log Summary
 ## September 2024
@@ -1059,7 +1109,7 @@ We do a lot of amazing things, but animals can also do most of them. It's import
 https://www.perkins.org/laura-bridgman/
 
 ### Reading The Story of My Life (Helen Keller)
-- > At first, when my teacher told me about a new thing I asked very few questions. My ideas were vague, and my vocabulary was inadequate; but as my knowledge of things grew, and I learned more and more words, my field of inquiry broadened, and I would return again and again to the same subject, eager for further information. Sometimes a new word revived an image that some earlier experience had engraved on my brain.
+- > At first, when my teacher told me about a new thing I asked very few questions. My ideas were vague, and my vocabulary was inadequate; but as my knowledge of things grew, and I learned more and more words, my field of inquiry broadened, and I would return again and again to the same subject, eager for further information. *Sometimes a new word revived an image that some earlier experience had engraved on my brain*.
 
 ### On Logical and Natural Optimization/Why Our Logical Strategies Coincide Natural Phenomena
 We see tit for tat in animals even when this is also deduced from human analytical thinking. We see learning algorithms reach local minima when human also reach local minima with the exact logic i.e. it looks good from where I came from and without an external nudge this will always be the best solution I can see. This is because systems have to follow the same physical laws and their high level behaviors have to sometimes follow patterns to satisfy those laws.
@@ -1241,7 +1291,8 @@ Time is totally ordered. Any other categorization is set and by partially ordere
 - You? Mr. Big Shot. You live on top of a castle. Traveling around the world doing concerts for rich people.  I live on the streets. You sit on a throne. 
 - The world's full of lonely people afraid to make the first move
 
-
+### Braveheart
+- Wallace before execution: every man dies. Not every man lives
 
 ### Forbes
 - Bernard Arnault: I see myself as an ambassador of French heritage and French culture. What we create is emblematic. It's linked to Versailles, to Marie Antoinette.
