@@ -8,6 +8,34 @@
 - concat heads->output projection->add&layer norm->mlp->add&layer norm
 - add&layer norm is post-norm and pre-norm is also used.
 
+### What is a transformer (draft version, needs a more concise summary) Also see sorcery.md
+- always think of the transformer as transforming states of the world. You give it some molecules and it gives you a cell or a drop or water...
+- the MLPs and Attn together describe law of dynamics where MLP can either be seen as "self evolution" or fixed environment interactions, and the attention mech is the interaction laws. As such, you only need one set of such laws instead of one for each token.
+> Note that one caveat of the physical state analogy is that language states are vector space while physical states are plain space. 
+- the time evolution of tokens is a parculiar one. At the end of one complete evolution, every element/token evolves to a state that happens to be its next neighbor/input (this hints at why late layers usually don't contain meta-level information). 
+- each layer is like a smallest discrete transformation. At each step, all states mix and propagate to produce the delta term, which is then added back (some models do attn and mlp sequentially, some parallel). 
+- > (optional) for untied embedding, the input embedding IS the most likely final transformation, or its next neighbor. If everything follows exactly bigram frequency, the input is then stationary after embedding and remains at that state. The input to output transformation is then a "rotation" of the states of every token/element to the next one. In real language modeling, we imagine cones in embedding space corresponding to the correct output transformations. Then the inputs essentially flow into the cones as attractors. If embeddings are tied, the cones overlap and input cones "rotate" into their neighbors. 
+
+> more specifically, each VO circuit directly changes the state, just like MLP, except that VO is linear. Each QK circuit describes a law of physics with a lookup table. eg, this thing at this state will exert a force this big on that thing at that state. We have L x H laws. 
+
+---
+How to interpret a state
+- there are states delta, or a subspace state change, that has an interpretable effect. In steering-vector-like methods this is found by averaging, at the last token position, activations from many related prompts/soup of elements. 
+- > In an alchemy analogy, you give the pot a bunch of elements and before they turn to gold, a strange metal will appear and you can use this metal everytime when you are trying to make gold like stuff by adding it at a certain time in the procedure. 
+- It's possible to analyze how this state eventually contribute to the effect with circuit analysis. 
+> The problem with analyzing states as if they are physical objects is that the intermediate states are hard to interpret. It's not likely to build a table of such elements for reference. 
+
+Methods to find interpretable states
+- Steering vector works in a statistical filtering way where when you feed it enough samples, the average will concentrate on the core feature of the samples. Since it requires many human picked samples, the concept/feature is usually abstract like love-hate or english-french. In theory, many intermediate products will represent this feature. 
+- Activation patching tries to pinpoint an intermediate transformed state that sufficiently creates an interpretable effect. The suffiency means the effect is gone without the state. Therefore to determine the sufficient state you need to make the effect disappear and bring it back. The tricky part is what effect you want. For the completion "the capital of China is 'beijing'", you could study the effect of being the correct answer "Beijing" by directly quantifying the logit of "Beijing". You could study the effect of being a city name (ie, there is a state that removes the city concept so it outputs something like panda or forbidden city)
+> This leads to the use of counterfactual pairs. We have seen that to quantify the effect of a function outputting Beijing, we have to ask "what's opposite of Beijing". Beijing is a very composite concept. It is a city, it is a capitol, it is of China, etc. We could say it is not London, not Seattle, not Rome, etc. This is a fundamental **problem of definition of concept**. It's possible that the model uses a different set of basic concepts from humans (even humans use different basis of concepts). At the moment, we can only try our best to find sets of concepts that are actually represented by the model and at the same time satisffactory for understanding a phenomena. For example, we might find, through various coutnerfactual pairs, that the model gives "Beijing" because some interactions of "is" and "capital" creates a concept of giving names of capitals (and to verify this you could hook a prompt like "my best friend's name is" and see it output "Washington"); some enrichment of "china" in early layers might already contain city names and this is attended by the aforementioned capitol vector to pinpoint the city to Beijing. 
+- function vector is similar to steering vector but uses activation patching to systemize the discovery. 
+
+---
+How to interpret a law
+- 
+
+
 ### Attention
 MHA
 
@@ -18,12 +46,12 @@ GQA
 ### MLP
 MOE
 
-### Language Modeling
+### n-gram Language Modeling
 - Pure embedding unembedding means bigram
 - one layer attn means skip trigram where instead of using 2 words to predict the next word, the model uses the current word combined with a second word anywhere in the context to predict the next word. In theory, if KVQ are arbitary functions, one layer attn can support n-gram where n is any integer. But for linear KVQ, the skip trigram is most effective.
 - two layer attn 
 
-## Neuron & Features
+## Neuron & Features (Also see sorcery.md)
 - in a biological view, the weights of NN represent (strength of) synaptic connections and the states or activations represent (activation of) neurons. So it's basically saying you are what you show. 
 - in transformer, there are primarily 3 types of neurons. *First* the attention circuit explicit neurons. Activations from input or previous layer neurons are copied 4 times and go through 3 groups of these type I neurons. *Second*, there are implicit neurons that are fixed with the attention architecture. These are neurons that does the cross attention. The activations of these neurons modulate activations of the type I value neurons. Even though there is no explicit neuron for the residual summation of the output of attention and residual activation, we study the sum a lot and since we have equated activations with neurons, we have to add these *type 2.5* neurons. The *third* type is the MLP neurons which every token use. This is clearly biologically implausible since time is always a influence in BNN but not in ANN. 
 - When analyzing "neurons" or features in transformer, we usually care about type 2.5 and III neurons. But type II neurons, which are the attention patterns (matrix) are also important but not as human interpretable concept or feature. 
@@ -76,7 +104,14 @@ we posit a speciﬁc mechanism for storage of factual associations: each midlaye
 
 We hypothesize that MLPs can be modeled as a linear associative memory; note that this differs from Geva et al.’s per-neuron view.
 
+## General Interpretability (Non transformer specific)
+https://christophm.github.io/interpretable-ml-book
 
+### Lime
+
+### Shapley
+- cooperative game theory
+- total direct effect from the mean
 # MI (Anthropic)
 ## Vision Circuits
 [feature visualization](https://distill.pub/2017/feature-visualization/)
@@ -166,6 +201,31 @@ We study 0 to 2 layer attn with only embedding, multihead attention, residual, a
 Crucially, we decompose into more features than there are neurons. This is because we believe that the MLP layer likely uses superposition to represent more features than it has neurons (and correspondingly do more useful non-linear work!)
 
 ![](/images/arena-sae-diagram-2.png)
+
+
+
+# Lens
+## Basics
+### LogitLens
+
+### Tuned Lens
+- to reduce bias and representation shift, use a "translator" which is an affine transformation to map latents to predication, one trasnlator for each layer. KL as distillation loss
+- causal basis extraction: find a set of orthonormal vectors, which, being removed, maximally dissimilate output of a translator from actual final logits. 
+
+> Note that they used KL throughout as a measure of dissimilarity
+### Future Lens
+- predict multiple future tokens from last token at any layer:
+    1. learned linear transformation
+    2. fixed prompt injection 
+    3. learned prompt injection
+
+> Thoughts: for the prompt injection, the transformer is autoregressively generating future tokens. This is essentially very similar to directly let the model generate tokens autoregressively. The only difference is the compressed injected token at first token location. This just confirms the compression hypothesis.
+
+
+## Recent work
+### Selfie
+> it might work as an probe where you just need a clever question after the injection to check some feature built into the activation, and when they are incorporated. For example, if you do "eis ea librum misserunt" (need to check how latins are tokenized) you might have questions to elicit the plural and perfect tense feature and see at which layer they emerge. 
+> Also it's possible to study the subspaces with this approach. in fact, all logit lens works can be restudied with this apprroach as a new lens
 
 # Patching
 ## Intuition
@@ -281,14 +341,16 @@ Result
 
 
 
-
+# Feature
 ## MIT
-
+### Gurnee
 [FINDING NEURONS IN A HAYSTACK : CASE STUDIES WITH SPARSE PROBING]
-- find k neurons that corresponds to human concepts
-- studies the effect of k (k=1 is single neuron)
-- probing:
-    - cons: 1) probing requires hypothesis (need to manually select features and corresponding counterfactual pairs of inputs) 2) probing is correlational
+- background: follow up the toy model (feature hypothesis and superposition). They want to find feature neurons. This is before SAE.
+- find k neurons in MLP activation (post non linearity) that corresponds to human concepts
+- one probe (a linear classifier) for each hypothesized feature, at each layer, for each k
+> Note: probe vs sparse probe
+- studies the effect of k={1,...8} (k=1 is single neuron)
+> An excellent discussion on polysematicity and interference: ... we found many individual neurons which were almost perfectly discriminating. However, after inspecting the activations across a much wider text corpus, we observe these neurons activate for a huge variety of unrelated n-grams, a classic example of the well known phenomena of polysemanticity. Superposition implies polysemanticity by the pigeonhole principle—if a layer of n neurons reacts to a set of m ≫ n features, then neurons must (on average) respond to more than one feature. This example also underscores the dangers of “interpretability illusions” caused by interpreting neurons using just the maximum activating dataset examples [72]. A researcher who just looked at the top 20 activating examples would be blind to all of the additional complexity. While inconvenient for interpretability researchers, polysemanticity is also problematic for the model, as it causes interference between different features [4]. That is, if 70M.L1.N111 fires, the model gets mixed signals that both the “prime factors” feature and the “International Coven” feature are present.
 
 [space and time in LLM]
 - probe on last entity token of each layer (layers analyzied individually) with target of either lat/lon or time
@@ -297,36 +359,36 @@ Result
 
 [universal neurons]
 
-[concept algebra]
 
-# Linear Representation Hypothesis
-## [linear representation]
+## Linear Representation Hypothesis
+### [concept algebra]
+- Y: set of images, 
+- X: set of prompts, 
+- C: set of latent variabels used to generate X from Y, st $P(y \mid X = x) = \int P(y|C = c)P(C=c|X=x)dc$
+- C is complicated so we introduce Z that's C-measurable. So Z maps C to Z which is the σ-algebra of ℤ which is the set of concepts (that's easier to work with than the set C)
+- now instead of using P(c|X) which describes how prompts induce latent distribution, we use P(c|Z). To define the situation in which information of Z is same as that of X, we define the notion of "sufficency". A set of concepts ℤ1,...ℤk is sufficient for a prompt X if 
+- $p(y |X=x) = \sum_{z_{i:k}} p(y | z_{1:k} )p(z_{1:k} | X=x)$ note how the integral over C becomes sum over Z 
 
-## Geometry of Categorical and Hierarchical Concepts
+### [linear representation]
+
+### Geometry of Categorical and Hierarchical Concepts
 Previous: binary concept with natural contrasts as direction in rep space 
 many natural concepts don't have contrasts
 features as vectors and representation of concepts as polytopes in rep space
 
-# James 
-
-## [Disentanglement with Biological Constraints](https://arxiv.org/abs/2210.01768)
-## [Transformer and hippocampus](https://arxiv.org/abs/2112.04035)
-## [Grid Cells from Minimal Constraints](https://arxiv.org/abs/2209.15563)
-## [Tolman-Eichenbaum Machine](https://www.cell.com/cell/fulltext/S0092-8674(20)31388-X)
 
 
-# Intrinsic Model Vectors
-### (Logit Lens)[https://www.lesswrong.com/posts/AcKRB8wDpdaN6v6ru/interpreting-gpt-the-logit-lens]
-The logit lens focuses on what GPT "believes" after each step of processing, rather than how it updates that belief inside the step.
 
-thoughts
+# [Geva](https://mega002.github.io/) and the Israeli gang
+### Background
+- [Logit Lens](https://www.lesswrong.com/posts/AcKRB8wDpdaN6v6ru/interpreting-gpt-the-logit-lens):The logit lens focuses on what GPT "believes" after each step of processing, rather than how it updates that belief inside the step.
+- mathematical framework of transformers: the final activation is sum of every layer's contribution. (they believe this means every layer operate on the same embedding space but it's equally possible that each layer uses different embedding)
+
+### Thoughts
 - can we study the intermediate residual spaces as we do on embedding or unembedding space. Note the E and U are WORD embedding. Intermediate layers may be sentence or concept embedding.
 
-## [Geva](https://mega002.github.io/) and the Israeli gang
-### Background
-- logit lens
-- mathematical framework of transformers
 
+## Vectors in Embedding Space
 ### MLP are Key value pairs
 Background
 - [Neural Memory (Sukhbaatar et al., 2015)](https://proceedings.neurips.cc/paper_files/paper/2015/file/8fb21ee7a2207526da55a679f0332de2-Paper.pdf). Exactly the MLP memory but non-linearity is softmax, used on RNN. It seems that the only difference btw these neural memory + RNN work and transformer is the attn module, which is highly efficient in mixing information. Sukhbaatar in his work in 2019 also relates the NM with MLP in transformer but didn't invesitigate what those memories are.  
@@ -351,9 +413,6 @@ key results
 thoughts
 - subtract target with value vectors and see if the remaining part matches any token embed
 
-### [How transformer recalls idioms](https://arxiv.org/abs/2210.03588)
-
-
 
 ### Everything in Embedding Space
 background 
@@ -365,10 +424,98 @@ key insights
 - now we rewrite attention and FFL as interaction between **tokens** instead of actual residual flows, to achieve input independence. 
 - rewrite VO of attention: index i for head. Each head has a WV (d by d_head) and WO (d_head by d). The whole WV dot WO can be seen as WVs dot WOs both concated. $W_{OV}=concatH(W_V^1,...,W_V^i,...,W_V^H)\cdot concatV(W_O^1,...,W_O^i,...,W_O^H)=\sum_i^H W_V^iW_O^i=\sum_i^H W_{VO}^i$ Therefore, when taking in X of (N by d) and attention pattern A of (N by N) we have $concatH(A^iXW_V^1,...,A^iXW_V^i,...,A^iXW_V^H)\cdot concatV(W_O^1,...,W_O^i,...,W_O^H)=\sum_i^H A^iXW_V^iW_O^i=\sum_i^H A^iXW_{VO}^i$. This will be added to the residual and should therefore be interpretable. To see what token it represents we use $A^iXW_{VO}^iE=A^i\hat{X}UW_{VO}^iE$. Attention pattern can be seen as linearly combining each row of X or $\hat{X}$ to produce new rows in embedding or token space. The token embedding is then passed to $UW_{VO}^iE$ which is input independent. It transitions an embedding in token space to another. (why not embeding space directly using WVO?)
 
+### Summary
+#### Key
+The method is to use prefixes of sentences (eg. I love dogs, I love, I)
+- top examples (prefixes) that trigger a key ![](/images/geva-kv-k-eg.png)
+- ![](/images/geva-kv-k-stat.png)
+
+#### Key centered value
+- for all keys, first find the top triggering example, then find the actual next token of this example, and see if it agrees with the most probable token associated with the value corresponding to this key ![](/images/geva-kv-kv-agree.png)
+- ![](/images/geva-kv-top-v-stat.png)
+
+Limitations
+- it's possible that for the agreeing key values, they are the same vectors. This is because the residual is already similar to the next token and the keys are therefore also similar to the next token and the value has to be the next token. This is reinforcement and is seen in late layers, so it's suppoorted by the rising aggrement rate at late layers. 
+- The shallow keys might be just the embedding of the pattern word. In fact, since the pattern word is the final word, and since it activates the key most stronger than sentence that appends something to the prefix. So their corresponding values might just be a bigram.
+- So the complete theory is that MLP's follow a spectrum of bigram to identity. 
+
+#### Value
+![](/images/geva-kv-v.png)
+
+
+#### Superposition
+- ![](/images/geva-kv-active-stat.png)
+
+- the sparsity of activations in MLP is expected because the whole idea of superposition relies on a filter, otherwise it becomes PCA. 
+
+#### Promotional Value
+- ![](/images/geva-kv-mlp-res-agree.png)
+
+
+
+## Factual Recall
+### [How transformer recalls idioms](https://arxiv.org/abs/2210.03588)
+
+
+### Dissecting Recall of Factual Associations
+
+
+
+
 ### [Visit](https://github.com/shacharKZ/VISIT-Visualizing-Transformers)
 
 
 ### [Diffusion](https://hila-chefer.github.io/Conceptor/)
+
+
+
+
+
+
+# LeCun/JEPA
+> transformer can be seen as perceiving the world and producing a current state vector at mid layers and then predict the next state at late layers (final layers can be seen as actor that select the best next actions/tokens)
+
+
+# ------- Neuro oriented -------
+
+
+# MIT
+## Fedorenko
+### 
+
+
+
+
+
+# James 
+
+## [Disentanglement with Biological Constraints](https://arxiv.org/abs/2210.01768)
+## [Transformer and hippocampus](https://arxiv.org/abs/2112.04035)
+## [Grid Cells from Minimal Constraints](https://arxiv.org/abs/2209.15563)
+## [Tolman-Eichenbaum Machine](https://www.cell.com/cell/fulltext/S0092-8674(20)31388-X)
+
+
+# Columbia
+## Temporal Straightening
+### BG
+- they first did experimental thing on humans to infer the perceptual curvature of sequence of images
+- second paper is on V1 neurons of monkeys
+
+### Large language models implicitly learn to straighten neural sentence trajectories to construct a predictive representation of natural language
+The critical insight comes from vision: because a sequence of visual inputs to the retina evolves in a nonlinear manner, and are difficult to extrapolate, visual system performs a series of transformation to make them easier to predict. The representation of input sequence is transformed to result in straighter the trajectory in the internal state,
+
+Curvature is calculated as angle which comes from arccos of dot product
+
+Thoughts
+- First the middle layer as representation of current sequence can support lots of other work. Most semantic steering and those meaniningful circuit effects happen at mid-layers. 
+- It's interesting that the middle layer residuals are similar (small curvature means small dot product) because they are all there are to represent the sequence, and they will each go on to evolve their corresponding next tokens. But in the representation view this is not surprising since adding one word should not change the representation of the sequence too much. 
+
+## Issa
+### Brain-Score
+![](/images/brain-score.png)
+Electroarray in monkey and record when seeing image. Linearly map btw ANN intermediate layer activation and the moonkey recording and check correlation.
+
+
 
 # Thoughts
 ## Features

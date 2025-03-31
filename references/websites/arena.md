@@ -952,7 +952,7 @@ decorator(func):
 def now_i_am_decorated(foo):
     return foo
 
-now_i_am_decorated()
+now_i_am_decorated("haha") # this calls decorated_func("haha") 
 
 ### ------ method decorator ------ 
 def a_decorator_passing_arbitrary_arguments(function_to_decorate):

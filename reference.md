@@ -316,6 +316,10 @@ Log and e:
 
 ### Z
 
+## Harmonic Analysis
+### Spherical Harmonics
+- [very good visual](https://youtu.be/YKGSN-98_Y4)
+
 ## *Transforms in Engineering
 ### Window Function
 - a mathematical function that is zero-valued outside of some chosen interval.
@@ -674,6 +678,9 @@ Alpha:
 Rao 1999
 - feedback connections from a higher- to a lower-order visual cortical area carry predictions of lower-level neural activities, whereas the feedforward connections carry the residual errors between the predictions and the actual lower-level activities.
 
+### Dynamics of Brain
+- [critical brain hypothesis](https://www.youtube.com/watch?v=hjGFp7lMi9A)
+
 ## Anatomical
 ### Mapping
 - [neuronal wiring diagram of a complete fly brain](https://www.nature.com/immersive/d42859-024-00053-4/index.html)
@@ -804,7 +811,7 @@ Barriers:
 Setting a "SMART" goal (specific, measurable, achievable, realistic, timely)
 
 # Computer
-## Graphics
+## Graphics (Also see Graphics under Engineering section)
 - [great interactive visual guide to everything](https://ciechanow.ski/lights-and-shadows/)(https://ciechanow.ski/cameras-and-lenses/)(https://ciechanow.ski/curves-and-surfaces/)
 
 ### 3D ML Models
@@ -863,6 +870,8 @@ Both encoders are pretrained transformers. Text encoder is GPT like while image 
 ![](/images/word-2-vec.png)
 note that there are two embedding matrices for context and non context word. Otherwise similar words will have similar embed with themselves AND next words and this repeats so everyone has same embed. 
 
+> not effective in identifying homographs (word with multiple meanings) as the representation is regression to a "mean" vector. 
+ 
 ### ELMo: Context Matters
 - A word has multiple meanings depending on context
 - Instead of using a fixed embedding for each word, ELMo looks at the entire sentence before assigning each word in it an embedding. 
@@ -912,6 +921,11 @@ we hypothesize that the structure of our winning tickets encodes an inductive bi
 #### Early Bird Tickets
 we discover for the first time that the winning tickets can be identified at a very early training stage, which we term as Early-Bird (EB) tickets, via low- cost training schemes
 
+## Graph Neural Network GNN
+- https://csustan.csustan.edu/~tom/Clustering/GraphLaplacian-tutorial.pdf
+- https://distill.pub/2021/understanding-gnns/
+- https://distill.pub/2021/gnn-intro/
+
 ## Other Topics
 ### Audio Transformer
 [wav2vec2](https://arxiv.org/abs/2006.11477)
@@ -922,7 +936,9 @@ we discover for the first time that the winning tickets can be identified at a v
 - encoder-decoder
 
 # Intelligence
-## Representation/concept
+See intelligence.md
+
+
 It's observed that neural networks, from LLM to basic MLP with a few dozen neurons (Hinton Nature), from autoencoders to RNNs, and with all learning paradiams from classification to RL and diffusion, there are activations of certain neurons that match our intuitive understanding of concepts. It feels to good to be true that one neuron can tell if an input is about a male or female, or that the input is about somthing old or new. 
 
 We first need to understand why. Why do they "have to" develop these concepts. Or why do WE have to develop these concepts. Theoretically, the network can perfectly fit the distribution without developing such intuitive features, just as we humans can think about each person as competely distinct things without the help of labels such as species or genders. To understand why we need such features we first analyze the differences when we do and do not abstract such regularities. We will use a the seemingly controversial example of deciding what to say when seeing a stranger. We have a concept of nationality and it's intuitive to use whatever language you believe is the person's native language based on your nationality guess. In contrast, if we don't use such a nice feature, but focus on, say, the length of his middle finger or the color of his lips, then even if we could end up using the right language based on these strange features, it would require a more complex decision rule. We should further develop a quantitative description of this example. Suppose that one nationality correspond to exactly one language preference, then we can say that the language we need to use depends exclusively on his nationality. It's important then to understand things that are "excluded" when making this decision. For example, it may not depend at all on their finger length or lip color. We borrow from physics and say that one's language preference is symmetric under change of lip color or finger length. Symmetric just mean being the same under those actions. 
@@ -931,49 +947,294 @@ Once we established that it's good to have this feature extraction ability, we c
 
 
 
-### Concept as Symmetry
+# ---- Engineering ---- 
+# Web2
+## JS (ECMAScript)
+### History
+- 1995. Brendan Eich at Netscape (now Mozilla).
+- 1995-2000s. JavaScript was adopted by other browsers (e.g., Internet Explorer, Firefox), each had its own JavaScript engine.
+- 2008. V8 engine (just-in-time machine code compilation) and Chromium browser
 
-## Linear
-### Concept Algebra
-- Y: set of images, 
-- X: set of prompts, 
-- C: set of latent variabels used to generate X from Y, st $P(y \mid X = x) = \int P(y|C = c)P(C=c|X=x)dc$
-- C is complicated so we introduce Z that's C-measurable. So Z maps C to Z which is the σ-algebra of ℤ which is the set of concepts (that's easier to work with than the set C)
-- now instead of using P(c|X) which describes how prompts induce latent distribution, we use P(c|Z). To define the situation in which information of Z is same as that of X, we define the notion of "sufficency". A set of concepts ℤ1,...ℤk is sufficient for a prompt X if 
-- $p(y |X=x) = \sum_{z_{i:k}} p(y | z_{1:k} )p(z_{1:k} | X=x)$ note how the integral over C becomes sum over Z 
+### Chromium and V8
 
-# Engineering
-## AI
-### Computer Use
+### Node.js
+- A runtime environment that lets you run JavaScript on servers (outside the browser) so you can use JS to handle data, manage http interaction, talk to database easily
+- Built on Chrome’s V8 JavaScript engine
+- npm ecosystem
+- express.js is part of the node.js ecosystem
+
+### .NET
+- backend
+- ASP.NET Core for web
+- .NET MAUI (Multi-platform App UI): Build native apps for iOS, Android, Windows, macOS.
+
+### React
+- Meta JS library for building UI
+
+
+
+## VSCode
+### Electron
+- 2013. OpenJS foundation
+- a software framework to create desktop applications using web technologies (mainly HTML, CSS and JavaScript)
+- uses Chromium to render and Node.js for backend
+
+### Moncaco editor
+
+### xterm.js
+VS Code includes a full terminal emulator (powered by xterm.js).
+
+### Language Server Protocol (LSP)
+1. When you write cpp, vscode starts the clangd server and communicates through JSON-RPC over stdin/stdout or a network socket. 
+2. clangd invokes the compiler (e.g., g++ or clang) in the background to generate compilation, syntax checks, and diagnostics, sending results back to VS Code.
+
+
+
+
+## Python 
+### uvicorn
+uvicorn is an ASGI (async server gateway interface) compatible web server. It's (simplified) the binding element that handles the web connections from the browser or api client and then allows FastAPI to serve the actual request
+
+### ASGI
+https://asgi.readthedocs.io/en/latest/
+
+### FastAPI
+FastAPI is a high-performance web framework for building HTTP-based service APIs in Python 3.8+. It uses Pydantic (a data validation library for Python. While writing code in an IDE, Pydantic provides type hints for schema validation and serialization through type annotations) and type hints to validate, serialize and deserialize data. FastAPI also automatically generates OpenAPI documentation for APIs built with it.
+
+```py
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+async def read_root():
+    return "Hello World!"
+```
+
+### Django
+a free and open-source, Python-based web framework that runs on a web server. It follows the model–template–views (MTV) architectural pattern.
+
+### Flask
+```py
+from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def hello() -> str:
+    return "Hello World"
+
+
+if __name__ == "__main__":
+    app.run()
+```
+
+
+
+# Commputer Automation
+https://github.com/trycua/acu
+
+[automa](https://github.com/AutomaApp/automa)
+
+## Products
+### General AI Agents
+Beam.ai
+- industrial level, founded 2022, small team (~50), Europe founder
+
+
 Computer Use (Anthropic)
 - screenshot based, move cursor (so OS wide)
 
 Operator/Computer Using Agent/CUA (openai)
-- 
+
 
 Manus
 
 
 Browser Use
-- optional screenshot, mainly DOM tree parser. 
+- python LLM run from terminal, optional screenshot, mainly DOM tree parser. 
 
 A5-Browser-Use
-- chrome extention with server side Browser Use 
+- local chrome extention with server side Browser Use 
+
+Proxy (Convergence)
+
+Project Mariner (Google)
+
+OmniParserV2 (Microsoft)
 
 CrewAI
+- [complete tutorial](https://youtu.be/ONKOXwucLvE)
 
 Atomic Agents
 
-## Automation
-Also see AI-Computer Use
+MindOS
+
+Second Me
+
+Arklex
+
+### Coding Agent
+Repl.it (read–eval–print loop (REPL))
+- history: google doc for code->JSRepl (used in Udacity and Codeacademy), code ran by emulation in browser->Monaco editor->code mirror
+- replit as shared online code editor (mainly for educators): [an example](https://replit.com/@wzh4/How-old-are-you?replId=96977cd1-658d-49ce-b073-e001e6b5d0e4), it's basically VSCode. 
+- then they added AI assitant and various useful features to make it really smooth, see above example
+- Now the default is the AI agent. See [example webpage with admin site and real email confirmation service](https://replit.com/@wzh4/WaitlistWizard)
+
+### Chat bots
+character.ai
+
+
+## Tools/Impementation
 ### Browser
 beautifulsoup
 
 selenium webdriver 
 - [tutorial](https://youtu.be/NB8OceGZGjA)
+```py
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+# Initialize the WebDriver
+driver = webdriver.Chrome()  # Or use webdriver.Firefox() for Firefox
+# Open a webpage
+driver.get("https://www.example.com")
+# Find an element by its name attribute and input text
+search_box = driver.find_element(By.NAME, "q")
+search_box.send_keys("Hello World")
+search_box.submit()
+# Close the browser
+driver.quit()
+```
+- arch:
+    - client: language specific libraries
+    - server: browser driver. lines like `driver.get("https://www.example.com")` send commands to the driver via HTTP requests.
+    - the server sends these commands to browser native protocols (eg Chrome DevTools Protocol, Marionette for Firefox, WebDriver Protocol for Edge)
+
+playwrite
+```py
+from playwright.sync_api import sync_playwright
+
+with sync_playwright() as p:
+    browser = p.chromium.launch(headless=False)  # Set headless=True for headless mode
+    page = browser.new_page()
+    page.goto("https://www.example.com")
+    page.fill("input[name='q']", "Hello World")
+    page.press("input[name='q']", "Enter")
+    browser.close()
+
+```
+
+pyppeteer
+```py
+import asyncio
+from pyppeteer import launch
+
+async def main():
+    browser = await launch(headless=False)  # Set headless=True for headless mode
+    page = await browser.newPage()
+    await page.goto("https://www.example.com")
+    await page.type("input[name='q']", "Hello World")
+    await page.keyboard.press("Enter")
+    await asyncio.sleep(5)  # Wait for results to load
+    await browser.close()
+
+asyncio.run(main())
+```
+### OS
+PyAutoGUI
+- all OS
+
+PyWinCtl
+- all OS
+- specifically for open applications managememnt
+
+pywinauto
+- windows
+
+### Document
+FAISS: an extremely efﬁcient, open-source library for similarity search and clustering of dense vectors, which can easily be applied to billions of vectors.
+
+[Dense Passage Retrieval DPR]
+
+[Retrieval Augmented RAG](https://en.wikipedia.org/wiki/Retrieval-augmented_generation)
 
 
-## AR
+# Graphics
+## Basics
+### Camera
+Focal length/field of view
+- ![](/images/focal-l-1.jpg)
+- ![](/images/focal-l-3.png)
+<!-- - ![](/images/focal-l-2.jpg) -->
+- focal length = 0.5 image width / tan(0.5 field of view)
+- increasing focal length makes far things big
+
+> Note that focal length  
+
+Focal distance
+- focal length is fixed for a lens. Focal distance is from the lens to the imaging plane and can be variable. 
+- Longer focal length focues on nearer things. 
+- changing focal distance doesn't change object size
+
+Deapth of Field (DoF)
+- https://developer.nvidia.com/gpugems/gpugems/part-iv-image-processing/chapter-23-depth-field-survey-techniques
+- Depth of field is the effect in which objects within some range of distances in a scene appear in focus
+- The range of distances within which the CoC is smaller than the resolution of the film is refered to as being in focus
+
+Aperture
+- ![](/images/dof.png)
+
+circle of confusion
+1. size of defocused point
+2. smallest blur spot a lens can make
+
+### Rasterization
+```c
+0. occlusion culling (discard triangles outside camera frustum, )
+1. project all triangles from world to camera and to NDC
+2. for each tile on screen
+    3. for each triangle in that tile
+        4. for each pixel in bounding box of triangle, check if pixel is in triangle
+            5. calculate z and compare with z-buffer, if test passed
+                6. update z-buffer and store result of fragment_shader() to color buffer
+```
+### Ray Tracing
+
+## K-Plane
+triplane (static)
+![](/images/triplane.png)
+
+6 planes (dynamic)
+https://sarafridov.github.io/K-Planes/
+![](/images/k-plane.jpg)
+
+
+## NeRF
+mipnerf
+- instead of nerf positional encoding, pass a gaussian encoding that encodes a neighborhood of points in a 3d gaussian approx a conical frustum to MLP
+
+dnerf
+- ![](/images/dnerf.png)
+- 2 modules:
+    - canonical network: original nerf MLP
+    - deformaiton network (x,d)->delta x: 
+
+## Gaussian Splatting
+
+
+
+
+4dgs
+- ![](/images/4dgs-1.png)  
+- 2 modules
+    - 3d gaussians
+    - spatio-temporal structural encoder H and MLPs: position of gaussian splatt and time is encoded to a vector from hexplane. deformation of position, rotation and scaling are computed with 3 separate MLPs. (from the code there's also optional spherical harmonic (3rd degree/16d) and opacity deformation head)
+
+
+
+
+
+# AR
 ### Interaction
 - [contact lens RF detection](https://www.nature.com/articles/s41467-024-47851-y)
 - [SSVEP](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4640776/): 60 characters/min
@@ -986,7 +1247,7 @@ selenium webdriver
 - EMG sensors 
 
 
-## Brain Hacks
+# Brain Hacks
 ### EEG Interpretation
 - [typing mega thread](https://openbci.com/forum/index.php?p=/discussion/206/openvibe-p300-speller-tutorial-questions)
 - [indian boy thread](https://anushmutyala.medium.com/muse-101-how-to-start-developing-with-the-muse-2-right-now-a1b87119be5c)
@@ -997,8 +1258,11 @@ selenium webdriver
 - [web muse](https://medium.com/@castillo.io/muse-2016-headband-web-bluetooth-11ddcfa74c83)
 - [web muse blog and eeg intro](https://medium.com/neurotechx/a-techys-introduction-to-neuroscience-3f492df4d3bf)
 
-# Dynamics of Brain
-- [critical brain hypothesis](https://www.youtube.com/watch?v=hjGFp7lMi9A)
+
+
+
+
+
 
 # Music
 ## Tools

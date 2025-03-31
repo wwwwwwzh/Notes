@@ -4,11 +4,20 @@
 - 2570 Great Pyramid [wonder]
 - c.2334-2154 Akkadian Empire
 - c.2055-1650 Middle Kingdom
+- c. 2000 Yu founded Xia [people,EA]
 - 1894-1595 Old Babylonian Empire
 - 1810-1750 Hammurabi [people]
+- c. 1600 Zi Lv/Tang (Taizu) founded Shang [people,EA]
 - c.1550-1069 New Kingdom
+- c. 1200 Trojan War [war]
+- 1046 Ji Fa (Wuwang) founded Zhou [people,EA]
+- 1046-771 Western Zhou [dynasty,EA]
 # Sea People
 - 911-609 Neo-Assyrian Empire
+- 814 Dido founded Carthage [people]
+- 795–771 Ji Gongsheng (Youwang) of Zhou [people,EA]
+- r. 770-720 Ji Yijiu (Pingwang) of Eastern Zhou [people,EA]
+- 771-256 Eastern Zhou (Luoyang) [dynasty,EA]
 - 753 Founding of Rome
 - 642-562 Nebuchadnezzar II [people]
 - 630-560 Solon [people]
@@ -98,7 +107,7 @@
 ---
 - 1304-1374 Petrarch (secular achievements do not necessarily preclude an authentic relationship with God, God has given humans their vast intellectual and creative potential to be used to its fullest)[people,science,art,philosophy]
 - 1337 Hundred Years War [war]
-- 1346-1352 Black death [pandemic]
+- 1346-1352 *Black death* [pandemic]
 - c. 1345s **Renaissance**
 - 1377-1446 Brunelleschi [people,art]
 ---
@@ -107,7 +116,7 @@
 - 1449-1492 Lorenzo Medici [people,monarch]
 - 1451-1506 Columbus [people]
 - 1451-1512 Amerigo [people]
-- 1452-1519 Da Vinci [people,science,art]
+- 1452-1519 *Da Vinci* [people,science,art]
 - 1453 **Fall of Constantinople** [war]
 - 1473-1543 **Copernicus** [people,science]
 - 1475-1564 Michelangelo [people,art]
@@ -372,3 +381,13 @@ A **country** is a distinct part of the world, such as a state, nation, or other
 A **sovereign state** is a state that has the highest jurisdiction over a territory. International law defines sovereign states as having a permanent population, defined territory (see territorial disputes), a government not under another, and has the capacity to interact with other sovereign states. It is also normally understood that a sovereign state is independent.
 
 A **government** is the system or group of people governing an organized community, generally a state.
+
+
+
+
+
+
+
+
+# China
+- 
