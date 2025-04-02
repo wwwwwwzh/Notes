@@ -245,8 +245,8 @@ https://jakevdp.github.io/blog/2017/12/05/installing-python-packages-from-jupyte
 import os
 from huggingface_hub import login
 
-os.environ["HF_AUTH_TOKEN"] = "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"
-login("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")
+os.environ["HF_AUTH_TOKEN"] = "token"
+login("token")
 ```
 - for some gated model, request access and all your API keys will have access
 
@@ -309,8 +309,12 @@ before running `pip install -e submodules/depth-diff-gaussian-rasterization`
 - export CUDA_ROOT=/nas/longleaf/rhel8/apps/cuda/11.8
 - export CUDA_PATH=/nas/longleaf/rhel8/apps/cuda/11.8
 - export CPATH="/nas/longleaf/rhel8/apps/cuda/11.8/includee"
-- 
+
 ### Colmap
+- **mamba install conda-forge::colmap**
+
+
+FAILED (no root user, cuda compile)
 - git clone https://github.com/colmap/colmap.git
 - cd colmap
 - mkdir build
@@ -326,8 +330,21 @@ before running `pip install -e submodules/depth-diff-gaussian-rasterization`
     -DCUDA_curand_LIBRARY=/nas/longleaf/rhel8/apps/cuda/11.8/lib64/libcurand.so \
     -DCMAKE_PREFIX_PATH="$CONDA_PREFIX" \
     -DCUDA_ENABLED=ON
+cmake .. \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=$HOME/colmap-install \
+    -DCMAKE_C_COMPILER=/nas/longleaf/rhel8/apps/gcc/11.2.0/bin/gcc \
+    -DCMAKE_CXX_COMPILER=/nas/longleaf/rhel8/apps/gcc/11.2.0/bin/g++ \
+    -DCMAKE_CUDA_FLAGS="-ccbin=/nas/longleaf/rhel8/apps/gcc/11.2.0/bin/gcc" \
+    -DCMAKE_PREFIX_PATH="$CONDA_PREFIX" \
+    -DCUDA_ENABLED=ON
+cmake .. \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=$HOME/colmap-install \ 
+    -DCMAKE_PREFIX_PATH=$CONDA_PREFIX \ 
+    -DCUDA_ENABLED=OFF  
 
-- make -j32 (use lscpu to see how many cores)
+- make -j32 (use `lscpu` to see how many cores and `ulimit -a` to see memory size)
 - optional if failed: make clean
 - make install
 in bash: 
@@ -339,6 +356,8 @@ export colmap_DIR="$HOME/colmap-install/share/colmap"
 ```
 - source ~/.bashrc
 - colmap -h
+
+
 # Conventions
 ## Naming Convention
 ### Variable

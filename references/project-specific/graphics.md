@@ -8,7 +8,7 @@ See [reference.md](../../reference.md#graphics)
 - Bundle Adjustment
 - multiview stereo (MVS)
     - patch match
-    
+
 
 ## Rendering
 ### Coordinate transform
@@ -68,10 +68,10 @@ https://colmap.github.io/format.html
 ### LLFF
 poses_bounds.npy
 - camera-to-world, 3 by 5 matrix plus 2 float
-- first 3 columns are rotation with axis [down, right, backwards]
-- 4th is translation 
-- 5th is [height, width, focal]
-- this matrix is flattened to concat the close and far depths.
+- extrinsic: first 3 columns are rotation with axis [down, right, backwards]
+- extrinsic: 4th is translation 
+- intrinsic: 5th is [height, width, focal]
+- this matrix is flattened to concat the close and far depths. [n_imgs 17]
 
 ```py
 images, depths, masks, poses, bds, render_poses, ref_c2w, motion_coords, bg_masks = load_llff_data(args.datadir,  args.start_frame, args.end_frame, args.factor, target_idx=target_idx, recenter=True, bd_factor=.9, spherify=args.spherify,  final_height=args.final_height)
@@ -88,8 +88,8 @@ images, depths, masks, poses, bds, render_poses, ref_c2w, motion_coords, bg_mask
     - images_bokeh: jpg 1880x720 (focus on a certain depth)
     - motion_masks: jpg black-white 940x360
 
-    - sparse/0
-        - cameras.bin: 1: {'model': 2/PINHOLE, 'width': 1880, 'height': 720, 'params': (544.2031891338942, 940.0, 360.0)}
+    - sparse/0 (one camera)
+        - cameras.bin: 1: {'model': 2, 'width': 1880, 'height': 720, 'params': (544.2031891338942, 940.0, 360.0)}
         - images.bin: 
         - points3D.bin: 27k points
     - database.db
@@ -207,4 +207,21 @@ images, depths, masks, poses, bds, render_poses, ref_c2w, motion_coords, bg_mask
 - python 3.9
 - mamba
 - 4dgs, d2rf pkgs, torch with cuda11.8
-- colmap with conda cmake
+- FAILED: colmap with conda cmake
+- mamba install conda-forge::colmap
+
+### Code
+scene->dataset_reader
+- readColmapSceneInfo: needs "images" and "sparse/0"
+
+## D2RF
+### Code
+config
+- start_frame end_frame are not used
+
+
+load_llff
+- only images_bokeh is used as image data (sorted)
+- the downloaded dataset used factor 2 which is default llff factor and images_2 contains downsampled bokeh image
+- llff_holdout is  2 which means it's using every second image (left for train, right for test)
+- the internal dimensions and return dim is a little different, the final shape for poses is (N_imgs, 3, 5) and for imgs (N_imgs, 360, 940, 3)

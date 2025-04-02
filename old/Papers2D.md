@@ -186,9 +186,11 @@ Conditional generative models model p(x|y) and in diffusion case is proportional
 In classifier free guidance, an unconditional diffusion model and a conditional diffusion model are trained jointly with a single network. The barycentric combination of these two models are used to update current image.
 
 
-### [Stable Diffusion](https://arxiv.org/abs/2112.10752)
+
+### [Stable Diffusion/Latent Diffusion](https://arxiv.org/abs/2112.10752)
 ![](/images/stable-diffusion.png)
 
+- x is image and E is a pretrained frozen image encoder, the image is paired with things on the right (conditioning)
 - Diffusion on latent space (auto-encoder) "training diffusion models on such a representation allows for the first time to reach a near-optimal point between complexity reduction and detail preservation"
 - OpenClip encoding of text added to all attention layers at every time step. 
 - Cross attention from image and text encoding (Q: image, K,V: text)

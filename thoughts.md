@@ -37,7 +37,10 @@
 - since attn pattern uses softmax, contribtion of the output at a token position from all previous tokens should concentrate on just one or two previous tokens. So a information flow diagram can be automatically created for each forward pass. 
 
 ## Big
-### Computer Tool
+### Agent collab
+- when multiple agents are powerful, you might want to copy one's answer to another to ccross-validate. is there an efficient way for many chatbots to converse?
+
+### Computer Tool (currently framed under AI agent)
 - (this can now be built on codes like browser use) universal human memory enhancement on computer, take in all user info and organize them and generates a tree like structure based on time and topic. For example, every websites i visited these days or books i read or messages i sent should be summarized and organized to provide easily accessible memory tool (i can ask what i learned yesterday or what are my thoughts for a certain topic)
 - online annotator where instead of highlighting most highlighted sentences or comments, use AI to summarize annotations so people can search if they don't understand sth (should also work on things like Piazza)
 

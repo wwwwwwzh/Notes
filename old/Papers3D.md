@@ -165,7 +165,8 @@ Scene prior is necessary because 4d light field itself isn't 3d consistent (nerf
 ![](/images/ibr.png)
 ![](/images/ibr2.png)
 
-### [NeRFormer ICCV 21]
+### [NeRFormer/CO3D ICCV 21](https://arxiv.org/pdf/2109.00512)
+- 50 categories 19k objects
 Similar to IBR net
 ![](/images/nerformer.png)
 
@@ -214,6 +215,12 @@ Implementation details:
 Comparison with other work:
 - Pixelnerf:
 - 
+
+
+## Diffusion Based
+
+
+
 
 ------------------------------------------------
 # Generative

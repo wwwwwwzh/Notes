@@ -24,13 +24,21 @@ workflow
 - 
 
 plan
-- under the repo the output at each analyzer step should also be stored
-- the ast should also give all variables and function calls inside functions 
+
 
 3.30
 - llm analyzes readme and find the entry file
 - entry file is parsed with ast and all of its function names and codes are stored
 - each function is analzed by llm to create a short summary text and detailed description
+- (plan) under the repo the output at each analyzer step should also be stored
+- (plan) the ast should also give all variables and function calls inside functions 
+
+3.31
+- entry file analyzer input is the file tree and the input (first summarized by a small hf model)
+- entries are lists of structure that include file name and function name
+- the entries are used to build ast
+- ast nodes now has two types, internal call and code literal. internal calls have child nodes. 
+- (plan) the whole tree should be built and the user will either see a default tree at a depth or they can type in what they want to focus on and see a new tree that omit unimportant parts (search 2 levels, find potential nodes (increasing number?) at first level and recurse). 
 
 ## Presentation
 

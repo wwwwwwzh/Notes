@@ -104,6 +104,10 @@ we posit a speciﬁc mechanism for storage of factual associations: each midlaye
 
 We hypothesize that MLPs can be modeled as a linear associative memory; note that this differs from Geva et al.’s per-neuron view.
 
+
+
+
+# Traditional
 ## General Interpretability (Non transformer specific)
 https://christophm.github.io/interpretable-ml-book
 
@@ -112,6 +116,8 @@ https://christophm.github.io/interpretable-ml-book
 ### Shapley
 - cooperative game theory
 - total direct effect from the mean
+
+
 # MI (Anthropic)
 ## Vision Circuits
 [feature visualization](https://distill.pub/2017/feature-visualization/)

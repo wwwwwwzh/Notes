@@ -1200,16 +1200,17 @@ circle of confusion
 ```
 ### Ray Tracing
 
-## K-Plane
+## SfM
+### K-Plane
 triplane (static)
 ![](/images/triplane.png)
 
-6 planes (dynamic)
+hex-plane (dynamic)
 https://sarafridov.github.io/K-Planes/
 ![](/images/k-plane.jpg)
 
 
-## NeRF
+### NeRF
 mipnerf
 - instead of nerf positional encoding, pass a gaussian encoding that encodes a neighborhood of points in a 3d gaussian approx a conical frustum to MLP
 
@@ -1219,8 +1220,17 @@ dnerf
     - canonical network: original nerf MLP
     - deformaiton network (x,d)->delta x: 
 
-## Gaussian Splatting
+### [Gaussian Splatting](https://github.com/graphdeco-inria/gaussian-splatting)
+summary
+- generalized point cloud with 3D gaussians as graphical primitives
+- each Gaussian is defined by xyz coordinate, 3 by 3 covariance matrix (defactorized into scale and rotate to learn positive definite matrix), opacity, shperical harmonic (degree 2 for first 1000 steps and 3 for rest)
+- The Gaussian distribution distributes opacity so opacity at a point is a*G(x)
+- Since they are graphical primitives, [traditional rasterization pipeline](#rasterization) is used. Due to properties of gaussian, the world to image space projection is easy. Note that instead of NeRF like ray sampling during  training, 3dgs renders the whole image and compare with gt (whole image is faster with rasterization)
 
+details
+- there is a graphical viewer 
+
+## Dynamics
 
 
 
