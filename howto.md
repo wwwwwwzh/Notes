@@ -245,8 +245,8 @@ https://jakevdp.github.io/blog/2017/12/05/installing-python-packages-from-jupyte
 import os
 from huggingface_hub import login
 
-os.environ["HF_AUTH_TOKEN"] = "token"
-login("token")
+os.environ["HF_AUTH_TOKEN"] = x # x is "token"
+login(x)
 ```
 - for some gated model, request access and all your API keys will have access
 
