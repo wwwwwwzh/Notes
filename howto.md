@@ -241,13 +241,8 @@ https://jakevdp.github.io/blog/2017/12/05/installing-python-packages-from-jupyte
 
 
 # Huggingface
-```py
-import os
-from huggingface_hub import login
+authentication code cannot be put here since github disallow it
 
-os.environ["HF_AUTH_TOKEN"]
-login(x)
-```
 - for some gated model, request access and all your API keys will have access
 
 # conda
