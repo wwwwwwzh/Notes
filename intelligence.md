@@ -1,3 +1,19 @@
+# Summary
+## Interp
+- We interpret 2 kinds of things, the transformation and the output/input of transformations. Circuit analysis, path patching, attention head analysis, MLP analysis, are all transformation analysis. Lens, scopes, SAE, superposition, representation, feature, all refer to the objects being transformed. 
+- We can also edit them. Editing the weight/transformation is model editing. Editing the activation is feature steering/control.
+- features uncovered by probes are like cells under microscope, at first it looks unreasonable, but then you can understand their structures completely. Can we do the same for ANN? 
+
+### Problems
+- The problem is that we can never truly "understand" anything, the circuit nor the feature, just as we can never understand what a piece of DNA does, or what exactly an oxygen atom is. This is because the space of representations in the model (similarly the space of states of the universe) and the action space of the transformations (similarly the space of physical laws) are extremely big, or infinite (this translates to infinite information to do anything, see section below). Therefore, when we answer the "what" question, eg, what is this feature/circuit, we are selecting uncountably infintie elements from a even larger space. This is like asking you to define a word, you can always have ambiguous examples of the word that requires modidying the definitoin. In literature, ths is called "contrastive", or "counterfactual".  
+- The effect of this is that we can never have a completely "safe" interp application. We can never fully steer the model's behavior so it's jailbreak proof or be 100% sure that the steering didn't introduce unwanted side effects, just as we can't safely edit a gene, or commit a perfect crime. 
+- The fortunate part is that we live in a universe of symmetries. All intelligent systems try to simulate such symmetries. Symmetries enable abstractions and information compression. Human words are abstract. 
+- Adding to the problem above, language model is inherently hard to interpret because language is abstract as opposed to visualizable things. In CNN, we can see the features. In gene editing, we can see the proteins and every molecule of interest. In language, the token to token transition is the default atomic step since humans cannot reflect any deeper why a word follows another while they speak. So the language interp problem is like knowing a force changed the state of an object but there are 100 more tinier steps in between that are also unobservable. However, this in-between-thoughts problem is not completely unknown. When I say (1+1)x2=, you can say 4 directly. When I say what's the thing on top of the thing next to your bed, you can again directly say it. When you parse a sentence like "puer dona puelae _", for different levels of speakers you might go through different degrees of internal thoughts before again directly giving the answer. These in between rough visual or symbolic or even positional thoughts are not linguistic, but they do exist in everyday lives. Another example is the feeling of highlight in a  conversation. You might focus on a phrase the other party said because it's the most relavant to your answer. In a long conversation, you might have unconscious (by this i mean thoughts not yet clearly articulated in brain) thoughts rising and falling which ultimately contribute to your response. These thoughts are like those mid-layer activations from eariler tokens that contribute to the outputs.
+
+## Machine Learning
+- It's actually engineering miracles that we have several learning methods that scale so well. 
+- The 3 main techniques of learning are supervised learning, generative/predictive learning, and reinforcement learning. 
+
 # Basics
 ## Transformer
 - $\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V=[V^T\text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)]^T$
@@ -118,7 +134,7 @@ https://christophm.github.io/interpretable-ml-book
 - total direct effect from the mean
 
 
-# MI (Anthropic)
+# Anthropic
 ## Vision Circuits
 [feature visualization](https://distill.pub/2017/feature-visualization/)
 
@@ -170,7 +186,7 @@ https://christophm.github.io/interpretable-ml-book
 
 
 ## Transformer
-### [First Circuit Analysis](https://transformer-circuits.pub/2021/framework/index.html)
+### [Weight (as opposed to patching and activation based) Based Circuit Analysis](https://transformer-circuits.pub/2021/framework/index.html)
 - 2 layer attention no MLP
 - linearity in residual stream
 - The fundamental action of attention heads is moving information. They read information from the residual stream of one token, and write it to the residual stream of another token.
@@ -203,10 +219,52 @@ We study 0 to 2 layer attn with only embedding, multihead attention, residual, a
 ### [Induction Heads and in context learning](https://transformer-circuits.pub/2022/in-context-learning-and-induction-heads/index.html)
 - Perhaps the most interesting finding was the induction head, a circuit whose function is to look back over the sequence for previous instances of the current token (call it A), find the token that came after it last time (call it B), and then predict that the same completion will occur again (e.g. forming the sequence [A][B] … [A] → [B])
 
+
+### [(Background) Word Embedding Vis](https://github.com/juexZZ/WordEmbVis)
+> The key insight of this work is that the relationships visualized in the human selected subsets represent more elementary word factors and a word vector is a linear combination of a sparse subset of these factors.
+- decompose word embedding to non negative overcomplete set of vectors (word factors), based on k-sparse autoencoder and spectral clustering 
+- manually label the factors
+- various visualizations for different purposes
+    - ![](/images/emb-vis-1.png)
+    - occupaction word factor: ![](/images/emb-vis-2.png)
+    - ![](/images/emb-vis-3.png)
+
+### [(Background) Transformer Vis](https://transformervis.github.io/transformervis/)
+> We view the latent representation of words in a transformer as contextualized word embedding.
+
 ### [Sparse Autoencoder](https://transformer-circuits.pub/2023/monosemantic-features/index.html)
 Crucially, we decompose into more features than there are neurons. This is because we believe that the MLP layer likely uses superposition to represent more features than it has neurons (and correspondingly do more useful non-linear work!)
 
 ![](/images/arena-sae-diagram-2.png)
+
+### [Transcoder]
+> MLP sublayers make fine-grained circuit analysis on transformer-based language models difficult. In particular, interpretable features—such as those found by sparse autoencoders (SAEs)—are typically linear combinations of extremely many neurons, each with its own nonlinearity to account for.
+
+structure
+- ![](/images/transcoder-1.png)
+
+attribution graph
+- activation (ROME) or attribution (Nanda) patching 
+
+### [Crosscoder](https://transformer-circuits.pub/2024/crosscoders/index.html)
+> Where autoencoders encode and predict activations at a single layer, and transcoders use activations from one layer to predict the next, a crosscoder reads and writes to multiple layers. ![](/images/crosscoder.png)
+
+recall that superposition means features vectors (assume invariant under scaling) overcompletely span the embeddnig space. Thus an activation might mean very different things at the same time, hindering interpretabilty. SAE resolves superposition within layer. Crosscoder aims to resolve it across all layers. ![](/images/crosscoder-1.png)
+
+structure
+- each layer has an encoder and decoder, we compute a shared encoding from activations of all layers and decode this to all layers and train on recon and L1 loss
+- this is better than SAE because sae might reuse lots of previous layer features (layers remain across layers) and use them in compositional fashion ![](/images/crosscoder-2.png)
+
+### [cross layer transcoder](https://transformer-circuits.pub/2025/attribution-graphs/methods.html)
+- reconstruct MLP output at layer l with sum of all previous (including current) layers' MLP input transformed (encoded then decoded). L1 on all CLT features. ![](/images/clt-1.png)
+- to analyze, run the input twice, first normal run and record everything, then use MLP inputs to calculattet CLT outputs. 
+
+Attribution Graphs
+- from transcoder
+
+### https://transformer-circuits.pub/2025/attribution-graphs/biology.html
+probes and microscope, attribution graphs and wiring diagram
+
 
 
 
@@ -227,18 +285,36 @@ Crucially, we decompose into more features than there are neurons. This is becau
 
 > Thoughts: for the prompt injection, the transformer is autoregressively generating future tokens. This is essentially very similar to directly let the model generate tokens autoregressively. The only difference is the compressed injected token at first token location. This just confirms the compression hypothesis.
 
+### Attribute Lens
+See [Relation section, Linear Relation](#relation)
 
-## Recent work
+## Self-interp
 ### Selfie
 > it might work as an probe where you just need a clever question after the injection to check some feature built into the activation, and when they are incorporated. For example, if you do "eis ea librum misserunt" (need to check how latins are tokenized) you might have questions to elicit the plural and perfect tense feature and see at which layer they emerge. 
 > Also it's possible to study the subspaces with this approach. in fact, all logit lens works can be restudied with this apprroach as a new lens
 
+### LatentQA
+train a decoder/interp LLM st prepending activation to a given set of questions will answer questions about the activation
+![](/images/latentQA-1.png)
+
+### PatchScope
+Instead of asking model to summarize as in Selfie or using a predefined set of questions as in LatentQA, use ICL to define a task and let the task elicit behavior on the patched activation
+
+![](/images/patchscope-1.png)
+
 # Patching
+- Sufficiency: we say a path is sufficient for a function when we give the input of the function to the path and it outputs the output of the function under ANY variation of ALL other paths. That is, we can patch any path other than this path with anything, and the model can still achieve the behavior of the function. 
+- Necessity: we say a path is necessary for a function when we vary the input of the function to the path and it doesn't output the output of the function given we give the original input to ALL other paths.
+
+Note
+- function: I use the word function to define a behavior or task. For example, the task of IOI is to output the indirect object name for a certain input template up to variation of names and places (as in the original paper). This defines the set of all mappings the circuit needs to model. 
+- domain: it's important to define our domain of interest for the task. For example, in the IOI task, the domain is defined by the variable places and names. What if we add anything before or after the prompt and the circuit no longer models the task? Does that matter to you? In theory, every counterfactual adds something to the domain. By thinking of more variety of counterfactuals, you make your circuit more robust, or being able to remain the same under more symmetries.
+- symmetry: a symmetry is a transformation that makes something intact. For example, newtonian laws of physics are symmetric under translation of space and time. We can define a task this way, and because a task is equal to the circuit that implemnts it, we can define circuits with symmetry too. For example, the IOI task is symmetric under place and name change (constrained by S1, S2, IO ordering). We could add more symmetry like some grammatical symmetry (eg, To the store Alice and Bob went, and there Alice gave her wallet to _)
 ## Intuition
 ### Model the world
-The practice of "knocking out" is ancient for experimental scientists. We knock out genes or generals in war to see the effects. As a living thing, we want to model the world. To model the world, we sometimes disentangle the building blocks (with varying scale) and model them individually so the total effects can be summed from the parts. Since models benefitial for living are inherently causal (we want to be sure that a snake causes the poisoning), we developed the tool of knocking out to study causal effects of parts of the system.
+The practice of "knocking out" is old for experimental scientists. We knock out genes or generals in war to see the effects. As a living thing, we want to model the world. To model the world, we sometimes disentangle the building blocks (with varying scale) and model them individually so the total effects can be summed from the parts. Since models benefitial for living are inherently causal (we want to be sure that a snake causes the poisoning), we developed the tool of knocking out to study causal effects of parts of the system.
 
-One problem is that we sometimes are able to knock sth out and observe something, but can't observe what hapended in between (there are many reasons why we can't observe everything but think about chaos, quantum effects and cost). This means we can't model the actual causal effect (direct effect in literature). If we change location or introduce a small change to the system our model might go wrong. The indirect effect must be removed from the total effect when we run the experiment.
+One problem is that we sometimes are able to knock sth out and observe something, but can't observe what hapended in between (there are many reasons why we can't observe everything but think about chaos, quantum effects and cost).  If we change location or introduce a small change to the system our model might go wrong. The indirect effect must be removed from the total effect when we run the experiment.
 
 ### Transformer
 When we study the effect of a sequence of genes, we might discover that it produces a protein, which interacts with other proteins to support a certain function in a certain cell, which in term interacts with some other cells that produce another function. Sounds familiar?
@@ -321,7 +397,7 @@ Sample harmless instruction prompt:
 ## Path Patching
 ### IOI in the wild
 Thoughts 
-- The author tries to find a minimal circuit that completely describes a task. They used activation patching first. First thing to know is that activation patching (AP) requires a clever selection of counterfactual prompts. Any element of importance found by AP is necessary and sufficient for the hypothesized behavior. 
+- The author tries to find a minimal circuit that completely describes a task. They used activation patching first. First thing to know is that activation patching (AP) requires a clever selection of **counterfactual prompts**. Any element of importance found by AP is necessary and sufficient for the hypothesized behavior. 
 - Formalizing this in terms of group theory: we first define invariance. In the IOI task, the invariance is the concept expressed by the prompt where 2 people are in a shopping place and one gives something to another. A symmetry is a change in the prompt that retains these concepts. One symmetry could be changing the first word btw "when" and "as" or the place word btw "store" and "market". We want to find counterfactuals, which breaks the symmetry. For example, changing S2 to a third person or "gave" to "paid" or simultaneously changing "store" to "war" and "gave a bottle of milk to" to "shot a bullet at". 
 - A circuit partially represents an invariance as it "fixes" a missing part when given the others (imagine a square with one corner missing and a function can fill the corner under any symmetry of the square). 
 - In summary, there's one circuit for each invariance and we find these circuits by finding  
@@ -338,14 +414,36 @@ Result
 ![](/images/ioi-in-wild-diagram.png)
 
 
+Path Patching
+- Original distribution is P_IOI, corrupted distribution is P_ABC where ABC are 3 random names, this is to preserve some grammatical structure of being valid subject and object and being common human names. 
+- 
+
+
 
 ### LOCALIZING MODEL BEHAVIOR WITH PATH PATCHING
-- nodes are functions and edges are values
+- X is the set of inputs, G is the function that can be represented by a graph. nodes are functions and edges are values. For example, a two layer FFN with skip connection can be represented as:
+- ![](/images/path-patching.png), where A is addition. If our hypothesis is that the path from x to f0 to y is unimportant, then we view the graph as union of two graphs, and we give corrupted input to the hypothetical unimportant path and the clean input to the rest. If the output is invariant under corrupted inputs of the unimportant path, then we say that path is unimportant. 
 - Formally, a hypothesis H is a tuple (G, δ, S, D) where δ: Y^2→ R is some measure of dissimilarity. S is a set of “important nodes”, G \ S are the unimportant nodes, and D is a joint distribution over (x_r, x_c) pairs (counterfactual data provider).
 - The strictest version of what it means for H to hold is that $δ(G(x_r), G_H(x_r, x_c))$ is exactly zero everywhere on D. We use AUE, averaged unexplained effect, which is expectation of the above formula.
 
+### Automatic circuit discovery
 
 
+
+### Greater Than
+path patching
+- why given "the war lasted from 17{YY} to 17" gpt-2 outputs >YY continuations 
+- path patching: B shows we are patching direct influence of MLP10 to logits, without altering its influence on MLP11 or attn11. C shows effect of ATTN10 through MLP10 to logits. Note that MLP10 is receiving clean input from residual9, different from B. Also note that ATTN10 still contributes clean output to MLP10, this is because we want the path like (ATTN10, MLP10, ATTN11, logits) to be clean. This is a consequence of every edge denoting an independent influence, ie, every combination of connected edges is a unique independent path. ![](/images/greater-than.png) 
+> "In path patching, we specify new input tokens, and a path of components through which they will reach the logits. For example, if we want to ascertain the effects of MLP 10 on the logits, we can patch the direct path (MLP 10, logits) with new input, which we call the 01-input: “The war lasted from the year 1701 to the year 17”. We thus alter MLP 10’s direct effects on the logits without changing its output to the attention and MLP of layer 11 (Figure 3). If the model’s behavior (as indicated by its logits) changes, we can be sure that this is because MLP 10 is important to that behavior; it is not due to downstream components. Earlier methods like interchange interventions lack this distinction—when they alter a component, they affect all components downstream from it."
+> 
+> Note: each edge means an influence. Note that in traditional transformer graph, influence from eariler layers are incorporated into the output of addition. Here the graph is more strict: if there's an influence from a node to another, then there must be an edge
+- we found a path at late layers (full circuit in appendix) and prove it's both sufficient and necessary by patching the path with clean while giving corrupted inputs and by patching the path with corrupted while giving clean. ![](/images/greater-than-2.png) 
+
+circuit analysis
+- attention heads: end token query attend to YY, the start year. 
+- 9-11 MLP: output has high similarity with >YY numbers and low for <YY numbers. ![](/images/greater-than-3.png) 
+- PCA of input and output of some MLP and attn heads at last token show clear structure. ![](/images/greater-than-4.png) 
+- output of individual neuron in MLP10: ![](/images/greater-than-5.png) 
 
 # Feature
 ## MIT
@@ -384,8 +482,114 @@ features as vectors and representation of concepts as polytopes in rep space
 
 
 
+# Prompt Tuning
+## Evolution of Techniques
+### AutoPrompt
+- dot gradient on prefix with word embedding to find k top tokens close to the gradient. Then update from the k tokens with the one that gives best result.
 
-# [Geva](https://mega002.github.io/) and the Israeli gang
+### P-Tuning
+- BERT continous prompt with MLP pormpt encoder on NLP tasks. 
+- prompt tuning can further improve fully fine tuned models
+
+### Prefix Tuning
+- ![](/images/prefix-tuning.png)
+### [Scaling Law](https://arxiv.org/pdf/2104.08691)
+- prompt tuning converge in GLUE score to full finetuning as model size increases
+- 5 to 20 prefix token length might be optimal. But the number decreases with larger model size. At 10b, one token prompt achieves comparable performance.
+
+
+### RLPrompt
+
+## Interp
+### Prompt Waywardness
+- for any discrete target prompt p_d, there exists a continuous prompt p_c such that: 1. p_c's nearest neighbor projection is p_d and 2. loss is similar with optimal p_c*
+- ![](/images/prompt-wayward-1.png)
+- Someone, like a big tech company, might offer a task prompt they tuned but includes malign behavior. You can't tell this because projection might show benign tokens ![](/images/prompt-wayward-2.png)
+
+### Soft prompt might be a bug, not feature
+- soft prompts occupy regions in the embedding space that are distinct from those containing natural language. Blue is soft red is natural prompt. ![](/images/soft-prompt-dist.png)
+- cosine or L2 nearest neighbor projection reduces task acc to 0
+- soft prompts are robust to magnitude reduction but sensitive to direction perturbation >30 degree (99.4% natural prompts cluster in direction, meaning they are 30 degrees near their nearest neighbor). Natural prompts are robust to both.
+
+### Is Continuous Prompt a Combination of Discrete Prompts?
+- Decomposing Soft Prompt to Combination of Interpretable Natrual Prompts 
+- p is soft prompt, r is weights of length |V|, E is embedding matrix, M is LLM, ⊕ means concat
+- train r with 3 losses:
+    - distance of reconstruction and soft
+    - $E_{x∼D}E_{a∼r,e∼E}[aD_{KL}(M(p ⊕ x), M(e ⊕ x))]$ discrete prompts with larger values should have outputs on downstream tasks that are as consistent as possible with the continuous prompt.
+    - sparsity L1 loss on r.
+- ![](/images/soft-prompt-decomp.png)
+
+### Toward Human Readable Prompt Tuning (FluentPrompt)
+- using energy update on the prefix with fluency constraint (probability of LLM generating the whole prompt sequence)
+- the learned prompts increases Surface Form Competition so they do a calibration loss. 
+- sample prompts: Kubrick, "The Shining; Paramount, "The Shining; Kubrick\’s "The Man; disappointing.\n\n"
+- disappointing.\n\n" is to balance the bias of surface form competition
+
+#### Gradient-Based Constrained Sampling from Language Models (MUCOLA)
+- instead of autoregressively geneating sentence, initialize a fixed length output and update all by descendnig the energy function
+- $E(y)\;=\;-\,\log P(y\mid x)\;-\;\sum_i\lambda_i\bigl(\epsilon_i - f_i(y)\bigr)$. $P(s)=e^{-E(s)}$ in boltzmann distribution so $E=-\log P(s)$. You can define arbitary  constraint function that takes the output and gives energy.
+
+#### [Surface Form Competition: Why the Highest Probability Answer Isn’t Always Right](https://aclanthology.org/2021.emnlp-main.564/)
+- for a multiple choice question, prompting LLM with neutral prompts like "choose from the following ABCD" should result in equal prob for all 4 answers. 
+
+### Sparse Entropy Regularization for RLPrompt Tuning
+
+### Linear Combination of Discrete Prompt Embeddings (MIT)
+- select a few prompts and learn a weighting 
+
+# John Hewitt
+### Control Task for probing
+- Use probes to train on random correspondence tasks and if accuracy is high, the structure found by this probe in desired tasks might not mean the hidden activation itself contain the structure, but that the probe iis powerful enough to learn it. Selectivity = mean acc - mean control task acc
+- > "as long as a representation is a lossless encoding, a sufficiently expressive probe with enough training data can learn any task on top of it."
+- With popular hyperparameter settings, MLP probes achieve very low selectivity
+- linear and bilinear probes are better (26% selectivity vs 4.5%), small internal hidden dim of MLP and small training size improves selectivity
+
+## Backpack
+### [Backpack Language Model](https://backpackmodels.science/)
+- train senses decomposition (MLP d->4d->d->kxd) and weight assignment function (transformer) end to end for next token prediction. 
+- ![](/images/backpack-senses.png)
+> Note that this kind of linear decomposition is very different from prompt tuning soft to hard projection. The interpretability of the senses vector here stems from they being the last layer before creating logits. Thus they don't go through the super non-linearity of a transformer as in prompt tuning.
+- ![](/images/backpack-control.png)
+
+### [Model editing with canonical example]
+- use very few examples to generalize the behavior while avoid distribution shift
+- compared LORA, full finetunign and MEMIT, LORA is best
+- sense finetuning on backpack, which selects and finetunes a few (≈ 10) sense vectors for each canonical example, and find that it outperforms other finetuning methods
+
+sense tuning
+- select important senses: 
+- gender bias
+
+questions
+- do they mask the attn, because the first word should supposedly give different sense weights depending on later continuations
+
+
+## Neologism
+### Schut AlphaZero knowledge transfer
+> The super-human ability of AI systems may arise in a few different ways: pure computational power of machines, a new way of reasoning over existing knowledge, or super-human knowledge we do not yet possess. This work focuses on the last two cases.
+
+Concept
+- we define concepts as a unit of knowledge. Unit implies minimality and knowledge implies usefulness towards a task
+- in practice, this means a concept can be transferred to another agent to help it solve a task
+- we assume concepts are linearly encoded in latent space of NN
+- in the RL task, we aim to find concepts (representing reason) that give rise to concepts (representing plans) optimizaing for concepts (goals).
+
+### Model Editing with Canonical Example
+
+### Neologism Position
+
+
+Thought
+- can we train a submodel specifically for different tasks? It could be an sae on just the soft prompt embeddings, it needs many different tasks to span the sae feature space. (Can we sae the embedding and see what the prompts mean)
+- in the ensure example, we only trained an embedding, that means the model already has the mechanism to ensure length, 
+- what is ensure emebddnig linearly composed of (soft prompt decomposition paper) and its description (inspect paper)
+- it's fine for a word to be verbose, because a word is sometimes figurative, every object word would require infnite description for peopple not living in our world. As such, an object also means different set of things for different people, for example, America for a people living in different places at different times mean very different things, yet they can still communicate. 
+- are we looking at just words/features or also circuits/ways of thinkng
+- potential ideas LM knows but not often used by humans
+    - frequency domain arithmatics
+
+# [Geva](https://mega002.github.io/)
 ### Background
 - [Logit Lens](https://www.lesswrong.com/posts/AcKRB8wDpdaN6v6ru/interpreting-gpt-the-logit-lens):The logit lens focuses on what GPT "believes" after each step of processing, rather than how it updates that belief inside the step.
 - mathematical framework of transformers: the final activation is sum of every layer's contribution. (they believe this means every layer operate on the same embedding space but it's equally possible that each layer uses different embedding)
@@ -394,11 +598,12 @@ features as vectors and representation of concepts as polytopes in rep space
 - can we study the intermediate residual spaces as we do on embedding or unembedding space. Note the E and U are WORD embedding. Intermediate layers may be sentence or concept embedding.
 
 
-## Vectors in Embedding Space
+## Interpretation in Embedding Space
 ### MLP are Key value pairs
 Background
 - [Neural Memory (Sukhbaatar et al., 2015)](https://proceedings.neurips.cc/paper_files/paper/2015/file/8fb21ee7a2207526da55a679f0332de2-Paper.pdf). Exactly the MLP memory but non-linearity is softmax, used on RNN. It seems that the only difference btw these neural memory + RNN work and transformer is the attn module, which is highly efficient in mixing information. Sukhbaatar in his work in 2019 also relates the NM with MLP in transformer but didn't invesitigate what those memories are.  
 
+![from leCun's JEPA slides](/images/transformer-as-ram.png)
 
 thoughts
 - since there's relu in btw, we can view it as no negative keys, or you only add, not substract. Then there must be anti value vectors for most value vectors in down projection matrix, just like every muscle has an antimuscle. Note that the figure 7 shows non zero activations are 50-10% decreasing wrt layer. "Interestingly, the number of active memories drops towards layer 10, which is the same layer in which semantic patterns become more prevalent"
@@ -430,11 +635,28 @@ key insights
 - now we rewrite attention and FFL as interaction between **tokens** instead of actual residual flows, to achieve input independence. 
 - rewrite VO of attention: index i for head. Each head has a WV (d by d_head) and WO (d_head by d). The whole WV dot WO can be seen as WVs dot WOs both concated. $W_{OV}=concatH(W_V^1,...,W_V^i,...,W_V^H)\cdot concatV(W_O^1,...,W_O^i,...,W_O^H)=\sum_i^H W_V^iW_O^i=\sum_i^H W_{VO}^i$ Therefore, when taking in X of (N by d) and attention pattern A of (N by N) we have $concatH(A^iXW_V^1,...,A^iXW_V^i,...,A^iXW_V^H)\cdot concatV(W_O^1,...,W_O^i,...,W_O^H)=\sum_i^H A^iXW_V^iW_O^i=\sum_i^H A^iXW_{VO}^i$. This will be added to the residual and should therefore be interpretable. To see what token it represents we use $A^iXW_{VO}^iE=A^i\hat{X}UW_{VO}^iE$. Attention pattern can be seen as linearly combining each row of X or $\hat{X}$ to produce new rows in embedding or token space. The token embedding is then passed to $UW_{VO}^iE$ which is input independent. It transitions an embedding in token space to another. (why not embeding space directly using WVO?)
 
+### [LM-Debugger](https://github.com/mega002/lm-debugger)
+- see before and after top predictions for each layer, following logit lens
+- find MLP neurons relavant for any concept, and can turn on those neurons to intervene on the generation
+
+### Function from head params
+- $M = E(W_{VO})E^T∈ R^{|V| × |V|}$. Each entry in M is viewed as a mapping score between source and target tokens s, t ∈ V based on W_VO, which signifies how strongly the head promotes it in its outputs.
+- ![](/images/head-params.png)
+
+## Interp through patching
+### Task vector
+### [Patchscope](#patchscope)
+
+### patchscope on soft prompts (Inspect)
+- the ICL prompt is to describe the task like "Categorize user feedback into different types: bug report, feature request, compliment" and "Identify the emotion expressed in this text: joy, sadness, anger, fear"
+- ![](/images/inspect.png)
+
 ### Summary
 #### Key
 The method is to use prefixes of sentences (eg. I love dogs, I love, I)
 - top examples (prefixes) that trigger a key ![](/images/geva-kv-k-eg.png)
 - ![](/images/geva-kv-k-stat.png)
+
 
 #### Key centered value
 - for all keys, first find the top triggering example, then find the actual next token of this example, and see if it agrees with the most probable token associated with the value corresponding to this key ![](/images/geva-kv-kv-agree.png)
@@ -471,15 +693,185 @@ Limitations
 ### [Visit](https://github.com/shacharKZ/VISIT-Visualizing-Transformers)
 
 
-### [Diffusion](https://hila-chefer.github.io/Conceptor/)
+## Vision
+### [See conceptor](#conceptor)
 
 
 
 
 
 
-# LeCun/JEPA
-> transformer can be seen as perceiving the world and producing a current state vector at mid layers and then predict the next state at late layers (final layers can be seen as actor that select the best next actions/tokens)
+# -------- Vision/Multimodal ------------
+## Basics
+Image processing is "harder" than language because it's more primitive. Fishes have vision, but only humans speak. All language related tasks require only language as input and output. But vision tasks are variable (classification, segmentation, captioning, etc) and input and output are often not images. It's worth thinking what a language transformer and a vision transformer mean in the brain. 
+
+### History
+- GANs 2014
+- MoCo 2020
+- CLIP 2021
+- DINO 2021
+
+### ViT
+- Image is first split into m fixed size patches
+- each patch is embedded with pos encoding as input to transformer
+- usually a [CLS] token is prepended 
+- after last layer, the CLS position token output will go through a head that gives image class (sometimes they pool image token outputs and drop CLS altogether)
+
+### Architectures
+- Dual encoder: CLIP
+- Fusion encoder: give image and language related tokens together to transformer
+    - cross attention from the start
+    - full cross attn from a certain layer on, so early layers are modality specific
+
+
+### Objective
+- moco: ![](/images/moco.png)
+- contrastive image pair to learn image representation
+- BYOL: non contrastive, two networks with 
+- Dino: 
+- Masked Language Modeling, like BERT but with image input
+- masked image modeling, use dVAE and predict masked emcoding
+- masked multimodal modeling (introduced in FLAVA)
+- image captioning
+- image caption matching 
+
+
+
+
+
+## Tuning/Interp
+Prompt Tuning: In addition to the follow-up works on how to construct better prompting texts, recent works propose to treat the prompts as task-specific continuous vectors and directly optimize them via gradients during fine-tuning.
+
+### Visual Prompt Tuning
+Instead of altering or fine-tuning the pre-trained Transformer itself, we modify the input to the Transformer.
+
+- ![](/images/VPT-1.png)
+- Note that lienar means just finetune a linear head on the CLS output, it achieves a very good improvement with just 0.02x param; also bias means just finetune all bias terms and it achieves near full finetuing performance with 0.05x param. VPT-shallow has 0.04x param and deep has 0.18x params. ![](/images/VPT-2.png)
+- ![](/images/VPT-4.png)
+- ![](/images/VPT-3.png)
+
+### MILAN
+Given a neuron, MILAN generates a description by searching for a natural language string that maximizes pointwise mutual information with the image regions in which the neuron is active.
+
+
+## CLIP/cls ViT Interp
+### [CLIP SAE](https://www.lesswrong.com/posts/bCtbuWraqYTDtuARg/towards-multimodal-interpretability-learning-sparse-2)
+- vit-clip trained a mid layer sae on image-net-1k, lots of visual examples of highest activating images for many features
+
+### [CLIP sae and difussion intervention](https://www.lesswrong.com/posts/Quqekpvx8BGMMcaem/interpreting-and-steering-features-in-images)
+- train SAE on clip 
+- use the features to intervene on stable diffusion conditioned on image (maybe also works on text), for example, given cat image, encode the image with intervened sae and use the altered embedding as input to diffusion. 
+
+### [Prisma](https://www.alignmentforum.org/posts/kobJymvvcvhbjWFKe/laying-the-foundations-for-vision-and-multimodal-mechanistic)
+- open source vision MI toolkit
+- good background section on methods in MI and tools, and why vision MI is more nuanced
+    - Unlike language models, vision transformers do not have a dictionary-style embedding and unembedding matrix. 
+    - Language input is discrete while vision input is continuous. 
+    - Vision models typically employ contrastive learning or unsupervised approaches rather than next-token prediction.
+- interesting findings
+    - feature is much denser in ViT SAE: image distribution is denser? token number is much smaller?
+    - model improvement with SAE
+- the website shows some cool visuals of their functionality
+    - logit lens for CLIP: the emoji means at the specified layer and patch location, directly map that residual activation to output class with the head MLP, kinda similar to logit lens output embedding mapping ![](/images/prisma.png)
+    - head anaysis, geometric heads in first layer
+
+### [CLIP head Lens](https://yossigandelsman.github.io/clip_decomposition/)
+- ViT-CLIP, heads are added, layers are added, for MSA, contributions from image patches are added, so the image-text joint repr is sum over H heads, L layers and N patches. 
+- to interpret each late layer head's function, find prompts that explain the most variablity of the output of the head, by actually feeding inputs and collect heads' outputs and project the variance onto the proposed span of concept embeddings. Maximize the projection
+- ![](/images/clip-lens.png)
+
+### [CLIP Neuron lens](https://yossigandelsman.github.io/clip_neurons/)
+- everything on cls token
+- neuron means the 1-d output subspace of an MLP neuron, ie, a column of the value matrix
+- each neuron's first order contribution to the image is too small, so use second order, which means the sum of the neuron's effect on all subsequent layers all MSA heads. 
+- the second order effect is approx rank 1. Using orthogonal matching pursuit, decompose the second order effect vector to principle words from common words. 
+- ![](/images/clip-neuron-lens.png)
+
+### [Splice]
+- CLIP embedding as linear combination of sparse concepts. 
+- ![](/images/splice.png)
+
+procedure
+- Mine the most common 1- and 2-word phrases (“coffee,” “birthday party,” etc.) from the LAION-400M captions.
+- Encode each phrase with the CLIP text encoder and mean-center + re-normalize (to handle the known “image vs. text cone” gap).
+- Stack your centered & normalized concept vectors as columns in a matrix C.
+- You want to find a nonnegative weight vector w (of length |vocab|) so that Cw points back to z—but with as few nonzeros as possible.
+- $ \min_{w \ge 0}\;\|C\,w - z\|_2^2 \;+\; 2\lambda\,\|w\|_1,$
+> psychology shows 20 concepts is best for one image/sentence
+
+
+
+## Difussion
+### Basics
+Stable Diffusion
+- the noise latents are fixed dimension matrix of N by d. Each latent vector has information over the whole image
+- The denoising UNet maps intermediate representations to query vectors, the CLIP encodiing of prompt to key and value vectors.
+- ![](/images/sd.png)
+
+Diffusion Transformer
+- ![](/images/dit.png)
+
+Inversion-reconstruction
+
+### [Kandinsky](https://github.com/ai-forever/Kandinsky-2)
+- ![](/images/kandinsky.png)
+
+
+### [ControlNet](https://github.com/lllyasviel/ControlNet)
+- [](/images/control-net-2.png)
+
+### [DAAM](https://github.com/castorini/daam)
+- what words contribute to what pixels
+- stable diffusion uses CLIP text embedding as k and v to answer q from images. For a specific token we can analyze the attention matrix's  column and see what queries it answered. 
+- each unet level's attention map is bicubic interpolated to highest resolution and added to create the segmmentation map
+- ![](/images/daam.png)
+
+### [Diffussion lens](https://tokeron.github.io/DiffusionLensWeb/)
+- use per layer activations from text encoder (apply final layer norm) to genrate image. 
+- ![](/images/diff-lens.png)
+
+### [Diffusion steering]
+- use per layer activations from image encoder to genrate image. 
+- ![](/images/diff-steering.png)
+
+### [conceptor](https://hila-chefer.github.io/Conceptor/)
+- in stable diffusion, decompose a text prompt encoding into linear combination of vocab embedding ($w^*=\sum^V a_i w_i$), weights optimized per concept with small MLP. 
+- ![](/images/conceptor.png)
+
+### [CLIP sae and difussion intervention](https://www.lesswrong.com/posts/Quqekpvx8BGMMcaem/interpreting-and-steering-features-in-images)
+See CLIP section above
+
+procedure
+- pass a prompt (like "apple") to CLIP to get a concept embedding 
+- run SD to get 100 images
+- use the 100 images to run the diffusion reconstruction loss on noised images conditioned on w*, so w* faithfully steer the diffusion process towards the images instead of simply minicing the prompt embedding
+- after we trained the MLP, we can decompose a single image. We use the seed if that image and remove one w at a time to generate a new image, then we compare CLIP of the two images and remove w if CLIP score is below 95. Do this for all w. Not clear if they follow a greedy alpha approach.
+- ![](/images/conceptor-2.png)
+
+## RL
+### Minecraft
+Steve 1: https://arxiv.org/pdf/2306.00937 
+Interpretable steve 1: https://arxiv.org/pdf/2407.12161
+
+# ------- Test Time -------
+> Research on “dual process” models suggests that people have two modes in which they engage with decisions – a fast, automatic, unconscious mode (“System 1”) and a slow, deliberate, conscious mode (“System 2”)
+
+> A genuine problem-solving process involves the repeated use of available information to initiate exploration, which discloses, in turn, more information until a way to attain the solution is finally discovered.—— Newell et al.
+
+
+
+
+
+
+# Thoughts
+the decision tree can be input to a system 2 transformer but a normal LLM might do just as well
+
+
+
+
+
+
+
 
 
 # ------- Neuro oriented -------
@@ -529,31 +921,66 @@ Electroarray in monkey and record when seeing image. Linearly map btw ANN interm
 - the state of the world is largely random, we can imagine all states of the world through all times laid out before us. Many of them will 
 - the metaphysical concept, or pure forms of the world, are either physical transformations of the environment under laws of dynamics, or transformations of the input stimuli to an intelligent system as a result of the system's state change. For example, the physical law that moves the apple from above to ground preserves the notioin of the apple, no matter its altitude. The change of viewpoint, as a result of your own movement, will similarly preserve the concept of objects withiin your view
 
+### Coding Effieciency
+There's an inherent tradeoff between feature based and exact matching based memory. Exact matching is fast. For example, when typing, we remember the exact sequence of movements leading to a word or a subword. Most of us actually don't remember the keyboard at all. We don't know what the second row's second key is. The keyboard is feature. We have traded this off for speed. 
+
+When coding 16 objects with 4 bits or with 16 bits. The 16 bits system is fast. The 4 bits system needs to be resolved  
+
+
+## Information
+Information is anything that decreaes entropy. As in physics, the definition of entropy is subjective. It depends on what you want to know and what you can keep track of. 
+
+Words in different languages can carry similar amount but different distribution of information. By reading or seeing or hearing something, the  change of your state are surely different, though they can change the same amount of entropy, depending on how you map state to entropy. 
+
+Abstract ideas have low information, but when you want multiple pieces of information/systems, their underlying state distributions might overlap, and now an abstraction carries more information on what you want to know, ie, the multiple things, each reduces some ambiguity by the said abstract information.
 
 # By Concepts
-## Feature/Model Steering
+## Identifying Feature
 activation patching 
 - a form of ablation and attribution patching approximates activation patching
 
 direct logit attribution 
 - approximates activation patching in a certain layer
 
-function vector: 
+
+## Feature Steering/Model Editing
+### Feature Steering (Change activation not weight)
+[function vector] 
 - within-task: activation patching and find attention heads by measuring causal indirect effect of last token attn activations. 
 - cross-task: take highest average indirect effect heads' output across samples for a task and add it to another task.
+- Giving a sentence to GPT and ask it to continue vs giving the same sentence but inject the FV. ![](/images/fv-1.png)
+- ![](/images/fv-2.png)
+- First copy means the task is to output the first word in the list. ![](/images/fv-3.png)
 
 [steering vector](https://www.lesswrong.com/posts/5spBue2z2tw4JuDCx/steering-gpt-2-xl-by-adding-an-activation-vector): 
 - run a concept like "golden gate bridge" and get some activations mid-layer and add those to other runs at that location (first tokens)
 
-[Steering vector](https://vgel.me/posts/representation-engineering/#So_what_exactly_is_a_control_vector?)
+[control vector](https://vgel.me/posts/representation-engineering/#So_what_exactly_is_a_control_vector?)
 1. run counterfactual pairs 
 2. collect last token states at every layer
 3. diff the average states 
 4. PCA
 
+### Model Editing (Change weight not activation)
+[ROME]
+- Given a dataset X and corrupted dataset X* (eg, The space needle is in, The space neeble is in; actual corruption technique is diverse and task specific at the moment)
+    1. run the model on X, store activations and prob of correct answer
+    2. run the model on X*, store activations and prob of correct answer
+    3. run the model on X*, restore activation from running X on desired positions, store prob of correct answer
+    4. average the effect: 
+
+[MEMIT]
+
+
+## Identidying Circuit/Mechanism
+### Relation
+[Linear encoding of relation](https://lre.baulab.info/)
+- Given a relation r such as plays the instrument, a linear relational embedding is an affine function $LRE(s) = W_r(s) + b_r$ that maps any subject representation s in the domain of the relation (e.g. Miles Davis, Carol Jantsch) to the corresponding object representation o (e.g. trumpet, tuba).
+- Attribute Lens ![](/images/attr-lens.png)
+
+
 # Others
 - [momenntum gd and dynamics](https://distill.pub/2017/momentum/)
-
 
 # Neuro
 [how brain selects memory](https://www.youtube.com/watch?v=ceFFEmkxTLg)
@@ -561,3 +988,6 @@ function vector:
 > my note: keep in mind that it's still possible that no memory is ever really lost as shown by recalling distant non significant random memory
 - during sleep, neocortex not receiving real stimuli and listens for hippocampus stimuli thus transfer memory from hippo to neocrotex
 - during wakefulness infrequent sharp wave ripples tag memories for later  consolidaiton
+
+## Evolution constraint
+[David Marr, A theory for the archicortex](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://www.cs.cmu.edu/afs/cs/academic/class/15883-f17/readings/marr-1971.pdf)

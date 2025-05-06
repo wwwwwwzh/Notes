@@ -46,27 +46,6 @@ https://zhuanlan.zhihu.com/p/773907223
 - sft
 - search
 
-### RLHF
-reward model
-- Process supervised (PRM): sample：a=5-2，b=a+1，b?<step1_start> a=5-2=3<step1_end> <step2_start> b=3+1=4<step2_end>
-- Outcome supervised (ORM)
-
-Pipeline
-- we have pretrained LLM
-- Train reward model: By comparing model outputs in head-to-head matchups, an Elo system can be used to generate a ranking of the models and outputs relative to each-other. These different methods of ranking are normalized into a scalar reward signal for training.
-- At this point in the RLHF system, we have an **initial language model** that can be used to generate text and a **preference model** that takes in any text and assigns it a score
-- Train LLM with reward: fine-tune some or all of the parameters of a copy of the initial LM with a policy-gradient RL algorithm, Proximal Policy Optimization (PPO). Some parameters of the LM are frozen because fine-tuning an entire 10B or 100B+ parameter model is prohibitively expensive (for more, see Low-Rank Adaptation (LoRA) for LMs or the Sparrow LM from DeepMind)
-- PPO: First, **the policy is a language model** (copy of the initial LLM) that takes in a prompt and returns a sequence of text (or just probability distributions over text). The action space of this policy is all the tokens corresponding to the vocabulary of the language model (often on the order of 50k tokens) and the observation space is the distribution of possible input token sequences, which is also quite large given previous uses of RL (the dimension is approximately the size of vocabulary ^ length of the input token sequence). The reward function is a combination of the preference model and a constraint on policy shift.
-![](/images/rlhf-2.png)
-
-### Direct preference optimization (DPO)
-https://zhuanlan.zhihu.com/p/721073733
-
-no RL, implicit reward model. 
-
-### GRPO 
-https://zhuanlan.zhihu.com/p/20812786520
-https://www.zhihu.com/question/10766825126/answer/88583863333
 
 ## Others
 ### LORA

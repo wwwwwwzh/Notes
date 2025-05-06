@@ -87,6 +87,15 @@ https://xiaomi.jobs.f.mioffice.cn/internship/position/7486710065689722988/detail
 3. 参与多模态大模型落地到小米各个产品，结合产品需求，参与算法的设计、开发、验证、集成、优化和维护，解决算法产品化过程中的各种技术问题，确保达到上线要求；
 
 ### Robotics
+**https://xiaomi.jobs.f.mioffice.cn/internship/position/7481229477680775276/detail?spread=6AA3R7B**
+- 传感器仿真算法实习生
+- 北京市校招实习软件研发类日常实习生招聘计划
+- 跟进 NVS(Novel View Synthesis) 领域的 SOTA 算法，推进闭环仿真的业务落地，输出高质量论文。
+- 职位要求
+- 能快速理解一个新算法并进行复现。
+- 熟悉以下 optimize based 3DGS 方案优先：StreetGaussian, OmniRe, ScaffoldGS, - DeformableGS, RoGS, TurboGS 等。
+- 熟悉以下 feed forward based 3DGS 方案优先: SCube, STORM 等
+
 https://xiaomi.jobs.f.mioffice.cn/campus/position/7476029400368562284/detail?spread=J7NS6YR
 - 机器人视觉-语言多模态大模型算法
 - 北京市校招正式软件研发类2025届春季校招计划
@@ -163,12 +172,10 @@ https://xiaomi.jobs.f.mioffice.cn/internship/position/7484156536048140396/detail
 **https://xiaomi.jobs.f.mioffice.cn/internship/position/7477763407006842988/detail?spread=6AA3R7B**
 - 自动驾驶-机器人算法实习生
 - 北京市校招实习软件研发类日常实习生招聘计划
-- 职位描述
 - 工作内容：
 - 1. 参与自动驾驶、机器人方向，研发前沿多模态语言大模型(VLM)、NerF，3D Gaussian、Stable Diffusion生成，文生3D方- 向等相关前沿算法，发表国际顶级论文、申请专利
 - 2.参与多模态理解&3D生成式等算法、LLM/VLM/AIGC等方向的前沿技术，重点关注生成式、大语言模型和多模态模型Evaluation/- SFT/Agent/数据合成技术等相关方向。
 - 3. 参与WorldModel，空间智能，End2End，VLA等方向的研究。
-- 职位要求
 - 任职要求：
 - 1. 具备一定的科研背景：在自动驾驶、机器人相关的感知算法（包括BEV感知，Lidar 3D Detection/Segmentation，- Occupancy Network，End2End, 多传感器融合，WorldModel，3D Gaussian，NerF，单目/多目深度估计，三维重建，LMM, - VLA等 AIGC大模型）中的一个或多个领域有过深入研究的经历；
 - 2. 有过相关领域的顶级会议论文发表（CVPR、ICCV、ECCV等等）；

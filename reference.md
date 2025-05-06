@@ -889,7 +889,68 @@ normalization
 > Note that mean of a vector is beta and var gamma squared. There's a property of such vectors X. $|x|^2=\sum^n x_i^2=n\frac{\sum^n (x_i-\beta)^2-\beta^2+2x_i\beta}{n}=nVar(x)-n\beta^2+2\beta\sum x_i$.  Attention computes the dot product of 2 such vectors, $\sum^n x_i y_i=n\frac{\sum^n x_i y_i}{n}$. If x and y are 0 mean, then their dot product is nCov(x,y). If they are further of unit variance, then dot product equals nCorr(x,y)
 - drop out, MHA, Residual connection
 
-## Inside NN
+## Multimodal
+Image processing is "harder" than language because it's more primitive. Fishes have vision, but only humans speak. All language related tasks require only language as input and output. But vision tasks are variable (classification, segmentation, captioning, etc) and input and output are often not images. It's worth thinking what a language transformer and a vision transformer mean in the brain. 
+
+### History
+- GANs 2014
+- CLIP 2021
+- DINO 2021
+
+### ViT
+- Image is first split into m fixed size patches
+- each patch is embedded with pos encoding as input to transformer
+- usually a [CLS] token is prepended 
+- after last layer, the CLS position token output will go through a head that gives image class (sometimes they pool image token outputs and drop CLS altogether)
+
+### Architectures
+- Dual encoder: CLIP
+- Fusion encoder: give image and language related tokens together to transformer
+    - cross attention from the start
+    - full cross attn from a certain layer on, so early layers are modality specific
+
+#### Flava: A Foundational Language And Vision Alignment Model
+- a single holistic universal model,
+![](/images/flava.png)
+
+
+### Objective
+- MoCo
+- contrastive image pair to learn image representation
+- BYOL: non contrastive, two networks with 
+- Dino: 
+- Masked Language Modeling, like BERT but with image input
+- masked image modeling, use dVAE and predict masked emcoding
+- masked multimodal modeling (introduced in FLAVA)
+- image captioning
+- image caption matching 
+
+
+#### Mean Teacher
+
+#### Bootstrap your own latent (BYOL)
+- online and target networks, align encoding from the 2 networks by passing in different image augmentation
+- this is improvement over CLIP contrastive embedding 
+- moving average is inspired by RL on policy method
+- key insight is while preventing collapsing, they can use a random target network for online network to predict and it achieves non trivial performance on classification
+![](/images/BYOL.png)
+
+#### DINO
+- ![](/images/dino.png)
+- ![](/images/dino-attn.png)
+
+
+
+#### LeCun/JEPA
+> transformer can be seen as perceiving the world and producing a current state vector at mid layers and then predict the next state at late layers (final layers can be seen as actor that select the best next actions/tokens)
+
+predictive encoding
+
+### Foundation Multimodal (text output)
+BLIP and Q-former
+- off the shelf image encoder and LLM with Q-former in middle
+
+## Inside NN (See [the main note on interp](/intelligence.md))
 See Intelligence section below
 ### Loss Landscape
 
@@ -906,7 +967,6 @@ See Intelligence section below
 ### World Models
 - [SORA doesn't learn physical law](https://phyworld.github.io/)
 
-## Practicality
 
 ## Tuning
 ### LOTTERY TICKET HYPOTHESIS
@@ -918,7 +978,7 @@ One possible explanation for this behavior is the good initial weights are close
 
 we hypothesize that the structure of our winning tickets encodes an inductive bias customized to the learning task at hand. Cohen & Shashua (2016) show that the inductive bias embedded in the structure of a deep network determines the kinds of data that it can separate more parameter-efficiently than can a shallow network
 
-#### Early Bird Tickets
+### Early Bird Tickets
 we discover for the first time that the winning tickets can be identified at a very early training stage, which we term as Early-Bird (EB) tickets, via low- cost training schemes
 
 ## Graph Neural Network GNN
@@ -1028,9 +1088,36 @@ if __name__ == "__main__":
     app.run()
 ```
 
+## Database
+### Basics
+- **Users** are priviliage and permissions container
+- A **database** is a logical container that holds data and database **objects** such as tables, views, indexes, and functions.
+- **Tables** are one of the fundamental building blocks in a relational database. They store data in rows and columns
+- Tables may have **relationships** defined via foreign keys. This establishes links between data in different tables.
+- **Schemas**: Act as namespaces in a PostgreSQL database, organizing objects such as tables, views, and indexes.
+- **Index** increases speed, costing storage
+
+### PostgreSQL
+object-relational database management system (DBMS)
 
 
-# Commputer Automation
+
+
+# AI Agent
+## Plans
+- we need an agent living in the computer that works with you side by side. It reads and listens whatever you see and hear and know everything you do on the computer. You can chat with it and it should do anything on the computer. 
+## Claude
+### Model Context Protocol (MCP)
+https://modelcontextprotocol.io/introduction
+
+
+## [Langchain](https://python.langchain.com/)
+
+## OpenAI
+https://platform.openai.com/docs/guides/
+### Tools Schema
+ 
+# Automation Agent
 https://github.com/trycua/acu
 
 [automa](https://github.com/AutomaApp/automa)
@@ -1056,11 +1143,21 @@ Browser Use
 A5-Browser-Use
 - local chrome extention with server side Browser Use 
 
+Open computer use
+
 Proxy (Convergence)
 
 Project Mariner (Google)
 
 OmniParserV2 (Microsoft)
+
+### Agent Builder
+Arklex
+<!-- - hierachical graph based planning
+    - first level is task/TaskGraph
+    - second level is worker/step or node of task/[StateGraph](#state-machine)
+    - third level is tool/step or node of a worker
+- each node at every level is reusable -->
 
 CrewAI
 - [complete tutorial](https://youtu.be/ONKOXwucLvE)
@@ -1071,17 +1168,25 @@ MindOS
 
 Second Me
 
-Arklex
 
 ### Coding Agent
-Repl.it (read–eval–print loop (REPL))
+[Repl.it](https://replit.com/) (read–eval–print loop (REPL))
 - history: google doc for code->JSRepl (used in Udacity and Codeacademy), code ran by emulation in browser->Monaco editor->code mirror
 - replit as shared online code editor (mainly for educators): [an example](https://replit.com/@wzh4/How-old-are-you?replId=96977cd1-658d-49ce-b073-e001e6b5d0e4), it's basically VSCode. 
 - then they added AI assitant and various useful features to make it really smooth, see above example
 - Now the default is the AI agent. See [example webpage with admin site and real email confirmation service](https://replit.com/@wzh4/WaitlistWizard)
 
+[v0.dev](https://v0.dev/)
+- website builder
+
 ### Chat bots
 character.ai
+
+### News Agent
+- meridian
+
+## Traditional
+### Automa
 
 
 ## Tools/Impementation
@@ -1152,16 +1257,64 @@ pywinauto
 - windows
 
 ### Document
+[Retrieval Augmented Generation (RAG)](https://en.wikipedia.org/wiki/Retrieval-augmented_generation)
+- ![](/images/rag.png)
+- document encodings and the encoder are not trained. 
+- query encoder and generator are trained
+
 FAISS: an extremely efﬁcient, open-source library for similarity search and clustering of dense vectors, which can easily be applied to billions of vectors.
 
 [Dense Passage Retrieval DPR]
 
-[Retrieval Augmented RAG](https://en.wikipedia.org/wiki/Retrieval-augmented_generation)
+### State Machine
+https://langchain-ai.github.io/langgraph/tutorials/introduction/#part-1-build-a-basic-chatbot
+
+```py
+# define the graph
+class State(TypedDict):
+    # the annotation defines how this state key should be updated (in this case, it appends messages to the list, rather than overwriting them)
+    messages: Annotated[list, add_messages]
+graph_builder = StateGraph(State)
+
+def chatbot(state: State):
+    return {"messages": [llm.invoke(state["messages"])]}
+
+graph_builder.add_node("chatbot", chatbot)
+graph_builder.add_edge(START, "chatbot")
+graph_builder.add_edge("chatbot", END)
+graph = graph_builder.compile()
+
+# visualize mermaid graph
+from IPython.display import Image, display
+display(Image(graph.get_graph().draw_mermaid_png()))
+
+# use the graph as an agent
+def stream_graph_updates(user_input: str):
+    for event in graph.stream({"messages": [{"role": "user", "content": user_input}]}):
+        for value in event.values():
+            print("Assistant:", value["messages"][-1].content)
+
+while True:
+    stream_graph_updates(input("User: "))
+```
+
+# Extensions
+## Chrome
+### Arch
+background.js
+- Loaded when the extension is installed or the browser starts, and remains running as long as the extension is enabled (or until explicitly unloaded in newer Manifest V3).
+- Think of as a hidden webpage
+
+content scripts
+- Injected into webpages based on URL patterns specified in the manifest or programmatically by the background script. 
+- They run in the context of the loaded webpage.
+- Executes in the same context as the webpage, but in an isolated JavaScript environment.
+
 
 
 # Graphics
 ## Basics
-### Camera
+### Camera Model
 Focal length/field of view
 - ![](/images/focal-l-1.jpg)
 - ![](/images/focal-l-3.png)
@@ -1174,12 +1327,8 @@ Focal length/field of view
 Focal distance
 - focal length is fixed for a lens. Focal distance is from the lens to the imaging plane and can be variable. 
 - Longer focal length focues on nearer things. 
-- changing focal distance doesn't change object size
-
-Deapth of Field (DoF)
-- https://developer.nvidia.com/gpugems/gpugems/part-iv-image-processing/chapter-23-depth-field-survey-techniques
-- Depth of field is the effect in which objects within some range of distances in a scene appear in focus
-- The range of distances within which the CoC is smaller than the resolution of the film is refered to as being in focus
+- changing focal distance doesn't change object size.
+- When we say we focus on something, we are changing focal distance.
 
 Aperture
 - ![](/images/dof.png)
@@ -1187,6 +1336,35 @@ Aperture
 circle of confusion
 1. size of defocused point
 2. smallest blur spot a lens can make
+
+Deapth of Field (DoF)
+- https://developer.nvidia.com/gpugems/gpugems/part-iv-image-processing/chapter-23-depth-field-survey-techniques
+- Depth of field is the effect in which objects within some range of distances in a scene appear in focus
+- The **range of distances** within which the CoC is smaller than the resolution of the film is refered to as being in focus
+- Smaller sensors inherently produce a greater depth of field (more in focus) at any given aperture. That's why mobile phone cameras appear focused at all distances.
+- smaller focal length gives greator DoF (derivation needed)
+- smaller aperture means greator DoF
+- see also [focus stacking](https://chatgpt.com/share/67f300f0-8fac-800c-96cb-6e8d9a783e4a)
+
+### Coordinate transform
+1. world (x,y,z,1) to camera through extrinsic matrix [R|t]. ${\mathbf{X}_c = \begin{bmatrix} X_c \\ Y_c \\ Z_c \\ 1 \end{bmatrix}
+=
+\begin{bmatrix} R ; t \\ 0 ; 1 \end{bmatrix}
+\begin{bmatrix} X_w \\ Y_w \\ Z_w \\ 1 \end{bmatrix}}$
+
+2. camera to image through intrinsic matrix K. ${\mathbf{x}_{\text{image}} =
+K \cdot
+\begin{bmatrix} X_c \\ Y_c \\ Z_c \end{bmatrix}
+=
+\begin{bmatrix}
+f_x  ; 0  ; c_x \\
+0  ; f_y  ; c_y \\
+0  ; 0  ; 1
+\end{bmatrix}
+\begin{bmatrix} X_c \\ Y_c \\ Z_c \end{bmatrix}}$
+
+3. image to pixel: $\\{u = \frac{u'}{w'} = \frac{f_x X_c}{Z_c} + c_x}\\{v = \frac{v'}{w'} = \frac{f_y Y_c}{Z_c} + c_y}$
+
 
 ### Rasterization
 ```c
@@ -1200,7 +1378,28 @@ circle of confusion
 ```
 ### Ray Tracing
 
+
 ## SfM
+- SIFT
+- flann
+- RANSAC
+- Bundle Adjustment
+- multiview stereo (MVS)
+    - patch match
+
+### Modern SfM/SLAM
+> SLAM is a form of SfM. modern SLAM systems have leveraged least-squares optimization. A key element for accuracy has been full Bundle Adjustment (BA), which jointly optimizes the camera poses and the 3D map in a single optimization problem.... current SLAM systems lack the robustness demanded for many real-world applications. Failures come in many forms, such as lost feature tracks, divergence in the optimization algorithm, and accumulation of drift.
+Recurrent All-Pairs Field Transforms (RAFT)
+
+Differentiable Recurrent Optimization-Inspired Design (DROID)
+- recurrent iterative updates, building upon RAFT [49] for optical ﬂow but introducing two key innovations.
+
+MegaSam
+
+
+
+
+## Representations
 ### K-Plane
 triplane (static)
 ![](/images/triplane.png)
@@ -1214,6 +1413,7 @@ https://sarafridov.github.io/K-Planes/
 mipnerf
 - instead of nerf positional encoding, pass a gaussian encoding that encodes a neighborhood of points in a 3d gaussian approx a conical frustum to MLP
 
+### Dynamic NeRF
 dnerf
 - ![](/images/dnerf.png)
 - 2 modules:
@@ -1230,10 +1430,7 @@ summary
 details
 - there is a graphical viewer 
 
-## Dynamics
-
-
-
+## Dynamic GS
 4dgs
 - ![](/images/4dgs-1.png)  
 - 2 modules
@@ -1242,6 +1439,9 @@ details
 
 
 
+## Generative 
+### Diffusion
+Cat3D (nerf), Bolt3D (gs), Cat4D (gs), uses a trained mutliview consistent transformer diffusion model. 
 
 
 # AR
@@ -1301,10 +1501,10 @@ https://github.com/ManimCommunity/manim/
 An investment is the current commitment of money or other resources in the expectation of reaping future benefits.
 
 ### RL
-
+See [references/books/RL](/references/books/RL.md)
 
 ### Analysis I and II
-See references/books/Analysis
+See [references/books/Analysis](/references/books/Analysis.md)
 
 ## Online Classes
 ### Hinton Old Coursera
@@ -1312,13 +1512,14 @@ See references/books/Analysis
 
 
 ### [Classical Mechanics]
+See [references/classes/TM-ClassicalMech](/references/classes/TM-ClassicalMech.md)
 
 ### Quantum Mechanics
-
+See [references/classes/TM-QuantumMech](/references/classes/TM-QuantumMech.md)
 
 
 ### Statistical Mechanics
-See references/classes/TM-StatMech.md
+See [references/classes/TM-StatMech](/references/classes/TM-StatMech.md)
 
 ### Particle Physics
 evolution of the concept of particle

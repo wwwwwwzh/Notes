@@ -49,7 +49,7 @@ print("bs4 module path:", bs4.__file__)
 
 ## Tensorboard
 - tensorboard --logdir log; ssh -L 16006:127.0.0.1:6006 zhw@hires-gpu1.cs.unc.edu then go to http://127.0.0.1:16006: tensor board on ssh
-
+- tensorboard --logdir log; ssh -L 6006:127.0.0.1:6006 zhw@longleaf.unc.edu then go to http://127.0.0.1:6006: tensor board on ssh
 
 
 
@@ -58,6 +58,7 @@ print("bs4 module path:", bs4.__file__)
 https://learngitbranching.js.org/
 clone
 - git clone
+- git submodule update --init --recursive
 
 create new
 - git init: initialize current directory
@@ -65,6 +66,7 @@ create new
 - git commit -m "initial"
 - go to github.com and create repo, or use gh command 
 - git remote add origin git@github.com:wwwwwwzh/code-mapper.git
+- (if account is different): git remote set-url origin https://wwwwwwzh:{token}@github.com/wwwwwwzh/demo-repo.git
 - if added readme: 
     - git branch --set-upstream-to=origin/main main
     - git pull --allow-unrelated-histories
@@ -78,12 +80,22 @@ create new
 - git merge branchName
 - git rebase branchName
 
+### push
+secret exposed
+
+
+push file too large
+- git config --global http.postBuffer 157286400
+
+
 ### ssh
 The process is as follows: you run a git clone command with an SSH URL; Git starts ssh to connect to the github.com host as git user; ssh connects and successfully authenticates by the 1st keypair; GitHub recognizes that it's the user that has access to the repository so it accepts the request at the Git protocol level
 
 - create new key for github: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
 - add key to github: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 - multiple keys for multiple github accounts: https://stackoverflow.com/questions/3225862/multiple-github-accounts-ssh-config
+
+- ssh config: code ~/.ssh/config
 
 
 ### Relative 
@@ -114,8 +126,10 @@ deselect previous occurrence: shift + control + G
 copy line done: command + D
 
 ### VSCode
-copy line done/up: shift + opt + arrow
-select next occurrence: command + D
+- shift cmd p: command pallate
+- shortcuts for upper/lower case: ctr shift u/l https://stackoverflow.com/questions/35184509/make-selected-block-of-text-uppercase
+- copy line done/up: shift + opt + arrow
+- select next occurrence: command + D
 
 - setup remote developing: https://code.visualstudio.com/docs/remote/ssh
 - remote jupiter notebook: run salloc and srun, THEN activate conda env and run jupiter, in vscode, add kernel to be the one in jupiter output (like http://c1123.ll.unc.edu) use 'import sys; print(sys.executable)' to check which env conda is using.
@@ -198,9 +212,10 @@ i don't have sudo how can i download a new curl and link to libcurl/8.4.0
 
 
 
-## cuda/torch download
-- cuda version, nvcc version and torch version must match
-- when compiling custom c++ packages into pip package using cuda sometimes you run into gcc incompatibility. check with `gcc --version` and `module avail gcc` and try `module load gcc/{version_number}`
+## cuda/torch related
+- cuda version, nvcc version and torch version must match [cuda and gcc compatibility](https://stackoverflow.com/questions/6622454/cuda-incompatible-with-my-gcc-version); Also check torch official website for the torch pkg that matches your cuda version.
+- when compiling custom c++ packages into pip package using cuda sometimes you run into gcc incompatibility. check with `gcc --version` and `module avail gcc` and try `module load gcc/{version_number}`. You also need to change various environement variables. See [build gaussian splatt section](#build-gaussian-splatt-cuda-libraries)
+
 > https://docs.google.com/document/d/1S8PU4EbigzlvSx4x_Ay835hMAjB8bCpouoWcNIyvTbc/edit
 
 
@@ -236,6 +251,7 @@ https://jakevdp.github.io/blog/2017/12/05/installing-python-packages-from-jupyte
 
 ## Others
 ### Download from google drive
+- gdown --fuzzy 'https://drive.google.com/file/d/0B9P1L--7Wd2vU3VUVlFnbTgtS2c/view?usp=sharing&resourcekey=0-WWs_XOSctfaY_0-sJBKRSQ'
 - rclone config
 - rclone copy "gdrive:" /nas/longleaf/home/zhw/personal/gs/data --drive-root-folder-id 1nUNWrFLKmK2g-ClJ4Nd9OGuxhYeu6Sv7 -P
 
@@ -276,7 +292,12 @@ On macbook pro my miniconda is in home directory
 ### Export Environment 
 - conda env export > environment_gp.yml
 
-## Troubleshooting
+
+### Python version
+> ! Do not run mamba install python=version, this will remove all your packages (needs to check if conda install is ok)
+
+
+### Troubleshooting
 - `which pip` should output `miniconda3/envs/env_name/bin/pip`, if not do `conda install pip`
 sometimes you can do `pip cache purge`
 - solve environment forever (making new env should not take more than 2 minutes and installing a package should not solve for more than 1 minute): remove and reinstall conda
@@ -299,11 +320,12 @@ sometimes you can do `pip cache purge`
 ### build gaussian splatt cuda libraries
 before running `pip install -e submodules/depth-diff-gaussian-rasterization`
 - module avail cuda
+- module avail gcc
+- module load cuda/11.8; module load gcc/9.1.0
 - pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu{version}
 > cuda and torch version must match
-- export CUDA_ROOT=/nas/longleaf/rhel8/apps/cuda/11.8
-- export CUDA_PATH=/nas/longleaf/rhel8/apps/cuda/11.8
-- export CPATH="/nas/longleaf/rhel8/apps/cuda/11.8/includee"
+- module load cuda/11.8; module load gcc/9.1.0; export CUDA_ROOT=/nas/longleaf/rhel8/apps/cuda/11.8; export CUDA_PATH=/nas/longleaf/rhel8/apps/cuda/11.8; export CPATH="/nas/longleaf/rhel8/apps/cuda/11.8/include"; export TORCH_CUDA_ARCH_LIST="8.9"; export CC=$(which gcc); export CXX=$(which g++); export CUDAHOSTCXX=$(which g++); 
+
 
 ### Colmap
 - **mamba install conda-forge::colmap**
@@ -398,7 +420,7 @@ on local machine terminal 2
 
 # UNC
 ## SSO
-if cookie issue: 1) go to connect carolina and login, 2) delete browsing history containing sso and unc and any website that required unc sso login (eg parchment)
+if cookie issue: 1) go to connect carolina and login and go to outlook, 2) delete browsing history containing sso and unc and any website that required unc sso login (sso, unc, outlook, parchment, duo, longleaf, api, sso, login) 
 
 # Prompt
 ## Chatbot
